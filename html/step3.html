@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>HEIDI Editor</title>
+
+    <!-- Stylesheets -->
+    <link href="css/bootstrap.min.css" type="text/css" rel="stylesheet">
+    <link href="css/bootstrap-slider.css" type="text/css" rel="stylesheet">
+    <link href="css/custom.css" type="text/css" rel="stylesheet">
+
+
+    <!-- jQuery and plugins -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/bootstrap-slider.js"></script>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+
+
+    <div id="header" class="container">header</div>
+
+    <div id="content">
+        <div class="container">
+
+            <input id="slider" type="text" data-slider-id="positionSlider" data-slider-min="1" data-slider-max="16" data-slider-step="1" data-slider-value="2" />
+            <!-- /slider -->
+
+            <h2 class="title">Step3: Identify Bibliography</h2>
+            <!-- /title -->
+
+
+            <div class="row">
+                <div class="col-sm-3" id="jstree"></div>
+                <div class="col-sm-9"></div>
+            </div>
+
+
+            <div class="row next-btn">
+                <button class="btn btn-primary next-btn" onclick="location.href='step4.html'">Next<i class="glyphicon glyphicon-chevron-right"></i></button>
+            </div>
+        </div>
+        <!-- /container -->
+
+
+    </div>
+
+    <!-- /content -->
+
+    <div id="footer" class="container">footer</div>
+
+<script type="text/javascript">
+    function getFileList(dirPath){
+        var fso, f, f1, f2;
+        var list = new Array();
+        fso = new ActiveXObject("Scripting.FileSystemObject");
+        if (dirPath.length == 0) dirPath = ".";
+        f = fso.GetFolder(dirPath);
+        f1 = new Enumerator(f.files);
+        for (; !f1.atEnd(); f1.moveNext()){
+            list.push(f1.item());
+        }
+        f2 = new Enumerator(f.SubFolders);
+        for (; !f2.atEnd(); f2.moveNext()){
+            list = list.concat(getFileList(f2.item()));
+        }
+        fso= null;
+        return list;
+    };
+
+    var jsonData = JSON.stringify(getFileList("/var/www/HEIDIEditor"));
+
+    $("#jstree").jstree({
+        "json_data": jsonData
+    });
+
+    $("#slider").slider({
+        tooltip: 'always',
+        formater: function(value) {
+            return 'Step ' + value;
+        }
+    });
+</script>
+
+</body>
+</html>

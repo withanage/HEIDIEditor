@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>HEIDI Editor</title>
+
+    <!-- Stylesheets -->
+    <link href="css/bootstrap.min.css" type="text/css" rel="stylesheet">
+    <link href="css/bootstrap-slider.css" type="text/css" rel="stylesheet">
+    <link href="css/jstree/style.min.css" type="text/css" rel="stylesheet">
+    <link href="css/custom.css" type="text/css" rel="stylesheet">
+
+
+    <!-- jQuery and plugins -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/bootstrap-slider.js"></script>
+    <script src="js/jstree.min.js"></script>
+    <script src="js/advanced.js"></script>
+    <script src="js/wysihtml5-0.3.0.min.js"></script>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+
+
+    <div id="header" class="container">header</div>
+
+    <div id="content">
+        <div class="container">
+
+            <input id="slider" type="text" data-slider-id="positionSlider" data-slider-min="1" data-slider-max="16" data-slider-step="1" data-slider-value="2" />
+            <!-- /slider -->
+
+            <h2 class="title">Step2: Add Metadata</h2>
+            <!-- /title -->
+
+
+            <div class="row">
+                <div class="col-sm-3">
+                    <div id="treepane" class="highlight">
+                        <ul>
+                            <li>Acknowledgements</li>
+                            <li>Preface</li>
+                            <li aria-selected="true">Chapter 1</li>
+                            <li>Chapter 2</li>
+                            <li>Chapter 3</li>
+                            <li>Appendix</li>
+                            <li>Bibliography</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-sm-9">
+                    <form class="form-horizontal">
+                        <div class="form-group">
+                            <label class="control-label col-sm-1 col-sm-offset-2" for="meta_title">Title</label>
+                            <div class="col-sm-6">
+                                <input type="text" id="meta_title" class="form-control" placeholder="Title" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-sm-1 col-sm-offset-1 plus-btn">
+                                <i class="glyphicon glyphicon-plus-sign"></i>
+                            </div>
+                            <label class="control-label col-sm-1" for="meta_surname">Author</label>
+                            <div class="col-sm-3">
+                                <input type="text" id="meta_surname" class="form-control" placeholder="Surname" />
+                            </div>
+                            <div class="col-sm-3">
+                                <input type="text" id="meta_lastname" class="form-control" placeholder="Last name" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-sm-1 col-sm-offset-2" for="meta_keywords">Keywords</label>
+                            <div class="col-sm-6">
+                                <input type="text" id="meta_keywords" class="form-control" placeholder="xxx, yyy, zzz" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-sm-1 col-sm-offset-2" for="meta_abstract">Abstract</label>
+                            <div class="col-sm-6">
+                                <textarea rows="5" id="meta_abstract" class="form-control" spellcheck="true" wrap="off"></textarea>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+
+            <div class="row next-btn">
+                <button class="btn btn-primary next-btn" onclick="location.href='step3.html'">Next<i class="glyphicon glyphicon-chevron-right"></i></button>
+            </div>
+        </div>
+        <!-- /container -->
+
+
+    </div>
+
+    <!-- /content -->
+
+    <div id="footer" class="container">footer</div>
+
+<script type="text/javascript">
+    $(function() {
+        $("#slider").slider({
+            tooltip: 'always',
+            formater: function(value) {
+                return 'Step ' + value;
+            }
+        });
+
+        /*
+        function getFileList(dirPath){
+            var fso, f, f1, f2;
+            var list = new Array();
+            fso = new ActiveXObject("Scripting.FileSystemObject");
+            if (dirPath.length == 0) dirPath = ".";
+            f = fso.GetFolder(dirPath);
+            f1 = new Enumerator(f.files);
+            for (; !f1.atEnd(); f1.moveNext()){
+                list.push(f1.item());
+            }
+            f2 = new Enumerator(f.SubFolders);
+            for (; !f2.atEnd(); f2.moveNext()){
+                list = list.concat(getFileList(f2.item()));
+            }
+            fso= null;
+            return list;
+        }
+        var jsonData = JSON.stringify(getFileList("/var/www/HEIDIEditor"));
+        */
+
+        $("#treepane").jstree({
+            //"json_data": jsonData
+        });
+
+
+        $('#meta_abstract').wysihtml5({
+            "font-styles": true, //Font styling, e.g. h1, h2, etc. Default true
+            "emphasis": true, //Italics, bold, etc. Default true
+            "lists": true, //(Un)ordered lists, e.g. Bullets, Numbers. Default true
+            "html": false, //Button which allows you to edit the generated HTML. Default false
+            "link": true, //Button to insert a link. Default true
+            "image": true, //Button to insert an image. Default true,
+            "color": false //Button to change color of font
+        });
+    });
+
+</script>
+
+</body>
+</html>
