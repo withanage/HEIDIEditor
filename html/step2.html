@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Step 2 | HEIDI Editor</title>
+
+    <!-- Stylesheets -->
+    <link href="css/bootstrap.min.css" type="text/css" rel="stylesheet">
+    <link href="css/bootstrap-wysihtml5-0.0.2.css" type="text/css" rel="stylesheet">
+    <link href="css/jstree/style.min.css" type="text/css" rel="stylesheet">
+    <link href="css/custom.css" type="text/css" rel="stylesheet">
+
+
+    <!-- jQuery and plugins -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jstree.min.js"></script>
+    <script src="js/advanced.js"></script>
+    <script src="js/wysihtml5-0.3.0.min.js"></script>
+    <script src="js/bootstrap-wysihtml5-0.0.2.min.js"></script>
+
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+
+
+    <div id="header" class="container">header</div>
+
+    <div id="content">
+        <div class="container">
+
+            <ol class="breadcrumb">
+                <li><a href="index.html">Step 1</a></li>
+                <li class="active"><span class="current">Step 2</span></li>
+                <li class="active">Step 3</a></li>
+                <li class="active">Step 4</a></li>
+                <li class="active">Step 5</a></li>
+                <li class="active">Step 6</a></li>
+                <li class="active">Step 7</a></li>
+                <li class="active">Step 8</a></li>
+                <li class="active">Step 9</a></li>
+                <li class="active">Step 10</a></li>
+                <li class="active">Step 11</a></li>
+                <li class="active">Step 12</a></li>
+                <li class="active">Step 13</a></li>
+                <li class="active">Step 14</a></li>
+                <li class="active">Step 15</a></li>
+                <li class="active">Step 16</a></li>
+            </ol>
+            <!-- /breadcrumb -->
+
+            <h2 class="title">Step2: Add Metadata</h2>
+            <!-- /title -->
+
+
+            <div class="row">
+                <div class="col-sm-3">
+                    <div id="treepane" class="highlight">
+                        <ul>
+                            <li>Acknowledgements</li>
+                            <li>Preface</li>
+                            <li>Chapter 1</li>
+                            <li>Chapter 2</li>
+                            <li>Chapter 3</li>
+                            <li>Appendix</li>
+                            <li>Bibliography</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-sm-9">
+                    <form class="form-horizontal">
+                        <div class="form-group">
+                            <label class="control-label text-right col-sm-1" for="meta_title">Title</label>
+                            <div class="col-sm-11">
+                                <input type="text" id="meta_title" class="form-control" placeholder="Title" />
+                            </div>
+                        </div>
+                        <div class="form-group" id="author_list_1">
+                            <label class="control-label text-right col-sm-1" for="meta_surname">Author <span id="author_label_1"></span></label>
+                            <div class="col-sm-5">
+                                <input type="text" id="meta_surname" class="form-control" placeholder="Surname" />
+                            </div>
+                            <div class="col-sm-5">
+                                <input type="text" id="meta_lastname" class="form-control" placeholder="Last name" />
+                            </div>
+                            <div class="col-sm-1">
+                                <a class="btn"><i class="icon-plus"></i></a>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label text-right col-sm-1" for="meta_keywords">Keywords</label>
+                            <div class="col-sm-11">
+                                <input type="text" id="meta_keywords" class="form-control" placeholder="xxx, yyy, zzz" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label text-right col-sm-1" for="meta_abstract">Abstract</label>
+                            <div class="col-sm-11">
+                                <textarea rows="7" id="meta_abstract" class="form-control" spellcheck="true" wrap="off"></textarea>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+
+            <div class="row next-btn">
+                <button class="btn btn-primary next-btn" onclick="location.href='step3.html'">Next<i class="glyphicon glyphicon-chevron-right"></i></button>
+            </div>
+        </div>
+        <!-- /container -->
+
+
+    </div>
+
+    <!-- /content -->
+
+    <div id="footer" class="container">footer</div>
+
+<script type="text/javascript">
+    $(document).ready(function(){
+        /*
+        function getFileList(dirPath){
+            var fso, f, f1, f2;
+            var list = new Array();
+            fso = new ActiveXObject("Scripting.FileSystemObject");
+            if (dirPath.length == 0) dirPath = ".";
+            f = fso.GetFolder(dirPath);
+            f1 = new Enumerator(f.files);
+            for (; !f1.atEnd(); f1.moveNext()){
+                list.push(f1.item());
+            }
+            f2 = new Enumerator(f.SubFolders);
+            for (; !f2.atEnd(); f2.moveNext()){
+                list = list.concat(getFileList(f2.item()));
+            }
+            fso= null;
+            return list;
+        }
+        var jsonData = JSON.stringify(getFileList("/var/www/HEIDIEditor"));
+        */
+
+        $("#treepane").jstree({
+            //"json_data": jsonData
+        });
+
+
+        $('#meta_abstract').wysihtml5();
+
+
+        $("a.btn:has(i.icon-plus)").click(function() {
+            var i = $("div[id^='author_list_']").size();
+            var newItem = $("#author_list_1").clone(false).attr("id", "author_list_" + (i+1));
+            $("div[id^='author_list_']:last").after(newItem);
+            if( i == 1 ) $("#author_label_" + i).text(i);
+            $("#author_list_" + (i+1)).find("input").val("");
+            $("#author_list_" + (i+1)).find("span[id^='author_label_']").attr("id", "author_label_" + (i+1)).text((i+1));
+            $("#author_list_" + (i+1)).find("i").removeClass("icon-plus").addClass("icon-remove");
+            $("a.btn:has(i.icon-remove)").click(function() {
+                var current = $(this).closest("div[id^='author_list_']");
+                current.nextAll("div[id^='author_list_']").each(function() {
+                    var pos = $("div[id^='author_list_']").index(this);
+                    $(this).attr("id", "author_list_" + pos).find("span[id^='author_label_']").attr("id", "author_label_" + pos).text(pos)
+                });
+                current.remove();
+                i = $("div[id^='author_list_']").size();
+                if (i == 1) $("#author_label_1").text("");
+            })
+        });
+
+
+    });
+
+</script>
+
+</body>
+</html>
