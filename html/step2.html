@@ -36,8 +36,25 @@
     <div id="content">
         <div class="container">
 
-            <input id="slider" type="text" data-slider-id="positionSlider" data-slider-min="1" data-slider-max="16" data-slider-step="1" data-slider-value="2" />
-            <!-- /slider -->
+            <ol class="breadcrumb">
+                <li><a href="index.html">Step 1</a></li>
+                <li class="active current">Step 2</a></li>
+                <li class="active">Step 3</a></li>
+                <li class="active">Step 4</a></li>
+                <li class="active">Step 5</a></li>
+                <li class="active">Step 6</a></li>
+                <li class="active">Step 7</a></li>
+                <li class="active">Step 8</a></li>
+                <li class="active">Step 9</a></li>
+                <li class="active">Step 10</a></li>
+                <li class="active">Step 11</a></li>
+                <li class="active">Step 12</a></li>
+                <li class="active">Step 13</a></li>
+                <li class="active">Step 14</a></li>
+                <li class="active">Step 15</a></li>
+                <li class="active">Step 16</a></li>
+            </ol>
+            <!-- /breadcrumb -->
 
             <h2 class="title">Step2: Add Metadata</h2>
             <!-- /title -->
@@ -61,15 +78,12 @@
                 <div class="col-sm-9">
                     <form class="form-horizontal">
                         <div class="form-group">
-                            <label class="control-label col-sm-1 col-sm-offset-2" for="meta_title">Title</label>
-                            <div class="col-sm-6">
+                            <label class="control-label col-sm-1 col-sm-offset-1" for="meta_title">Title</label>
+                            <div class="col-sm-7">
                                 <input type="text" id="meta_title" class="form-control" placeholder="Title" />
                             </div>
                         </div>
                         <div class="form-group">
-                            <div class="col-sm-1 col-sm-offset-1 plus-btn">
-                                <i class="glyphicon glyphicon-plus-sign"></i>
-                            </div>
                             <label class="control-label col-sm-1" for="meta_surname">Author</label>
                             <div class="col-sm-3">
                                 <input type="text" id="meta_surname" class="form-control" placeholder="Surname" />
@@ -77,16 +91,19 @@
                             <div class="col-sm-3">
                                 <input type="text" id="meta_lastname" class="form-control" placeholder="Last name" />
                             </div>
+                            <div class="col-sm-1 del_area">
+                                <i class="glyphicon glyphicon-remove-circle"></i>
+                            </div>
                         </div>
                         <div class="form-group">
-                            <label class="control-label col-sm-1 col-sm-offset-2" for="meta_keywords">Keywords</label>
-                            <div class="col-sm-6">
+                            <label class="control-label col-sm-1 col-sm-offset-1" for="meta_keywords">Keywords</label>
+                            <div class="col-sm-8">
                                 <input type="text" id="meta_keywords" class="form-control" placeholder="xxx, yyy, zzz" />
                             </div>
                         </div>
                         <div class="form-group">
-                            <label class="control-label col-sm-1 col-sm-offset-2" for="meta_abstract">Abstract</label>
-                            <div class="col-sm-6">
+                            <label class="control-label col-sm-1 col-sm-offset-1" for="meta_abstract">Abstract</label>
+                            <div class="col-sm-8">
                                 <textarea rows="5" id="meta_abstract" class="form-control" spellcheck="true" wrap="off"></textarea>
                             </div>
                         </div>
@@ -109,7 +126,31 @@
     <div id="footer" class="container">footer</div>
 
 <script type="text/javascript">
-    $(function() {
+    $(document).ready(function(){
+        var next = 1;
+        $(".add-more").click(function(e){
+            e.preventDefault();
+            var addto = "#field" + next;
+            var addRemove = "#field" + (next);
+            next = next + 1;
+            var newIn = '<input autocomplete="off" class="input form-control" id="field' + next + '" name="field' + next + '" type="text">';
+            var newInput = $(newIn);
+            var removeBtn = '<button id="remove' + (next - 1) + '" class="btn btn-danger remove-me" >-</button></div><div id="field">';
+            var removeButton = $(removeBtn);
+            $(addto).after(newInput);
+            $(addRemove).after(removeButton);
+            $("#field" + next).attr('data-source',$(addto).attr('data-source'));
+            $("#count").val(next);
+
+            $('.remove-me').click(function(e){
+                e.preventDefault();
+                var fieldNum = this.id.charAt(this.id.length-1);
+                var fieldID = "#field" + fieldNum;
+                $(this).remove();
+                $(fieldID).remove();
+            });
+        });
+
         $("#slider").slider({
             tooltip: 'always',
             formater: function(value) {
@@ -151,6 +192,11 @@
             "link": true, //Button to insert a link. Default true
             "image": true, //Button to insert an image. Default true,
             "color": false //Button to change color of font
+        });
+
+
+        $("#authorlist").addInputArea({
+            area_del: '.del_area'
         });
     });
 
