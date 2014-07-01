@@ -5,27 +5,89 @@
     <option name="CUSTOM_SCOPE_NAME" value="Project Files" />
   </component>
   <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/html/step2.html" line="169" mnemonic="0" />
+    <bookmark url="file://$PROJECT_DIR$/html/step2.html" line="168" mnemonic="0" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e2b4b2df-b231-4d18-9841-b44ba3f356d9" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html/images/glyphicons-halflings-white.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html/images/glyphicons-halflings.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html/css/bootstrap-responsive.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html/css/bootstrap-responsive.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html/css/bootstrap-wysihtml5-0.0.2.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html/js/bootstrap-wysihtml5-0.0.2.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html/css/jstree/bootstrap.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html/js/jquery.sheepItPlugin.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html/step4.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html/css/twitterbootstrap.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html/css/twitterbootstrap.min.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/js/bootstrap.js" afterPath="$PROJECT_DIR$/html/js/bootstrap.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/css/bootstrap.min.css" afterPath="$PROJECT_DIR$/html/css/bootstrap.min.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/js/bootstrap.min.js" afterPath="$PROJECT_DIR$/html/js/bootstrap.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/css/custom.css" afterPath="$PROJECT_DIR$/html/css/custom.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html/css/themes/jstree/32px.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html/css/themes/jstree/40px.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html/fonts/FontAwesome.otf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html/fonts/Titillium_Web.zip" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html/css/themes/apple/bg.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html/css/themes/proton/d-mobile.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html/css/themes/classic/d.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html/css/themes/default-rtl/d.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html/css/themes/apple/d.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html/css/themes/classic/d.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html/css/themes/default-rtl/d.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html/css/themes/proton/d.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html/css/themes/proton/d.psd" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html/css/themes/apple/dot_for_ie.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html/css/themes/classic/dot_for_ie.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html/css/themes/proton/dot_for_ie.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html/css/themes/default-rtl/dots.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html/css/themes/proton/file.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html/fonts/fontawesome-webfont.eot" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html/fonts/fontawesome-webfont.ttf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html/fonts/fontawesome-webfont.woff" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html/fonts/proton/proton-icons.eot" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html/fonts/proton/proton-icons.ttf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html/fonts/proton/proton-icons.woff" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html/css/themes/apple/throbber.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html/css/themes/classic/throbber.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html/css/themes/default-rtl/throbber.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html/css/themes/jstree/throbber.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html/css/themes/proton/throbber.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html/fonts/titillium/titilliumweb-bold-webfont.eot" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html/fonts/titillium/titilliumweb-bold-webfont.ttf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html/fonts/titillium/titilliumweb-bold-webfont.woff" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html/fonts/titillium/titilliumweb-extralight-webfont.eot" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html/fonts/titillium/titilliumweb-extralight-webfont.ttf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html/fonts/titillium/titilliumweb-extralight-webfont.woff" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html/fonts/titillium/titilliumweb-regular-webfont.eot" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html/fonts/titillium/titilliumweb-regular-webfont.ttf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html/fonts/titillium/titilliumweb-regular-webfont.woff" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html/fonts/fontawesome-webfont.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html/js/jquery.cookie.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html/js/jquery.hotkeys.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html/css/themes/proton/less-1.3.1.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/cgi/xml/out.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html/fonts/proton/proton-icons.dev.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html/fonts/proton/proton-icons.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html/css/themes/proton/proton-jstree.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html/css/themes/proton/proton-mixins.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html/css/themes/proton/proton-variables.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html/step10.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html/step11.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html/step12.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html/step13.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html/step14.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html/step15.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html/step16.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html/step5.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html/step6.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html/step7.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html/step8.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html/step9.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html/css/themes/proton/style-original.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html/css/themes/apple/style.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html/css/themes/classic/style.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html/css/themes/default-rtl/style.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html/css/themes/jstree/style.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html/css/themes/proton/style.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html/css/themes/proton/style.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html/css/themes/jstree/style.min.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html/fonts/titillium/titilliumweb-bold-webfont.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html/fonts/titillium/titilliumweb-extralight-webfont.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html/fonts/titillium/titilliumweb-regular-webfont.svg" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/html/css/jstree/bootstrap.css" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/html/css/jstree/32px.png" afterPath="$PROJECT_DIR$/html/css/themes/default/32px.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/html/css/jstree/40px.png" afterPath="$PROJECT_DIR$/html/css/themes/default/40px.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/html/css/jstree/style.css" afterPath="$PROJECT_DIR$/html/css/themes/default/style.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/html/css/jstree/style.min.css" afterPath="$PROJECT_DIR$/html/css/themes/default/style.min.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/html/css/jstree/throbber.gif" afterPath="$PROJECT_DIR$/html/css/themes/default/throbber.gif" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/step2.html" afterPath="$PROJECT_DIR$/html/step2.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/step3.html" afterPath="$PROJECT_DIR$/html/step3.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/step4.html" afterPath="$PROJECT_DIR$/html/step4.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="HEIDIEditor.iws" />
@@ -52,8 +114,8 @@
       <file leaf-file-name="step2.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/html/step2.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="26.25" vertical-offset="720" max-vertical-offset="2865">
-              <caret line="6" column="20" selection-start-line="6" selection-start-column="20" selection-end-line="6" selection-end-column="20" />
+            <state vertical-scroll-proportion="4.2916665" vertical-offset="1393" max-vertical-offset="2850">
+              <caret line="86" column="51" selection-start-line="86" selection-start-column="51" selection-end-line="86" selection-end-column="51" />
               <folding />
             </state>
           </provider>
@@ -62,39 +124,57 @@
       <file leaf-file-name="step3.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/html/step3.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-3.75" vertical-offset="0" max-vertical-offset="1785">
-              <caret line="6" column="20" selection-start-line="6" selection-start-column="20" selection-end-line="6" selection-end-column="20" />
-              <folding>
-                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="step4.html" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/html/step4.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5295203" vertical-offset="1588" max-vertical-offset="2490">
-              <caret line="125" column="95" selection-start-line="125" selection-start-column="95" selection-end-line="125" selection-end-column="95" />
+            <state vertical-scroll-proportion="-13.125" vertical-offset="990" max-vertical-offset="1785">
+              <caret line="87" column="14" selection-start-line="85" selection-start-column="8" selection-end-line="87" selection-end-column="14" />
               <folding />
             </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="glyphicons-halflings.png" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/html/images/glyphicons-halflings.png">
-          <provider selected="true" editor-type-id="images">
-            <state />
           </provider>
         </entry>
       </file>
       <file leaf-file-name="custom.css" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/html/css/custom.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-6.160714" vertical-offset="180" max-vertical-offset="10680">
-              <caret line="35" column="22" selection-start-line="35" selection-start-column="22" selection-end-line="35" selection-end-column="22" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="585" max-vertical-offset="10680">
+              <caret line="60" column="17" selection-start-line="60" selection-start-column="17" selection-end-line="60" selection-end-column="17" />
               <folding />
             </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="step6.html" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/html/step6.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="2.8723404" vertical-offset="495" max-vertical-offset="2970">
+              <caret line="150" column="52" selection-start-line="150" selection-start-column="52" selection-end-line="150" selection-end-column="52" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="style-original.css" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/html/css/themes/proton/style-original.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="990">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="style.css" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/html/css/themes/proton/style.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-9.375" vertical-offset="0" max-vertical-offset="4215">
+              <caret line="35" column="25" selection-start-line="35" selection-start-column="25" selection-end-line="35" selection-end-column="25" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="d.png" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/html/css/themes/proton/d.png">
+          <provider selected="true" editor-type-id="images">
+            <state />
           </provider>
         </entry>
       </file>
@@ -123,9 +203,11 @@
         <option value="$PROJECT_DIR$/html/index.html" />
         <option value="$PROJECT_DIR$/html/css/bootstrap.css" />
         <option value="$PROJECT_DIR$/html/step3.html" />
-        <option value="$PROJECT_DIR$/html/step2.html" />
         <option value="$PROJECT_DIR$/html/css/custom.css" />
         <option value="$PROJECT_DIR$/html/step4.html" />
+        <option value="$PROJECT_DIR$/html/step5.html" />
+        <option value="$PROJECT_DIR$/html/step2.html" />
+        <option value="$PROJECT_DIR$/html/step6.html" />
       </list>
     </option>
   </component>
@@ -208,25 +290,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="HEIDIEditor" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="HEIDIEditor" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="html" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="images" />
+              <option name="myItemId" value="fonts" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -245,6 +309,10 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="fonts" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="proton" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -280,6 +348,24 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="HEIDIEditor" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="HEIDIEditor" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cgi" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="xml" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
     </panes>
@@ -311,13 +397,15 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/html" />
-      <recent name="$PROJECT_DIR$/html/js" />
+      <recent name="$PROJECT_DIR$/html/css/themes/" />
       <recent name="$PROJECT_DIR$/html/css" />
+      <recent name="$PROJECT_DIR$/html/fonts" />
       <recent name="$PROJECT_DIR$/html/css/jstree" />
-      <recent name="$PROJECT_DIR$/html/images" />
+      <recent name="$PROJECT_DIR$/html/js" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/html/css/jstree" />
+      <recent name="$PROJECT_DIR$/cgi" />
       <recent name="$PROJECT_DIR$/html/images" />
       <recent name="$PROJECT_DIR$/html/fonts" />
       <recent name="$PROJECT_DIR$/html" />
@@ -385,31 +473,35 @@
       <created>1404118189312</created>
       <updated>1404118189312</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="commit (30. June 2014)">
+      <created>1404149246917</created>
+      <updated>1404149246918</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="1985" y="24" width="1855" height="1056" extended-state="6" />
     <editor active="false" />
     <layout>
-      <window_info id="File Transfer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.39979756" sideWeight="0.50026953" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="File Transfer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3299595" sideWeight="0.50026953" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33906883" sideWeight="0.4" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3299595" sideWeight="0.49973047" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="true" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32894737" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3299595" sideWeight="0.49973047" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3299595" sideWeight="0.49973047" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1902965" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.39979756" sideWeight="0.49973047" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19838275" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32894737" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3299595" sideWeight="0.49973047" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.39979756" sideWeight="0.49973047" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
     </layout>
   </component>
@@ -431,12 +523,50 @@
       <TodoPanelSettings />
     </option>
     <MESSAGE value="initial commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="initial commit" />
+    <MESSAGE value="commit (30. June 2014)" />
+    <option name="LAST_COMMIT_MESSAGE" value="commit (30. June 2014)" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/html/step2.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2865">
+          <caret line="6" column="20" selection-start-line="6" selection-start-column="20" selection-end-line="6" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/html/step3.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1785">
+          <caret line="6" column="20" selection-start-line="6" selection-start-column="20" selection-end-line="6" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/html/step4.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="823" max-vertical-offset="2490">
+          <caret line="125" column="95" selection-start-line="125" selection-start-column="95" selection-end-line="125" selection-end-column="95" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/html/images/glyphicons-halflings.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/html/css/custom.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="180" max-vertical-offset="10680">
+          <caret line="35" column="22" selection-start-line="35" selection-start-column="22" selection-end-line="35" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/html/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1125">
@@ -639,7 +769,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="90">
           <caret line="0" column="214030" selection-start-line="0" selection-start-column="214030" selection-end-line="0" selection-end-column="214030" />
-          <folding />
         </state>
       </provider>
       <provider editor-type-id="sourcemapFileViewerProvider">
@@ -650,15 +779,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.15198618" vertical-offset="587" max-vertical-offset="16725">
           <caret line="45" column="0" selection-start-line="45" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/html/css/jstree/bootstrap.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.1688103" vertical-offset="0" max-vertical-offset="86865">
-          <caret line="7" column="6" selection-start-line="7" selection-start-column="6" selection-end-line="7" selection-end-column="6" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -687,7 +807,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-3.4464285" vertical-offset="287" max-vertical-offset="1620">
           <caret line="32" column="20" selection-start-line="32" selection-start-column="15" selection-end-line="32" selection-end-column="20" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -707,41 +826,101 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/html/step4.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-23.416666" vertical-offset="1283" max-vertical-offset="2400">
+          <caret line="123" column="0" selection-start-line="123" selection-start-column="0" selection-end-line="123" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/html/step5.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="2.103321" vertical-offset="0" max-vertical-offset="1290">
+          <caret line="76" column="7" selection-start-line="76" selection-start-column="7" selection-end-line="76" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/html/images/glyphicons-halflings.png">
       <provider selected="true" editor-type-id="images">
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/html/step3.html">
+    <entry file="file://$PROJECT_DIR$/html/step2.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.75" vertical-offset="0" max-vertical-offset="1785">
-          <caret line="6" column="20" selection-start-line="6" selection-start-column="20" selection-end-line="6" selection-end-column="20" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
+        <state vertical-scroll-proportion="4.2916665" vertical-offset="1393" max-vertical-offset="2850">
+          <caret line="86" column="51" selection-start-line="86" selection-start-column="51" selection-end-line="86" selection-end-column="51" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/html/css/custom.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.160714" vertical-offset="180" max-vertical-offset="10680">
-          <caret line="35" column="22" selection-start-line="35" selection-start-column="22" selection-end-line="35" selection-end-column="22" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="585" max-vertical-offset="10680">
+          <caret line="60" column="17" selection-start-line="60" selection-start-column="17" selection-end-line="60" selection-end-column="17" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/html/step2.html">
+    <entry file="file://$PROJECT_DIR$/html/css/themes/proton/d.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/html/css/themes/proton/proton-jstree.less">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="26.25" vertical-offset="720" max-vertical-offset="2865">
-          <caret line="6" column="20" selection-start-line="6" selection-start-column="20" selection-end-line="6" selection-end-column="20" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="4485">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/html/step4.html">
+    <entry file="file://$PROJECT_DIR$/html/css/themes/proton/style-original.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5295203" vertical-offset="1588" max-vertical-offset="2490">
-          <caret line="125" column="95" selection-start-line="125" selection-start-column="95" selection-end-line="125" selection-end-column="95" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="990">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/html/css/themes/proton/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-9.375" vertical-offset="0" max-vertical-offset="4215">
+          <caret line="35" column="25" selection-start-line="35" selection-start-column="25" selection-end-line="35" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/html/css/themes/default/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.94699645" vertical-offset="14059" max-vertical-offset="14805">
+          <caret line="973" column="29" selection-start-line="973" selection-start-column="26" selection-end-line="973" selection-end-column="29" />
+          <folding>
+            <element signature="e#3172#3277#2" expanded="true" />
+            <element signature="e#8854#9035#1" expanded="true" />
+            <element signature="e#12364#12529#2" expanded="true" />
+            <element signature="e#13842#14007#2" expanded="true" />
+            <element signature="e#16547#16712#2" expanded="true" />
+            <element signature="e#18103#18268#2" expanded="true" />
+            <element signature="e#20802#20967#2" expanded="true" />
+            <element signature="e#22354#22519#2" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/html/step3.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-13.125" vertical-offset="990" max-vertical-offset="1785">
+          <caret line="87" column="14" selection-start-line="85" selection-start-column="8" selection-end-line="87" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/html/step6.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="2.8723404" vertical-offset="495" max-vertical-offset="2970">
+          <caret line="150" column="52" selection-start-line="150" selection-start-column="52" selection-end-line="150" selection-end-column="52" />
           <folding />
         </state>
       </provider>
