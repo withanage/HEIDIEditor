@@ -9,7 +9,7 @@
     <!-- Stylesheets -->
     <link href="css/bootstrap.min.css" type="text/css" rel="stylesheet">
     <link href="css/bootstrap-wysihtml5-0.0.2.css" type="text/css" rel="stylesheet">
-    <link href="css/jstree/style.min.css" type="text/css" rel="stylesheet">
+    <link href="css/themes/default/style.css" type="text/css" rel="stylesheet">
     <link href="css/custom.css" type="text/css" rel="stylesheet">
 
 
@@ -32,30 +32,51 @@
 <body>
 
 
-    <div id="header" class="container">header</div>
-
     <div id="content">
         <div class="container">
 
-            <ol class="breadcrumb">
-                <li><a href="index.html">Step 1</a></li>
-                <li class="active"><span class="current">Step 2</span></li>
-                <li class="active">Step 3</a></li>
-                <li class="active">Step 4</a></li>
-                <li class="active">Step 5</a></li>
-                <li class="active">Step 6</a></li>
-                <li class="active">Step 7</a></li>
-                <li class="active">Step 8</a></li>
-                <li class="active">Step 9</a></li>
-                <li class="active">Step 10</a></li>
-                <li class="active">Step 11</a></li>
-                <li class="active">Step 12</a></li>
-                <li class="active">Step 13</a></li>
-                <li class="active">Step 14</a></li>
-                <li class="active">Step 15</a></li>
-                <li class="active">Step 16</a></li>
-            </ol>
-            <!-- /breadcrumb -->
+            <div class="navbar navbar-default" role="navigation">
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" href="#">HEIDI Editor</a>
+                    </div>
+                    <div class="navbar-collapse collapse">
+                        <ul class="nav navbar-nav">
+                            <li><a href="index.html">Step 1</a></li>
+                            <li class="active"><a href="#">Step 2</a></li>
+                            <li><a href="#">Step 3</a></li>
+                            <li><a href="#">Step 4</a></li>
+                            <li><a href="#">Step 5</a></li>
+                            <li><a href="#">Step 6</a></li>
+                            <li><a href="#">Step 7</a></li>
+                            <li><a href="#">Step 8</a></li>
+                            <li><a href="#">Step 9</a></li>
+                            <li><a href="#">Step 10</a></li>
+                            <li><a href="#">Step 11</a></li>
+                        </ul>
+                        <ul class="nav navbar-nav navbar-right">
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="glyphicon glyphicon-wrench"></i><span class="caret"></span></a>
+                                <ul class="dropdown-menu" role="menu">
+                                    <li><a href="#">Help <i class="glyphicon glyphicon-question-sign"></i></a></li>
+                                    <li><a href="#">Settings <i class="glyphicon glyphicon-wrench"></i></a></li>
+                                    <li class="divider"></li>
+                                    <li class="dropdown-header">About us</li>
+                                    <li><a href="#">Home <i class="glyphicon glyphicon-home"></i></a></li>
+                                    <li><a href="#">Contact <i class="glyphicon glyphicon-envelope"></i></a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div><!--/.nav-collapse -->
+                </div><!--/.container-fluid -->
+            </div>
+
 
             <h2 class="title">Step2: Add Metadata</h2>
             <!-- /title -->
@@ -63,16 +84,16 @@
 
             <div class="row">
                 <div class="col-sm-3">
-                    <div id="treepane" class="highlight">
-                        <ul>
-                            <li>Acknowledgements</li>
-                            <li>Preface</li>
-                            <li>Chapter 1</li>
-                            <li>Chapter 2</li>
-                            <li>Chapter 3</li>
-                            <li>Appendix</li>
-                            <li>Bibliography</li>
-                        </ul>
+                    <div class="row">
+                        <input id="treepane_q" class="form-control" type="text" placeholder="search" />
+                    </div>
+                    <div class="row">
+                        &nbsp;
+                    </div>
+                    <div class="row">
+                        <div id="treepane" class="highlight">
+
+                        </div>
                     </div>
                 </div>
 
@@ -108,11 +129,12 @@
                                 <textarea rows="7" id="meta_abstract" class="form-control" spellcheck="true" wrap="off"></textarea>
                             </div>
                         </div>
-                        <button class="btn btn-primary next-btn col-sm-1 col-sm-offset-11" type="submit" onclick="location.href='step3.html'">
-                            Next<i class="glyphicon glyphicon-chevron-right"></i>
-                        </button>
                     </form>
                 </div>
+            </div>
+
+            <div class="row next-btn">
+                <button class="btn btn-primary next-btn" onclick="location.href='step3ls.html'">Next<i class="glyphicon glyphicon-chevron-right"></i></button>
             </div>
 
         </div>
@@ -149,7 +171,55 @@
         */
 
         $("#treepane").jstree({
-            //"json_data": jsonData
+            'core' : {
+                'data' : [
+                    'Acknowledgements',
+                    'Preface',
+                    {
+                        'text': 'Chapter 1',
+                        'state': {'selected': true}
+                    },
+                    'Chapter 2',
+                    'Chapter 3',
+                    'Appendix',
+                    'Bibliography'
+                ]
+            },
+            "plugins" : [ "themes", "types", "search" ],
+            "types" : {
+                "max_depth" : -2,
+                "max_children" : -2,
+                "valid_children" : [ "folder" ],
+                "types" : {
+                    "default" : {
+                        "valid_children" : "all",
+                        "check_node" : false,
+                        "uncheck_node" : false
+                    },
+                    "file" : {
+                        "valid_children" : "none"
+                    },
+                    "product-category": {
+                        "valid_children" : "file",
+                        "check_node" : true,
+                        "uncheck_node" : true
+                    },
+                    "product-category-master": {
+                        "valid_children" : "file"
+                    }
+                }
+            },
+            "themes" : {
+                "theme" : "proton"
+            }
+        });
+        var to = false;
+        $("#treepane_q").keyup(function() {
+            if(to) { clearTimeout(to); }
+            to = setTimeout(function() {
+                var v = $("#treepane_q").val();
+                $("#treepane").jstree(true).search(v);
+            }, 250);
         });
 
 

@@ -8,7 +8,8 @@
 
     <!-- Stylesheets -->
     <link href="css/bootstrap.min.css" type="text/css" rel="stylesheet">
-    <link href="css/jstree/style.min.css" type="text/css" rel="stylesheet">
+    <link href="css/bootstrap-wysihtml5-0.0.2.css" type="text/css" rel="stylesheet">
+    <link href="css/themes/default/style.css" type="text/css" rel="stylesheet">
     <link href="css/custom.css" type="text/css" rel="stylesheet">
 
 
@@ -17,6 +18,8 @@
     <script src="js/bootstrap.min.js"></script>
     <script src="js/jstree.min.js"></script>
     <script src="js/advanced.js"></script>
+    <script src="js/wysihtml5-0.3.0.min.js"></script>
+    <script src="js/bootstrap-wysihtml5-0.0.2.min.js"></script>
 
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -29,30 +32,52 @@
 <body>
 
 
-<div id="header" class="container">header</div>
-
 <div id="content">
     <div class="container">
 
-        <ol class="breadcrumb">
-            <li><a href="index.html">Step 1</a></li>
-            <li><a href="step2.html">Step 2</a></li>
-            <li><a href="step3.html">Step 3</a></li>
-            <li class="active"><span class="current">Step 4</span></li>
-            <li class="active">Step 5</a></li>
-            <li class="active">Step 6</a></li>
-            <li class="active">Step 7</a></li>
-            <li class="active">Step 8</a></li>
-            <li class="active">Step 9</a></li>
-            <li class="active">Step 10</a></li>
-            <li class="active">Step 11</a></li>
-            <li class="active">Step 12</a></li>
-            <li class="active">Step 13</a></li>
-            <li class="active">Step 14</a></li>
-            <li class="active">Step 15</a></li>
-            <li class="active">Step 16</a></li>
-        </ol>
-        <!-- /breadcrumb -->
+
+        <div class="navbar navbar-default" role="navigation">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#">HEIDI Editor</a>
+                </div>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li><a href="index.html">Step 1</a></li>
+                        <li><a href="step2.html">Step 2</a></li>
+                        <li><a href="step3.html">Step 3</a></li>
+                        <li class="active"><a href="#">Step 4</a></li>
+                        <li><a href="#">Step 5</a></li>
+                        <li><a href="#">Step 6</a></li>
+                        <li><a href="#">Step 7</a></li>
+                        <li><a href="#">Step 8</a></li>
+                        <li><a href="#">Step 9</a></li>
+                        <li><a href="#">Step 10</a></li>
+                        <li><a href="#">Step 11</a></li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="glyphicon glyphicon-wrench"></i><span class="caret"></span></a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="#">Help <i class="glyphicon glyphicon-question-sign"></i></a></li>
+                                <li><a href="#">Settings <i class="glyphicon glyphicon-wrench"></i></a></li>
+                                <li class="divider"></li>
+                                <li class="dropdown-header">About us</li>
+                                <li><a href="#">Home <i class="glyphicon glyphicon-home"></i></a></li>
+                                <li><a href="#">Contact <i class="glyphicon glyphicon-envelope"></i></a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div><!--/.nav-collapse -->
+            </div><!--/.container-fluid -->
+        </div>
+
 
         <h2 class="title">Step4: Confirm Bibliography</h2>
         <!-- /title -->
@@ -67,7 +92,7 @@
             <div class="tab-pane active" id="bibliography">
                 <div class="row">&nbsp;</div>
                 <div class="row">
-                    <div class="col-sm-11 col-sm-offset-1 highlight treepane">
+                    <div class="col-sm-11 col-sm-offset-1 highlight treepane" id="treepane_bib">
                         <ul>
                             <li>A</li>
                             <li>B</li>
@@ -77,6 +102,32 @@
                             <li>F</li>
                             <li>G</li>
                         </ul>
+                    </div>
+                </div>
+                <!-- Button trigger modal -->
+                <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#addBibModal">
+                    add
+                </button>
+
+                <!-- Modal -->
+                <div class="modal fade modal-lg" id="addBibModal" tabindex="-1" role="dialog" aria-labelledby="addBibModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                                <h4 class="modal-title" id="addBibModalLabel">Add missing bibliographic entries</h4>
+                            </div>
+                            <div class="modal-body">
+                                <label class="control-label col-sm-2" for="add_bib">Reference</label>
+                                <div class="col-sm-10">
+                                    <textarea rows="7" id="add_bib" class="form-control wysihtml" spellcheck="true" wrap="off"></textarea>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-primary">Save</button>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
@@ -84,7 +135,7 @@
             <div class="tab-pane" id="notes">
                 <div class="row">&nbsp;</div>
                 <div class="row">
-                    <div class="col-sm-11 col-sm-offset-1 highlight treepane">
+                    <div class="col-sm-11 col-sm-offset-1 highlight treepane" id="treepane_notes">
                         <ul>
                             <li>A</li>
                             <li>B</li>
@@ -96,12 +147,38 @@
                         </ul>
                     </div>
                 </div>
+                <!-- Button trigger modal -->
+                <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#addBibModal">
+                    add
+                </button>
+
+                <!-- Modal -->
+                <div class="modal fade modal-lg" id="addNoteModal" tabindex="-1" role="dialog" aria-labelledby="addNoteModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                                <h4 class="modal-title" id="addNoteModalLabel">Add missing bibliographic entries</h4>
+                            </div>
+                            <div class="modal-body">
+                                <label class="control-label col-sm-2" for="add_note">Reference</label>
+                                <div class="col-sm-10">
+                                    <textarea rows="7" id="add_note" class="form-control wysihtml" spellcheck="true" wrap="off"></textarea>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-primary">Save</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
             </div>
             <div class="tab-pane" id="headings">
                 <div class="row">&nbsp;</div>
                 <div class="row">
-                    <div class="col-sm-11 col-sm-offset-1 highlight treepane">
+                    <div class="col-sm-11 col-sm-offset-1 highlight treepane" id="treepane_head">
                         <ul>
                             <li>A</li>
                             <li>B</li>
@@ -111,6 +188,32 @@
                             <li>F</li>
                             <li>G</li>
                         </ul>
+                    </div>
+                </div>
+                <!-- Button trigger modal -->
+                <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#addNoteModal">
+                    add
+                </button>
+
+                <!-- Modal -->
+                <div class="modal fade modal-lg" id="addHeadModal" tabindex="-1" role="dialog" aria-labelledby="addHeadModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                                <h4 class="modal-title" id="addHeadModalLabel">Add missing bibliographic entries</h4>
+                            </div>
+                            <div class="modal-body">
+                                <label class="control-label col-sm-2" for="add_head">Reference</label>
+                                <div class="col-sm-10">
+                                    <textarea rows="7" id="add_head" class="form-control wysihtml" spellcheck="true" wrap="off"></textarea>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-primary">Save</button>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
@@ -123,6 +226,9 @@
 
 
         </div>
+
+
+
 
 
     </div>
@@ -142,6 +248,8 @@
         $(".treepane").jstree({
             //"json_data": jsonData
         });
+
+        $('#add_bib').wysihtml5();
 
         $("a[data-toggle='tab']").on("shown.bs.tab", function(e) {
             var target = $(e.target).text();

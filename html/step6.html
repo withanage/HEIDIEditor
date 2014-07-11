@@ -34,30 +34,51 @@
 <body>
 
 
-    <div id="header" class="container">header</div>
-
     <div id="content">
         <div class="container">
 
-            <ol class="breadcrumb">
-                <li><a href="index.html">Step 1</a></li>
-                <li><a href="step2.html">Step 2</a></li>
-                <li><a href="step3.html">Step 3</a></li>
-                <li><a href="step4.html">Step 4</a></li>
-                <li><a href="step5.html">Step 5</a></li>
-                <li class="active"><span class="current">Step 6</span></li>
-                <li class="active">Step 7</a></li>
-                <li class="active">Step 8</a></li>
-                <li class="active">Step 9</a></li>
-                <li class="active">Step 10</a></li>
-                <li class="active">Step 11</a></li>
-                <li class="active">Step 12</a></li>
-                <li class="active">Step 13</a></li>
-                <li class="active">Step 14</a></li>
-                <li class="active">Step 15</a></li>
-                <li class="active">Step 16</a></li>
-            </ol>
-            <!-- /breadcrumb -->
+            <div class="navbar navbar-default" role="navigation">
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" href="#">HEIDI Editor</a>
+                    </div>
+                    <div class="navbar-collapse collapse">
+                        <ul class="nav navbar-nav">
+                            <li><a href="index.html">Step 1</a></li>
+                            <li><a href="step2.html">Step 2</a></li>
+                            <li><a href="step3.html">Step 3</a></li>
+                            <li><a href="step4.html">Step 4</a></li>
+                            <li><a href="step5.html">Step 5</a></li>
+                            <li class="active"><a href="#">Step 6</a></li>
+                            <li><a href="#">Step 7</a></li>
+                            <li><a href="#">Step 8</a></li>
+                            <li><a href="#">Step 9</a></li>
+                            <li><a href="#">Step 10</a></li>
+                            <li><a href="#">Step 11</a></li>
+                        </ul>
+                        <ul class="nav navbar-nav navbar-right">
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="glyphicon glyphicon-wrench"></i><span class="caret"></span></a>
+                                <ul class="dropdown-menu" role="menu">
+                                    <li><a href="#">Help <i class="glyphicon glyphicon-question-sign"></i></a></li>
+                                    <li><a href="#">Settings <i class="glyphicon glyphicon-wrench"></i></a></li>
+                                    <li class="divider"></li>
+                                    <li class="dropdown-header">About us</li>
+                                    <li><a href="#">Home <i class="glyphicon glyphicon-home"></i></a></li>
+                                    <li><a href="#">Contact <i class="glyphicon glyphicon-envelope"></i></a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div><!--/.nav-collapse -->
+                </div><!--/.container-fluid -->
+            </div>
+
 
             <h2 class="title">Step 6: Confirm Parenthetical References</h2>
             <!-- /title -->
