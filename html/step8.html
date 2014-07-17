@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Step 4 | HEIDI Editor</title>
+
+    <!-- Stylesheets -->
+    <link href="css/bootstrap.min.css" type="text/css" rel="stylesheet">
+    <link href="css/jstree/style.min.css" type="text/css" rel="stylesheet">
+    <link href="css/custom.css" type="text/css" rel="stylesheet">
+
+
+    <!-- jQuery and plugins -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jstree.min.js"></script>
+    <script src="js/advanced.js"></script>
+
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+
+
+
+
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="navbar-header">
+        <a href="" class="navbar-brand">HEIDI Editor</a>
+    </div>
+    <ul class="nav navbar-nav">
+        <li><a href="index.html">Step 1</a></li>
+        <li><a href="step2.html">Step 2</a></li>
+        <li><a href="step3.html">Step 3</a></li>
+        <li><a href="step4.html">Step 4</a></li>
+        <li><a href="step5.html">Step 5</a></li>
+        <li><a href="step6.html">Step 6</a></li>
+        <li><a href="step7.html">Step 7</a></li>
+        <li class="active"><a>Step 8</a></li>
+        <li><a>Step 9</a></li>
+        <li><a>Step 10</a></li>
+        <li><a>Step 11</a></li>
+        <li><a>Step 12</a></li>
+        <li><a>Step 13</a></li>
+        <li><a>Step 14</a></li>
+        <li><a>Step 15</a></li>
+        <li><a>Step 16</a></li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+        <li><a href="">Settings <i class="glyphicon glyphicon-wrench"></i></a></li>
+        <li><a href="">Contact <i class="glyphicon glyphicon-envelope"></i></a></li>
+        <li><a href="">Help <i class="glyphicon glyphicon-question-sign"></i></a></li>
+        <li></li>
+    </ul>
+</nav>
+
+
+<div id="content">
+    <div class="container">
+
+
+
+        <h2 class="title">Step4: Confirm Bibliography</h2>
+        <!-- /title -->
+
+
+
+
+    </div>
+    <!-- /container -->
+
+
+</div>
+
+<!-- /content -->
+
+<div id="footer" class="container">footer</div>
+
+<script type="text/javascript">
+    $(document).ready(function(){
+
+
+        $(".treepane").jstree({
+            //"json_data": jsonData
+        });
+
+        $("a[data-toggle='tab']").on("shown.bs.tab", function(e) {
+            var target = $(e.target).text();
+            $("h2.title").text("Step 4: Confirm " + target);
+        });
+    });
+
+</script>
+
+</body>
+</html>

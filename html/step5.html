@@ -4,19 +4,16 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Step 3 | HEIDI Editor</title>
+    <title>Step 5 | HEIDI Editor</title>
 
     <!-- Stylesheets -->
     <link href="css/bootstrap.min.css" type="text/css" rel="stylesheet">
-    <link href="css/themes/default/style.css" type="text/css" rel="stylesheet">
     <link href="css/custom.css" type="text/css" rel="stylesheet">
 
 
     <!-- jQuery and plugins -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
-    <script src="js/jstree.min.js"></script>
-    <script src="js/advanced.js"></script>
 
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -27,7 +24,6 @@
     <![endif]-->
 </head>
 <body>
-
 
 <div id="content">
     <div class="container">
@@ -47,9 +43,9 @@
                     <ul class="nav navbar-nav">
                         <li><a href="index.html">Step 1</a></li>
                         <li><a href="step2.html">Step 2</a></li>
-                        <li class="active"><a href="#">Step 3</a></li>
-                        <li><a href="#">Step 4</a></li>
-                        <li><a href="#">Step 5</a></li>
+                        <li><a href="step3.html">Step 3</a></li>
+                        <li><a href="step4.html">Step 4</a></li>
+                        <li class="active"><a href="#">Step 5</a></li>
                         <li><a href="#">Step 6</a></li>
                         <li><a href="#">Step 7</a></li>
                         <li><a href="#">Step 8</a></li>
@@ -75,36 +71,23 @@
         </div>
 
 
-        <h2 class="title">Step3: Identify Bibliography</h2>
+        <h2 class="title">Step 5: Tag Bibliography</h2>
         <!-- /title -->
 
-
         <div class="row">
-            <div id="treepane" class="col-sm-11 col-sm-offset-1 highlight">
-
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col-sm-11 col-sm-offset-1 highlight">
-                Rendering...
-                <div class="progress progress-striped active">
-                    <div class="progress-bar progress-bar-primary"  style="width: 50%"></div>
-
-                </div>
-            </div>
+            &nbsp;
         </div>
 
 
         <div class="row next-btn">
-            <button class="btn btn-primary next-btn" onclick="location.href='step4.html'">Next<i class="glyphicon glyphicon-chevron-right"></i></button>
+            <button class="btn btn-primary next-btn" onclick="location.href='step6.html'">
+                Next<i class="glyphicon glyphicon-chevron-right"></i></button>
         </div>
+
     </div>
     <!-- /container -->
 
-
 </div>
-
 <!-- /content -->
 
 <div id="footer" class="container">footer</div>
@@ -112,55 +95,7 @@
 <script type="text/javascript">
     $(document).ready(function(){
 
-
-        $("#treepane").jstree({
-            'core' : {
-                'data' : [
-                    'Acknowledgements',
-                    'Preface',
-                    'Chapter 1 *******************',
-                    'Chapter 2 ************',
-                    'Chapter 3 ************************',
-                    'Appendix',
-                    {
-                        'text': 'Bibliography',
-                        'state': {'selected': true}
-                    }
-                ]
-            },
-            "plugins" : [ "themes", "types" ],
-            "types" : {
-                "max_depth" : -2,
-                "max_children" : -2,
-                "valid_children" : [ "folder" ],
-                "types" : {
-                    "default" : {
-                        "valid_children" : "all",
-                        "check_node" : false,
-                        "uncheck_node" : false
-                    },
-                    "file" : {
-                        "valid_children" : "none"
-                    },
-                    "product-category": {
-                        "valid_children" : "file",
-                        "check_node" : true,
-                        "uncheck_node" : true
-                    },
-                    "product-category-master": {
-                        "valid_children" : "file"
-                    }
-                }
-            },
-            "themes" : {
-                "theme" : "proton"
-            }
-        });
-
-
-
     });
-
 </script>
 
 </body>

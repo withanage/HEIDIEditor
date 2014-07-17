@@ -1,0 +1,345 @@
+<!DOCTYPE article PUBLIC "-//NLM//DTD Journal Publishing DTD v3.0 20080202//EN" "http://dtd.nlm.nih.gov/publishing/3.0/journalpublishing3.dtd">
+<article>
+  <front>
+    <journal-meta>
+      <journal-id journal-id-type="publisher-id">The Journal Title</journal-id>
+      <issn pub-type="epub">0000-000X</issn>
+      <publisher>
+        <publisher-name>The Publisher Name</publisher-name>
+      </publisher>
+    </journal-meta>
+    <article-meta>
+      <article-id pub-id-type="doi">10.1000/123456</article-id>
+      <article-categories>
+        <subj-group>
+          <subject>Sample Articles</subject>
+        </subj-group>
+      </article-categories>
+      <title-group>
+        <article-title>A Sample Article Title</article-title>
+      </title-group>
+      <contrib-group>
+        <contrib contrib-type="author">
+          <name>
+            <surname>Eve</surname>
+            <given-names>Martin Paul</given-names>
+          </name>
+          <xref ref-type="aff" rid="lincoln"/>
+        </contrib>
+        <aff id="lincoln">
+          <institution>University of Lincoln</institution>
+        </aff>
+      </contrib-group>
+      <pub-date pub-type="epub">
+        <year>2013</year>
+      </pub-date>
+      <volume>1</volume>
+      <issue>1</issue>
+      <fpage>1</fpage>
+      <lpage>2</lpage>
+      <permissions>
+        <copyright-statement>Copyright &#169; 2014, Martin Paul Eve</copyright-statement>
+        <license xmlns:xlink="http://www.w3.org/1999/xlink" license-type="open-access" xlink:href="http://creativecommons.org/licenses/by/2.0/">
+          <license-p>This is an open-access article distributed under the terms of the Creative Commons Attribution License, which permits unrestricted use, distribution, and reproduction in any medium, provided the original work is properly cited. The citation of this article must include: the name(s) of the authors, the name of the journal, the full URL of the article (in a hyperlinked format if distributed online) and the DOI number of the article.</license-p>
+        </license>
+      </permissions>
+      <self-uri>https://www.martineve.com/</self-uri>
+      <abstract>
+        <p>This is a sample abstract that forms part of the metadataSample.xml file in meTypeset.</p>
+      </abstract>
+    </article-meta>
+  </front>
+  <body>
+    <sec>
+      <title>TITLE OF THESIS OR DISSERTATION: NUMERIC FORMAT WITH LANDSCAPE PAGE AND FOOTNOTES IN WORD 2007, 2010, OR 2013</title>
+      <p>A Dissertation Presented</p>
+      <p>by</p>
+      <p>SAMANTHA S. STUDENT</p>
+      <p>Submitted to the Graduate School of the</p>
+      <p>University of Massachusetts Amherst in partial fulfillment</p>
+      <p>of the requirements for the degree of</p>
+      <p>DOCTOR OF PHILOSOPHY</p>
+      <p>(<xref rid="TO_LINK" ref-type="bibr" id="IDaab242f2-046e-4659-99df-46be69bdd895">or DOCTOR OF EDUCATION</xref>)</p>
+      <p>Month Year</p>
+      <p>Official Graduate Program Name</p>
+      <p>&#169; Copyright by Samantha S. Student 2007</p>
+      <p>All Rights Reserved</p>
+    </sec>
+    <sec>
+      <title>TITLE OF THESIS OR DISSERTATION: NUMERIC FORMAT WITH LANDSCAPE PAGE AND FOOTNOTES IN WORD 2007, 2010, OR 2013</title>
+      <p>A Dissertation Presented</p>
+      <p>by</p>
+      <p>SAMANTHA S. STUDENT</p>
+      <p>Approved as to style and content by:</p>
+      <p>Name O. Chairr, Chair</p>
+      <p>First O. Member, Member</p>
+      <p>Second M. Name, Member</p>
+      <p>Name, Department Head or Dean as appropriate</p>
+      <p>Department Name</p>
+      <p>DEDICATION</p>
+    </sec>
+    <sec>
+      <title>ACKNOWLEDGMENTS</title>
+      <sec>
+        <title>ABSTRACT</title>
+        <p>TITLE OF DISSERTATION</p>
+        <p>DEGREE DATE</p>
+        <p>NAME OF STUDENT, B.A., COLLEGE OR UNIVERSITY</p>
+        <p>M.A., COLLEGE OR UNIVERSITY</p>
+        <p>Ph.D., UNIVERSITY OF MASSACHUSETTS AMHERST</p>
+        <p>Directed by: Professor Xxxx Y. Zzzz</p>
+        <p>TABLE OF CONTENTS</p>
+        <p>	Page</p>
+        <p> TOC ACKNOWLEDGMENTS	8
+               </p>
+        <p>ABSTRACT	9
+            </p>
+        <p>LIST OF TABLES	11
+            </p>
+        <p>LIST OF FIGURES	12
+            </p>
+        <p>NEW SCIENTIFIC DARWINISTS	1
+            </p>
+        <list list-type="order">
+          <list-item>
+            <p>1 Introduction	1
+                  </p>
+          </list-item>
+        </list>
+        <list list-type="order">
+          <list-item>
+            <p>2 Thomas Henry Huxley	1
+                  </p>
+          </list-item>
+        </list>
+        <list list-type="order">
+          <list-item>
+            <p>2.1 Discoveries of Organic Chemists and Evolutionists Complementary	3
+                  </p>
+          </list-item>
+        </list>
+        <list list-type="order">
+          <list-item>
+            <p>2.2.1 An Example of a Heading 4 Subdivision Head	3
+                  </p>
+          </list-item>
+        </list>
+        <list list-type="order">
+          <list-item>
+            <p>2.2.1.1 An Example of a Heading 5 Subdivision Head	4
+                  </p>
+          </list-item>
+          <list-item>
+            <p>1 Ernst Heinrich Haeckel	7
+                  </p>
+          </list-item>
+        </list>
+        <p>SECOND CHAPTER TITLE	7
+            </p>
+        <p>2.1.1 Haeckel's Anti-Anthropocentrism	8
+            </p>
+        <p>THE DARWINIAN REVOLUTION	11
+            </p>
+        <p>THE TABLES	13
+            </p>
+        <p>BIBLIOGRAPHY	16
+            </p>
+      </sec>
+      <sec>
+        <title>LIST OF TABLES</title>
+        <p>Table	Page</p>
+      </sec>
+      <sec>
+        <title>LIST OF FIGURES</title>
+        <p>Figure	Page</p>
+        <p> TOC \c "Figure" Figure 1.1: Caption for my First Figure	6
+               </p>
+        <p>Figure 2.1: Caption for my Second Figure	8
+            </p>
+      </sec>
+    </sec>
+    <sec>
+      <title>CHAPTER 1</title>
+    </sec>
+    <sec>
+      <title>NEW SCIENTIFIC DARWINISTS</title>
+      <sec>
+        <title>1.1 Introduction</title>
+        <p>This chapter shows how Darwin's theory of evolution was applied to the study of human evolution by two of the most enthusiastic of the new scientific Darwinists, T. H. Huxley and Ernst Haeckel.  Both Huxley and Haeckel adopted the anti-creationist aspects of Darwin's theory and used them to attack many traditional beliefs and social institutions, as well as to advance the claims of science to be an authority within society.  The chapter also shows how Darwin's theory provided a basis for the foundation of comparative psychology by G. J. Romanes. </p>
+      </sec>
+      <sec>
+        <title>1.2 Thomas Henry Huxley</title>
+        <p>Huxley argued against primary anthropocentrism and the two forms of evolutionary anthropocentrism--"yes, but" and "Crown of Creation"--which are attempts to resurrect supernatural control of evolution or to portray humans as the goal of creation. However, he is himself an example of the "engineering mentality" form of anthropocentrism. In this section of this chapter I focus on Huxley's contribution to the evidence favoring the application of the theory of evolution to human beings. Huxley saw evolution in general and human evolution in particular as what one would expect of life in an ordered but ceaselessly changing universe. According to Huxley, "naught endures save the flow of energy and the rational order which pervades it."<xref ref-type="fn" rid="bibd2e241"/>  In using the adjective "rational," Huxley did not suggest that he believed in a rational Mind or Lawgiver rather he meant that he believed the order of the universe to be comprehensible by a rational mind.  The principle of the universe is order, and scientists are gradually discovering that order.  The most fundamental principles of that order, as they are observed by humans, are described as "laws of nature."<xref ref-type="fn" rid="bibd2e254"/> 
+            </p>
+        <p>Life itself and all living forms are a part of that order, as he demonstrated with evidence from biochemistry and evolution. The chemical elements in organic and inorganic nature are identical," as recent scientific analysis of the chemical constituents of protoplasm had shown.<xref ref-type="fn" rid="bibd2e266"/>  Huxley made a point of reminding his readers that the chemicals making up living beings are breaking down and being reformed into new individuals all the time and that people belong to that system of life-and-death:  </p>
+        <p>Under whatever disguise it takes refuge, whether fungus or oak, worm or man, the living protoplasm not only ultimately dies and is resolved into its mineral and lifeless constituents, but is always dying, and, strange as the paradox may sound, could not live unless it died.<xref ref-type="fn" rid="bibd2e278"/> 
+            </p>
+      </sec>
+      <sec>
+        <title>1.2.1 Discoveries of Organic Chemists and Evolutionists Complementary</title>
+        <p>Since the basic elements in living and non-living things are the same, Huxley had no doubt that life had evolved from non-living matter.<xref ref-type="fn" rid="bibd2e294"/>  Thus, the discoveries of organic chemists and evolutionists were complementary to each other.  If life is made of the same materials as non- life, the evolution of life becomes more plausible. </p>
+      </sec>
+      <sec>
+        <title>1.2.2.1 An Example of a Heading 4 Subdivision Head</title>
+        <p>One of the major controversies of Darwin scholarship is whether or not there is a "Darwinian revolution." I agree with those who consider that Darwin's insights, arguments and impact are significant enough to warrant the title "revolution." Of course, no intellectual revolution occurs without a context.<xref ref-type="fn" rid="bibd2e310"/>  Darwin did not invent the idea of evolution; there were major forces for intellectual change in science in general as well as social change. </p>
+      </sec>
+      <sec>
+        <title>1.2.2.1.1 An Example of a Heading 5 Subdivision Head</title>
+        <p>Nevertheless, most educated people still believed in special creation and the Argument from Design; naturalists expected and hoped that the study of nature would "reveal some meaning in it, something about man's place in nature, man's relation with God."  Darwin's study did just that--but hardly what had been expected or hoped for. </p>
+        <fig position="float" orientation="portrait">
+          <caption>
+            <title>unable to handle picture</title>
+          </caption>
+        </fig>
+        <fig position="float" orientation="portrait">
+          <caption>
+            <title><bold>Figure </bold>3<bold>.1: Caption for my First Figure</bold></title>
+          </caption>
+        </fig>
+        <p>CHAPTER 2</p>
+      </sec>
+    </sec>
+    <sec>
+      <title>SECOND CHAPTER TITLE</title>
+      <sec>
+        <title>2.1 Ernst Heinrich Haeckel</title>
+        <p>Ernst Haeckel, like Huxley, used science as a weapon against some of the prevalent assumptions and institutions of his day. For Haeckel natural selection was both a description of the origin of species and (because it is a mechanical non-teleological explanation of morphology, which paralleled the mechanical explanations of physics and astronomy) the final proof of the "unity of organic and inorganic nature."<xref ref-type="fn" rid="bibd2e357"/>  Haeckel wrote a number of books in an attempt to convert non-scientists to his ideas.  Many of these were quickly translated into English and sold very well.  The most important of his books for an examination of his anti-anthropocentrism are: <underline>The History of Creation</underline> (<xref rid="TO_LINK" ref-type="bibr" id="IDe3c11821-d491-4444-836d-a1b266d78924">translated in 1873</xref>); <underline>The Evolution of Man</underline> (<xref rid="TO_LINK" ref-type="bibr" id="IDb8a09898-46c3-47c7-a3ee-bd18f9f487b8">translated 1879</xref>); <underline>The Last Link</underline> (<xref rid="TO_LINK" ref-type="bibr" id="IDb460de84-f719-4aeb-9e2a-d6c0e43538b5">translated 1898</xref>); <underline>The Riddle of the Universe</underline> (<xref rid="TO_LINK" ref-type="bibr" id="ID028d0437-0e93-485e-a025-89e0e43968db">1900</xref>); and <underline>The Wonders of Life</underline> (<xref rid="TO_LINK" ref-type="bibr" id="IDba6bdea4-d5bc-4334-813a-e43cfec324f7">1905</xref>). </p>
+        <fig position="float" orientation="portrait">
+          <caption>
+            <title>unable to handle picture</title>
+          </caption>
+        </fig>
+        <sec>
+          <title><bold>Figure </bold>4<bold>.1: Caption for my Second Figure</bold></title>
+        </sec>
+      </sec>
+      <sec>
+        <title>2.1.1 Haeckel's Anti-Anthropocentrism</title>
+        <p>Haeckel is explicitly anti-anthropocentric. Unlike the other people I am considering in this dissertation, Haeckel defined anthropocentrism and several related words, and used them throughout his works. Anthropocentrism, according to Haeckel, is one form of "anthropism: that powerful and world-wide group of erroneous opinions which opposes the human organism to the whole of the rest of nature, and represents it to be the preordained end of the organic creation, an entity essentially distinct from it, a godlike being."<xref ref-type="fn" rid="bibd2e400"/>  He distinguished three varieties of anthropism:  anthropocentrism, anthropomorphism, and anthropolatrism.<xref ref-type="fn" rid="bibd2e410"/>  Anthropocentrism is the one that concerns us here.  "The anthropocentric dogma culminates in the idea that man is the preordained centre and aim of all terrestrial life--or, in a wider sense, of the whole universe."<xref ref-type="fn" rid="bibd2e417"/>  Haeckel vigorously attacked this belief in human centrality as untrue and arrogant.  He used arguments and evidence based on many sciences, including physiology, paleontology, and astronomy.  </p>
+        <p>APPENDICES</p>
+        <p>APPENDIX A</p>
+      </sec>
+      <sec>
+        <title>THE DARWINIAN REVOLUTION</title>
+        <p>One of the major controversies of Darwin scholarship is whether or not there is a "Darwinian revolution." I agree with those who consider that Darwin's insights, arguments and impact are significant enough to warrant the title "revolution." Of course, no intellectual revolution occurs without a context.</p>
+        <p>Darwin did not invent the idea of evolution; there were major forces for intellectual change in science in general as well as social change. Nevertheless, most educated people still believed in special creation and the Argument from Design; naturalists expected and hoped that the study of nature would "reveal some meaning in it, something about man's place in nature, man's relation with God."</p>
+        <p>Darwin's study did just that--but hardly what had been expected or hoped for.  </p>
+        <p>Modern scientists and historians of science who argue that there is a "Darwinian revolution" include Michael T. Ghiselin (<xref ref-type="bibr" id="ID9998f516-8aa7-400f-a224-4eba39465aeb" rid="TO_LINK"><underline>The Triumph of the Darwinian Method</underline>, 1969</xref>); Ernst Mayr ("The Nature of the Darwinian Revolution," <underline>Science</underline>, 1971), David Hull (<underline>Darwin and his Critics: the Reception of Darwin's Theory of Evolution by the Scientific Community</underline>, 1973); and Howard Gruber, (<underline>Darwin on Man: A Psychological Study of Scientific Creativity</underline>, 1974). Lewontin, Passmore and Coleman also have interesting comments about Darwin's most important contributions.</p>
+        <p>APPENDIX B</p>
+      </sec>
+      <sec>
+        <title>THE TABLES</title>
+        <p>Unfortunately, a short caption looks dumb left-justified and a long caption looks dumb center-justified, but you have to choose one style and be consistent.</p>
+        <fig position="float" orientation="portrait">
+          <caption>
+            <title>
+              <bold>Table B.1: Caption for First Table</bold>
+            </title>
+          </caption>
+        </fig>
+        <table-wrap specific-use="rules" position="float" orientation="portrait">
+          <table>
+            <tr>
+              <td rowspan="1" colspan="1">column1</td>
+              <td rowspan="1" colspan="1">column2</td>
+              <td rowspan="1" colspan="1">column3</td>
+              <td rowspan="1" colspan="1">column4</td>
+            </tr>
+            <tr>
+              <td rowspan="1" colspan="1">one</td>
+              <td rowspan="1" colspan="1">two</td>
+              <td rowspan="1" colspan="1">three</td>
+              <td rowspan="1" colspan="1">four</td>
+            </tr>
+            <tr>
+              <td rowspan="1" colspan="1">one again</td>
+              <td rowspan="1" colspan="1">two again </td>
+              <td rowspan="1" colspan="1">three again</td>
+              <td rowspan="1" colspan="1">four again</td>
+            </tr>
+            <tr>
+              <td rowspan="1" colspan="1">final one</td>
+              <td rowspan="1" colspan="1">final two </td>
+              <td rowspan="1" colspan="1">final three</td>
+              <td rowspan="1" colspan="1">final four</td>
+            </tr>
+          </table>
+        </table-wrap>
+        <fig position="float" orientation="portrait">
+          <caption>
+            <title>
+              <bold>Table B.2: Caption for Second TableWhich I Have Made Very Long So it Will Wrap in the List</bold>
+            </title>
+          </caption>
+        </fig>
+        <table-wrap specific-use="rules" position="float" orientation="portrait">
+          <table>
+            <tr>
+              <td rowspan="1" colspan="1">Identifying colors</td>
+              <td rowspan="1" colspan="1">original placements</td>
+              <td rowspan="1" colspan="1">1 month later</td>
+              <td rowspan="1" colspan="1">end of year</td>
+            </tr>
+            <tr>
+              <td rowspan="1" colspan="1">red</td>
+              <td rowspan="1" colspan="1">4</td>
+              <td rowspan="1" colspan="1">3</td>
+              <td rowspan="1" colspan="1">3</td>
+            </tr>
+            <tr>
+              <td rowspan="1" colspan="1">orange</td>
+              <td rowspan="1" colspan="1">5 </td>
+              <td rowspan="1" colspan="1">4</td>
+              <td rowspan="1" colspan="1">3</td>
+            </tr>
+            <tr>
+              <td rowspan="1" colspan="1">blue</td>
+              <td rowspan="1" colspan="1">3 </td>
+              <td rowspan="1" colspan="1">2</td>
+              <td rowspan="1" colspan="1">0</td>
+            </tr>
+          </table>
+        </table-wrap>
+      </sec>
+    </sec>
+  </body>
+  <back>
+    <fn-group>
+      <fn id="bibd2e241">
+        <p>	 Thomas Henry Huxley, <underline>Collected Essays, vol. V: Science and Christian Tradition</underline> (London: Macmillan &amp; co., 1894; reprint ed., Hildesheim: Georg Olms Verlag, 1970), p. 76.</p>
+      </fn>
+      <fn id="bibd2e254">
+        <p>	 Thomas Henry Huxley, <underline>Collected Essays, vol. II: Darwiniana</underline> (London: Macmillan &amp; co., 1894; reprint ed., Hildesheim: Georg Olms Verlag, 1970), p. 316.</p>
+      </fn>
+      <fn id="bibd2e266">
+        <p>	 Thomas Henry Huxley, <underline>Lay Sermons, Addresses, and Reviews</underline> (New York: D. Appleton &amp; co., 1874), pp. 131-31.</p>
+      </fn>
+      <fn id="bibd2e278">
+        <p>	 Thomas Henry Huxley, <underline>Collected Essays, vol. II,</underline>, p. 316.</p>
+      </fn>
+      <fn id="bibd2e294">
+        <p>	 Thomas Henry Huxley, <underline>Lay Sermons</underline>, pp. 131-31</p>
+      </fn>
+      <fn id="bibd2e310">
+        <p>	 The following passage demonstrates Huxley's budding biocentrism (in the scientific sense):  "If it were given me to look beyond the abyss of a geologically recorded time to the still more remote period when the earth was passing through physical and chemical conditions,which it can no more see again than a man can recall his infancy, I should expect to be a witness of the evolution of living protoplasm from not living matter.  I should expect to see it appear under forms of great simplicity, endowed, like existing fungi, with the pwoer of determining the formation of new protoplasm from such matter as ammonium carbonates, oxalates and tartrates,alkaline and earthy phosphates, and water, without the aid of light."  (Thomas Henry Huxley, <underline>Collected Essays, vol. VIII: Discourses: Biological and Geological</underline>; (London: Macmillan &amp; Co., 1894; reprint ed., Hildesheim: Georg Olms Verlag, 1970, pp 256-57.)  In fact, Huxley was a determinist on this subject; in "The Genealogy of Animals," he wrote:  "The whole world, living and not living, is the result of mutual interaction, according to definite laws, of the forces possessed by the molecules of which the primitive nebulosity of the universe was composed.  If this be true, it is no less certain that the existing world lay, potentially, in the cosmic vapours; and that a sufficient intelligence could from a knowledge of the properties of the molecules of that vapour, have predicted, say the state of the Fauna of Britain in 1869, with as much certainty as one can say what will happen to the vapour of the breath in a cold winter's day."  (Huxley, <underline>Darwiniana</underline>, p. 110.). "If it were given me to look beyond the abyss of a geologically recorded time to the still more remote period when the earth was passing through physical and chemical conditions,which it can no mroe see again than a man can recall his infancy, I should expect to be a witness of the evolution of living protoplasm from not living matter.  I should expect to see it appear under forms of great simplicity, endowed, like existing fungi, with the pwoer of determining the formation of new protoplasm from such matter as ammonium carbonates, oxalates and tartrates,alkaline and earthy phosphates, and water, without the aid of light."  (Thomas Henry Huxley, Collected Essays, vol. VIII, pp 256-57.)  In fact, Huxley was a determinist on this subject; in "The Genealogy of Animals," he wrote:  "The whole world, living and not living, is the result of mutual interaction, according to definite laws, of the forces possessed by the molecules of which the primitive nebulosity of the universe was composed.  If this be true, it is no less certain that the existing world lay, potentially, in the cosmic vapours; and that a sufficient intelligence could from a knowledge of the properties of the molecules of that vapour, have predicted, say the state of the Fauna of Britain in 1869, with as much certainty as one can say what will happen to the vapour of the breath in a cold winter's day."  (Huxley, <underline>Darwiniana</underline>, p. 110.). "If it were given me to look beyond the abyss of a geologically recorded time to the still more remote period when the earth was passing through physical and chemical conditions, which it can no more see again than a man can recall his infancy, I should expect to be a witness of the evolution of living protoplasm from not living matter. I should expect to see it appear under forms of great simplicity, endowed, like existing fungi, with the power of determining the formation of new protoplasm from such matter as ammonium carbonates, oxalates and tartrates, alkaline and earthy phosphates, and water, without the aid of light." (Thomas Henry Huxley, Collected Essays, vol. VIII:, pp 256-57.)</p>
+      </fn>
+      <fn id="bibd2e357">
+        <p>	 Ernest Heinrich Haeckel, <underline>The History of Creation or the Development of the Earth and Its Inhabitants by the Action of Natural Causes: A Popular Exposition of the Doctrine of Evolution in General, and of that of Darwin, Goethe, and Lamarck in Particular</underline>, 2 vols., trans. and revised by E. Ray Lankester (London: Henry S. King &amp; Co. 1876), I:22.  </p>
+      </fn>
+      <fn id="bibd2e400">
+        <p>	 Ernest Heinrich Haeckel, <underline>The Riddle of the Universe at the Close of the Nineteenth Century</underline>, trans. Joseph McCabe (New York: Harper &amp; Brothers, 1900), p. 11.</p>
+      </fn>
+      <fn id="bibd2e410">
+        <p>	 The full text of Haeckel's definition follows:The anthropocentric dogma culminates in the idea that man is the preordained centre and aim of all terrestrial life -- or, in a wider sense, of the whole universe.  As this error is extremely conducive to man's interest, and as it is intimately connected with the creation-myth of the three great Mediterranean religions, and with the dogmas of the Mosaic, Christian and Mohammedan theologies, it still dominates the greater part of the civilized world.</p>
+      </fn>
+      <fn id="bibd2e417">
+        <p>	 The <underline>Oxford English Dictionary</underline> cites a passage from an earlier Haeckel book, <underline>History of Creation</underline>, as one of its two examples of usage for "anthropocentric": "The anthropocentric error, that Man is the premeditated aim of the creation of the earth."  </p>
+      </fn>
+    </fn-group>
+    <ref-list>
+      <ref>
+        <mixed-citation>Branford, Victor. Intrepretations and Forecasts: A Study of Survivals and Tendencies in Contemporary Society. London: Duckworth &amp; Co., 1914.Darwin, Charles Robert. On the Origin of Species by Means of Natural Selection, or Preservation of Fasvoured Races in the Struggle for Life. London: Murray, 1859.&#8212;. The Descent of Man, and Selection in Relation to Sex. New York: D Appleton &amp; Co., 1871.&#8212;. The Expression of the Emotions in Man and Animals. London: D. Appleton, 1872.</mixed-citation>
+      </ref>
+    </ref-list>
+  </back>
+</article>
