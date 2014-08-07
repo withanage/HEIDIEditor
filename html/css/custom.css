@@ -66,6 +66,10 @@ button.next-btn{
     text-align: center;
 }
 
+div.download-btn{
+    text-align: center;
+    margin-top: 20px;
+}
 
 /*  icon (copied from twitterbootstrap.css)
 /*--------------------------------- */
