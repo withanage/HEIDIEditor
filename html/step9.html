@@ -13,7 +13,7 @@
 
 
     <!-- jQuery and plugins -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="js/jquery-1.11.1.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/jstree.min.js"></script>
     <script src="js/advanced.js"></script>
@@ -25,6 +25,18 @@
     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
+
+    <script>
+        $(function(){
+            $("#header").load("header.html", null, function(){
+                $("a.disabled").click(function(){return false;});
+                $("li#nav-step9").addClass("active").nextAll().each(function(){
+                    $(this).find("a").addClass("disabled").attr({href:"javascript:void(0)", onClick:"return false"});
+                });
+            });
+        });
+    </script>
+
 </head>
 <body>
 
@@ -34,47 +46,7 @@
 
 
 
-        <div class="navbar navbar-default" role="navigation">
-            <div class="container-fluid">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a class="navbar-brand" href="#">HEIDI Editor</a>
-                </div>
-                <div class="navbar-collapse collapse">
-                    <ul class="nav navbar-nav">
-                        <li><a href="index.html">Step 1</a></li>
-                        <li><a href="step2.html">Step 2</a></li>
-                        <li><a href="step3.html">Step 3</a></li>
-                        <li><a href="step4.html">Step 4</a></li>
-                        <li><a href="step5.html">Step 5</a></li>
-                        <li><a href="step6.html">Step 6</a></li>
-                        <li><a href="step7.html">Step 7</a></li>
-                        <li><a href="step8.html">Step 8</a></li>
-                        <li class="active"><a href="#">Step 9</a></li>
-                        <li><a href="#">Step 10</a></li>
-                        <li><a href="#">Step 11</a></li>
-                    </ul>
-                    <ul class="nav navbar-nav navbar-right">
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="glyphicon glyphicon-wrench"></i><span class="caret"></span></a>
-                            <ul class="dropdown-menu" role="menu">
-                                <li><a href="#">Help <i class="glyphicon glyphicon-question-sign"></i></a></li>
-                                <li><a href="#">Settings <i class="glyphicon glyphicon-wrench"></i></a></li>
-                                <li class="divider"></li>
-                                <li class="dropdown-header">About us</li>
-                                <li><a href="#">Home <i class="glyphicon glyphicon-home"></i></a></li>
-                                <li><a href="#">Contact <i class="glyphicon glyphicon-envelope"></i></a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                </div><!--/.nav-collapse -->
-            </div><!--/.container-fluid -->
-        </div>
+        <div id="header"></div>
 
 
         <h2 class="title">Step9: Freeform editing</h2>

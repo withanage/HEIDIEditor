@@ -307,7 +307,7 @@ require.register("dropzone/lib/dropzone.js", function (exports, module) {
       acceptedMimeTypes: null,
       autoProcessQueue: true,
       autoQueue: true,
-      addRemoveLinks: false,
+      addRemoveLinks: true, //false,
       previewsContainer: null,
       dictDefaultMessage: "Drop files here to upload",
       dictFallbackMessage: "Your browser does not support drag'n'drop file uploads.",

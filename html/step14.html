@@ -13,7 +13,7 @@
 
 
     <!-- jQuery and plugins -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="js/jquery-1.11.1.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/jstree.min.js"></script>
     <script src="js/advanced.js"></script>
@@ -25,6 +25,18 @@
     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
+
+    <script>
+        $(function(){
+            $("#header").load("header.html", null, function(){
+                $("a.disabled").click(function(){return false;});
+                $("li#nav-step14").addClass("active").nextAll().each(function(){
+                    $(this).find("a").addClass("disabled").attr({href:"javascript:void(0)", onClick:"return false"});
+                });
+            });
+        });
+    </script>
+
 </head>
 <body>
 
