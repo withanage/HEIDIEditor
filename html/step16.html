@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Step 4 | HEIDI Editor</title>
+    <title>Step 16 | HEIDI Editor</title>
 
     <!-- Stylesheets -->
     <link href="css/bootstrap.min.css" type="text/css" rel="stylesheet">
@@ -13,7 +13,7 @@
 
 
     <!-- jQuery and plugins -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="js/jquery-1.11.1.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/jstree.min.js"></script>
     <script src="js/advanced.js"></script>
@@ -25,104 +25,52 @@
     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
+
+    <script>
+        $(function(){
+            $("#header").load("header.html", null, function(){
+                $("a.disabled").click(function(){return false;});
+                $("li#nav-step16").addClass("active").nextAll().each(function(){
+                    $(this).find("a").addClass("disabled").attr({href:"javascript:void(0)", onClick:"return false"});
+                });
+            });
+        });
+    </script>
+
+
 </head>
 <body>
 
 
-<div id="header" class="container">header</div>
-
 <div id="content">
     <div class="container">
 
-        <ol class="breadcrumb">
-            <li><a href="index.html">Step 1</a></li>
-            <li><a href="step2.html">Step 2</a></li>
-            <li><a href="step3.html">Step 3</a></li>
-            <li class="active"><span class="current">Step 4</span></li>
-            <li class="active">Step 5</a></li>
-            <li class="active">Step 6</a></li>
-            <li class="active">Step 7</a></li>
-            <li class="active">Step 8</a></li>
-            <li class="active">Step 9</a></li>
-            <li class="active">Step 10</a></li>
-            <li class="active">Step 11</a></li>
-            <li class="active">Step 12</a></li>
-            <li class="active">Step 13</a></li>
-            <li class="active">Step 14</a></li>
-            <li class="active">Step 15</a></li>
-            <li class="active">Step 16</a></li>
-        </ol>
-        <!-- /breadcrumb -->
+        <div id="header"></div>
 
-        <h2 class="title">Step4: Confirm Bibliography</h2>
+
+        <h2 class="title">Step 16: Download Book</h2>
         <!-- /title -->
 
-        <ul class="nav nav-tabs">
-            <li class="active"><a href="#bibliography" data-toggle="tab">Bibliography</a></li>
-            <li><a href="#notes" data-toggle="tab">Notes</a></li>
-            <li><a href="#headings" data-toggle="tab">Headings</a></li>
-        </ul>
 
-        <div class="tab-content">
-            <div class="tab-pane active" id="bibliography">
-                <div class="row">&nbsp;</div>
-                <div class="row">
-                    <div class="col-sm-11 col-sm-offset-1 highlight treepane">
-                        <ul>
-                            <li>A</li>
-                            <li>B</li>
-                            <li>C</li>
-                            <li>D</li>
-                            <li>E</li>
-                            <li>F</li>
-                            <li>G</li>
-                        </ul>
-                    </div>
-                </div>
-
-            </div>
-            <div class="tab-pane" id="notes">
-                <div class="row">&nbsp;</div>
-                <div class="row">
-                    <div class="col-sm-11 col-sm-offset-1 highlight treepane">
-                        <ul>
-                            <li>A</li>
-                            <li>B</li>
-                            <li>C</li>
-                            <li>D</li>
-                            <li>E</li>
-                            <li>F</li>
-                            <li>G</li>
-                        </ul>
-                    </div>
-                </div>
-
-            </div>
-            <div class="tab-pane" id="headings">
-                <div class="row">&nbsp;</div>
-                <div class="row">
-                    <div class="col-sm-11 col-sm-offset-1 highlight treepane">
-                        <ul>
-                            <li>A</li>
-                            <li>B</li>
-                            <li>C</li>
-                            <li>D</li>
-                            <li>E</li>
-                            <li>F</li>
-                            <li>G</li>
-                        </ul>
-                    </div>
-                </div>
-
-            </div>
-
-
-            <div class="row next-btn">
-                <button class="btn btn-primary next-btn" onclick="location.href='step5.html'">Next<i class="glyphicon glyphicon-chevron-right"></i></button>
-            </div>
-
-
+        <div class="row download-btn">
+            <button class="btn btn-primary btn-large">Download HTML <i class="glyphicon glyphicon-download"></i></button>
         </div>
+        <div class="row download-btn">
+            <button class="btn btn-primary btn-large">Download PDF <i class="glyphicon glyphicon-download"></i></button>
+        </div>
+        <div class="row download-btn">
+            <button class="btn btn-primary btn-large">Download ePUB <i class="glyphicon glyphicon-download"></i></button>
+        </div>
+        <div class="row download-btn">
+            <button class="btn btn-primary btn-large">Download Zip(Media) <i class="glyphicon glyphicon-download"></i></button>
+        </div>
+
+
+        <div class="row next-btn">
+            <button class="btn btn-primary" onclick="location.href='index.html'">Back to Home<i class="glyphicon glyphicon-chevron-right"></i></button>
+        </div>
+
+
 
 
     </div>
@@ -143,10 +91,7 @@
             //"json_data": jsonData
         });
 
-        $("a[data-toggle='tab']").on("shown.bs.tab", function(e) {
-            var target = $(e.target).text();
-            $("h2.title").text("Step 4: Confirm " + target);
-        });
+
     });
 
 </script>

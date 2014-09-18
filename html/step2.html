@@ -20,6 +20,8 @@
     <script src="js/advanced.js"></script>
     <script src="js/wysihtml5-0.3.0.min.js"></script>
     <script src="js/bootstrap-wysihtml5-0.0.2.min.js"></script>
+    <script src="js/knockout-3.2.0.js"></script>
+    <script src="js/json2.js"></script>
 
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -28,6 +30,18 @@
     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
+
+    <script>
+        $(function(){
+            $("#header").load("header.html", null, function(){
+                $("a.disabled").click(function(){return false;});
+                $("li#nav-step2").addClass("active").nextAll().each(function(){
+                    $(this).find("a").addClass("disabled").attr({href:"javascript:void(0)", onClick:"return false"});
+                });
+            });
+        });
+    </script>
+
 </head>
 <body>
 
@@ -35,47 +49,7 @@
     <div id="content">
         <div class="container">
 
-            <div class="navbar navbar-default" role="navigation">
-                <div class="container-fluid">
-                    <div class="navbar-header">
-                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                            <span class="sr-only">Toggle navigation</span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                        </button>
-                        <a class="navbar-brand" href="#">HEIDI Editor</a>
-                    </div>
-                    <div class="navbar-collapse collapse">
-                        <ul class="nav navbar-nav">
-                            <li><a href="index.html">Step 1</a></li>
-                            <li class="active"><a href="#">Step 2</a></li>
-                            <li><a href="#">Step 3</a></li>
-                            <li><a href="#">Step 4</a></li>
-                            <li><a href="#">Step 5</a></li>
-                            <li><a href="#">Step 6</a></li>
-                            <li><a href="#">Step 7</a></li>
-                            <li><a href="#">Step 8</a></li>
-                            <li><a href="#">Step 9</a></li>
-                            <li><a href="#">Step 10</a></li>
-                            <li><a href="#">Step 11</a></li>
-                        </ul>
-                        <ul class="nav navbar-nav navbar-right">
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="glyphicon glyphicon-wrench"></i><span class="caret"></span></a>
-                                <ul class="dropdown-menu" role="menu">
-                                    <li><a href="#">Help <i class="glyphicon glyphicon-question-sign"></i></a></li>
-                                    <li><a href="#">Settings <i class="glyphicon glyphicon-wrench"></i></a></li>
-                                    <li class="divider"></li>
-                                    <li class="dropdown-header">About us</li>
-                                    <li><a href="#">Home <i class="glyphicon glyphicon-home"></i></a></li>
-                                    <li><a href="#">Contact <i class="glyphicon glyphicon-envelope"></i></a></li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </div><!--/.nav-collapse -->
-                </div><!--/.container-fluid -->
-            </div>
+            <div id="header"></div>
 
 
             <h2 class="title">Step2: Add Metadata</h2>
@@ -102,16 +76,19 @@
                         <div class="form-group">
                             <label class="control-label text-right col-sm-1" for="meta_title">Title</label>
                             <div class="col-sm-11">
-                                <input type="text" id="meta_title" class="form-control" placeholder="Title" />
+                                <input type="text" id="meta_title" class="form-control" placeholder="Title" value="" data-bind="title" />
                             </div>
                         </div>
                         <div class="form-group" id="author_list_1">
-                            <label class="control-label text-right col-sm-1" for="meta_surname">Author <span id="author_label_1"></span></label>
-                            <div class="col-sm-5">
-                                <input type="text" id="meta_surname" class="form-control" placeholder="Surname" />
+                            <label class="control-label text-right col-sm-1" for="meta_firstname">Author <span id="author_label_1"></span></label>
+                            <div class="col-sm-3">
+                                <input type="text" id="meta_firstname" class="form-control" placeholder="First name" value="" data-bind="firstname" />
                             </div>
-                            <div class="col-sm-5">
-                                <input type="text" id="meta_lastname" class="form-control" placeholder="Last name" />
+                            <div class="col-sm-3">
+                                <input type="text" id="meta_lastname" class="form-control" placeholder="Last name" value="" data-bind="lastname" />
+                            </div>
+                            <div class="col-sm-4">
+                                <input type="text" id="meta_affiliation" class="form-control" placeholder="Affiliation" value="" data-bind="affiliation" />
                             </div>
                             <div class="col-sm-1">
                                 <a class="btn"><i class="icon-plus"></i></a>
@@ -120,21 +97,26 @@
                         <div class="form-group">
                             <label class="control-label text-right col-sm-1" for="meta_keywords">Keywords</label>
                             <div class="col-sm-11">
-                                <input type="text" id="meta_keywords" class="form-control" placeholder="xxx, yyy, zzz" />
+                                <input type="text" id="meta_keywords" class="form-control" placeholder="xxx, yyy, zzz" value="" data-bind="keywords"/>
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="control-label text-right col-sm-1" for="meta_abstract">Abstract</label>
                             <div class="col-sm-11">
-                                <textarea rows="7" id="meta_abstract" class="form-control" spellcheck="true" wrap="off"></textarea>
+                                <textarea rows="7" id="meta_abstract" class="form-control" spellcheck="true" wrap="off" data-bind="abstract"></textarea>
                             </div>
                         </div>
                     </form>
                 </div>
             </div>
 
+
+            <div class="row">
+                <ul id="debug"></ul>
+            </div>
+
             <div class="row next-btn">
-                <button class="btn btn-primary next-btn" onclick="location.href='step3ls.html'">Next<i class="glyphicon glyphicon-chevron-right"></i></button>
+                <button class="btn btn-primary next-btn" onclick="location.href='step3.html'">Next<i class="glyphicon glyphicon-chevron-right"></i></button>
             </div>
 
         </div>
@@ -149,6 +131,7 @@
 
 <script type="text/javascript">
     $(document).ready(function(){
+
         /*
         function getFileList(dirPath){
             var fso, f, f1, f2;
@@ -167,7 +150,7 @@
             fso= null;
             return list;
         }
-        var jsonData = JSON.stringify(getFileList("/var/www/HEIDIEditor"));
+        var jsonData = JSON.stringify(getFileList("/var/www/html/HEIDIEditor/html/files/"));
         */
 
         $("#treepane").jstree({
@@ -245,6 +228,69 @@
                 if (i == 1) $("#author_label_1").text("");
             })
         });
+
+
+
+
+        // Load Json
+        $.getJSON("../cgi/json/metadataTest.json", function (data) {
+            var jsonobj = (new Function("return" + data))(); //JSON.parse(data[]);
+            var article_meta = jsonobj[0].metadata["article-meta"];
+            var journal_meta = jsonobj[0].metadata["journal-meta"];
+            var html = "<li>journal-meta:</li><ul>"
+                    + "<li>journal-id: " + journal_meta["journal-id"] + "</li>"
+                    + "<li>issn: " + journal_meta.issn + "</li>"
+                    + "<li>publisher: {publisher-name:" + journal_meta["publisher"]["publisher-name"] + "}</li>"
+                    + "</ul>"
+                    + "<li>article-meta:</li>"
+                    + "<ul>"
+                    + "<li>last name: " + article_meta["contrib-group"]["contrib"]["name"].surname + "</li>"
+                    + "<li>first name: " + article_meta["contrib-group"]["contrib"]["name"]["given-names"] + "</li>"
+                    + "<li>affiliation: " + article_meta["contrib-group"]["aff"].institution + "</li>"
+                    + "<li>categories: " + article_meta["article-categories"]["subj-group"].subject + "</li>"
+                    + "<li>article-title: " + article_meta["title-group"]["article-title"] + "</li>"
+                    + "<li>volume: " + article_meta.volume + "</li>"
+                    + "<li>issue: " + article_meta.issue + "</li>"
+                    + "<li>fpage: " + article_meta.fpage + "</li>"
+                    + "<li>lpage: " + article_meta.lpage + "</li>"
+                    + "<li>pubdate: {year:" + article_meta["pub-date"].year + "}</li>"
+                    + "<li>abstract: <p>" + article_meta.abstract["p"] + "</p></li>"
+                    + "</ul>"
+            // $("#debug").append(html);
+            $("#meta_title").val(article_meta["title-group"]["article-title"]);
+            $("#meta_lastname").val(article_meta["contrib-group"]["contrib"]["name"].surname);
+            $("#meta_firstname").val(article_meta["contrib-group"]["contrib"]["name"]["given-names"]);
+            $("#meta_affiliation").val(article_meta["contrib-group"]["aff"].institution);
+            $("#meta_keywords").val(article_meta["article-categories"]["subj-group"].subject);
+            $("#meta_abstract").append("<p>" + article_meta.abstract["p"] + "</p>");
+        });
+
+
+
+        function Metadata(data) {
+            this.title = ko.observable(data["title-group"]["article-title"]);
+            this.lastname = ko.observable(data["contrib-group"]["contrib"]["name"].surname);
+            this.firstname = ko.observable(data["contrib-group"]["contrib"]["name"]["given-names"]);
+            this.affiliation = ko.observable(data["contrib-group"]["aff"].institution);
+            this.keywords = ko.observable(data["article-categories"]["subj-group"].subject);
+            this.abstract = ko.observable("<p>" + data.abstract["p"] + "</p>");
+        }
+
+        function MetadataViewMOdel() {
+            // Data
+            var self = this;
+            self.metadata.ko.observableArray([]);
+
+            // Operations
+
+            // Load json
+            $.getJSON("../cgi/json/metadataTest.json", function (data) {
+                var jsonobj = (new Function("return" + data))();
+                self.metadata(jsonobj[0].metadata["article-meta"]);
+            });
+        }
+
+        ko.applyBindings(new MetadataViewModel());
 
 
     });

@@ -2,7 +2,7 @@
 /</em>   header
 /* ------------------------------------- */
 #header{
-    background-color: #a2c6dc;
+    //background-color: #a2c6dc;
     min-height: 50px;
     margin-bottom: 20px;
 }
@@ -66,6 +66,10 @@ button.next-btn{
     text-align: center;
 }
 
+div.download-btn{
+    text-align: center;
+    margin-top: 20px;
+}
 
 /*  icon (copied from twitterbootstrap.css)
 /*--------------------------------- */
