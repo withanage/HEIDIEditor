@@ -13,8 +13,6 @@
 error_reporting(E_ALL | E_STRICT);
 require('UploadHandler.php');
 $options = array(
-    'upload_dir' => '../../files/',
-    'upload_url' => $_SERVER['HTTP_HOST'].'files/',
-    'access_control_allow_credentials' => true,
+    'upload_dir' => '../files/'
 );
 $upload_handler = new UploadHandler($options);
