@@ -1,11 +1,20 @@
 <?php
-if (!empty($_FILES)) {
-    $filename = dirname(__FILE__) . "/files/" . $_FILES['file']['name'];
-    $path = pathinfo($filename);
-    move_uploaded_file($_FILES['file']['tmp_name'], $filename);
-    chmod($filename, 0666);
-    system("python ../meTypeset/bin/meTypeset.py " .  $path["extension"] . " " . $filename . " ./files/out_" . $path["filename"]);
-    system("python ../cgi/convertXml2Json.py ./files/out_" . $path["filename"] . "/nlm/out.xml ./files/".$path["filename"].".json");
-    copy("./files/out_" . $path["filename"] . "/nlm/out.xml", "./files/" . $path["filename"] . ".xml");
+/*
+ * jQuery File Upload Plugin PHP Example 5.14
+ * https://github.com/blueimp/jQuery-File-Upload
+ *
+ * Copyright 2010, Sebastian Tschan
+ * https://blueimp.net
+ *
+ * Licensed under the MIT license:
+ * http://www.opensource.org/licenses/MIT
+ */
 
-}
+error_reporting(E_ALL | E_STRICT);
+require('UploadHandler.php');
+$options = array(
+    'upload_dir' => '../../files/',
+    'upload_url' => $_SERVER['HTTP_HOST'].'files/',
+    'access_control_allow_credentials' => true,
+);
+$upload_handler = new UploadHandler($options);

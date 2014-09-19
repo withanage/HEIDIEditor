@@ -128,6 +128,15 @@
             }
         });
 
+        //progressbar
+        var req = new XMLHttpRequest();
+
+        req.addEventListener("progress", updateProgress, false);
+        req.addEventListener("load", transferComplete, false);
+        req.addEventListener("error", transferFailed, false);
+        req.addEventListener("abort", transferCanceled, false);
+
+        req.open();
 
 
     });

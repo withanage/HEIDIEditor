@@ -1,11 +1,12 @@
 #!/usr/bin/python
 
-
+import cgitb
 import os, sys
 from xml2json import xml2json
 import optparse
 import json
 
+cgitb.enable()
 
 def run(upload_dir, metadata_path):
     uploads = os.listdir(upload_dir)
@@ -34,11 +35,11 @@ def run(upload_dir, metadata_path):
 
 
 if __name__ == "__main__":
-    sys.path.append("/home/m1o/git/meTypeset/bin")
+    sys.path.append("../meTypeset/bin")
     import meTypeset
-    UPLOAD_DIR = '/var/www/html/HEIDIEditor/html/files'
-    METADATA_PATH = '/var/www/cgi/xml/metadataTest.xml'
+    UPLOAD_DIR = '../html/files'
+    METADATA_PATH = '.:/xml/metadataTest.xml'
     run(UPLOAD_DIR, METADATA_PATH)
 
     # jump to next page
-    # print open("step2.html", "r").read()
+    print "Location: http://" + os.environ['HTTP_HOST'] + "/HEIDIEditor/html/step2.html\n\n"
