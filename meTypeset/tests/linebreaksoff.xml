@@ -1,0 +1,91 @@
+
+<mt:meTypeset xmlns:mt="https://github.com/MartinPaulEve/meTypeset">
+    
+    <mt:saxon-libs>
+        xml-resolver-1.1.jar;saxon9.jar
+    </mt:saxon-libs>
+
+    <mt:executables>
+        <mt:unoconv>unoconv</mt:unoconv>
+    </mt:executables>
+
+    <mt:parse>
+        <mt:dash-lists>True</mt:dash-lists>
+        <mt:bracket-lists>True</mt:bracket-lists>
+        <mt:bracket-references-and-footnotes>True</mt:bracket-references-and-footnotes>
+        <mt:superscripted-footnotes>True</mt:superscripted-footnotes>
+    </mt:parse>
+
+    <mt:aggression>
+        <mt:listclassifier>4</mt:listclassifier>
+        <mt:tablecaptions>5</mt:tablecaptions>
+        <mt:graphiccaptions>5</mt:graphiccaptions>
+        <mt:sizeclassifier>5</mt:sizeclassifier>
+        <mt:bibliographyaddins>4</mt:bibliographyaddins>
+        <mt:bibliographyclassifier>4</mt:bibliographyclassifier>
+	<mt:wmfimagereplace>5</mt:wmfimagereplace>
+	<mt:teicleanup>3</mt:teicleanup>
+    </mt:aggression>
+    
+    <mt:folders>
+        <mt:docx>docx</mt:docx>
+        <mt:doc>doc</mt:doc>
+        <mt:common2>common2</mt:common2>
+        <mt:runtime>runtime</mt:runtime>
+        <mt:binaries>bin</mt:binaries>
+        <mt:word>word</mt:word>
+        <mt:tei>tei</mt:tei>
+	<mt:xsl>xsl</mt:xsl>
+        <mt:error>error</mt:error>
+	<mt:outputmedia>media</mt:outputmedia>
+	<mt:nlm>nlm</mt:nlm>
+	<mt:media>media</mt:media>
+    </mt:folders>
+
+    <mt:sizeclassifier>
+        <mt:minimum-heading-size>16</mt:minimum-heading-size>
+        <mt:maximum-headings>41</mt:maximum-headings>
+    </mt:sizeclassifier>
+
+    <mt:display>
+        <mt:color>False</mt:color>
+    </mt:display>
+    
+    <mt:style-sheets>
+        <mt:docs-style-sheet-path>
+            docx/from/docxtotei.xsl
+        </mt:docs-style-sheet-path>
+        <mt:doc-to-tei-stylesheet>
+            from/docxtotei.xsl
+        </mt:doc-to-tei-stylesheet>
+        <mt:tei-to-nlm-stylesheet>
+           nlm/tei_to_nlm.xsl
+        </mt:tei-to-nlm-stylesheet>
+        <mt:metadata-stylesheet>
+        metadata/metadata.xsl
+        </mt:metadata-stylesheet>
+        <mt:proprietary-math-stylesheet>
+            proprietary/ommlwrapper.xsl
+        </mt:proprietary-math-stylesheet>
+    </mt:style-sheets>
+
+    <mt:bibliographicdatabase>
+        <mt:databasefile>bibliography.db</mt:databasefile>
+    </mt:bibliographicdatabase>
+
+    <mt:languages>
+        <mt:reference-languages>en</mt:reference-languages>
+    </mt:languages>
+    
+    <mt:xml-files>
+        <mt:default-metadata-file-path>metadata/metadataSample.xml </mt:default-metadata-file-path>
+        <mt:word-document-xml>word/document.xml </mt:word-document-xml>
+        <mt:runtime-catalog>runtime/catalog.xml</mt:runtime-catalog>
+    </mt:xml-files>
+    
+    <mt:nlm>
+        <mt:linebreaks-as-comments>True</mt:linebreaks-as-comments>
+	<mt:drop-unknown-addins>True</mt:drop-unknown-addins>
+    </mt:nlm>
+    
+</mt:meTypeset>
