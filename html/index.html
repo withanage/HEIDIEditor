@@ -131,9 +131,9 @@
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 
-    <!-- include header -->
     <script>
         $(function(){
+            // Include header
             $("#header").load("header.html", null, function(){
                 $("a.disabled").click(function(){return false;});
                 $("li#nav-step1").addClass("active").nextAll().each(function(){
@@ -144,7 +144,23 @@
             'use strict';
             // Initialize the jQuery File Upload widget:
             $('#fileupload').fileupload({
-                url: 'php/'
+                url: './php/index.php',
+                maxFileSize: 5000000,
+                acceptFileTypes: /(\.|\/)(docx?|odt)$/i
+            });
+            // Load existing files:
+            $('#fileupload').addClass('fileupload-processing');
+            $.ajax({
+                // Uncomment the following to send cross-domain cookies:
+                //xhrFields: {withCredentials: true},
+                url: $('#fileupload').fileupload('option', 'url'),
+                dataType: 'json',
+                context: $('#fileupload')[0]
+            }).always(function () {
+                $(this).removeClass('fileupload-processing');
+            }).done(function (result) {
+                $(this).fileupload('option', 'done')
+                        .call(this, $.Event('done'), {result: result});
             });
         });
     </script>
@@ -223,7 +239,7 @@
             </div></div>
 
             <div class="row next-btn">
-                <button class="btn btn-primary next-btn" onclick="location.href='step2.html'">Next<i class="glyphicon glyphicon-chevron-right"></i></button>
+                <button class="btn btn-primary next-btn" onclick="location.href='../cgi/typeset.py'">Next<i class="glyphicon glyphicon-chevron-right"></i></button>
             </div>
         </div>
         <!-- /container -->
