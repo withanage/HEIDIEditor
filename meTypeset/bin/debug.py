@@ -20,6 +20,8 @@ class Debug(object):
 
         self.git_objects = []
 
+        self.log = ''
+
     def enable_debug(self, nogit):
         self.debug = True
         self.git = not nogit
@@ -33,9 +35,13 @@ class Debug(object):
         else:
             self.prompt.print_(u'[{0}] {1}'.format(self.prompt.colorize('red', module.get_module_name()),
                                                    unicode(message)))
+        self.log = self.log + os.linesep + u'[{0}] {1}'.format(module.get_module_name(), unicode(message))
 
     def get_module_name(self):
         return 'Debugger'
+
+    def get_log(self):
+        return self.log
 
     def mkdir(self, path):
         try:

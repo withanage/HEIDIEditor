@@ -29,6 +29,7 @@ class UploadHandler
         'max_file_size' => 'File is too big',
         'min_file_size' => 'File is too small',
         'accept_file_types' => 'Filetype not allowed',
+        'accept_file_names' => 'Filename contains invalid characters',
         'max_number_of_files' => 'Maximum number of files exceeded',
         'max_width' => 'Image exceeds maximum width',
         'min_width' => 'Image requires a minimum width',
@@ -81,6 +82,8 @@ class UploadHandler
             'inline_file_types' => '/\.(gif|jpe?g|png)$/i',
             // Defines which files (based on their names) are accepted for upload:
             'accept_file_types' => '/.+$/i',
+            // Defines which file names are accepted for upload:
+            'accept_file_names' => '/^(\w|-|\(|\))+\.[a-z]+$/i',
             // The php.ini settings upload_max_filesize and post_max_size
             // take precedence over the following max_file_size setting:
             'max_file_size' => null,
@@ -389,6 +392,10 @@ class UploadHandler
                 // Ignore additional chunks of existing files:
                 !is_file($this->get_upload_path($file->name))) {
             $file->error = $this->get_error_message('max_number_of_files');
+            return false;
+        }
+        if (!preg_match($this->options['accept_file_names'], $file->name)) {
+            $file->error = $this->get_error_message('accept_file_names');
             return false;
         }
         $max_width = @$this->options['max_width'];
@@ -1056,7 +1063,9 @@ class UploadHandler
                     );
                 } else {
                     move_uploaded_file($uploaded_file, $file_path);
+                    // Call typeset script
                     chmod($file_path, 0666);
+                    //system("python ../../cgi/typeset.py ".$file_path);
                 }
             } else {
                 // Non-multipart uploads (PUT method support)
@@ -1081,6 +1090,7 @@ class UploadHandler
             }
             $this->set_additional_file_properties($file);
         }
+
         return $file;
     }
 

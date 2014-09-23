@@ -253,9 +253,12 @@ def main():
     me_typeset_instance = MeTypeset()
     me_typeset_instance.run()
 
+
 def test(opt):
     me_typeset_instance = MeTypeset(opt)
     me_typeset_instance.run()
+    return me_typeset_instance.debug.get_log()
 
-#if __name__ == '__main__':
-#    main()
+
+if __name__ == '__main__':
+    main()

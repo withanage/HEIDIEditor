@@ -79,7 +79,9 @@
                     <i class="glyphicon glyphicon-trash"></i>
                     <span>Delete</span>
                 </button>
+                <!--
                 <input type="checkbox" name="delete" value="1" class="toggle">
+                -->
             {% } else { %}
                 <button class="btn btn-warning cancel">
                     <i class="glyphicon glyphicon-ban-circle"></i>
@@ -152,7 +154,7 @@
             $('#fileupload').addClass('fileupload-processing');
             $.ajax({
                 // Uncomment the following to send cross-domain cookies:
-                //xhrFields: {withCredentials: true},
+                xhrFields: {withCredentials: true},
                 url: $('#fileupload').fileupload('option', 'url'),
                 dataType: 'json',
                 context: $('#fileupload')[0]
@@ -206,7 +208,9 @@
                                 <i class="glyphicon glyphicon-trash"></i>
                                 <span>Delete</span>
                             </button>
+                            <!--
                             <input type="checkbox" class="toggle">
+                            -->
                             <!-- The global file processing state -->
                             <span class="fileupload-process"></span>
                         </div>
@@ -232,6 +236,7 @@
                         <ul>
                             <li>The maximum file size for uploads is <strong>5 MB</strong>.</li>
                             <li>Only document files (<strong>DOC, DOCX, ODT</strong>) are allowed.</li>
+                            <li>Filenames can only contain <strong>alpha-numerical characters</strong>, <strong>under scores</strong>(_) and <strong>hyphens</strong>(-).</li>
                             <li>You can <strong>drag &amp; drop</strong> files from your desktop on this webpage (see <a href="https://github.com/blueimp/jQuery-File-Upload/wiki/Browser-support">Browser support</a>).</li>
                         </ul>
                     </div>
