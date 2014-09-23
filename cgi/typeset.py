@@ -15,6 +15,7 @@ import shutil
 cgitb.enable()
 logging.basicConfig(level=logging.DEBUG, filename='typeset.log')
 
+
 def typeset(item, upload_dir, metadata_path):
     itemname = os.path.split(item)[-1]
     logging.info("\t"+str(datetime.now().time())+":\t Checking validation "+itemname+" ...")

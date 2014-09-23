@@ -253,7 +253,7 @@ def main():
     me_typeset_instance = MeTypeset()
     me_typeset_instance.run()
 
-
+# call with arguments
 def test(opt):
     me_typeset_instance = MeTypeset(opt)
     me_typeset_instance.run()
