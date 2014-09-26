@@ -15,5 +15,6 @@ require('UploadHandler.php');
 
 $upload_handler = new UploadHandler(array(
     'upload_dir' => '../files/',
+    'upload_url' => '../html/files/',
     'delete_type' => 'POST'
 ));

@@ -29,6 +29,7 @@ class UploadHandler
         'max_file_size' => 'File is too big',
         'min_file_size' => 'File is too small',
         'accept_file_types' => 'Filetype not allowed',
+        'accept_file_names' => 'Filename contains invalid characters',
         'max_number_of_files' => 'Maximum number of files exceeded',
         'max_width' => 'Image exceeds maximum width',
         'min_width' => 'Image requires a minimum width',
@@ -47,6 +48,7 @@ class UploadHandler
             'upload_url' => $this->get_full_url().'/files/',
             'user_dirs' => false,
             'mkdir_mode' => 0755,
+            'image_file_mode' => 0666,
             'param_name' => 'files',
             // Set the following option to 'POST', if your server does not support
             // DELETE requests. This is a parameter sent to the client:
@@ -82,7 +84,7 @@ class UploadHandler
             // Defines which files (based on their names) are accepted for upload:
             'accept_file_types' => '/.+$/i',
             // Custom: Defines which file names are accepted for upload:
-            'accept_file_names' => '/^[a-z0-9-()]+_[a-z0-9-()]+(_[a-z0-9-()]+)?\.[a-z]+$/i',
+            'accept_file_names' => '/^(\w|-|\(|\))+\.[a-z]+$/i',
             // The php.ini settings upload_max_filesize and post_max_size
             // take precedence over the following max_file_size setting:
             'max_file_size' => null,
@@ -90,7 +92,7 @@ class UploadHandler
             // The maximum number of files for the upload directory:
             'max_number_of_files' => null,
             // Defines which files are handled as image files:
-            'image_file_types' => '/\.(gif|jpe?g|png)$/i',
+            'image_file_types' => '/\.(gif|jpe?g|png|eps|tiff)$/i',
             // Use exif_imagetype on all files to correct file extensions:
             'correct_image_extensions' => false,
             // Image resolution restrictions:
@@ -393,6 +395,10 @@ class UploadHandler
             $file->error = $this->get_error_message('max_number_of_files');
             return false;
         }
+        if (!preg_match($this->options['accept_file_names'], $file->name)) {
+            $file->error = $this->get_error_message('accept_file_names');
+            return false;
+        }
         $max_width = @$this->options['max_width'];
         $max_height = @$this->options['max_height'];
         $min_width = @$this->options['min_width'];
@@ -430,7 +436,7 @@ class UploadHandler
 
     protected function upcount_name($name) {
         return preg_replace_callback(
-            '/(?:(?:_\(([\d]+)\))?(\.[^.]+))?$/',
+            '/(?:(?: \(([\d]+)\))?(\.[^.]+))?$/',
             array($this, 'upcount_name_callback'),
             $name,
             1
@@ -494,6 +500,9 @@ class UploadHandler
         // into different directories or replacing hidden system files.
         // Also remove control characters and spaces (\x00..\x20) around the filename:
         $name = trim(basename(stripslashes($name)), ".\x00..\x20");
+        // Replace non-word characters with hyphens
+        $path_name = pathinfo($name);
+        $name = preg_replace('/\W+/i', '-', $path_name['filename']).'.'.$path_name['extension'];
         // Use a timestamp for empty filenames:
         if (!$name) {
             $name = str_replace('.', '-', microtime(true));
@@ -899,7 +908,8 @@ class UploadHandler
         if (!empty($options['strip'])) {
             $image->stripImage();
         }
-        return $success && $image->writeImage($new_file_path);
+        $write_success = $image->writeImage($new_file_path);
+        return $success && $write_success;
     }
 
     protected function imagemagick_create_scaled_image($file_name, $version, $options) {
@@ -1056,6 +1066,7 @@ class UploadHandler
                         fopen($uploaded_file, 'r'),
                         FILE_APPEND
                     );
+                    chmod($file_path, 0666);
                 } else {
                     move_uploaded_file($uploaded_file, $file_path);
                     chmod($file_path, 0666);
@@ -1067,6 +1078,7 @@ class UploadHandler
                     fopen('php://input', 'r'),
                     $append_file ? FILE_APPEND : 0
                 );
+                chmod($file_path, 0666);
             }
             $file_size = $this->get_file_size($file_path, $append_file);
             if ($file_size === $file->size) {
@@ -1083,6 +1095,7 @@ class UploadHandler
             }
             $this->set_additional_file_properties($file);
         }
+
         return $file;
     }
 
