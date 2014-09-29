@@ -1,0 +1,453 @@
+*** Settings ***
+Documentation     This series of test cases evaluates the basic environment setup and the ability to parse basic documents.
+Library           Process
+Library           OperatingSystem
+Library           XML
+Library           Collections
+
+*** Test Cases ***
+000 Environment
+    ${result} =    Run Process    python ../bin/meTypeset.py docx 001.docx ./000 -d --nogit    shell=True
+    Log    ${result.stdout}
+    Log    ${result.stderr}
+    Should Not Contain    ${result.stderr}    cannot find or open
+    Should Not Contain    ${result.stdout}    ERROR
+    [Teardown]    Remove Directory    000    recursive=True
+
+001 Basic paragraph
+    ${result} =    Run Process    python ../bin/meTypeset.py docx 001.docx ./001 -d --nogit    shell=True
+    Log    ${result.stdout}
+    Log    ${result.stderr}
+    ${xml}=    Parse XML    ./001/nlm/out.xml
+    ${paragraph}=    Get Element    ${xml}    body/sec/p
+    Elements Should Match    ${paragraph}    <p>The most basic document possible.</p>
+    [Teardown]    Remove Directory    001    recursive=True
+
+002 Basic paragraph with italics
+    [Tags]    italic    002    formatting
+    ${result} =    Run Process    python ../bin/meTypeset.py docx 002.docx ./002 -d --nogit    shell=True
+    Log    ${result.stdout}
+    Log    ${result.stderr}
+    ${xml}=    Parse XML    ./002/nlm/out.xml
+    ${paragraph}=    Get Element    ${xml}    body/sec/p
+    Elements Should Match    ${paragraph}    <p>A document <italic>with</italic> an italic word.</p>
+    [Teardown]    Remove Directory    002    recursive=True
+
+003 Basic paragraph with bold
+    [Tags]    bold    formatting    003
+    ${result} =    Run Process    python ../bin/meTypeset.py docx 003.docx ./003 -d --nogit    shell=True
+    Log    ${result.stdout}
+    Log    ${result.stderr}
+    ${xml}=    Parse XML    ./003/nlm/out.xml
+    ${paragraph}=    Get Element    ${xml}    body/sec/p
+    Elements Should Match    ${paragraph}    <p>A document <bold>with</bold> a bold word.</p>
+    [Teardown]    Remove Directory    003    recursive=True
+
+004 Metadata merge
+    [Tags]    metadata    004
+    ${result} =    Run Process    python ../bin/meTypeset.py docx 002.docx ./004 -d --nogit    shell=True
+    Log    ${result.stdout}
+    Log    ${result.stderr}
+    ${xml}=    Parse XML    ./004/nlm/out.xml
+    ${journalid}=    Get Element    ${xml}    front/journal-meta/journal-id
+    Elements Should Match    ${journalid}    <journal-id journal-id-type="publisher-id">The Journal Title</journal-id>
+    ${issn}=    Get Element    ${xml}    front/journal-meta/issn
+    Elements Should Match    ${issn}    <issn pub-type="epub">0000-000X</issn>
+    ${doi}=    Get Element    ${xml}    front/article-meta/article-id[@pub-id-type="doi"]
+    Elements Should Match    ${doi}    <article-id pub-id-type="doi">10.1000/123456</article-id>
+    ${title}=    Get Element    ${xml}    front/article-meta/title-group/article-title
+    Elements Should Match    ${title}    <article-title>A Sample Article Title</article-title>
+    ${firstname}=    Get Element    ${xml}    front/article-meta/contrib-group/contrib/name/given-names
+    Elements Should Match    ${firstname}    <given-names>Martin Paul</given-names>
+    ${surname}=    Get Element    ${xml}    front/article-meta/contrib-group/contrib/name/surname
+    Elements Should Match    ${surname}    <surname>Eve</surname>
+    ${aff}=    Get Element    ${xml}    front/article-meta/contrib-group/aff
+    Elements Should Match    ${aff}    <aff id="lincoln"><institution>University of Lincoln</institution></aff>    normalize_whitespace=yes
+    ${year}=    Get Element    ${xml}    front/article-meta/pub-date/year
+    Elements Should Match    ${year}    <year>2013</year>
+    ${volume}=    Get Element    ${xml}    front/article-meta/volume
+    Elements Should Match    ${volume}    <volume>1</volume>
+    ${issue}=    Get Element    ${xml}    front/article-meta/issue
+    Elements Should Match    ${issue}    <issue>1</issue>
+    ${copyright}=    Get Element    ${xml}    front/article-meta/permissions/copyright-statement
+    Elements Should Match    ${copyright}    <copyright-statement>Copyright © 2014, Martin Paul Eve</copyright-statement>
+    ${license}=    Get Element    ${xml}    front/article-meta/permissions/license/license-p
+    Elements Should Match    ${license}    <license-p>This is an open-access article distributed under the terms of the Creative Commons Attribution License, which permits unrestricted use, distribution, and reproduction in any medium, provided the original work is properly cited. The citation of this article must include: the name(s) of the authors, the name of the journal, the full URL of the article (in a hyperlinked format if distributed online) and the DOI number of the article.</license-p>
+    ${uri}=    Get Element    ${xml}    front/article-meta/self-uri
+    Elements Should Match    ${uri}    <self-uri>https://www.martineve.com/</self-uri>
+    ${abstract}=    Get Element    ${xml}    front/article-meta/abstract/p
+    Elements Should Match    ${abstract}    <p>This is a sample abstract that forms part of the metadataSample.xml file in meTypeset.</p>
+    [Teardown]    Remove Directory    004    recursive=True
+
+005 Title, non-title, title (from bolded text)
+    [Tags]    formatting    bold    title    005
+    ${result} =    Run Process    python ../bin/meTypeset.py docx 005.docx ./005 -d --nogit    shell=True
+    Log    ${result.stdout}
+    Log    ${result.stderr}
+    ${xml}=    Parse XML    ./005/nlm/out.xml
+    ${body}=    Get Element    ${xml}    body
+    Elements Should Match    ${body}    <body><sec><title>This should be treated as a title.</title><p>This shouldn't.</p><p><bold>This </bold>shouldn't.</p></sec><sec><title>This should.</title></sec></body>    normalize_whitespace=yes
+    [Teardown]    Remove Directory    005    recursive=True
+
+006 Basic footnote test
+    [Tags]    formatting    footnotes    006
+    ${result} =    Run Process    python ../bin/meTypeset.py docx Footnote.docx ./006 -d --nogit    shell=True
+    Log    ${result.stdout}
+    Log    ${result.stderr}
+    ${xml}=    Parse XML    ./006/nlm/out.xml
+    ${p}=    Get Element    ${xml}    body/sec/p
+    Elements Should Match    ${p}    <p>A footnote test.<xref ref-type="fn" rid="bibd2e35"/></p>    normalize_whitespace=yes
+    ${fng}=    Get Element    ${xml}    back/fn-group
+    Elements Should Match    ${fng}    <fn-group><fn id="bibd2e35"><p>Footnote.</p></fn></fn-group>    normalize_whitespace=yes
+    [Teardown]    Remove Directory    006    recursive=True
+
+007 Complex link test
+    [Tags]    formatting    complexlink    007
+    ${result} =    Run Process    python ../bin/meTypeset.py docxextracted ./ComplexLink ./007 -d --nogit    shell=True
+    Log    ${result.stdout}
+    Log    ${result.stderr}
+    ${xml}=    Parse XML    ./007/nlm/out.xml
+    ${p}=    Get Element    ${xml}    body/sec/p/ext-link
+    ${attr1}=    Get Element Attribute    ${p}    {http://www.w3.org/1999/xlink}href
+    Should Be Equal    ${attr1}    http://www.medscape.com/content/2003/00/45/63/456300/456300_tab.html
+    Should Be Equal As Strings    ${p.text}    "Table 1."
+    [Teardown]    Remove Directory    007    recursive=True
+
+008 Non-Latin text
+    [Tags]    formatting    arabic    008
+    ${result} =    Run Process    python ../bin/meTypeset.py docx Arabic.docx ./008 -d --nogit    shell=True
+    Log    ${result.stdout}
+    Log    ${result.stderr}
+    ${xml}=    Parse XML    ./008/nlm/out.xml
+    ${ps}=    Get Elements    ${xml}    body/sec/p
+    ${p}=    Get From List    ${ps}    0
+    Elements Should Match    ${p}    <p>عل بين بدفع وترك الحربية, سمّي أعلنت والمعدات فصل تم. هو العام، بالهجوم نفس, بل أطراف ايطاليا، المتاخمة لكل. اعتداء جزيرتي أي يتم, وقرى الأوروبية، و وصل. غير ثم لعملة الستار الأوربيين, للحرب السوفييتي، ربع هو, ما سحقت بتطويق تلك.</p>    normalize_whitespace=yes
+    ${title}=    Get Element    ${xml}    body/sec/title
+    Elements Should Match    ${title}    <title>استمرار هذا.</title>    normalize_whitespace=yes
+    [Teardown]    Remove Directory    008    recursive=True
+
+009 Dash list classifier
+    [Tags]    formatting    listclassifier    009
+    ${result} =    Run Process    python ../bin/meTypeset.py docx 009.docx ./009 -d --nogit    shell=True
+    Log    ${result.stdout}
+    Log    ${result.stderr}
+    ${xml}=    Parse XML    ./009/nlm/out.xml
+    ${p}=    Get Element    ${xml}    body/sec/list
+    Elements Should Match    ${p}    <list><list-item><p>Item 1</p></list-item><list-item><p>Item 2</p></list-item><list-item><p>Item 3</p></list-item></list>    normalize_whitespace=yes
+    [Teardown]    Remove Directory    009    recursive=True
+
+010 Reference list classifier
+    [Tags]    formatting    listclassifier    010
+    ${result} =    Run Process    python ../bin/meTypeset.py docx ListReferences01.docx ./010 -d --nogit    shell=True
+    Log    ${result.stdout}
+    Log    ${result.stderr}
+    ${xml}=    Parse XML    ./010/nlm/out.xml
+    ${p}=    Get Element    ${xml}    back/ref-list
+    Elements Should Match    ${p}    <ref-list><ref><mixed-citation>Reference 1 2013</mixed-citation></ref><ref><mixed-citation>Reference 2 2014</mixed-citation></ref></ref-list>    normalize_whitespace=yes
+    [Teardown]    Remove Directory    010    recursive=True
+
+011 Footnote list classifier
+    [Tags]    formatting    listclassifier    011
+    ${result} =    Run Process    python ../bin/meTypeset.py docx FootnotesFromText.docx ./011 -s testsettings.xml -d --nogit    shell=True
+    Log    ${result.stdout}
+    Log    ${result.stderr}
+    ${xml}=    Parse XML    ./011/nlm/out.xml
+    ${p}=    Get Element    ${xml}    body/sec
+    Elements Should Match    ${p}    <sec><title/><p>A section with a footnote.<xref ref-type="fn" rid="bibd2e35"/> More text.</p><p>A third.<xref ref-type="fn" rid="bibd2e40"/></p></sec>    normalize_whitespace=yes
+    ${ptwo}=    Get Element    ${xml}    back/fn-group
+    Elements Should Match    ${ptwo}    <fn-group><fn id="bibd2e35"><p>The footnote should link here</p></fn><fn id="bibd2e40"><p>A second footnote</p></fn></fn-group>    normalize_whitespace=yes
+    [Teardown]    Remove Directory    011    recursive=True
+
+012 Superscripted footnotes
+    [Tags]    formatting    listclassifier    012
+    ${result} =    Run Process    python ../bin/meTypeset.py docx SuperscriptFootnotes.docx ./012 -s testsettings.xml -d --nogit    shell=True
+    Log    ${result.stdout}
+    Log    ${result.stderr}
+    ${xml}=    Parse XML    ./012/nlm/out.xml
+    ${secs}=    Get Elements    ${xml}    body/sec
+    ${sec}=    Get From List    ${secs}    0
+    Elements Should Match    ${sec}    <sec><title>Article</title><p>Line.<xref ref-type="fn" rid="bibd2e38"/>Line.<xref ref-type="fn" rid="bibd2e42"/> Line.<xref ref-type="fn" rid="bibd2e46"/> Line.<xref ref-type="fn" rid="bibd2e50"/> Line.<xref ref-type="fn" rid="bibd2e54"/> Line.<xref ref-type="fn" rid="bibd2e59"/> Line.<xref ref-type="fn" rid="bibd2e63"/> Line.<xref ref-type="fn" rid="bibd2e67"/> Line.<xref ref-type="fn" rid="bibd2e71"/> Line.<xref ref-type="fn" rid="bibd2e75"/> Line.<xref ref-type="fn" rid="bibd2e79"/></p></sec>    normalize_whitespace=yes
+    ${ptwo}=    Get Element    ${xml}    back/fn-group
+    Elements Should Match    ${ptwo}    <fn-group><fn id="bibd2e38"><p>Footnote number 1</p></fn><fn id="bibd2e42"><p>Footnote number 2</p></fn><fn id="bibd2e46"><p>Footnote number 3</p></fn><fn id="bibd2e50"><p>Footnote number 4</p></fn><fn id="bibd2e54"><p>Footnote number 5</p></fn><fn id="bibd2e59"><p>Footnote number 6</p></fn><fn id="bibd2e63"><p>Footnote number 7</p></fn><fn id="bibd2e67"><p>Footnote number 8</p></fn><fn id="bibd2e71"><p>Footnote number 9</p></fn><fn id="bibd2e75"><p>Footnote number 10</p></fn><fn id="bibd2e79"><p>Footnote number 11</p></fn></fn-group>    normalize_whitespace=yes
+    [Teardown]    Remove Directory    012    recursive=True
+
+013 Table parsing
+    [Tags]    formatting    013    captions
+    ${result} =    Run Process    python ../bin/meTypeset.py docx TableClassifier1.docx ./013 -s testsettings.xml -d --nogit    shell=True
+    Log    ${result.stdout}
+    Log    ${result.stderr}
+    ${xml}=    Parse XML    ./013/nlm/out.xml
+    ${secs}=    Get Elements    ${xml}    body/sec/p
+    ${title}=    Get Element    ${xml}    body/sec/table-wrap/label
+    ${caption}=    Get Element    ${xml}    body/sec/table-wrap/caption/p
+    ${pone}=    Get From List    ${secs}    0
+    ${ptwo}=    Get From List    ${secs}    1
+    ${xrefone}=    Get Element    ${pone}    xref
+    ${xreftwo}=    Get Element    ${ptwo}    xref
+    Should Be Equal As Strings    ${title.text}    Table 1
+    Should Be Equal As Strings    ${caption.text}    Some data.
+    Should Be Equal As Strings    ${xrefone.text}    Table 1
+    Should Be Equal As Strings    ${xreftwo.text}    Table 1
+    [Teardown]    Remove Directory    013    recursive=True
+
+014 Graphic caption parsing
+    [Tags]    formatting    captions    014
+    ${result} =    Run Process    python ../bin/meTypeset.py docx ImageCaption1.docx ./014 -s testsettings.xml -d --nogit    shell=True
+    Log    ${result.stdout}
+    Log    ${result.stderr}
+    ${xml}=    Parse XML    ./014/nlm/out.xml
+    ${secs}=    Get Element    ${xml}    body/sec/p/graphic
+    ${title}=    Get Element    ${secs}    label
+    ${caption}=    Get Element    ${secs}    caption/p
+    Should Be Equal As Strings    ${title.text}    Figure 1
+    Should Be Equal As Strings    ${caption.text}    Martin Eve at the pub
+    [Teardown]    Remove Directory    014    recursive=True
+
+015 Ensure graphics not removed by empty link remover
+    [Tags]    formatting    nlm    015
+    ${mkdir} =    Run Process    mkdir ./015    shell=True
+    ${cp} =    Run Process    cp LoneImage.xml ./015/    shell=True
+    ${result} =    Run Process    python ../bin/nlmprocessor.py process ./015/LoneImage.xml -d --nogit    shell=True
+    Log    ${result.stdout}
+    Log    ${result.stderr}
+    ${xml}=    Parse XML    ./015/LoneImage.xml
+    ${graphiclabel}=    Get Element    ${xml}    body/sec/p/graphic/label
+    ${graphiccaption}=    Get Element    ${xml}    body/sec/p/graphic/caption
+    Elements Should Match    ${graphiclabel}    <label>Figure 5</label>    normalize_whitespace=yes
+    Elements Should Match    ${graphiccaption}    <caption><p>An Image</p></caption>    normalize_whitespace=yes
+    [Teardown]    Remove Directory    015    recursive=True
+
+016 Removal of stranded titles
+    [Tags]    formatting    nlm    016
+    ${mkdir} =    Run Process    mkdir ./016    shell=True
+    ${cp} =    Run Process    cp StrandedTitle.xml ./016/    shell=True
+    ${result} =    Run Process    python ../bin/nlmprocessor.py process ./016/StrandedTitle.xml -d --nogit    shell=True
+    Log    ${result.stdout}
+    Log    ${result.stderr}
+    ${xml}=    Parse XML    ./016/StrandedTitle.xml
+    ${title}=    Get Element    ${xml}    body/sec/title
+    ${p}=    Get Element    ${xml}    body/sec/p
+    Should Be Equal As Strings    ${title.text}    REFERENCES
+    Should Be Equal As Strings    ${p.text}    Not a real reference
+    [Teardown]    Remove Directory    016    recursive=True
+
+017 Removal of stranded titles in French
+    [Tags]    formatting    nlm    017
+    ${mkdir} =    Run Process    mkdir ./017    shell=True
+    ${cp} =    Run Process    cp StrandedTitleFrench.xml ./017/    shell=True
+    ${result} =    Run Process    python ../bin/nlmprocessor.py process ./017/StrandedTitleFrench.xml -d --nogit    shell=True
+    Log    ${result.stdout}
+    Log    ${result.stderr}
+    ${xml}=    Parse XML    ./017/StrandedTitleFrench.xml
+    ${title}=    Get Element    ${xml}    body/sec/title
+    ${p}=    Get Element    ${xml}    body/sec/p
+    Should Be Equal As Strings    ${title.text}    Bibliographie
+    Should Be Equal As Strings    ${p.text}    Not a real reference
+    [Teardown]    Remove Directory    017    recursive=True
+
+018 Removal of duplicated metadata in document
+    [Tags]    formatting    metadata    018
+    ${result} =    Run Process    python ../bin/meTypeset.py docx MetadataRemoval.docx ./018 -s testsettings.xml -d --nogit    shell=True
+    Log    ${result.stdout}
+    Log    ${result.stderr}
+    ${xml}=    Parse XML    ./018/nlm/out.xml
+    ${title}=    Get Element    ${xml}    body/sec/title
+    ${p}=    Get Elements    ${xml}    body/sec/p
+    ${pone}=    Get From List    ${p}    2
+    Should Be Equal As Strings    ${title.text}    A Heading
+    Should Be Equal As Strings    ${pone.text}    Some article content. As Martin Paul Eve has noted, blah blah.
+    [Teardown]    Remove Directory    018    recursive=True
+
+019 Table caption parsing dot separator above
+    [Tags]    formatting    019    captions    tables
+    ${result} =    Run Process    python ../bin/meTypeset.py docx TableDotAboveCaption.docx ./019 -s testsettings.xml -d --nogit    shell=True
+    Log    ${result.stdout}
+    Log    ${result.stderr}
+    ${xml}=    Parse XML    ./019/nlm/out.xml
+    ${title}=    Get Element    ${xml}    body/sec/table-wrap/label
+    ${caption}=    Get Element    ${xml}    body/sec/table-wrap/caption/p
+    Should Be Equal As Strings    ${title.text}    Table 1
+    Should Be Equal As Strings    ${caption.text}    A table you know
+    [Teardown]    Remove Directory    019    recursive=True
+
+020 Table caption parsing dot separator below
+    [Tags]    formatting    020    captions    tables
+    ${result} =    Run Process    python ../bin/meTypeset.py docx TableDotBelowCaption.docx ./020 -s testsettings.xml -d --nogit    shell=True
+    Log    ${result.stdout}
+    Log    ${result.stderr}
+    ${xml}=    Parse XML    ./020/nlm/out.xml
+    ${title}=    Get Element    ${xml}    body/sec/table-wrap/label
+    ${caption}=    Get Element    ${xml}    body/sec/table-wrap/caption/p
+    Should Be Equal As Strings    ${title.text}    Table 1
+    Should Be Equal As Strings    ${caption.text}    A table you know
+    [Teardown]    Remove Directory    020    recursive=True
+
+021 Table caption parsing colon separator above
+    [Tags]    formatting    021    captions    tables
+    ${result} =    Run Process    python ../bin/meTypeset.py docx TableColonAboveCaption.docx ./021 -s testsettings.xml -d --nogit    shell=True
+    Log    ${result.stdout}
+    Log    ${result.stderr}
+    ${xml}=    Parse XML    ./021/nlm/out.xml
+    ${title}=    Get Element    ${xml}    body/sec/table-wrap/label
+    ${caption}=    Get Element    ${xml}    body/sec/table-wrap/caption/p
+    Should Be Equal As Strings    ${title.text}    Table 1
+    Should Be Equal As Strings    ${caption.text}    A table you know.
+    [Teardown]    Remove Directory    021    recursive=True
+
+022 Table caption parsing colon separator below
+    [Tags]    formatting    022    captions    tables
+    ${result} =    Run Process    python ../bin/meTypeset.py docx TableColonBelowCaption.docx ./022 -s testsettings.xml -d --nogit    shell=True
+    Log    ${result.stdout}
+    Log    ${result.stderr}
+    ${xml}=    Parse XML    ./022/nlm/out.xml
+    ${title}=    Get Element    ${xml}    body/sec/table-wrap/label
+    ${caption}=    Get Element    ${xml}    body/sec/table-wrap/caption/p
+    Should Be Equal As Strings    ${title.text}    Table 1
+    Should Be Equal As Strings    ${caption.text}    A table you know.
+    [Teardown]    Remove Directory    022    recursive=True
+
+023 Graphic caption parsing with formatted label
+    [Tags]    formatting    023    captions    graphics
+    ${result} =    Run Process    python ../bin/meTypeset.py docx ImageCaptionInItalics.docx ./023 -s testsettings.xml -d --nogit    shell=True
+    Log    ${result.stdout}
+    Log    ${result.stderr}
+    ${xml}=    Parse XML    ./023/nlm/out.xml
+    ${title}=    Get Element    ${xml}    body/sec/fig/graphic/label
+    ${caption}=    Get Element    ${xml}    body/sec/fig/graphic/caption/p
+    ${p}=    Get Element    ${xml}    body/sec/p
+    Should Be Equal As Strings    ${title.text}    Figure 1
+    Should Be Equal As Strings    ${caption.text}    A Guinea Pig Called Jane
+    Should Be Equal As Strings    ${p.text}    The paragraph that should remain
+    [Teardown]    Remove Directory    023    recursive=True
+
+024 Graphic caption parsing with label from title
+    [Tags]    formatting    024    captions    graphics
+    ${result} =    Run Process    python ../bin/meTypeset.py docx GraphicCaptionInTitle.docx ./024 -s testsettings.xml -d --nogit    shell=True
+    Log    ${result.stdout}
+    Log    ${result.stderr}
+    ${xml}=    Parse XML    ./024/nlm/out.xml
+    ${title}=    Get Element    ${xml}    body/sec/p/graphic/label
+    ${caption}=    Get Element    ${xml}    body/sec/p/graphic/caption/p
+    Should Be Equal As Strings    ${title.text}    Figure 1
+    Should Be Equal As Strings    ${caption.text}    A mugshot
+    [Teardown]    Remove Directory    024    recursive=True
+
+025 Table caption parsing with label from title
+    [Tags]    formatting    025    captions    tables
+    ${result} =    Run Process    python ../bin/meTypeset.py docx TableCaptionInTitle.docx ./025 -s testsettings.xml -d --nogit    shell=True
+    Log    ${result.stdout}
+    Log    ${result.stderr}
+    ${xml}=    Parse XML    ./025/nlm/out.xml
+    ${title}=    Get Element    ${xml}    body/sec/table-wrap/label
+    ${caption}=    Get Element    ${xml}    body/sec/table-wrap/caption/p
+    ${p}=    Get Element    ${xml}    body/sec/p
+    Should Be Equal As Strings    ${title.text}    Table-1
+    Should Be Equal As Strings    ${caption.text}    A table
+    Should Be Equal As Strings    ${p.text}    Some intermediate text
+    [Teardown]    Remove Directory    025    recursive=True
+
+026 Roman Numeral List Parsing
+    [Tags]    formatting    listclassifier    026    numerals
+    ${result} =    Run Process    python ../bin/meTypeset.py docx ListDispQuotesRomanNumerals.docx ./026 -s testsettings.xml -d --nogit    shell=True
+    Log    ${result.stdout}
+    Log    ${result.stderr}
+    ${xml}=    Parse XML    ./026/nlm/out.xml
+    ${secs}=    Get Element    ${xml}    body/sec
+    Elements Should Match    ${secs}    <sec> <title> Heading </title> <disp-quote> <p> <list list-type="order"> <list-item> <p>List</p> </list-item> <list-item> <p>List 2</p> </list-item> <list-item> <p>List 3</p> </list-item> </list> </p> </disp-quote> <p>A pararaph.</p> <p>Another pararaph.</p> <p>A final paragraph.</p> </sec>    normalize_whitespace=yes
+    [Teardown]    Remove Directory    026    recursive=True
+
+027 Roman Numeral Multiple List Parsing
+    [Tags]    formatting    listclassifier    027    numerals
+    ${result} =    Run Process    python ../bin/meTypeset.py docx ListDispQuotesMultipleRomanNumerals.docx ./027 -s testsettings.xml -d --nogit    shell=True
+    Log    ${result.stdout}
+    Log    ${result.stderr}
+    ${xml}=    Parse XML    ./027/nlm/out.xml
+    ${secs}=    Get Element    ${xml}    body/sec
+    Elements Should Match    ${secs}    <sec> <title>Heading</title> <disp-quote> <p> <list list-type="order"> <list-item> <p>List</p> </list-item> <list-item> <p>List 2</p> </list-item> <list-item> <p>List 3</p> </list-item> </list> </p> </disp-quote> <p>A paragraph.</p> <p>Another paragraph.</p> <p>A final paragraph.</p> <disp-quote> <p> <list list-type="order"> <list-item> <p>List</p> </list-item> <list-item> <p>List 2</p> </list-item> <list-item> <p>List 3</p> </list-item> </list> </p> </disp-quote> <p>A paragraph.</p> <p>Another paragraph.</p> <p>A final paragraph.</p> </sec>    normalize_whitespace=yes
+    [Teardown]    Remove Directory    027    recursive=True
+
+028 Numeric List Parsing
+    [Tags]    formatting    listclassifier    028    numerals
+    ${result} =    Run Process    python ../bin/meTypeset.py docx ListDispQuotesNumeric.docx ./028 -s testsettings.xml -d --nogit    shell=True
+    Log    ${result.stdout}
+    Log    ${result.stderr}
+    ${xml}=    Parse XML    ./028/nlm/out.xml
+    ${secs}=    Get Element    ${xml}    body/sec
+    Elements Should Match    ${secs}    <sec> <title>Heading</title> <disp-quote> <p> <list list-type="order"> <list-item> <p>List</p> </list-item> <list-item> <p>List 2</p> </list-item> <list-item> <p>List 3</p> </list-item> </list> </p> </disp-quote> <p>A pararaph.</p> <p>Another pararaph.</p> <p>A final paragraph.</p> </sec>    normalize_whitespace=yes
+    [Teardown]    Remove Directory    028    recursive=True
+
+029 Numeric Multiple List Parsing
+    [Tags]    formatting    listclassifier    029    numerals
+    ${result} =    Run Process    python ../bin/meTypeset.py docx ListDispQuotesMultipleNumeric.docx ./029 -s testsettings.xml -d --nogit    shell=True
+    Log    ${result.stdout}
+    Log    ${result.stderr}
+    ${xml}=    Parse XML    ./029/nlm/out.xml
+    ${secs}=    Get Element    ${xml}    body/sec
+    Elements Should Match    ${secs}    <sec> <title>Heading</title> <disp-quote> <p> <list list-type="order"> <list-item> <p>List</p> </list-item> <list-item> <p>List 2</p> </list-item> <list-item> <p>List 3</p> </list-item> </list> </p> </disp-quote> <p>A paragraph.</p> <p>Another paragraph.</p> <p>A final paragraph.</p> <disp-quote> <p> <list list-type="order"> <list-item> <p>List</p> </list-item> <list-item> <p>List 2</p> </list-item> <list-item> <p>List 3</p> </list-item> </list> </p> </disp-quote> <p>A paragraph.</p> <p>Another paragraph.</p> <p>A final paragraph.</p> </sec>    normalize_whitespace=yes
+    [Teardown]    Remove Directory    029    recursive=True
+
+030 Numeric Multiple List Parsing with brackets
+    [Tags]    formatting    listclassifier    030    numerals
+    ${result} =    Run Process    python ../bin/meTypeset.py docx ListDispQuotesMultipleNumericWithBracketList.docx ./030 -s testsettings.xml -d --nogit    shell=True
+    Log    ${result.stdout}
+    Log    ${result.stderr}
+    ${xml}=    Parse XML    ./030/nlm/out.xml
+    ${secs}=    Get Element    ${xml}    body/sec
+    Elements Should Match    ${secs}    <sec> <title>Heading</title> <disp-quote> <p> <list list-type="order"> <list-item> <p>List</p> </list-item> <list-item> <p>List 2</p> </list-item> <list-item> <p>List 3</p> </list-item> </list> </p> </disp-quote> <p>A paragraph.</p> <p>Another paragraph.</p> <p>A final paragraph.</p> <list list-type="order"> <list-item> <p>List</p> </list-item> <list-item> <p>List 2</p> </list-item> <list-item> <p>List 3</p> </list-item> </list> <p>A paragraph.</p> <p>Another paragraph.</p> <p>A final paragraph.</p> </sec>    normalize_whitespace=yes
+    [Teardown]    Remove Directory    030    recursive=True
+
+031 Table parsing and section merging
+    [Tags]    formatting    captionclassifier    031    tables
+    ${result} =    Run Process    python ../bin/meTypeset.py docx TableCaptionInTitleForMerge.docx ./031 -s testsettings.xml -d --nogit    shell=True
+    Log    ${result.stdout}
+    Log    ${result.stderr}
+    ${xml}=    Parse XML    ./031/nlm/out.xml
+    ${title}=    Get Element    ${xml}    body/sec/title
+    ${p}=    Get Element    ${xml}    body/sec/p
+    ${label}=    Get Element    ${xml}    body/sec/table-wrap/label
+    ${caption}=    Get Element    ${xml}    body/sec/table-wrap/caption/p
+    Elements Should Match    ${title}    <title>First section</title>    normalize_whitespace=yes
+    Elements Should Match    ${p}    <p>Some text</p>    normalize_whitespace=yes
+    Elements Should Match    ${label}    <label>Table 1</label>    normalize_whitespace=yes
+    Elements Should Match    ${caption}    <p>A table</p>    normalize_whitespace=yes
+    [Teardown]    Remove Directory    031    recursive=True
+
+032 Roman numeral false positive evasion
+    [Tags]    formatting    listclassifier    032    numerals
+    ${result} =    Run Process    python ../bin/meTypeset.py docx FalsePositiveRomanNumeral.docx ./032 -s testsettings.xml -d --nogit    shell=True
+    Log    ${result.stdout}
+    Log    ${result.stderr}
+    ${xml}=    Parse XML    ./032/nlm/out.xml
+    ${secs}=    Get Element    ${xml}    body/sec
+    Elements Should Match    ${secs}    <sec> <title>This is a heading</title> <p>I am a writer. I have written some stuff.</p> <p>It takes the form of two paragraphs.</p> </sec>    normalize_whitespace=yes
+    [Teardown]    Remove Directory    032    recursive=True
+
+033 Nested xref compliance on
+    [Tags]    formatting    compliance    033
+    ${result} =    Run Process    python ../bin/meTypeset.py tei xrefnestedcompliance.xml ./033 -s testsettings.xml -c -d --nogit    shell=True
+    Log    ${result.stdout}
+    Log    ${result.stderr}
+    ${xml}=    Parse XML    ./033/nlm/out.xml
+    ${secs}=    Get Element    ${xml}    body/sec/p
+    Elements Should Match    ${secs}    <p><bold>Povidone iodine.</bold> This is some text that links to (<ext-link xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple">"Table 1."</ext-link>). </p>    normalize_whitespace=yes
+    [Teardown]    Remove Directory    033    recursive=True
+
+034 Deleted text handling
+    [Tags]    italic    034    deleted
+    ${result} =    Run Process    python ../bin/meTypeset.py doc 034.doc ./034 -d --nogit    shell=True
+    Log    ${result.stdout}
+    Log    ${result.stderr}
+    ${xml}=    Parse XML    ./034/nlm/out.xml
+    ${paragraph}=    Get Element    ${xml}    body/sec/p
+    Elements Should Match    ${paragraph}    <p>Test document</p>
+    [Teardown]    Remove Directory    034    recursive=True
+
+035 Deleted text preservation
+    [Tags]    italic    035    deleted
+    ${result} =    Run Process    python ../bin/meTypeset.py doc 034.doc ./034 -d --nogit --includedeleted    shell=True
+    Log    ${result.stdout}
+    Log    ${result.stderr}
+    ${xml}=    Parse XML    ./034/nlm/out.xml
+    ${paragraph}=    Get Element    ${xml}    body/sec/p
+    Elements Should Match    ${paragraph}    <p>Test document with deleted text</p>
+    [Teardown]    Remove Directory    034    recursive=True

@@ -76,19 +76,19 @@
                         <div class="form-group">
                             <label class="control-label text-right col-sm-1" for="meta_title">Title</label>
                             <div class="col-sm-11">
-                                <input type="text" id="meta_title" class="form-control" placeholder="Title" value="" data-bind="title" />
+                                <input type="text" name="meta_title" id="meta_title" class="form-control" placeholder="Title" value="" data-bind="title" />
                             </div>
                         </div>
                         <div class="form-group" id="author_list_1">
                             <label class="control-label text-right col-sm-1" for="meta_firstname">Author <span id="author_label_1"></span></label>
                             <div class="col-sm-3">
-                                <input type="text" id="meta_firstname" class="form-control" placeholder="First name" value="" data-bind="firstname" />
+                                <input type="text" name="meta_firstname" id="meta_firstname" class="form-control" placeholder="First name" value="" data-bind="value: firstname" />
                             </div>
                             <div class="col-sm-3">
-                                <input type="text" id="meta_lastname" class="form-control" placeholder="Last name" value="" data-bind="lastname" />
+                                <input type="text" name="meta_lastname" id="meta_lastname" class="form-control" placeholder="Last name" value="" data-bind="value: lastname" />
                             </div>
                             <div class="col-sm-4">
-                                <input type="text" id="meta_affiliation" class="form-control" placeholder="Affiliation" value="" data-bind="affiliation" />
+                                <input type="text" name="meta_affiliation" id="meta_affiliation" class="form-control" placeholder="Affiliation" value="" data-bind="value: affiliation" />
                             </div>
                             <div class="col-sm-1">
                                 <a class="btn"><i class="icon-plus"></i></a>
@@ -97,14 +97,17 @@
                         <div class="form-group">
                             <label class="control-label text-right col-sm-1" for="meta_keywords">Keywords</label>
                             <div class="col-sm-11">
-                                <input type="text" id="meta_keywords" class="form-control" placeholder="xxx, yyy, zzz" value="" data-bind="keywords"/>
+                                <input type="text" name="meta_keywords" id="meta_keywords" class="form-control" placeholder="xxx, yyy, zzz" value="" data-bind="value: keywords"/>
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="control-label text-right col-sm-1" for="meta_abstract">Abstract</label>
                             <div class="col-sm-11">
-                                <textarea rows="7" id="meta_abstract" class="form-control" spellcheck="true" wrap="off" data-bind="abstract"></textarea>
+                                <textarea rows="7" name="meta_keywords" id="meta_abstract" class="form-control" spellcheck="true" wrap="off" data-bind="value: abstract"></textarea>
                             </div>
+                        </div>
+                        <div class="row next-btn">
+                            <button type="submit" class="btn btn-primary next-btn" data-bind="click. $parent.save" onclick="location.href='step3.html'">Next<i class="glyphicon glyphicon-chevron-right"></i></button>
                         </div>
                     </form>
                 </div>
@@ -115,9 +118,7 @@
                 <ul id="debug"></ul>
             </div>
 
-            <div class="row next-btn">
-                <button class="btn btn-primary next-btn" onclick="location.href='step3.html'">Next<i class="glyphicon glyphicon-chevron-right"></i></button>
-            </div>
+
 
         </div>
         <!-- /container -->
@@ -131,27 +132,6 @@
 
 <script type="text/javascript">
     $(document).ready(function(){
-
-        /*
-        function getFileList(dirPath){
-            var fso, f, f1, f2;
-            var list = new Array();
-            fso = new ActiveXObject("Scripting.FileSystemObject");
-            if (dirPath.length == 0) dirPath = ".";
-            f = fso.GetFolder(dirPath);
-            f1 = new Enumerator(f.files);
-            for (; !f1.atEnd(); f1.moveNext()){
-                list.push(f1.item());
-            }
-            f2 = new Enumerator(f.SubFolders);
-            for (; !f2.atEnd(); f2.moveNext()){
-                list = list.concat(getFileList(f2.item()));
-            }
-            fso= null;
-            return list;
-        }
-        var jsonData = JSON.stringify(getFileList("/var/www/html/HEIDIEditor/html/files/"));
-        */
 
         $("#treepane").jstree({
             'core' : {
@@ -266,34 +246,43 @@
         });
 
 
-
-        function Metadata(data) {
-            this.title = ko.observable(data["title-group"]["article-title"]);
-            this.lastname = ko.observable(data["contrib-group"]["contrib"]["name"].surname);
-            this.firstname = ko.observable(data["contrib-group"]["contrib"]["name"]["given-names"]);
-            this.affiliation = ko.observable(data["contrib-group"]["aff"].institution);
-            this.keywords = ko.observable(data["article-categories"]["subj-group"].subject);
-            this.abstract = ko.observable("<p>" + data.abstract["p"] + "</p>");
-        }
-
-        function MetadataViewMOdel() {
-            // Data
-            var self = this;
-            self.metadata.ko.observableArray([]);
-
-            // Operations
-
-            // Load json
-            $.getJSON("../cgi/json/metadataTest.json", function (data) {
-                var jsonobj = (new Function("return" + data))();
-                self.metadata(jsonobj[0].metadata["article-meta"]);
-            });
-        }
-
         ko.applyBindings(new MetadataViewModel());
 
 
     });
+
+    function Metadata(data) {
+        this.title = ko.observable(data["title-group"]["article-title"]);
+        this.lastname = ko.observable(data["contrib-group"]["contrib"]["name"].surname);
+        this.firstname = ko.observable(data["contrib-group"]["contrib"]["name"]["given-names"]);
+        this.affiliation = ko.observable(data["contrib-group"]["aff"].institution);
+        this.keywords = ko.observable(data["article-categories"]["subj-group"].subject);
+        this.abstract = ko.observable("<p>" + data.abstract["p"] + "</p>");
+    }
+
+    function MetadataViewModel() {
+        // Data
+        var self = this;
+        self.metadata.ko.observable();
+
+        // Operations
+        self.save = function() {
+            $.ajax("../cgi/json/metaDataTest.json", {
+                data: ko.toJSON(self.metadata),
+                type: "post",
+                contentType: "application/json",
+                success: function(result) {alert(result)}
+            });
+        };
+
+        // Load json
+        $.getJSON("../cgi/json/metadataTest.json", function (data) {
+            var jsonobj = (new Function("return" + data))(); //JSON.parse(data);
+            var allData = $.map(jsonobj, function(item){ return new Metadata(item)});
+            self.articleMeta(allData);
+        });
+
+    }
 
 </script>
 
