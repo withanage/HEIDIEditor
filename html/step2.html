@@ -14,13 +14,13 @@
 
 
     <!-- jQuery and plugins -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="js/jquery-1.11.1.min.js"></script>
+    <script src="js/angular.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/jstree.min.js"></script>
     <script src="js/advanced.js"></script>
     <script src="js/wysihtml5-0.3.0.min.js"></script>
     <script src="js/bootstrap-wysihtml5-0.0.2.min.js"></script>
-    <script src="js/knockout-3.2.0.js"></script>
     <script src="js/json2.js"></script>
 
 
@@ -43,13 +43,13 @@
     </script>
 
 </head>
-<body>
+<body ng-app>
 
 
+    <div ng-include="'header.html'"></div>
     <div id="content">
         <div class="container">
 
-            <div id="header"></div>
 
 
             <h2 class="title">Step2: Add Metadata</h2>
@@ -115,7 +115,7 @@
 
 
             <div class="row">
-                <ul id="debug"></ul>
+                <ul id="debug_log"></ul>
             </div>
 
 
@@ -128,52 +128,70 @@
 
     <!-- /content -->
 
-    <div id="footer" class="container">footer</div>
+    <div id="footer" class="container"></div>
 
 <script type="text/javascript">
     $(document).ready(function(){
 
+        var testdata = [ {'Book': [
+            'Acknowledgements',
+            'Preface',
+            {
+                'text': 'Chapter 1',
+                'state': {'selected': true}
+            },
+            'Chapter 2',
+            'Chapter 3',
+            'Appendix',
+            'Bibliography']}
+        ];
+
         $("#treepane").jstree({
             'core' : {
-                'data' : [
-                    'Acknowledgements',
-                    'Preface',
-                    {
-                        'text': 'Chapter 1',
-                        'state': {'selected': true}
+                'data' : {'url' : '../cgi/listDocs.py' }
+                /*
+                'data' : [{
+                    text: 'Book',
+                    state: {
+                        opened: true,
+                        selected: true
                     },
-                    'Chapter 2',
-                    'Chapter 3',
-                    'Appendix',
-                    'Bibliography'
-                ]
+                    children: ['Acknowledgements',
+                        'Preface',
+                        'Chapter 2',
+                        'Chapter 3',
+                        'Appendix',
+                        'Bibliography']
+                }]
+                */
             },
             "plugins" : [ "themes", "types", "search" ],
             "types" : {
-                "max_depth" : -2,
-                "max_children" : -2,
-                "valid_children" : [ "folder" ],
-                "types" : {
-                    "default" : {
-                        "valid_children" : "all",
-                        "check_node" : false,
-                        "uncheck_node" : false
+                "max_depth": -2,
+                "max_children": -2,
+                "valid_children": [ "folder" ],
+                "types": {
+                    "default": {
+                        "valid_children": "all",
+                        "check_node": false,
+                        "uncheck_node": false
                     },
-                    "file" : {
-                        "valid_children" : "none"
+                    "file": {
+                        "valid_children": "none",
+                        "icon": "jstree-file"
                     },
                     "product-category": {
-                        "valid_children" : "file",
-                        "check_node" : true,
-                        "uncheck_node" : true
+                        "valid_children": "file",
+                        "check_node": true,
+                        "uncheck_node": true
                     },
                     "product-category-master": {
-                        "valid_children" : "file"
+                        "valid_children": "file"
                     }
                 }
             },
             "themes" : {
-                "theme" : "proton"
+                "theme": "proton"
             }
         });
         var to = false;
@@ -210,10 +228,14 @@
         });
 
 
+        $.getJSON("../cgi/listDocs.py", function (data) {
+            $('#debug_log').html("JSON Data: " + JSON.parse(data));
+        });
+
 
 
         // Load Json
-        $.getJSON("../cgi/json/metadataTest.json", function (data) {
+        $.getJSON("../cgi/metadataSample.json", function (data) {
             var jsonobj = (new Function("return" + data))(); //JSON.parse(data[]);
             var article_meta = jsonobj[0].metadata["article-meta"];
             var journal_meta = jsonobj[0].metadata["journal-meta"];
@@ -246,43 +268,9 @@
         });
 
 
-        ko.applyBindings(new MetadataViewModel());
-
-
     });
 
-    function Metadata(data) {
-        this.title = ko.observable(data["title-group"]["article-title"]);
-        this.lastname = ko.observable(data["contrib-group"]["contrib"]["name"].surname);
-        this.firstname = ko.observable(data["contrib-group"]["contrib"]["name"]["given-names"]);
-        this.affiliation = ko.observable(data["contrib-group"]["aff"].institution);
-        this.keywords = ko.observable(data["article-categories"]["subj-group"].subject);
-        this.abstract = ko.observable("<p>" + data.abstract["p"] + "</p>");
-    }
 
-    function MetadataViewModel() {
-        // Data
-        var self = this;
-        self.metadata.ko.observable();
-
-        // Operations
-        self.save = function() {
-            $.ajax("../cgi/json/metaDataTest.json", {
-                data: ko.toJSON(self.metadata),
-                type: "post",
-                contentType: "application/json",
-                success: function(result) {alert(result)}
-            });
-        };
-
-        // Load json
-        $.getJSON("../cgi/json/metadataTest.json", function (data) {
-            var jsonobj = (new Function("return" + data))(); //JSON.parse(data);
-            var allData = $.map(jsonobj, function(item){ return new Metadata(item)});
-            self.articleMeta(allData);
-        });
-
-    }
 
 </script>
 
