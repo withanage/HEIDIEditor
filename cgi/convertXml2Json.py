@@ -3,18 +3,13 @@
 import sys
 import json
 import optparse
-from xml2json import xml2json
+import xmltodict
 
 
 def run(infile, outfile):
     xmldata = open(infile).read()
-    options = optparse.Values({'pretty': False})
-    jsondata = xml2json(xmldata, options, 1)
-    jsondata = "[" + jsondata + "]"
-    # print jsondata
-
-
-    with open(outfile, 'wb') as f:
+    jsondata = xmltodict.parse(xmldata)
+    with open(outfile, 'w+') as f:
         json.dump(jsondata, f, sort_keys=False, indent=4)
 
 

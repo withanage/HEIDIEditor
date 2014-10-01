@@ -23,6 +23,8 @@
     <script src="js/bootstrap-wysihtml5-0.0.2.min.js"></script>
     <script src="js/json2.js"></script>
 
+    <script src="js/controllers.js"></script>
+
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -31,19 +33,9 @@
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 
-    <script>
-        $(function(){
-            $("#header").load("header.html", null, function(){
-                $("a.disabled").click(function(){return false;});
-                $("li#nav-step2").addClass("active").nextAll().each(function(){
-                    $(this).find("a").addClass("disabled").attr({href:"javascript:void(0)", onClick:"return false"});
-                });
-            });
-        });
-    </script>
 
 </head>
-<body ng-app>
+<body ng-app="metadata">
 
 
     <div ng-include="'header.html'"></div>
@@ -59,7 +51,7 @@
             <div class="row">
                 <div class="col-sm-3">
                     <div class="row">
-                        <input id="treepane_q" class="form-control" type="text" placeholder="search" />
+                        <input id="treepane_q" class="form-control" type="text" placeholder="chapter search" />
                     </div>
                     <div class="row">
                         &nbsp;
@@ -114,8 +106,19 @@
             </div>
 
 
-            <div class="row">
-                <ul id="debug_log"></ul>
+            <div class="row" ng-controller="metadataCtrl">
+                <span>Debugging</span>
+                <div ng-repeat="book in books">
+                    <label>book title(file name):</label><input ng-model="book.text"/><span><span>{{book.text}}</span>
+                </div>
+                <div>
+                    <label>journal title(metadata value):</label>
+                    <input ng-model="journalid"/><span>{{journalid}}</span>
+                </div>
+                <div>
+                    <label>article title(metadata value):</label>
+                    <input ng-model="articletitle"/><span>{{articletitle}}</span>
+                </div>
             </div>
 
 
@@ -133,37 +136,9 @@
 <script type="text/javascript">
     $(document).ready(function(){
 
-        var testdata = [ {'Book': [
-            'Acknowledgements',
-            'Preface',
-            {
-                'text': 'Chapter 1',
-                'state': {'selected': true}
-            },
-            'Chapter 2',
-            'Chapter 3',
-            'Appendix',
-            'Bibliography']}
-        ];
-
         $("#treepane").jstree({
             'core' : {
                 'data' : {'url' : '../cgi/listDocs.py' }
-                /*
-                'data' : [{
-                    text: 'Book',
-                    state: {
-                        opened: true,
-                        selected: true
-                    },
-                    children: ['Acknowledgements',
-                        'Preface',
-                        'Chapter 2',
-                        'Chapter 3',
-                        'Appendix',
-                        'Bibliography']
-                }]
-                */
             },
             "plugins" : [ "themes", "types", "search" ],
             "types" : {
@@ -228,12 +203,7 @@
         });
 
 
-        $.getJSON("../cgi/listDocs.py", function (data) {
-            $('#debug_log').html("JSON Data: " + JSON.parse(data));
-        });
-
-
-
+        /*
         // Load Json
         $.getJSON("../cgi/metadataSample.json", function (data) {
             var jsonobj = (new Function("return" + data))(); //JSON.parse(data[]);
@@ -266,7 +236,7 @@
             $("#meta_keywords").val(article_meta["article-categories"]["subj-group"].subject);
             $("#meta_abstract").append("<p>" + article_meta.abstract["p"] + "</p>");
         });
-
+        */
 
     });
 

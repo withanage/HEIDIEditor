@@ -88,7 +88,7 @@ class MeTypeset (Debuggable):
         self.settings = Settings(Settings.get_settings_file(self, self.settings_file_path), self.args)
         self.gv = GV(self.settings, self.debug)
 
-        self.debug.enable_prompt(Interactive(self.gv))
+        # self.debug.enable_prompt(Interactive(self.gv))
 
     @staticmethod
     def read_command_line():

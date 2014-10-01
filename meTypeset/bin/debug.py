@@ -29,13 +29,16 @@ class Debug(object):
     def enable_prompt(self, prompt):
         self.prompt = prompt
 
+    def disable_prompt(self):
+        self.prompt = None
+
     def print_(self, module, message):
         if self.prompt is None:
-            print(u'[{0}] {1}'.format(module.get_module_name(), unicode(message)))
+            self.log = self.log + os.linesep + u'[{0}] {1}'.format(module.get_module_name(), unicode(message))
+            # print(u'[{0}] {1}'.format(module.get_module_name(), unicode(message)))
         else:
             self.prompt.print_(u'[{0}] {1}'.format(self.prompt.colorize('red', module.get_module_name()),
                                                    unicode(message)))
-        self.log = self.log + os.linesep + u'[{0}] {1}'.format(module.get_module_name(), unicode(message))
 
     def get_module_name(self):
         return 'Debugger'
