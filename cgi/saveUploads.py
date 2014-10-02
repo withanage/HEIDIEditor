@@ -10,12 +10,12 @@ import stat
 import time
 from datetime import datetime
 import sys
-from xml2json import xml2json
+import xmltodict
 import optparse
 import json
 import shutil
 
-sys.path.append('../meTypeset/bin')
+sys.path.append('../../meTypeset/bin')
 import meTypeset
 
 
@@ -49,7 +49,7 @@ def typeset(item):
     if os.path.exists(out_dir):
         logging.debug("\t"+str(datetime.now().time())+":\t\t "+out_dir+" already exists. remove it.")
         shutil.rmtree(out_dir)
-    opt = filename[1].strip('.') + " " + bookname_dir + "/" + bookname[1]  + " " + out_dir + " -m " + METADATA_PATH
+    opt = filename[1].strip('.') + " " + bookname_dir + "/" + bookname[1]  + " " + out_dir + " -d -m " + METADATA_PATH
     logging.info("\t"+str(datetime.now().time())+":\t\t [-------meTypeset-------]")
     logging.info("\t"+str(datetime.now().time())+":\t\t meTypeset.py "+opt)
     log = meTypeset.test(opt)
@@ -58,8 +58,7 @@ def typeset(item):
     logging.info("\t"+str(datetime.now().time())+":\t\t Generating JSON ...")
     nlmfile = out_dir+"/"+"nlm"+"/"+"out.xml"
     xmldata = open(nlmfile).read()
-    options = optparse.Values({'pretty': True})
-    jsondata = xml2json(xmldata, options, 1)
+    jsondata = xmltodict.parse(xmldata)
     # logging.info("\t"+str(datetime.now().time())+":\t\t JSON data: \n"+jsondata)
 
     if not os.path.isdir(bookname_dir+"/"+"json"):
@@ -71,7 +70,7 @@ def typeset(item):
         os.remove(jsonfile)
     logging.info("\t"+str(datetime.now().time())+":\t\t Writing JSON to "+jsonfile+" ...")
     with open(jsonfile, 'w+') as f:
-        json.dump("["+jsondata+"]", f, sort_keys=False, indent=4)
+        json.dump(jsondata, f, sort_keys=False, indent=4)
 
     if not os.path.isdir(bookname_dir+"/"+"xml"):
         logging.info("\t"+str(datetime.now().time())+":\t\t Making directory "+bookname_dir+"/"+"xml"+" ...")
@@ -85,7 +84,7 @@ def typeset(item):
 
 
 def main():
-    logging.info("\n\t================main() in typeset2.py "+str(datetime.now())+"=================\n")
+    logging.info("\n\t================main() in saveUploads.py "+str(datetime.now())+"=================\n")
 
     for item in os.listdir(TMP_DIR):
         logging.info("\t"+str(datetime.now().time())+":\t Processing "+item+" ...")

@@ -14,8 +14,7 @@ import json
 import shutil
 
 cgitb.enable()
-#logging.basicConfig(level=logging.DEBUG, filename='typeset.log')
-logging.basicConfig(level=logging.DEBUG)
+logging.basicConfig(level=logging.DEBUG, filename='typeset.log')
 
 
 #### Constant variables ####
@@ -80,7 +79,7 @@ def typeset(item):
 
 if __name__ == "__main__":
     logging.info("================run typeset.py "+str(datetime.now())+"=================")
-    sys.path.append('..'+"/"+'meTypeset'+"/"+'bin')
+    sys.path.append('../../meTypeset/bin')
     import meTypeset
 
 
