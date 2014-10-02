@@ -1,0 +1,658 @@
+<!DOCTYPE article PUBLIC "-//NLM//DTD Journal Publishing DTD v3.0 20080202//EN" "http://dtd.nlm.nih.gov/publishing/3.0/journalpublishing3.dtd">
+<article>
+  <front>
+    <journal-meta>
+      <journal-id journal-id-type="publisher-id">The Journal Title</journal-id>
+      <issn pub-type="epub">0000-000X</issn>
+      <publisher>
+        <publisher-name>The Publisher Name</publisher-name>
+      </publisher>
+    </journal-meta>
+    <article-meta>
+      <article-id pub-id-type="doi">10.1000/123456</article-id>
+      <article-categories>
+        <subj-group>
+          <subject>Sample Articles</subject>
+        </subj-group>
+      </article-categories>
+      <title-group>
+        <article-title>A Sample Article Title</article-title>
+      </title-group>
+      <contrib-group>
+        <contrib contrib-type="author">
+          <name>
+            <surname>Eve</surname>
+            <given-names>Martin Paul</given-names>
+          </name>
+          <xref ref-type="aff" rid="lincoln"/>
+        </contrib>
+        <aff id="lincoln">
+          <institution>University of Lincoln</institution>
+        </aff>
+      </contrib-group>
+      <pub-date pub-type="epub">
+        <year>2013</year>
+      </pub-date>
+      <volume>1</volume>
+      <issue>1</issue>
+      <fpage>1</fpage>
+      <lpage>2</lpage>
+      <permissions>
+        <copyright-statement>Copyright &#169; 2014, Martin Paul Eve</copyright-statement>
+        <license xmlns:xlink="http://www.w3.org/1999/xlink" license-type="open-access" xlink:href="http://creativecommons.org/licenses/by/2.0/">
+          <license-p>This is an open-access article distributed under the terms of the Creative Commons Attribution License, which permits unrestricted use, distribution, and reproduction in any medium, provided the original work is properly cited. The citation of this article must include: the name(s) of the authors, the name of the journal, the full URL of the article (in a hyperlinked format if distributed online) and the DOI number of the article.</license-p>
+        </license>
+      </permissions>
+      <self-uri>https://www.martineve.com/</self-uri>
+      <abstract>
+        <p>This is a sample abstract that forms part of the metadataSample.xml file in meTypeset.</p>
+      </abstract>
+    </article-meta>
+  </front>
+  <body>
+    <sec>
+      <title>The Iconography of Zoroastrian Angelology in Sasanian Art and Architecture</title>
+      <p>
+        <italic>by Shervin Farridnejad</italic>
+      </p>
+    </sec>
+    <sec>
+      <title>Abstract</title>
+      <p>Historical depictions of angels are a suitable means of tracing transculturality in the ancient world. For more than four centuries, and as far as the end of late antiquity, two great world powers, the Sasanian Empire, the last pre-Islamic Persian empire, and its neighbor, the Roman Empire, ruled the Near East and the Mediterranean&#8212;sometimes as well-disposed partners and, sometimes as rivals. Choosing Zoroastrianism as the empire-wide religion, Sasanians developed and complemented their in-house religious iconographic canon. The Sasanian canon contains some iconographical elements borrowed from previous or neighboring cultures, which the Sasanian artists translated, alongside their own creations and &#8220;iranianized&#8221; in a proper Zoroastrian mode. The cultural legacy of the Sasanians in turn became a great source of inspiration for medieval art and architecture both in Europe and Asia. In this article, significant examples from the religious canon of Sasanian iconography are studied in reference to the cross-cultural entanglements of angels.</p>
+    </sec>
+    <sec>
+      <title>Zoroastrian angels: term and function</title>
+      <p>Zoroastrianism, named after its prophet Zarathustra, is one of the world&#8217;s oldest religions. It is the religion of the Iranian peoples and dates back to the second millennium BCE, in Central Asia.<xref ref-type="fn" rid="bibd2e54"/> When worshippers moved to the Iranian mainland, it became the religion of three great empires, the Achaemenids (<xref rid="TO_LINK" ref-type="bibr" id="ID04c3a3fe-ac84-41ed-9b64-23da06a8c1b5">550&#8211;330 BCE</xref>), the Parthians (<xref rid="TO_LINK" ref-type="bibr" id="ID2ce017d4-845e-4691-b655-2e6f4fb4eb70">247 BCE&#8211;224 CE</xref>), and the Sasanians (<xref rid="ID744039b9-edcc-4315-b39a-ef3f3267565d" ref-type="bibr" id="IDba0ae4d4-072c-448b-88e7-ddc9838219d8">224&#8211;651</xref>). Zoroastrianism is still a living religion in Iran, western India and Pakistan, as well as in the western diaspora.</p>
+      <p>Zoroastrianism has a wide range of different spiritual beings besides its supreme god, Ahura Mazd&#257;, who represents an angel-like concept. For the purposes of this article, angels will be defined from a theological view as &#8220;spiritual beings who mediate between the transcendental realm of the sacred and profane world of man&#8221; (<xref rid="ID2f0ef4cf-061c-4aaa-9d20-7e7b5c47995d" ref-type="bibr" id="ID3dbac604-f5e3-4117-93af-ff2ab31691d4">Schippmann 1990, 282</xref>). Although the use of the term &#8220;angel&#8221; in Semitic religions (<xref rid="TO_LINK" ref-type="bibr" id="IDb354f5d5-a1c7-4bca-b9aa-c04aa81f821f">Judaism, Christianity, and Islam</xref>) may differ from Zoroastrianism in some aspects, some of the main concepts are the same. Today, many scholars believe that the concept of the angel in Judaism after the Babylonian exile (<xref rid="TO_LINK" ref-type="bibr" id="ID2e131004-dc51-48ec-b8b6-5e2c23626583">as well as later, in Christianity and Islam</xref>) was taken from Zoroastrianism (<xref rid="TO_LINK" ref-type="bibr" id="IDae9c0e0f-1a94-4637-bb15-390b8a252735">Abka'i-Khavari 2000, 404&#8211;405, 411, 419&#8211;421</xref>). This likelihood allows us to compare concepts among these cultures and observe their similarities as a successful example of transcultural phenomena.<xref ref-type="fn" rid="bibd2e61"/> The function of angels&#8212;at least in religions based on revelation, Zoroastrianism among them&#8212;which emphasizes the gap between God and man, is to mediate between heaven and the earth (<xref rid="ID2f0ef4cf-061c-4aaa-9d20-7e7b5c47995d" ref-type="bibr" id="IDc824359b-876e-4e75-b633-538eac94cabe">Schippmann 1990, 282</xref>&#8211;3). This main function, inter alia, is my initial point regarding the identification of &#8220;Zoroastrian angelology&#8221; and its related iconography of religious &#8220;Sasanian art,&#8221; which shall be investigated first.</p>
+    </sec>
+    <sec>
+      <title>Sasanians and the term &#8220;Sasanian art&#8221;</title>
+      <p>The term &#8220;Sasanian art&#8221;<xref ref-type="fn" rid="bibd2e72"/> implies a variety of categories including cultural, geographical, historical, ethnic or religious aspects, as well as places and objects which are all categorized as and characterized by artistic and creative works. Sasanian art refers more specifically to the art produced by an ethnic aggregation within Iranian nations, namely the S&#257;s&#257;n family in Persis (NP. <italic>f&#257;rs</italic>), as well as ultimately the art of a great dynasty and power of late antiquity that, for more than 400 years, stretched from the eastern boundaries of the Roman Empire to the Indian subcontinent.<xref ref-type="fn" rid="bibd2e80"/> The Sasanian Empire (MP <italic>Er&#257;nshahr</italic>) was founded by Arda&#353;&#299;r I (<xref rid="TO_LINK" ref-type="bibr" id="ID1e39b132-0728-4b88-bb31-04e3811c4984">224&#8211;239/40 CE</xref>) after he defeated the last Arsacid king of kings, Artabanus IV (<xref rid="ID744039b9-edcc-4315-b39a-ef3f3267565d" ref-type="bibr" id="IDe071bc5d-8a67-4c3c-ada2-b29d24b8d0ac">213&#8211;244</xref>), and declined with the last Sasanian king of kings, Yazdgird III (<xref rid="ID744039b9-edcc-4315-b39a-ef3f3267565d" ref-type="bibr" id="IDe8910322-3118-488c-8f9f-94ff9ae205f0">632&#8211;651</xref>). In regard to its cross-cultural negotiations with the Roman civilization, the Sasanian empire marks one of the most important and influential historical periods of late antiquity.<xref ref-type="fn" rid="bibd2e88"/> Far beyond their political borders, from Western Europe to North Africa, China, and India, the Sasanian cultural heritage has always played an important role in the formation and development of both European and Asiatic medieval art and architecture, and was influential throughout the Islamic ages.</p>
+      <p>The proper definition of the term &#8220;Sasanian art&#8221; refers to the art of the court of the Sasanian Empire produced from 224 to 651 CE. This body of work commonly includes both courtly art as well as propaganda art of the Sasanian kings, covering a range of geographical and historical realms. But Sasanian art communicates more than this. It is, for example, simultaneously Zoroastrian art, and possesses many impressive and remarkable spiritual dimensions. I will address this Zoroastrian aspect of Sasanian art first.</p>
+    </sec>
+    <sec>
+      <title>The concept of spiritual beings or the so-called &#8220;angels&#8221; in Zoroastrianism</title>
+      <p>Zoroastrianism, as the most eminent Iranian religion and, specifically, as the official religion of the Sasanian Empire in the course of late antiquity in western Asia and the Mediterranean region, has left an important imprint on the genesis of the <italic>weltanschaung</italic> of Iranians and their neighbors over the past millennia. Sasanian art depicts and is marked by Zoroastrian beliefs and ideology and can be better understood within the frame of Zoroastrianism in both their official theological and folk religious forms. The angel-like figures&#8212;<italic>yazata</italic>s (<xref rid="TO_LINK" ref-type="bibr" id="IDd95de7c1-832e-4eac-9969-7a3891afa89a">&#8220;the adorable ones&#8221;</xref>)&#8212;or deities are one of the main elements within Zoroastrian cosmogony and theology. As a result, <italic>yazata</italic>s are the key to understanding the concept of angels both in the Iranian realm and the world that adopted significant cultural aspects from it. This may also lead to another understanding of the iconography of Sasanian art, which was and is one of the most controversial topics in the field of Iranian studies and art history.</p>
+      <p>Zoroastrianism recognizes various classes of spiritual beings besides the supreme being Ahura Mazd&#257;<xref ref-type="fn" rid="bibd2e112"/>: the divine heptad <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://opac.sub.uni-goettingen.de/DB=1/SET=3/TTL=10/MAT=/NOMAT=T/CLK?IKT=1016&amp;TRM=Am%D5%E9%F2sa" ext-link-type="uri" xlink:type="simple">am&#477;&#7779;&#780;a</ext-link>
+            <italic> sp&#477;&#7751;ta</italic>s<xref ref-type="fn" rid="bibd2e126"/> and the major and minor deities, the <italic>yazata</italic>s and <italic>frauua&#7779;&#780;i</italic>s.<xref ref-type="fn" rid="bibd2e147"/> In practice, every fifteen year-old Zoroastrian has to choose a patron angel for her or his protection (<xref rid="TO_LINK" ref-type="bibr" id="ID48325420-e7cb-4e0f-9c81-5677f5c44f78">Stolze 1882, 22</xref>) and through worship, meditation, and acts/efforts, endeavors to always carry the angel with him or her.</p>
+    </sec>
+    <sec>
+      <title>Zoroastrian angelology</title>
+      <sec>
+        <title>Archangels: Av. <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://opac.sub.uni-goettingen.de/DB=1/SET=3/TTL=10/MAT=/NOMAT=T/CLK?IKT=1016&amp;TRM=Am%D5%E9%F2sa" ext-link-type="uri" xlink:type="simple">a</ext-link>
+               <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://opac.sub.uni-goettingen.de/DB=1/SET=3/TTL=10/MAT=/NOMAT=T/CLK?IKT=1016&amp;TRM=Am%D5%E9%F2sa" ext-link-type="uri" xlink:type="simple">m&#477;&#7779;&#780;a</ext-link>
+               <italic> sp&#477;&#7751;ta</italic>s (Pahl. <italic>ame&#353;&#257;spand</italic>, [<italic>a</italic>]<italic>mahraspand</italic>)</title>
+        <p>The term <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://opac.sub.uni-goettingen.de/DB=1/SET=3/TTL=10/MAT=/NOMAT=T/CLK?IKT=1016&amp;TRM=Am%D5%E9%F2sa" ext-link-type="uri" xlink:type="simple">a</ext-link>
+               <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://opac.sub.uni-goettingen.de/DB=1/SET=3/TTL=10/MAT=/NOMAT=T/CLK?IKT=1016&amp;TRM=Am%D5%E9%F2sa" ext-link-type="uri" xlink:type="simple">m&#477;&#7779;&#780;a</ext-link>
+               <italic> sp&#477;&#7751;ta</italic> applies to Ahura Mazd&#257; himself, and to all the divine beings he has brought into existence (<xref rid="ID29f5d7d3-354f-473e-8a62-70af23424b06" ref-type="bibr" id="ID16f9c921-6d92-4b3e-b8e5-0da25e97c1f1">Boyce 19852, 933&#8211;6</xref>), including <italic>frauua&#7779;&#780;i</italic>s and <italic>yazata</italic>s and literally means &#8220;beneficent immortals&#8221; or &#8220;immortal holy ones.&#8221; These are the highest spiritual beings created by Ahura Mazd&#257;, and they work with him as &#8220;archangels&#8221; or &#8220;ministering angels&#8221; (<xref rid="ID61cb7740-cb37-4559-bd89-8c08807c4401" ref-type="bibr" id="IDed155906-0263-4829-9626-48066968a8ba">Dhalla 1972, 26</xref>), helping to overcome all evil. As the <italic>Ya&#353;ts</italic>, hymns to lesser divine beings, confine the list to a divine heptad, <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://opac.sub.uni-goettingen.de/DB=1/SET=3/TTL=10/MAT=/NOMAT=T/CLK?IKT=1016&amp;TRM=Am%D5%E9%F2sa" ext-link-type="uri" xlink:type="simple">a</ext-link>
+               <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://opac.sub.uni-goettingen.de/DB=1/SET=3/TTL=10/MAT=/NOMAT=T/CLK?IKT=1016&amp;TRM=Am%D5%E9%F2sa" ext-link-type="uri" xlink:type="simple">m&#477;&#7779;&#780;a</ext-link>
+               <italic> sp&#477;&#7751;ta</italic> is used more often in a restricted sense, to refer to the greatest of them,<xref ref-type="fn" rid="bibd2e213"/> as follows (<xref rid="IDa8cf24a2-a394-43c0-ae9d-9eb54ddd8811" ref-type="bibr" id="IDf7755d8b-a773-48f5-b30d-4e2598fedc3a">Groneberg 2007, 1</xref>): Each of the <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://opac.sub.uni-goettingen.de/DB=1/SET=3/TTL=10/MAT=/NOMAT=T/CLK?IKT=1016&amp;TRM=Am%D5%E9%F2sa" ext-link-type="uri" xlink:type="simple">a</ext-link>
+               <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://opac.sub.uni-goettingen.de/DB=1/SET=3/TTL=10/MAT=/NOMAT=T/CLK?IKT=1016&amp;TRM=Am%D5%E9%F2sa" ext-link-type="uri" xlink:type="simple">m&#477;&#7779;&#780;a</ext-link>
+               <italic> sp&#477;&#7751;ta </italic>is is also connected with one of Ahura Mazd&#257;&#8217;s good creations<xref ref-type="fn" rid="bibd2e231"/>: Av. <italic>vohu- manah</italic>-/MP <italic>vohuman</italic> (<xref rid="TO_LINK" ref-type="bibr" id="ID48c6ec45-1191-4259-b98d-5c28efd9df6a">&#8220;good mind&#8221; or &#8220;good purpose&#8221;</xref>) presides over cattle and their associated products (<xref rid="TO_LINK" ref-type="bibr" id="IDdf04ef88-a65e-4979-ae40-fbd7a53375e7">e.g. Y. 33.6, Y. 28.1, 31.10</xref>); Av. <italic>a&#353;a- vahi&#353;ta</italic>-/MP <italic>ardwahisht</italic> (<xref rid="TO_LINK" ref-type="bibr" id="ID5566c603-4c0d-4de9-90b8-e3ba8d34b214">&#8220;best righteousness&#8221;/&#8220;best order&#8221;</xref>) presides over truth (<italic><xref rid="TO_LINK" ref-type="bibr" id="ID579039be-a544-45c6-80b9-c43f9f0c7640">a&#7779;&#780;a</xref></italic>) and fire (<xref rid="TO_LINK" ref-type="bibr" id="ID7548d1db-1d7d-470f-b78a-ff2f8610ea94">e.g., Y. 34.4, 43.4, 9</xref>); Av. <italic>x&#353;a&#952;ra- vairiia</italic>-/MP <italic>&#353;ahrewar</italic> (<xref rid="TO_LINK" ref-type="bibr" id="IDc5279e08-d7e5-4c5b-8431-ce652af1307b">&#8220;desirable dominion&#8221;/&#8220;well-deserved command&#8221;</xref>) presides over metals<xref ref-type="fn" rid="bibd2e267"/>; Av. <italic>sp&#477;&#7751;ta- &#257;rmaiti</italic>-/MP <italic>spand&#257;rmad</italic> (<xref rid="TO_LINK" ref-type="bibr" id="ID04cdc3a5-f27a-4401-8318-23f6c2ac1ce7">&#8220;holy devotion&#8221;/&#8220;life-giving humility&#8221;</xref>) presides over the earth (<xref rid="TO_LINK" ref-type="bibr" id="IDa80fdb18-1ff3-4c21-8dbc-74a6050e150f">e.g., Y. 30.7, 47.3</xref>); Av. <italic>hauruuat&#257;t</italic>/MP <italic>hord&#257;d </italic>(<xref rid="TO_LINK" ref-type="bibr" id="ID051f161e-4ca3-45ec-8ef6-f82b3c1af1a3">&#8220;wholeness&#8221;</xref>) presides over water; Av. <italic>am&#477;r&#477;t&#257;t</italic>/MP <italic>amurd&#257;d</italic> (<xref rid="TO_LINK" ref-type="bibr" id="IDac890abb-9f5f-4d6d-aeda-20ae954de5e5">&#8220;immortality&#8221;</xref>) presides over the plants (<xref rid="TO_LINK" ref-type="bibr" id="ID5842d628-ee77-44a0-b86c-1ff2a5794ccd">e.g., Y. 33.8, 34.11, 51.7</xref>).</p>
+        <p>Together with Ahura Mazd&#257; at their head, who is linked to the &#8220;just man&#8221; (<xref ref-type="bibr" id="ID94bbe4dc-d150-4b37-aae8-c13fba0939d1" rid="TO_LINK">Y<italic>.</italic> 33.6</xref>), these six form the divine heptad and can be interpreted in abstract terms as well as personified as concrete beings.</p>
+      </sec>
+      <sec>
+        <title><bold>Guardian angels: Av. </bold>frauua&#7779;&#780;i-<bold> (Pahl. </bold>frawahr<bold>)</bold></title>
+        <p><italic>Frauua&#7779;&#780;i</italic>s can be understood as man&#8217;s immortal soul as well as each person&#8217;s guardian angel (<xref rid="IDa026c9a6-752e-4ada-86f8-6c1b132366a3" ref-type="bibr" id="IDb451b549-5782-48cd-8ee3-d41251053031">Eichler 1984, 33</xref>). In Zoroastrianism, each person is accompanied by a guardian angel (<xref rid="TO_LINK" ref-type="bibr" id="ID943b73bb-3815-4596-80dd-b39e615ec2cf">Y.26.4, 55.1</xref>) which acts as a guide throughout life. These angels originally patrolled the boundaries of the ramparts of heaven,<xref ref-type="fn" rid="bibd2e324"/> but volunteer to descend to earth to accompany individuals until the end of their days. Ahura Mazd&#257; advises Zarathu&#353;tra to invoke them for help whenever he finds himself in danger (<xref rid="TO_LINK" ref-type="bibr" id="IDd4c6600c-e469-4d70-9795-2d2ee53c12be">Yt.13.19-20</xref>). If it were not for their guardianship, animals and people could not have continued to exist, because the wicked &#8220;lie&#8221; (Av. <italic>dr&#363;j-</italic>) (<xref rid="ID67e69ea8-9322-4a2b-9845-2d8698975363" ref-type="bibr" id="ID9ee53b5f-38d3-4b70-9607-f833579fe2df">Kellens 1996, 562&#8211;3</xref>) would have destroyed them all (<xref rid="TO_LINK" ref-type="bibr" id="ID04920f85-ccf4-4cd5-95a3-336e8037b08a">Yt.13.12-13</xref>).</p>
+        <p>These<italic> frauua&#7779;&#780;i</italic>s are the celestial prototypes of all created beings, the guardian angels of believers. They possess a dual character or nature: angels on the one hand and, on the other, beings with human qualities, attributes, and thoughts (<xref rid="ID2202b1e3-ac41-4f2b-9553-845c42e6ceb2" ref-type="bibr" id="ID9f31dc34-4650-4a37-a90e-df6c267fca2e">Ferrier 1989, 112</xref>). The<italic> frauua&#7779;&#780;i</italic>s also serve as an ideal towards which the soul must strive and, ultimately, after death, become one with the souls they protect (<xref rid="TO_LINK" ref-type="bibr" id="ID2acf49c7-5d2d-4c29-af7c-06408b7d7bfa">e.g. Y.16.7, 26.7, 26.11, 71.23, Yt.22.39</xref>) (<xref rid="TO_LINK" ref-type="bibr" id="ID609e8695-8a18-4386-bd68-5d8589ea2b30">Dhalla 1977, 232-234 and 375-378</xref>).</p>
+      </sec>
+      <sec>
+        <title><bold>Angels: Av. </bold>yazata<bold> (Pahl. </bold>yazad<bold>)</bold></title>
+        <p>The rest of the <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://opac.sub.uni-goettingen.de/DB=1/SET=3/TTL=10/MAT=/NOMAT=T/CLK?IKT=1016&amp;TRM=Am%D5%E9%F2sa" ext-link-type="uri" xlink:type="simple">am&#477;&#7779;&#780;a</ext-link>
+               <italic> sp&#477;&#7751;ta</italic>s excluded from the divine heptad, are classified as <italic>yazata</italic>s, which literally means &#8220;adorable ones&#8221; or &#8220;ones worthy of worship.&#8221;<xref ref-type="fn" rid="bibd2e365"/> Using the term &#8220;angel&#8221; for Iranian <italic>yazata</italic>s is a controversial debate among Iranists. Mary Boyce and other scholars believe that the position and function of <italic>yazata</italic>s make them conceptually similar to the angels of Semitic monotheistic religions, but suggest the term <italic>yazata</italic> should remain untranslated (<xref rid="IDb454293d-ab07-4fc2-8217-813ae923644c" ref-type="bibr" id="ID44dbe35f-669a-4948-9c96-49edd4348b7d">Sarkhosh Curtis 1998, 196</xref>). On the other hand, some scholars such as Martin Haug (<xref rid="ID26f9e92b-188a-4d75-baf4-061fbd310bdb" ref-type="bibr" id="ID368693a0-0aba-433f-902c-dc062e9e51a3">1827-1876</xref>)&#8212;and specifically Parsi scholars&#8212;do use the angel terminology (<xref rid="TO_LINK" ref-type="bibr" id="IDf58f0628-e506-4187-b133-01966f6485a0">Dhalla 1972, 26ff., 87ff., 96ff.</xref>). Regarding the main definition of angels and being aware of differences between some aspects of angels in Semitic religion terminology versus Zoroastrianism, the term &#8220;angels&#8221; will be used here to express the general concept of heavenly beings under Ahura Mazd&#257;, i.e. the Zoroastrian <italic>yazata</italic>s. Generally, <italic>yazata</italic> is a collective term for all the Zoroastrian divine beings. These are deities worthy of being honored or praised and who, like the heptad <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://opac.sub.uni-goettingen.de/DB=1/SET=3/TTL=10/MAT=/NOMAT=T/CLK?IKT=1016&amp;TRM=Am%D5%E9%F2sa" ext-link-type="uri" xlink:type="simple">am&#477;&#7779;&#780;a</ext-link>
+               <italic> sp&#477;&#7751;tas</italic>, can personify abstract ideas and virtues, or concrete objects in nature. <italic>Yazata</italic>s can be defined as direct or indirect emanations of Ahura Mazd&#257; and can be considered as hypostatizing his qualities or attributes (<xref rid="ID29f5d7d3-354f-473e-8a62-70af23424b06" ref-type="bibr" id="IDc1ad5bd3-cba9-4c77-a487-3b8b2f943398">Boyce 2001, 22</xref>). <italic>Yazata</italic>s also try to help people and protect them from evil (<xref rid="TO_LINK" ref-type="bibr" id="ID5d94b7ab-9e6e-4de9-a801-3aaa658d7969">Menasc 1954, 50&#8211;9, 71ff.</xref>). Although the title <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://opac.sub.uni-goettingen.de/DB=1/SET=3/TTL=10/MAT=/NOMAT=T/CLK?IKT=1016&amp;TRM=Am%D5%E9%F2sa" ext-link-type="uri" xlink:type="simple">am&#477;&#7779;&#780;a</ext-link>
+               <italic> sp&#477;&#7751;ta</italic> may be applied to any of these divinities, <italic>yazata</italic> is usually reserved for the lesser ones (<xref rid="ID29f5d7d3-354f-473e-8a62-70af23424b06" ref-type="bibr" id="IDc85cc390-c767-4874-aef6-008fa20d6620">Boyce 2001, 22</xref>).</p>
+      </sec>
+      <sec>
+        <title>Angels in Sasanian art&#8212;notes on their iconography</title>
+        <p>The question of which of the Zoroastrian angels or deities are depicted in Sasanian art is controversial among scholars. In terms of depicting angelic groups of deities, not many anthropomorphic depictions of the archangels or <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://opac.sub.uni-goettingen.de/DB=1/SET=3/TTL=10/MAT=/NOMAT=T/CLK?IKT=1016&amp;TRM=Am%D5%E9%F2sa" ext-link-type="uri" xlink:type="simple">am&#477;&#7779;&#780;a</ext-link>
+               <italic> sp&#477;&#7751;ta</italic>s have been identified. A rare example of those depictions, as identified and discussed by Franz Grenet (<xref rid="ID7b4caff9-7bbb-408f-a89a-b4f2eb3c73cb" ref-type="bibr" id="IDc6247cfe-9d5a-4e90-a9b7-842981ba53bd">1986</xref>), can be found on Sogdian ossuaries of the eighth century. Apart from this example, the presence of <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://opac.sub.uni-goettingen.de/DB=1/SET=3/TTL=10/MAT=/NOMAT=T/CLK?IKT=1016&amp;TRM=Am%D5%E9%F2sa" ext-link-type="uri" xlink:type="simple">am&#477;&#7779;&#780;a</ext-link>
+               <italic> sp&#477;&#7751;ta</italic>s in Sasanian art is limited to other non-anthropomorphic images and attributes which must be discussed separately.</p>
+        <p>Most Indo-Iranian gods, deities, and angels, however, possess anthropomorphic features, and most of the known anthropomorphic, angelic representations of Zoroastrian deities belong to the common <italic>yazata</italic>s and <italic>frauua&#7779;&#780;i</italic>s. Furthermore, with respect to iconographic matters, the depiction of supernatural beings in Sasanian art and architecture can be divided into two groups: those with and those without wings. In general, when observing their depictions in Iranian art from the Persian Achaemenid Empire (<xref rid="TO_LINK" ref-type="bibr" id="ID89fb1b05-4d6e-4dbf-b8de-fc7b0a5f1b86">ca. 550&#8211;330 BCE</xref>) to the Sasanian Empire, it is possible to say that in most cases the presence of wings is among the iconographic elements of the so-called mixed and/or mythical creatures and, to a lesser extent, to the gods or deities, especially in their anthropomorphic forms.</p>
+        <p>Ahura Mazd&#257;, Mithra, and An&#257;hit&#257; are the main <italic>yazata</italic>s whose anthropomorphic depictions can be found on Sasanian rock reliefs (<xref rid="TO_LINK" ref-type="bibr" id="ID545dc7a5-3d22-41fc-bf18-4031deb123b6">Herrmann and Sarkhosh Curtis, undated</xref>; <xref rid="ID04d6fc69-fbb7-4054-a321-2b169621b82e" ref-type="bibr" id="ID2e3b6861-1c27-4a14-a744-ec6c9b15d7c8">Jacobs 2006</xref>; <xref rid="ID3e4d6145-510c-48eb-9c27-2be65fcb961b" ref-type="bibr" id="ID983ab24e-f4ea-4725-9c21-c1da08e83dd6">Bier 1985, 1009&#8211;11, 1</xref>). The main scenes in which they appear are the so-called investiture scenes,<xref ref-type="fn" rid="bibd2e479"/> in which a king receives the ring of glory, <italic>x&#7609;ar&#477;nah</italic>, from Ahura Mazd&#257; or An&#257;hit&#257;. The <italic>yazata</italic>s are shown mostly in a frontal position and in profile and, rarely from the front or in a three-quarter profile. In all of these cases, the figures appear static and are firmly rooted to the ground. This is not the case, however, with the angels on the toreutics where these figures can also be found dancing and floating. The figurative, decorated silver and gold vessels (<xref rid="IDf34387a5-bad1-49c7-a7c9-c1ba7e4b9fbf" ref-type="bibr" id="ID06f7d96f-e4ca-425d-896c-542d808d3022">Grabar 1967</xref>; <xref rid="IDbefd5ce2-ab7b-4df4-aa7c-7a08d5a1e421" ref-type="bibr" id="ID33081cbf-14f1-40fc-8f07-2b45cc5970d6">Harper 1981</xref>) boast a rich display of angelic deities. From this group, I am going to investigate the so-called dancing girls, whose iconography has been the subject of debate.<xref ref-type="fn" rid="bibd2e490"/>
+            </p>
+        <p>The <italic>frauua&#7779;&#780;i</italic>s, as we will see later, appear mostly in winged anthropomorphic forms. Among the most prominent examples of anthropomorphic winged figures in Sasanian art are those found on the arch of the greater <italic>&#299;w&#257;n</italic>
+               <xref ref-type="fn" rid="bibd2e501"/> of T&#257;q-e Bost&#257;n in Kerm&#257;n&#353;&#257;h, in the western part of Iran. Other examples are naked male winged figures on Sasanian silver vessels, which can also be identified as personifications of <italic>frauua&#7779;&#780;i</italic>s.<xref ref-type="fn" rid="bibd2e511"/> Apart from the two geniuses of T&#257;q-&#275; Bost&#257;n, no other anthropomorphic winged figures have been found on Sasanian architecture. The anthropomorphic appearances of gods or angels are denoted with other attributes and distinguishing features. Besides the seals, the main sources for pictorial depictions of winged figures in Sasanian art include bullae, amulets, toreutics, textiles, and coins.</p>
+      </sec>
+    </sec>
+    <sec>
+      <title>Yazatas depicted in Sasanian toreutics and rock reliefs</title>
+      <sec>
+        <title>Dancing girls</title>
+        <p>The dancing or floating female figures&#8212;in most cases naked or clad in diaphanous garments&#8212;on numerous Sasanian bowls and vessels are titled, in the earliest theory by Ernst Herzfeldas, &#8220;dancing girls.&#8221;<xref ref-type="fn" rid="bibd2e531"/> This assumption seems to be generally correct, but Herzfeldas neither identifies the figures, in particular the attributes and symbols carried by them, nor does he make any suggestions regarding their function and importance. These figures are accompanied by different attributes, such as birds, children, foxes, bears, floral patterns, bunches of grapes and vines, vessels, etc. and in some cases they appear within an architectural composition of arcades and columns (<xref rid="ID3e4d6145-510c-48eb-9c27-2be65fcb961b" ref-type="bibr" id="ID138314b0-965b-4bf9-ac2a-fe0e121bf486">Bier 1985, 1009&#8211;11, 1</xref>).</p>
+        <p>Based on a boat-shaped bowl from the seventh century<xref ref-type="fn" rid="bibd2e538"/> preserved in Walters Art Museum, Baltimore (<xref rid="TO_LINK" ref-type="bibr" id="ID1297e632-86b7-43fc-942d-e8ebfdd870e6">Fig. 1</xref>),<xref ref-type="fn" rid="bibd2e544"/> its main scene depicting a king receiving homage by courtiers and/or a deity, with two nude female dancers with scarves (<xref rid="TO_LINK" ref-type="bibr" id="IDf54125c3-59c8-437c-a5cc-4cf194014678">Fig. 2</xref>), Roman Ghirshman reasons that the dancing female figures in this &#8220;banquet scene,&#8221;<xref ref-type="fn" rid="bibd2e549"/> (<xref rid="IDbefd5ce2-ab7b-4df4-aa7c-7a08d5a1e421" ref-type="bibr" id="IDca501e36-e95e-450d-8cc9-bb74913969e3">Harper 1978, 216</xref>) are &#8220;court dancers&#8221; (<xref rid="IDf4937806-28e9-41eb-bec4-c0d7d7568522" ref-type="bibr" id="IDf7b1effb-48e9-491e-ab86-04651b61b269">Ghirshman 1953, 54</xref>).</p>
+        <p>[Fig. 1 here]</p>
+        <p>[Fig. 2 here]</p>
+        <p>I would like to abandon the theory of secular interpretation of the dancing figures shown on Sasanian bowls and vessels. Richard Ettinghausen mentions that, beside other non-representational elements of the scene, the fact that the female images are shown to be larger<xref ref-type="fn" rid="bibd2e560"/> than the king may indicate that it is a symbolic matter rather than a normal profane staging of courtly life. The most widely held theory on the iconography of the Sasanian vessels&#8217; female nudes has been presented by Hovsep Abgari Orbeli, followed and extended by Dorothy Shepherd (<xref rid="TO_LINK" ref-type="bibr" id="IDc97d69c6-2ab8-4a34-9974-eeef78b3384f">Shepherd 1964 and 1980</xref>). Two prominent examples of vessels showing dancing female figures are a silver bottle from Iran with a gilded background, probably from the fourth or early fifth century<xref ref-type="fn" rid="bibd2e565"/> (<xref rid="TO_LINK" ref-type="bibr" id="IDfc9a7522-9b39-4623-b719-61e5c8d58010">Fig. 3</xref>), and another one from the fifth or sixth century, which is now housed in the Mus&#233;e du Louvre<xref ref-type="fn" rid="bibd2e570"/> in Paris (<xref rid="TO_LINK" ref-type="bibr" id="ID2d1f54e8-2d43-410a-858a-b79d19caee39">Fig. 4</xref>).</p>
+        <p>[Fig. 3 here]</p>
+        <p>[Fig. 4 here]</p>
+        <p>Both vessels show four dancing figures, each holding different attributes. Orbeli has identified the dancing figures as the Iranian <italic>yazata</italic> An&#257;hit&#257;. Shepherd, expanding on this theory, interpreted the symbolization of the different objects carried by each figure, as well as their attributes, according to the four aspects for which An&#257;hit&#257; is responsible, namely water, vegetation, agriculture, and fertility.<xref ref-type="fn" rid="bibd2e587"/> The topknot and diadem of this figure, as attributes of deities, are important features which support this theory&#8217;s validity. The main obstacle to this theory might be the Avestan record of An&#257;hit&#257; in her hymn, Ya&#353;t 5, in which she has been described as a beautiful young maiden with firm and large breasts, clad in a beaver mantel, and wearing a jeweled crown (<xref rid="TO_LINK" ref-type="bibr" id="ID2f955bac-4c9c-4726-85f6-668c28c650fa">Taylor 2008, 55ff.</xref>) as in Y.5.78:</p>
+        <p>Ar&#477;dw&#299; Sura An&#257;hit&#257; flowed up to (<xref rid="TO_LINK" ref-type="bibr" id="ID048cb415-1398-4cf3-bd68-a4f321ed3009">him</xref>) in the form of a beautiful, very strong maiden, well built, high girdled, erect, noble in respect to (<xref rid="TO_LINK" ref-type="bibr" id="IDdc5e0151-ff7f-4679-9dd8-d1e2788a52fd">her</xref>) illustrious lineage, dressed in golden shoes, who was completely adorned, splendid. Some waters she <xref rid="TO_LINK" ref-type="bibr" id="ID5e412d33-7387-4743-93db-f0bdce28db97">made</xref> stand still, the others she (made) flow onward. She left a dry passage across good W&#299;tahwait&#299; (<xref rid="ID8d213d5c-dcde-4762-acc8-dcfcfed839f8" ref-type="bibr" id="ID62a6dec5-2cad-40d6-9ea7-d5aa72565d33">Malandra 1983, 126</xref>).<xref ref-type="fn" rid="bibd2e594"/>
+            </p>
+        <p>Also, Y.5.123:</p>
+        <p>Good Ar&#477;dw&#299; Sura An&#257;hit&#257; stands, wearing a golden plastron (<xref rid="TO_LINK" ref-type="bibr" id="IDf32f0e9b-0f45-4172-9209-0a99da4db549">beaver pelt</xref>) mantle (<xref rid="ID61e1fe51-5948-47a6-ae39-1e2eaeda34b2" ref-type="bibr" id="ID3c9d45e8-b10f-4e27-ba4a-169514cdf9a9">Darmesteter 2000, 82</xref>), yearning for the prayer at the libation, thinking this in her mind (<xref rid="ID8d213d5c-dcde-4762-acc8-dcfcfed839f8" ref-type="bibr" id="ID796a6ba1-e287-4392-870a-0288be8c278e">Malandra 1983, 129</xref>).</p>
+        <p>Elsewhere in Y.5.127 we read:</p>
+        <p>Holding bar&#477;sman<xref ref-type="fn" rid="bibd2e785"/> in <xref rid="TO_LINK" ref-type="bibr" id="ID481fee2f-45f6-4741-b6b0-e12ac2c5d117">her</xref> hand in the correct way, showing off her four-lobed golden earrings, Ar&#477;dw&#299; Sura An&#257;hit&#257; of good birth is wont to wear a necklace about her beautiful throat. She laces herself around the waist both so that (her) breasts (<xref rid="TO_LINK" ref-type="bibr" id="ID7c5c084d-f68f-423a-afdc-038b9a2903b0">maybe</xref>) well-formed and so that they swell out (<xref rid="TO_LINK" ref-type="bibr" id="IDb076f18f-a443-49f6-a55a-bca8afa1b695">Malandra 1983, 129&#8211;30</xref>).<xref ref-type="fn" rid="bibd2e795"/>
+            </p>
+        <p>On the other hand, we know of her representation on two Sasanian rock reliefs: one in an investiture scene of Xusr&#333; II (<xref rid="ID744039b9-edcc-4315-b39a-ef3f3267565d" ref-type="bibr" id="IDd534b9ad-6315-4eb2-a8a8-7f0d97e14fcb">590&#8211;628</xref>), in the tallest grotto at T&#257;q-e Bost&#257;n (<xref rid="TO_LINK" ref-type="bibr" id="IDf4792505-43c6-4380-8100-9df67a6d3a92">Fig. 5</xref>), on a series of stone capitals from the same site<xref ref-type="fn" rid="bibd2e940"/>, and one at Naq&#353;-e Rostam. Both the description of the goddess in her Avestan hymn and representations of her on plastic arts should be seen as allegorical and metaphorical accounts. The artists did not feel the need to depict her as she was described in literary or religious texts. Each of those iconographic types has been considered and planned in different contexts for different reasons and is understandable only within the context of the Zoroastrian religious structure of Sasanian society and state. The expectation of finding a detailed parallel representation of the deity as mentioned in Avestan text in Sasanian visual sources is an inexperienced expectation and likely cannot be met. The images and texts in ancient oriental conventions were always supposed to complete and accompany but not represent, reproduce or imitate each other.</p>
+        <p>The female figures on Sasanian vessels have, in most cases, been illustrated in a so-called hedonic scene. Even if their hedonic accounts are not directly present in the Avestan and Middle Persian Zoroastrian corpus, we are well aware of such hedonic cults in ancient Iran because they are mentioned in various sources, among them the Persian Book of the Kings, <italic>&#352;&#257;hn&#257;me</italic>. The so-called pre-Zoroastrian cult of nude goddesses has a long-known history in western Iran and Mesopotamia which makes a syncretistic composition of two or more figures possible. Many of the iconographical features of An&#257;hit&#257; are comparable with those of old Egyptian-old Syriac Anat and the ancient Mesopotamian Innana/I&#353;tar.<xref ref-type="fn" rid="bibd2e950"/>
+            </p>
+        <p>According to another theory regarding such naked female figures, Alexander Strelkoff and Jean Duchesne-Guillemin count them as priestesses of An&#257;hit&#257;, rendering homage to her by dancing a ritualistic dance (<xref rid="TO_LINK" ref-type="bibr" id="ID8f3e0bee-9e5a-48fb-a2f7-0cb7b4f5cc27">Duchesne-Guillemin 1971, 377-388 (Planche I&#8211;XI</xref>)). Subsequently, Kurt Erdmann and Lars Ivar Ringbom see them as An&#257;hit&#257;&#8217;s attendants and/or hierodules (<xref rid="IDf291c5d8-0aa6-43b8-9db3-3cd110be5a96" ref-type="bibr" id="IDea66655f-f483-464f-8e3a-796363124fdf">Ringbom 1957</xref>). Many of the hedonic scenes are interpreted as Dionysian or Bacchic imagery in Parthian and Sasanian Iran. The great popularity of these scenes is remarkable given that a real trace of such a Dionysian cult in Sasanian Iran has not been found. Furthermore, the imagery of Dionysus/Baccus himself is absent. On the other hand, this may contrast with the popularity of wine drinking ceremonies in Persian courts, which have been well-illustrated in Pahlavi literature, as well as the Persian Book of Kings. We can agree with Ettinghausen that, even if a kind of Baccus cult had existed within the boundaries of Iran, it was later assimilated into an An&#257;hit&#257;/An&#257;h&#299;t cult or some sort of fertility cult. In this way, it could be possible to interpret those attributes as implying a hedonic cult of Bacchus (<xref rid="ID5bae5418-ff99-477c-a3ea-fc1cf6382f49" ref-type="bibr" id="ID9f11f534-a4a3-403b-a877-da0177aa5f25">Ettinghausen 1967</xref>).</p>
+      </sec>
+      <sec>
+        <title>Frauua&#7779;&#780;is depicted in Sasanian rock reliefs and toreutics</title>
+        <p>Winged figures of T&#257;q-e Bost&#257;n</p>
+        <p>As mentioned before, the <italic>frauua&#7779;&#780;i</italic>s are the only anthropomorphic winged deities to have been identified in Sasanian religious art to date.<xref ref-type="fn" rid="bibd2e969"/> Both male and female figures are depicted in the iconography.</p>
+        <p>The site of T&#257;q-e Bost&#257;n,<xref ref-type="fn" rid="bibd2e976"/> situated in northwest Iran, seven kilometers from the modern city of Kerm&#257;n&#353;&#257;h, includes a series of monumental rock reliefs and comprises a big (<xref rid="TO_LINK" ref-type="bibr" id="ID0100bbd1-f854-4c58-ac34-f29576ba345c">Figs. 5 and 6</xref>) and a small grotto. T&#257;q-e Bost&#257;n was the camp of the Sasanian kings on their royal hunts. The greater <italic>&#299;w&#257;n </italic>(<xref rid="ID78a4ed97-b01a-4f7a-a779-2f61d83c11a5" ref-type="bibr" id="ID50d39215-31a7-48de-bb7e-f20eeab1df8e">Fukai and Horiuchi 1969, 1972, 1983, and 1984</xref>) contains several scenes: the investiture of Xusr&#333; II on the upper part of the back wall, a mounted warrior in the lower part and two royal hunt scenes on the right and left walls. The great <italic>&#299;w&#257;n</italic> is surrounded by a triumphal arch which rests on two pilasters with finely-carved floral patterns (<xref rid="TO_LINK" ref-type="bibr" id="IDd7ebc114-c91f-47f0-a0fc-05771b24e3f4">Fig. 6</xref>). Above the arch, two winged female figures levitate on opposing sides. These figures have often been compared to the Greco-Roman &#925;&#943;&#954;&#951;/Victoria and &#932;&#973;&#967;&#951;/Fortuna<xref ref-type="fn" rid="bibd2e987"/> (<xref rid="TO_LINK" ref-type="bibr" id="IDb83d0d96-471a-4236-a6df-e560d7e84518">see Kai T&#246;pfer&#8217;s contribution to this volume</xref>) and are undoubtedly one of the most prominent examples of cross-cultural negotiation processes in Persian art and the Persianate world (see Eba Koch&#8217;s contribution in this volume, especially Fig. 7, which clearly shows the continuation of its iconography in Islamic art and architecture).</p>
+        <p>[Fig. 5 here]</p>
+        <p>[Fig. 6 here]</p>
+        <p>All that remains of the left figure is her head and left arm. The figure to the right is completely preserved (<xref rid="TO_LINK" ref-type="bibr" id="ID63c9ee63-cc56-43a7-8479-3178108ae250">Figs. 7 and 8</xref>). She has a pair of long, pinnate wings and wears (<xref rid="TO_LINK" ref-type="bibr" id="ID32ecd80c-4aa0-4d07-8d06-5089537c51ab">in the Greek</xref>) a <italic>chiton</italic> with an <italic>apoptygma</italic>.<xref ref-type="fn" rid="bibd2e1004"/> She is carrying a diadem&#8212;a ribbon-decorated ring&#8212;in her right hand. In her left hand, she offers a bowl, presumably filled with pearls, which she holds on its pedestal. Valuable offerings of a similar kind were also presented by heavenly beings in early sixth century China (<xref rid="TO_LINK" ref-type="bibr" id="ID0d4e750d-c691-4171-a645-8f90ba7e151a">see Pradel, Fig. 9</xref>). This being faces the viewer while her legs are shown in profile. Her short hair is gathered on top of her head, differing from the flowing hairstyles of the females depicted on Sasanian vases. Other features recall well-known shapes of Sasanian female figures: her face is round and her almond-shaped eyes are open wide. Her short neck lends a powerful impression of exuded strength.</p>
+        <p>[Fig. 7 here]</p>
+        <p>[Fig. 8 here]</p>
+        <p>These two winged geniuses above the taller grotto at T&#257;q-e Bost&#257;n are perhaps the most frequently studied winged figures in Sasanian iconography. Herzfeld identified these flying figures as <italic>am&#601;r&#601;t&#257;t</italic> and <italic>hauruuat&#257;t</italic>, both of which are Zoroastrian female archangels (<xref rid="ID5e47ef60-dbbd-409a-9089-f634e110cd3a" ref-type="bibr" id="ID57c562a5-0e53-44f3-88c2-892f01c0eae3">Bridge 1960, 75</xref>). As in the majority of cases, these two archangels appear together, both of them in Avestan are female, and according to the concepts that they represent, namely immortality and wholeness, it is possible that they are presenting the king with the <italic>x&#7609;ar&#477;nah</italic>,<xref ref-type="fn" rid="bibd2e1024"/> as symbolized by a ribbon-decorated ring. This identification, however, has no direct textual support from Avestan or Zoroastrian Middle Persian texts. Another possible identification of the flying winged figures, which seems most plausible, is with the<italic> frauua&#7779;&#780;i</italic>s.<xref ref-type="fn" rid="bibd2e1038"/> The Avestan term<italic> frauua&#7779;&#780;i</italic> is grammatically female (<xref rid="TO_LINK" ref-type="bibr" id="ID7857a50f-4e13-4e34-ae38-ceeafb714e62">Bartholomae 1904, col. 992</xref>). The<italic> frauua&#7779;&#780;i</italic>s are believed to have wings,<xref ref-type="fn" rid="bibd2e1049"/> even among Zoroastrians in Iran today. In fraward&#299;n ya&#353;t (<xref rid="ID29f5d7d3-354f-473e-8a62-70af23424b06" ref-type="bibr" id="IDafdd8246-d40f-4929-b42a-d01a201288e4">Boyce 2001, 199&#8211;201</xref>), the thirteenth Avestan hymn devoted to the<italic> frauua&#7779;&#780;i</italic>s and the longest of all the Ya&#353;ts, it is said that they will grant good fortune to the man who worships them, as was done by the righteous Zarathustra. This could be a suitable explanation for the appearance of<italic> frauua&#7779;&#780;i</italic>s above the king&#8217;s investiture arch, which could have been meant to bring him fortune, glory, victory, and prosperity.<xref ref-type="fn" rid="bibd2e1070"/>
+            </p>
+        <p>The <italic>frauua&#7779;&#780;i</italic>s are, according to Fraward&#299;n Ya&#353;t, an army of armed warriors who help righteous men in their battles against demons and devil powers (<xref rid="ID8d213d5c-dcde-4762-acc8-dcfcfed839f8" ref-type="bibr" id="IDc9458a44-53ce-4ed4-a67c-cf282a32a26d">Malandra 1973</xref>).<xref ref-type="fn" rid="bibd2e1082"/> In fact, their brawny impression&#8212;in contrast to the rather delicate figures on the silver vessels described earlier&#8212;makes this identification plausible. Another fitting iconographic interpretation of <italic>frauua&#7779;&#780;i</italic>s as warriors is the armed mounted warrior of the lower part of the greater <italic>&#299;w&#257;n</italic> of T&#257;q-e Bost&#257;n (<xref rid="TO_LINK" ref-type="bibr" id="ID765a1f6b-efc5-47f0-bda8-c5a07bd39060">Fig. 5</xref>) (<xref rid="ID637992c3-c423-42e9-8134-e1b80c9eb0df" ref-type="bibr" id="IDa2ad9558-e936-4e15-a9eb-42ebbddd8bc3">Gall 1971, 230&#8211;3</xref>; <xref rid="ID67e69ea8-9322-4a2b-9845-2d8698975363" ref-type="bibr" id="IDd8c11141-bbd2-44dd-bdfc-efbf6223ccd9">Kellens 1973</xref>).</p>
+      </sec>
+      <sec>
+        <title>Winged figures in toreutics</title>
+        <p>Moreover, in addition to the rare appearances of female <italic>frauua&#7779;&#780;i</italic>s evident in Sasanian art objects and architecture, other depictions of <italic>frauua&#7779;&#780;i</italic>s on Sasanian vessels show them as small male figures or child-like beings. Since Middle Persian lost the grammatical gendering of terms, <italic>frauua&#7779;&#780;i</italic>s were also considered male beings. Furthermore, some iconographic parallels between these and the Greco-Roman putti can also be found, which at the same time present another example of cultural and artistic entanglement in late antiquity. In some aspects, like those winged figures of T&#257;q-e Bost&#257;n, a Roman iconographical element has been borrowed to incorporate a completely different concept.</p>
+        <p>A silver-gilt plate from the Museum f&#252;r Islamische Kunst in Berlin (<xref rid="IDbefd5ce2-ab7b-4df4-aa7c-7a08d5a1e421" ref-type="bibr" id="IDc2cec350-b018-43dd-95a7-dcc8086809ed">Harper 1981, 221</xref>) (<xref rid="TO_LINK" ref-type="bibr" id="ID2537b20a-c158-47e3-b184-88498a99878d">Fig. 9</xref>) shows a royal hunting scene, in which a <italic>frauua&#7779;&#780;i</italic>&#8212;like those female figures at T&#257;q-e Bost&#257;n&#8212;offers the ribbon of victory (Av. <italic>x&#7609;ar&#477;nah</italic>) to the king. This is the kind of iconography in Sasanian art which can be seen on many other movable objects, including a fourth-century Ku&#353;&#257;no-Sasanian silver plate from the ancient Gandhara-region (<xref rid="TO_LINK" ref-type="bibr" id="ID715f38c3-b866-41a8-a438-c25d3df8876e">present-day Pakistan</xref>) (<xref rid="TO_LINK" ref-type="bibr" id="ID7e2322d1-5eea-4432-99fe-30772a59dea3">Fig. 10</xref>), now in the British Museum. Again, a<italic> frauua&#7779;&#780;i </italic>brings the king a diadem symbolizing <italic>x&#7609;ar&#477;nah</italic>. The scene arrangement evokes the investiture scene of the greater <italic>&#299;w&#257;n</italic> of T&#257;q-e Bost&#257;n.</p>
+        <p>[Fig. 9 here]</p>
+        <p>[Fig. 10 here]</p>
+      </sec>
+      <sec>
+        <title>Conclusion</title>
+        <p>Angelic iconography is present in most religious beliefs. Both the theological concepts of heavenly figures and their visual representations in art and archeology testify to cultural regenerations and prove to be a fascinating field for observations from a transcultural vantage point. As the last great pre-Islamic Persian Empire, Sasanians and their religious iconographical canon with its wide zone of cultural and political authority, were the most important bridge between the ancient Near East and medieval European and Islamic worlds.</p>
+        <p>It may seem difficult at first glance to establish reliable iconographic classifications for the angelic figures in Sasanian art. The differing points of view and scholarly approaches, which range from religious to profane interpretations, make it even more complicated to establish a multilateral concept regarding the depiction of angels in Sasanian art.</p>
+        <p>Futhermore, dividing the depiction of Zoroastrian deities/angels in the Sasanian art into two groups of winged and non-winged figures allows us to distinguish between the iconography of <italic>yazata</italic>s vs. <italic>frauua&#7779;&#780;i</italic>s. As constituent parts of Zoroastrian cosmogony, angels (<xref ref-type="bibr" id="IDa9a778b1-f265-4681-a636-1dfc780cf789" rid="TO_LINK"><italic>yazatas</italic> and<italic> frauua&#7779;&#780;i</italic>s</xref>) mediate between heaven and earth and Zoroastrianism associates these beneficent immortals with all kinds of good creations. The way they are commonly depicted in the art of the Sasanian Empire (including architecture, but also on moveable objects such as bowls, plates, vessels, seals, sealings, bullae, amulets, toreutics, textiles, and coins) inevitably ties them to their Roman and ancient Near Eastern kin, Victoria and I&#353;tar/Inanna in particular, and their similar role as tutelary deities.</p>
+        <p>With respect to the depictions of such angelic figures, the religious Sasanian iconographic canon reveals a transcultural phenomenon; due to the usage of both Greco-Roman and Ancient Near Eastern sources for embodying genuine Zoroastrian concepts of angels, Sasanian art leaves an important legacy of inspiring sources to the medieval Byzantine and Islamic era.</p>
+      </sec>
+    </sec>
+  </body>
+  <back>
+    <fn-group>
+      <fn id="bibd2e54">
+        <p>	 For a general and brief introduction and selection of texts, cf. Skj&#230;rv&#248; 2011; Boyce 2006.</p>
+      </fn>
+      <fn id="bibd2e61">
+        <p>	 A short bibliography on this matter is found in Taylor 2008, 1&#8211;2.</p>
+      </fn>
+      <fn id="bibd2e72">
+        <p>	 For a general overview of Sasanian art cf. Christensen 1944, and even if in some aspects are superseded cf. Harper 1978; Yarshater 1983, chapter 29 on Sasanian art; Harper 1987, 585&#8211;94.</p>
+      </fn>
+      <fn id="bibd2e80">
+        <p>	 For an overview on the history of Iran in the Sasanian Era cf. Erdmann 1937; Gyselen 1995; Daryaee 2008. For a sociological-historical overview cf. Daryaee 2009; and for a very brief but informative introduction in German cf. Schippmann 1990.</p>
+      </fn>
+      <fn id="bibd2e88">
+        <p>	 For some aspects of cultural exchanges between Sasanians and Romans cf. Canepa 2009.</p>
+      </fn>
+      <fn id="bibd2e112">
+        <p>	 On Ahura Mazd&#257; cf. Boyce 19851, 684&#8211;7.</p>
+      </fn>
+      <fn id="bibd2e126">
+        <p>	 On <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://opac.sub.uni-goettingen.de/DB=1/SET=3/TTL=10/MAT=/NOMAT=T/CLK?IKT=1016&amp;TRM=Am%D5%E9%F2sa" ext-link-type="uri" xlink:type="simple">am&#477;&#7779;&#780;a</ext-link>
+               <italic> sp&#477;&#7751;ta</italic> cf. Boyce 19852, 933&#8211;6; Narten 1982.</p>
+      </fn>
+      <fn id="bibd2e147">
+        <p>	 On <italic>frauua&#7779;&#780;i </italic>cf. Boyce 2001, 195&#8211;9.</p>
+      </fn>
+      <fn id="bibd2e213">
+        <p>	 Also cf. Boyce 19852, 933&#8211;6.</p>
+      </fn>
+      <fn id="bibd2e231">
+        <p>	 In &#352;n&#352; XV.5 we can read: &#8220;(In) that material world of Mine, I who am &#332;hrmazd, (preside over) the just man, and Wohuman over cattle, and Ardwahi&#353;t over fire, and &#352;ahrewar over metals, and Spandarmad over earth and virtuous woman, and Hordad over waters, and Amurdad over plants.&#8221; Cf. Kotwal 1969, 58&#8211;9. </p>
+      </fn>
+      <fn id="bibd2e267">
+        <p>	 For the evidences regardings this link cf. Boyce19852, 933&#8211;6.</p>
+      </fn>
+      <fn id="bibd2e324">
+        <p><italic>	 Bundahi&#353;n </italic>VIa.2&#8211;3, cf. Pakzad 2005, 89&#8211;90.</p>
+      </fn>
+      <fn id="bibd2e365">
+        <p>	 Pokorny considers <italic>Yazata-</italic>, <italic>yaz-</italic>, <italic>yasna</italic>, <italic>y&#225;jati</italic>, <italic>yaj&#241;&#225;</italic>, &#7941;&#947;&#953;&#959;&#962; to all be derivatives of a Proto-Indo-European (PIE) root <italic>i&#810;ag&#690;-</italic> (<italic>i&#810;ag&#180;-</italic>) <italic>&#8220;religi&#246;s verehren&#8221;</italic> (&#8220;religiously venerate&#8221;), cf. Pokorny 1959.</p>
+      </fn>
+      <fn id="bibd2e479">
+        <p>	 On investiture and investiture scenes cf. Brosius et al. 2006, 180&#8211;8.</p>
+      </fn>
+      <fn id="bibd2e490">
+        <p>	 For more details on different views&#8212;secular, religious, or erotic&#8212;regarding the &#8220;dancing girl&#8221; cf. Ettinghausen1967,and alsoSarre 1922; also Bier 1985, 1009&#8211;11, 1.</p>
+      </fn>
+      <fn id="bibd2e501">
+        <p><italic>	 &#298;w&#257;n</italic> (NP &#1575;&#1740;&#1608;&#1575;&#1606;) is a typically Iranian rectangular type of construction, which consists of a vaulted rectangular hall, walled on three sides and open on one end. Cf. Grabar 1989, 153&#8211;5.</p>
+      </fn>
+      <fn id="bibd2e511">
+        <p>	 However, not discussed in this paper, there is another group of nude, wingless, male figures which I identify as personifications of &#8220;<italic>ap&#261;m nap&#257;t</italic>.&#8221;</p>
+      </fn>
+      <fn id="bibd2e531">
+        <p>	 Cf. Ettinghausen1967.</p>
+      </fn>
+      <fn id="bibd2e538">
+        <p>	 Although associated with silver vessels made in Iran during the Sassanian dynasty (224&#8211;651 CE), the vessel&#8217;s shape and decoration suggest that this object dates from the early Islamic era.</p>
+      </fn>
+      <fn id="bibd2e544">
+        <p>	 Cf. Harper 1981, Pl. 36.</p>
+      </fn>
+      <fn id="bibd2e549">
+        <p>	 The dancing female figures are identified as being either totally or partially female nudes in erotic scenes, cf. Ghirshman 1953, 54.</p>
+      </fn>
+      <fn id="bibd2e560">
+        <p>	 In the hierarchical imagery system of the art of ancient orientals, the proportions of the figures, as well as objects in some cases, are crucial in declaring the significance of power. </p>
+      </fn>
+      <fn id="bibd2e565">
+        <p>	 Cf. Ettinghausen 1967, 28&#8211;29, plate 1&#8211;4.</p>
+      </fn>
+      <fn id="bibd2e570">
+        <p>	 Cf. Martiniani-Reber and B&#233;nazeth 1997, 105, plate 43.</p>
+      </fn>
+      <fn id="bibd2e587">
+        <p>	 Cf. Martiniani-Reber and B&#233;nazeth 1997, 105, plate 43. The goddess is also reponsible for the warriors. No attribute of this aspect of her in this context is available.</p>
+      </fn>
+      <fn id="bibd2e594">
+        <p>	 The original reads as follows: <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="javascript:ci(60317,'upa2E00tacat')" ext-link-type="uri" xlink:type="simple">upa.tacat&#816;</ext-link>
+               <italic>. </italic>
+               <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="javascript:ci(60317,'ar5902duu2B01')" ext-link-type="uri" xlink:type="simple">ar&#601;duu&#299;</ext-link>
+               <italic>. </italic>
+               <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="javascript:ci(60317,'s6B01ra')" ext-link-type="uri" xlink:type="simple">s&#363;ra</ext-link>
+               <italic>. </italic>
+               <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="javascript:ci(60317,'an0101hita')" ext-link-type="uri" xlink:type="simple">an&#257;hita</ext-link>
+               <italic>./</italic>
+               <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="javascript:ci(60317,'kainin4D01')" ext-link-type="uri" xlink:type="simple">kainin&#333;</ext-link>
+               <italic>. </italic>
+               <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="javascript:ci(60317,'k5902hrpa')" ext-link-type="uri" xlink:type="simple">k&#601;hrpa</ext-link>
+               <italic>. </italic>
+               <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="javascript:ci(60317,'sr2B01raiiE500')" ext-link-type="uri" xlink:type="simple">sr&#299;raii&#257;&#778;</ext-link>
+               <italic>./</italic>
+               <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="javascript:ci(60317,'a6101amaiiE500')" ext-link-type="uri" xlink:type="simple">a&#353;amaii&#257;&#778;</ext-link>
+               <italic>. </italic>
+               <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="javascript:ci(60317,'huraoB403aiiE500')" ext-link-type="uri" xlink:type="simple">hurao&#948;aii&#257;&#778;</ext-link>
+               <italic>./</italic>
+               <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="javascript:ci(60317,'usk0101t')" ext-link-type="uri" xlink:type="simple">usk&#257;t&#816;</ext-link>
+               <italic>. </italic>
+               <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="javascript:ci(60317,'y0101staiiE500')" ext-link-type="uri" xlink:type="simple">y&#257;staii&#257;&#778;</ext-link>
+               <italic>. </italic>
+               <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="javascript:ci(60317,'5902r5902zuuaiD103ii4D01')" ext-link-type="uri" xlink:type="simple">&#601;r&#601;zuuai&#977;ii&#333;</ext-link>
+               <italic>./</italic>
+               <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="javascript:ci(60317,'ra1301uuat')" ext-link-type="uri" xlink:type="simple">ra&#275;uuat&#816;</ext-link>
+               <italic>. </italic>
+               <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="javascript:ci(60317,'ciD103r5902m')" ext-link-type="uri" xlink:type="simple">ci&#977;r&#601;m</ext-link>
+               <italic>. </italic>
+               <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="javascript:ci(60317,'0101z0101taiiE500')" ext-link-type="uri" xlink:type="simple">&#257;z&#257;taii&#257;&#778;</ext-link>
+               <italic>./</italic>
+               <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="javascript:ci(60317,'zaraniia')" ext-link-type="uri" xlink:type="simple">zaraniia</ext-link>
+               <italic>. </italic>
+               <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="javascript:ci(60317,'aoD103ra')" ext-link-type="uri" xlink:type="simple">ao&#977;ra</ext-link>
+               <italic>. </italic>
+               <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="javascript:ci(60317,'paiti6101muxta')" ext-link-type="uri" xlink:type="simple">paiti&#353;muxta</ext-link>
+               <italic>./</italic>
+               <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="javascript:ci(60317,'y0101')" ext-link-type="uri" xlink:type="simple">y&#257;</ext-link>
+               <italic>. </italic>
+               <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="javascript:ci(60317,'v2B01sp4D012E00p2B01sa')" ext-link-type="uri" xlink:type="simple">v&#299;sp&#333;.p&#299;sa</ext-link>
+               <italic>. </italic>
+               <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="javascript:ci(60317,'b0101miia')" ext-link-type="uri" xlink:type="simple">b&#257;miia</ext-link>
+               <italic>./</italic>
+               <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="javascript:ci(60317,'ar5902ma13016101tE500')" ext-link-type="uri" xlink:type="simple">ar&#601;ma&#275;&#353;t&#257;&#778;</ext-link>
+               <italic>. </italic>
+               <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="javascript:ci(60317,'aniiE500')" ext-link-type="uri" xlink:type="simple">anii&#257;&#778;</ext-link>
+               <italic>. </italic>
+               <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="javascript:ci(60317,'0101p4D01')" ext-link-type="uri" xlink:type="simple">&#257;p&#333;</ext-link>
+               <italic>. </italic>
+               <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="javascript:ci(60317,'k5902r5902naot')" ext-link-type="uri" xlink:type="simple">k&#601;r&#601;naot&#816;</ext-link>
+               <italic>./</italic>
+               <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="javascript:ci(60317,'fra6101a')" ext-link-type="uri" xlink:type="simple">fra&#353;&#803;a</ext-link>
+               <italic>. </italic>
+               <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="javascript:ci(60317,'aniiE500')" ext-link-type="uri" xlink:type="simple">anii&#257;&#778;</ext-link>
+               <italic>. </italic>
+               <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="javascript:ci(60317,'fratacat')" ext-link-type="uri" xlink:type="simple">fratacat&#816;</ext-link>
+               <italic>./</italic>
+               <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="javascript:ci(60317,'hu6101k5902m')" ext-link-type="uri" xlink:type="simple">hu&#353;k&#601;m</ext-link>
+               <italic>. </italic>
+               <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="javascript:ci(60317,'p59026101um')" ext-link-type="uri" xlink:type="simple">p&#601;&#353;&#803;um</ext-link>
+               <italic>. </italic>
+               <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="javascript:ci(60317,'ra1301caiiat')" ext-link-type="uri" xlink:type="simple">ra&#275;caiiat&#816;</ext-link>
+               <italic>./</italic>
+               <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="javascript:ci(60317,'tar4D01')" ext-link-type="uri" xlink:type="simple">tar&#333;</ext-link>
+               <italic>. </italic>
+               <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="javascript:ci(60317,'va4B01uh2B01m')" ext-link-type="uri" xlink:type="simple">va&#331;uh&#299;m</ext-link>
+               <italic>. </italic>
+               <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="javascript:ci(60317,'v2B01ta4B01uhait2B01m')" ext-link-type="uri" xlink:type="simple">v&#299;ta&#331;uhait&#299;m</ext-link>
+               <italic>.</italic>
+            </p>
+      </fn>
+      <fn id="bibd2e785">
+        <p><italic>	bar&#477;sman</italic> or <italic>barsom</italic> is the sacred twig bundle which is an important part of the Zoroastrian liturgical apparatus, cf. Kanga 1989, 825&#8211;7.</p>
+      </fn>
+      <fn id="bibd2e795">
+        <p>	 The original reads as follows: <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="javascript:ci(60317,'b0101B403a')" ext-link-type="uri" xlink:type="simple">b&#257;&#948;a</ext-link>
+               <italic>. </italic>
+               <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="javascript:ci(60317,'yaD103a2E00m0501m')" ext-link-type="uri" xlink:type="simple">ya&#977;a.m&#261;m</ext-link>
+               <italic>./</italic>
+               <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="javascript:ci(60317,'bar5902sm4D012E00zasta')" ext-link-type="uri" xlink:type="simple">bar&#601;sm&#333;.zasta</ext-link>
+               <italic>./</italic>
+               <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="javascript:ci(60317,'fr01012E00gao61010101uuara')" ext-link-type="uri" xlink:type="simple">fr&#257;.gao&#353;&#803;&#257;uuara</ext-link>
+               <italic>. </italic>
+               <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="javascript:ci(60317,'s2B01sp5902mna')" ext-link-type="uri" xlink:type="simple">s&#299;sp&#601;mna</ext-link>
+               <italic>./</italic>
+               <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="javascript:ci(60317,'caD103ru2E00karana')" ext-link-type="uri" xlink:type="simple">ca&#977;ru.karana</ext-link>
+               <italic>. </italic>
+               <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="javascript:ci(60317,'zarana1301ni')" ext-link-type="uri" xlink:type="simple">zarana&#275;ni</ext-link>
+               <italic>:/</italic>
+               <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="javascript:ci(60317,'minum')" ext-link-type="uri" xlink:type="simple">minum</ext-link>
+               <italic>. </italic>
+               <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="javascript:ci(60317,'barat')" ext-link-type="uri" xlink:type="simple">barat&#816;</ext-link>
+               <italic>. </italic>
+               <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="javascript:ci(60317,'huu0101z0101ta')" ext-link-type="uri" xlink:type="simple">huu&#257;z&#257;ta</ext-link>
+               <italic>./</italic>
+               <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="javascript:ci(60317,'ar5902duu2B01')" ext-link-type="uri" xlink:type="simple">ar&#601;duu&#299;</ext-link>
+               <italic>. </italic>
+               <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="javascript:ci(60317,'s6B01ra')" ext-link-type="uri" xlink:type="simple">s&#363;ra</ext-link>
+               <italic>. </italic>
+               <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="javascript:ci(60317,'an0101hita')" ext-link-type="uri" xlink:type="simple">an&#257;hita</ext-link>
+               <italic>./</italic>
+               <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="javascript:ci(60317,'upa')" ext-link-type="uri" xlink:type="simple">upa</ext-link>
+               <italic>. </italic>
+               <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="javascript:ci(60317,'t0501m')" ext-link-type="uri" xlink:type="simple">t&#261;m</ext-link>
+               <italic>. </italic>
+               <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="javascript:ci(60317,'sr2B01r0501m')" ext-link-type="uri" xlink:type="simple">sr&#299;r&#261;m</ext-link>
+               <italic>./</italic>
+               <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="javascript:ci(60317,'manaoD103rim')" ext-link-type="uri" xlink:type="simple">manao&#977;rim</ext-link>
+               <italic>:/</italic>
+               <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="javascript:ci(60317,'h0101')" ext-link-type="uri" xlink:type="simple">h&#257;</ext-link>
+               <italic>. </italic>
+               <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="javascript:ci(60317,'h1301')" ext-link-type="uri" xlink:type="simple">h&#275;</ext-link>
+               <italic>. </italic>
+               <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="javascript:ci(60317,'maiB403im')" ext-link-type="uri" xlink:type="simple">mai&#948;im</ext-link>
+               <italic>. </italic>
+               <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="javascript:ci(60317,'nii0101zata')" ext-link-type="uri" xlink:type="simple">nii&#257;zata</ext-link>
+               <italic>./</italic>
+               <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="javascript:ci(60317,'yaD103aca')" ext-link-type="uri" xlink:type="simple">ya&#977;aca</ext-link>
+               <italic>. </italic>
+               <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="javascript:ci(60317,'huk5902r5902pta')" ext-link-type="uri" xlink:type="simple">huk&#601;r&#601;pta</ext-link>
+               <italic>. </italic>
+               <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="javascript:ci(60317,'f6101t0101na')" ext-link-type="uri" xlink:type="simple">f&#353;t&#257;na</ext-link>
+               <italic>./</italic>
+               <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="javascript:ci(60317,'yaD103aca')" ext-link-type="uri" xlink:type="simple">ya&#977;aca</ext-link>
+               <italic>. </italic>
+               <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="javascript:ci(60317,'a4B01h5902n')" ext-link-type="uri" xlink:type="simple">a&#331;h&#601;n</ext-link>
+               <italic>. </italic>
+               <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="javascript:ci(60317,'niuu0101z0101na')" ext-link-type="uri" xlink:type="simple">niuu&#257;z&#257;na</ext-link>
+               <italic>.</italic>
+            </p>
+      </fn>
+      <fn id="bibd2e940">
+        <p>	 For a detailed description of the capitals cf.Stock 1996.</p>
+      </fn>
+      <fn id="bibd2e950">
+        <p>	 On the Babylonian-Akkadian goddess cf. Zgoll 2003; Wegner 1991; Meinhold 2009; Levit-Tawil 1992.</p>
+      </fn>
+      <fn id="bibd2e969">
+        <p>	 With the exception of the armed mounted figure on the upper part of the greater grotto of T&#257;q-e Bost&#257;n.</p>
+      </fn>
+      <fn id="bibd2e976">
+        <p>	 Cf. Vanden Berghe1984; Kleiss and Boehmer1996, as well as the very detailed and valuable four volumes by Fukai and Horiuchi1969, 1972, 1983, and 1984.</p>
+      </fn>
+      <fn id="bibd2e987">
+        <p>	 For the links and connections between T&#257;q-e Bost&#257;n and Byzantin iconography cf. Mackintosh 1978; also cf. Fukai et al. 1984, 167&#8211;77 (Appendix II: Flying Victory&#8212;Its Prototypes and Diffusion). Tanabe asserts that &#8220;It is clear that the flying genii are obviously modelled after the goddesses Nike and Tyche, but her significance within the Sasanian dynastic iconography is unknown.&#8221; Cf. Harrison1978, 43; this must be disscused in a separate article as despite Tanabe&#8217;s opinion, the iconographical role and significance of these flying figures is rather clear.</p>
+      </fn>
+      <fn id="bibd2e1004">
+        <p>	 For a more detailed description cf. Harrison1978, 42ff.</p>
+      </fn>
+      <fn id="bibd2e1024">
+        <p><italic>	 x&#7609;ar&#477;nah</italic>, lit. &#8220;glory&#8221; is themagic force or power of luminous and fiery nature. On <italic>x&#7609;ar&#477;nah</italic> cf. Gnoli 1999, 312&#8211;9.</p>
+      </fn>
+      <fn id="bibd2e1038">
+        <p>	 Tanabe mentioned this possibility only marginally and in a footnote, but does not discuss it. Cf. Harrison1978, 46, n. 21.</p>
+      </fn>
+      <fn id="bibd2e1049">
+        <p>	 Cf. Werner 1990, 161, n. 47, and the author&#8217;s observations and dialoges with Irani Zoroastrians.</p>
+      </fn>
+      <fn id="bibd2e1070">
+        <p>	 For a descriptive account on <italic>frauua&#7779;&#780;i</italic>s cf. Dhalla 1972, 143&#8211;50; Boyce 2001, 195&#8211;9.</p>
+      </fn>
+      <fn id="bibd2e1082">
+        <p>	 See also in Bundahi&#353;n VIa.3, cf. Soraki 2005, 90.</p>
+      </fn>
+    </fn-group>
+    <ref-list>
+      <ref>
+        <mixed-citation><italic>Atti del convegno internazionale sul tema: La Persia nel Medioevo. </italic>Problemi attuali di scienza e di cultura 160. Roma: Accademia Nazionale dei Lincei, 1971.</mixed-citation>
+      </ref>
+      <ref>
+        <mixed-citation>Abka'i-Khavari, Manijeh. 2000. <italic>Das Bild des K&#246;nigs in der Sasanidenzeit: Schriftliche &#220;berlieferungen im Vergleich mit Antiquaria</italic>. Hildesheim: Olms.</mixed-citation>
+      </ref>
+      <ref>
+        <mixed-citation>Bartholomae, Christian. 1904. <italic>Altiranisches W&#246;rterbuch</italic>. Strassburg: Tr&#252;bner.</mixed-citation>
+      </ref>
+      <ref id="ID3e4d6145-510c-48eb-9c27-2be65fcb961b">
+        <mixed-citation>Bier, Carol. 1985. &#8220;An&#257;h&#299;d: IV. An&#257;hit&#257; in the arts.&#8221; In <italic>Encyclop&#230;dia Iranica</italic> Vol. 1, edited by Ehsan Yarshater, 1009&#8211;11. London:&#160;Routledge &amp; Paul.</mixed-citation>
+      </ref>
+      <ref id="ID29f5d7d3-354f-473e-8a62-70af23424b06">
+        <mixed-citation>Boyce, Mary. 19851. &#8220;Ahura Mazd&#257;.&#8221; In <italic>Encyclop&#230;dia Iranica</italic> Vol.1, edited by Ehsan Yarshater, 684&#8211;7. London: Routledge &amp; Paul.</mixed-citation>
+      </ref>
+      <ref id="ID17e71c16-14ef-4697-b6a8-fffd730e2074">
+        <mixed-citation>&#8212;. 19852. &#8220;Ame&#353;a Spentas.&#8221; In <italic>Encyclop&#230;dia Iranica</italic> Vol. 1, edited by Ehsan Yarshater, 933&#8211;6. London:&#160;Routledge &amp; Paul.</mixed-citation>
+      </ref>
+      <ref id="IDaa41d8f3-e975-4dac-b849-7747be4fcdc9">
+        <mixed-citation>&#8212;. 2001. &#8220;Frava&#353;i.&#8221; In <italic>Encyclop&#230;dia Iranica</italic> Vol. 10, edited by Ehsan Yarshater, 195&#8211;9. New York, NY:&#160;Bibliotheca Persica Press.</mixed-citation>
+      </ref>
+      <ref id="ID0b95d702-aeb3-43b7-88e4-f662f5b21d98">
+        <mixed-citation>&#8212;. 2001. &#8220;Fraward&#299;n Ya&#353;t.&#8221; In <italic>Encyclop&#230;dia Iranica</italic> Vol. 10, edited by Ehsan Yarshater, 199&#8211;201. New York, NY:&#160;Bibliotheca Persica Press.</mixed-citation>
+      </ref>
+      <ref>
+        <mixed-citation>&#8212;. 2001. <italic>Zoroastrians: their religious beliefs and practices</italic>. Routledge. Accessed 12 August 2012. http://books.google.de/books?id=a6gbxVfjtUEC.</mixed-citation>
+      </ref>
+      <ref>
+        <mixed-citation>&#8212;. 2006. <italic>Textual Sources for the Study of Zoroastrianism</italic>. Chicago: University of Chicago Press.</mixed-citation>
+      </ref>
+      <ref id="ID5e47ef60-dbbd-409a-9089-f634e110cd3a">
+        <mixed-citation>Bridge, Antony C. 1960. <italic>Images of God</italic>. London: Hodder &amp; Stoughton.</mixed-citation>
+      </ref>
+      <ref id="IDe83c86ae-7c27-45d8-bb28-cc6704f0ae6c">
+        <mixed-citation>Brosius, Maria, Vesta Sarkhosh Curtis, and Jenny Rose. 2006. &#8220;Investiture.&#8221; In <italic>Encyclop&#230;dia Iranica</italic> Vol. 13, edited by Ehsan Yarshater, 180&#8211;88. New York, NY:&#160;Encyclop&#230;dia Iranica Foundation.</mixed-citation>
+      </ref>
+      <ref>
+        <mixed-citation>Canepa, Matthew P. 2009. <italic>Two eyes of the Earth: Competition and exchange in the art and ritual of kingship between Rome and Sasanian Iran. </italic>[The transformation of the classical heritage 45]. Berkeley: University of California Press.</mixed-citation>
+      </ref>
+      <ref>
+        <mixed-citation>Christensen, Arthur. 1944. <italic>L'Iran sous les Sassanides</italic>. 2nd&#160;ed. Copenhague: E. Munksgaard.</mixed-citation>
+      </ref>
+      <ref id="ID61e1fe51-5948-47a6-ae39-1e2eaeda34b2">
+        <mixed-citation>Darmesteter, James. 2000. <italic>The Zend-Avesta: Part II: The S&#238;r&#244;zahs, Yasts and Ny&#226;yis. </italic>The sacred books of the East 23. Delhi: Motilal Banarsidass Publishers.</mixed-citation>
+      </ref>
+      <ref id="ID5d829170-5372-4ef2-b6e6-73c5f428ee1c">
+        <mixed-citation>Daryaee, Touraj. 2008. <italic>Sasanian Iran (224&#8211;651 CE): Portrait of a late antique empire. </italic>Sasanika series 1. Costa Mesa, Calif.: Mazda Publishers.</mixed-citation>
+      </ref>
+      <ref>
+        <mixed-citation>&#8212;. 2009. <italic>Sasanian Persia: The rise and fall of an Empire</italic>. London: Tauris.</mixed-citation>
+      </ref>
+      <ref id="ID61cb7740-cb37-4559-bd89-8c08807c4401">
+        <mixed-citation>Dhalla, Maneckji N. 1972. <italic>Zoroastrian theology from the earliest times to the present day</italic>. New York: AMS Press. Accessed 11 July 2012. http://www.worldcat.org/oclc/246545.</mixed-citation>
+      </ref>
+      <ref>
+        <mixed-citation>&#8212;. 1977. <italic>History of Zoroastrianism</italic>. New York, NY: AMS Pr. Reprint from the edition of 1938.</mixed-citation>
+      </ref>
+      <ref id="IDf992d10b-2623-44f8-bc52-fa3f12c3cc9d">
+        <mixed-citation>Duchesne-Guillemin, Jacques. 1971. &#8220;Art et Religion sous les Sassanides.&#8221; In <italic>Atti del convegno internazionale sul tema: La Persia nel Medioevo</italic>, 377&#8211;388 (Planche I-XI). Problemi attuali di scienza e di cultura 160. Roma:&#160;Accademia Nazionale dei Lincei.</mixed-citation>
+      </ref>
+      <ref id="IDa026c9a6-752e-4ada-86f8-6c1b132366a3">
+        <mixed-citation>Eichler, Seyyare. 1984. <italic>G&#246;tter, Genien und Mischwesen in der urart&#228;ischen Kunst</italic>. Berlin: Reimer.</mixed-citation>
+      </ref>
+      <ref>
+        <mixed-citation>Erdmann, Kurt. 1937. <italic>Sasanidische Kunst</italic>. With the assistance of E. K&#252;hnel. Bilderhefte der Islamischen Abteilung der Staatlichen Museen in Berlin. Berlin: W&#252;rfel.</mixed-citation>
+      </ref>
+      <ref id="ID5bae5418-ff99-477c-a3ea-fc1cf6382f49">
+        <mixed-citation>Ettinghausen, Richard. 1967. &#8220;A Persian Treasure.&#8221;<italic>The Arts in Virginia</italic> 8: 28&#8211;41.</mixed-citation>
+      </ref>
+      <ref id="ID2202b1e3-ac41-4f2b-9553-845c42e6ceb2">
+        <mixed-citation>Ferrier, Ronald W. 1989. <italic>The Arts of Persia</italic>. New Haven: Yale Univ. Press.</mixed-citation>
+      </ref>
+      <ref id="ID397e63ac-85f9-40a9-b124-81cc0dd35910">
+        <mixed-citation>Fukai, Shinji, and Kiyoharu Horiuchi. 1969. <italic>Taq-i-Bustan: I. Plates. </italic>[The Tokyo University Iraq-Iran Archaeological Expedition Report 10]. Tokyo: Inst. of Oriental Culture, Univ. of Tokyo.</mixed-citation>
+      </ref>
+      <ref>
+        <mixed-citation>&#8212;. 1972. <italic>Taq-i-Bustan: II. Plates. </italic>[The Tokyo University Iraq-Iran Archaeological Expedition Report 13]. Tokyo: Institute of Oriental Culture, University of Tokyo.</mixed-citation>
+      </ref>
+      <ref>
+        <mixed-citation>&#8212;. 1983. <italic>Taq-i-Bustan: III. Dissoku-zu-shusei = Photogrammetric Elevations. </italic>[The Tokyo University Iraq-Iran Archaeological Expedition Report 19]. Tokyo: Yamakawa Publ.</mixed-citation>
+      </ref>
+      <ref id="ID78a4ed97-b01a-4f7a-a779-2f61d83c11a5">
+        <mixed-citation>Fukai, Shinji, Kiyoharu Horiuchi, Katsumi Tanabe, and Mihoko Domyo.1984. <italic>Taq-i-Bustan: IV. Text. </italic>[The Tokyo University Iraq-Iran Archaeological Expedition Report 20]. Tokyo: Inst. of Oriental Culture, University of Tokyo.</mixed-citation>
+      </ref>
+      <ref id="ID637992c3-c423-42e9-8134-e1b80c9eb0df">
+        <mixed-citation>Gall, Hubertus v. 1971. &#8220;Entwicklung und Gestalt des Thrones im Vorislamischen Iran.&#8221;<italic>Archaeologische Mitteilungen aus Iran</italic> Neue Folge, Bd. 4: 207&#8211;235 (Tafeln 36&#8211;40).</mixed-citation>
+      </ref>
+      <ref>
+        <mixed-citation>Gern, Erik, Bernhard Lewin, Helmer Ringgren, and Stig Wikander, eds. 1954. <italic>Donvm Natalicivm H. S. Nyberg Oblatvm 28. mense dec. 1954. </italic>Mense Dec. Mcmliv. Uppsala: Almquist &amp; Wiksell.</mixed-citation>
+      </ref>
+      <ref id="IDf4937806-28e9-41eb-bec4-c0d7d7568522">
+        <mixed-citation>Ghirshman, Roman. 1953. &#8220;Notes Iraniennes V: Scenes de Banquet sur I'Argenterie Sassanide.&#8221;<italic>Artibus Asiae</italic> 16: 51&#8211;76.</mixed-citation>
+      </ref>
+      <ref id="IDfb97a605-fc23-468b-a68a-a7ba652a9918">
+        <mixed-citation>Gnoli, Gherardo. 1999. &#8220;Farr(ah).&#8221; In <italic>Encyclop&#230;dia Iranica</italic> Vol 9, edited by Ehsan Yarshater, 312&#8211;19. New York, NY:&#160;Bibliotheca Persica Press.</mixed-citation>
+      </ref>
+      <ref id="IDf34387a5-bad1-49c7-a7c9-c1ba7e4b9fbf">
+        <mixed-citation>Grabar, Oleg. 1967. <italic>Sasanian Silver: Late Antique and Early Mediaeval Arts of Luxury from Iran</italic>. Ann Arbor, Mich.: University of Michigan Museum of Art, August-September 1967. The University of Michigan Museum of Art.</mixed-citation>
+      </ref>
+      <ref id="IDe1ccf643-7429-428e-8473-8a44aa86f5bf">
+        <mixed-citation>&#8212;. 1989. &#8220;Ayv&#257;n.&#8221; In <italic>Encyclop&#230;dia Iranica</italic> Vol. 3, edited by Ehsan Yarshater, 153&#8211;55. London:&#160;Routledge &amp; Paul.</mixed-citation>
+      </ref>
+      <ref id="ID7b4caff9-7bbb-408f-a89a-b4f2eb3c73cb">
+        <mixed-citation>Grenet, Frantz. 1986. &#8220;L&#8217;Art Zoroastrien en Sogdiane.&#8221;<italic>Mesopotamia</italic> XXI: 97&#8211;131.</mixed-citation>
+      </ref>
+      <ref id="IDa8cf24a2-a394-43c0-ae9d-9eb54ddd8811">
+        <mixed-citation>Groneberg, Brigitte, ed. 2007. <italic>Die Welt der G&#246;tterbilder</italic>. With the assistance of Groneberg B. Frauke Weiersh&#228;user. Zeitschrift f&#252;r die alttestamentliche Wissenschaft . Beihefte zur Zeitschrift f&#252;r die alttestamentliche Wissenschaft, ISSN 0934-2575. Berlin: de Gruyter.</mixed-citation>
+      </ref>
+      <ref>
+        <mixed-citation>Gyselen, Rika. 1995. <italic>Sceaux magiques en Iran sassanide</italic>. Paris: Assoc. pour l'Avancement des &#201;tudes Iraniennes.</mixed-citation>
+      </ref>
+      <ref id="IDbefd5ce2-ab7b-4df4-aa7c-7a08d5a1e421">
+        <mixed-citation>Harper, Prudence O. 1978. <italic>The Royal Hunter: Art of the Sasanian Empire; </italic>[Catalogue of an Exhibition Shown in Asia House Gallery in the Winter of 1978 as an Activity of the Asia Society &#8230; ]. New York, NY: The Asia Society.</mixed-citation>
+      </ref>
+      <ref>
+        <mixed-citation>&#8212;. 1981. <italic>Silver Vessels of the Sasanian Period: Vol. 1: Royal Imagery</italic>. With the assistance of and with a technical study by Pieter Meyers 1. New York: The Metropolitan Museum of Art.</mixed-citation>
+      </ref>
+      <ref id="ID1ebe501f-1fd8-409b-8a9a-09d9cd5a3c3b">
+        <mixed-citation>&#8212;. 1987. &#8220;Sasanian Art.&#8221; In <italic>Encyclop&#230;dia Iranica</italic> Vol. 2, edited by Ehsan Yarshater, 585&#8211;94. London:&#160;Routledge &amp; Paul.</mixed-citation>
+      </ref>
+      <ref>
+        <mixed-citation>Harrison, Jane E. 1978. <italic>Ancient Art and Ritual</italic>. Bradford-on-Avon, Wilts.: Moonraker Press.</mixed-citation>
+      </ref>
+      <ref id="ID10b0e4cc-20c3-4253-aa2d-3b48b81c2412">
+        <mixed-citation>Herrmann, Georgina, and Vesta Sarkhosh Curtis. Undated. &#8220;Sasanian Rock Reliefs.&#8221; Accessed 15 July 2012, http://www.cais-soas.com/CAIS/Art/sasanian_rock_relief.htm.</mixed-citation>
+      </ref>
+      <ref id="ID04d6fc69-fbb7-4054-a321-2b169621b82e">
+        <mixed-citation>Jacobs, Bruno. 2006. &#8220;Anahita.&#8221; In <italic>Iconography of Deities and Demons in the Ancient Near East (IDD)</italic>, edited by Christoph Uehlinger. Leiden/Z&#252;rich:&#160;Brill (last updated: 14 November 2006). Accessed 19 May&#160;2010. http://www.religionswissenschaft.unizh.ch/idd/prepublications/e_idd_anahita.pdf.</mixed-citation>
+      </ref>
+      <ref id="ID545de61f-c357-4014-9a09-5fe48c6cbe63">
+        <mixed-citation>Kanga, Maneck Fardunji1989. &#8220;Barsom.&#8221; In <italic>Encyclop&#230;dia Iranica</italic> Vol. 3, edited by Ehsan Yarshater, 825&#8211;27. London:&#160;Routledge &amp; Paul.</mixed-citation>
+      </ref>
+      <ref id="ID67e69ea8-9322-4a2b-9845-2d8698975363">
+        <mixed-citation>Kellens, Jean. 1973. &#8220;Les Frauua&#7779;&#780;is dans l'art Sassanide.&#8221;<italic>Iranica Antiqua</italic> X: 133&#8211;138.</mixed-citation>
+      </ref>
+      <ref id="IDbfda6019-0562-483b-9b67-9f84144ab0dd">
+        <mixed-citation>&#8212;. 1996. &#8220;Druj-.&#8221; In <italic>Encyclop&#230;dia Iranica</italic> Vol. 7, edited by Ehsan Yarshater, 562&#8211;63. Costa Mesa, Calif.:&#160;Routledge &amp; Paul; Mazda Publ.</mixed-citation>
+      </ref>
+      <ref id="ID50254775-22d4-4d54-a4db-4ca441a6a389">
+        <mixed-citation>Kleiss, Wolfram and Rainer M. Boehmer, eds. 1996. <italic>Bisutun: Ausgrabungen und Forschungen in den Jahren 1963&#8211;1967. </italic>Teheraner Forschungen; Hrsg. vom Deutschen Arch&#228;ologischen Institut, Abteilung Teheran 7. Berlin: Mann.</mixed-citation>
+      </ref>
+      <ref>
+        <mixed-citation>Kotwal, Firoze M. P., ed.1969.<italic>The Supplementary Texts to the &#352;&#257;yest n&#275;-&#352;&#257;yest</italic>. Historisk-filosofiske meddelelser: HfM; Det Kongelige Danske Videnskabernes Selskab 44,2. K&#248;benhavn: Munksgaard.</mixed-citation>
+      </ref>
+      <ref id="IDe96ba93c-86d8-4aef-b42c-75dda3446e84">
+        <mixed-citation><italic>Les Perses Sassanides: Fastes d&#8217;un empire oubli&#233; (224&#8211;642)</italic>. Paris: Paris-Mus&#233;es, 2006.</mixed-citation>
+      </ref>
+      <ref id="ID9754ca02-665e-46db-82ca-de1992848e0d">
+        <mixed-citation>Levit-Tawil, Dalia. 1992. &#8220;The Syncretistic Goddess Anahita in Light of the Small Bas Relief of Darabgird: Her Imagery on Early Sasanian Rock Reliefs and Seals.&#8221;<italic>Iranica Antiqua</italic> XXVII: 189&#8211;225.</mixed-citation>
+      </ref>
+      <ref id="ID3dd20370-5f3a-419f-9038-028fa0cba25b">
+        <mixed-citation>Mackintosh, M. C. 1978. &#8220;Taq-i Bustan and Byzantine Art: A Case for Early Byzantine Influence on the Reliefs of Taq-i Bustan.&#8221; In <italic>Iranica Antiqua</italic> XIII: 149&#8211;177.</mixed-citation>
+      </ref>
+      <ref id="ID8d213d5c-dcde-4762-acc8-dcfcfed839f8">
+        <mixed-citation>Malandra, William W. 1983. <italic>An Introduction to Ancient Iranian Religion: Readings from the Avesta and Achaemenid Inscriptions. </italic>[Minnesota Publications in the Humanities 2]. Minneapolis [Minn.]: University of Minnesota Press.</mixed-citation>
+      </ref>
+      <ref>
+        <mixed-citation>Martiniani-Reber, Marielle, and Dominique B&#233;nazeth. 1997. <italic>Mus&#233;e du Louvre, textiles et mode sassanides: Les tissus orientaux conserv&#233;s au d&#233;partement des Antiquit&#233;s &#201;gyptiennes. </italic>[Inventaire des collections publiques fran&#231;aises 39]. Paris: R&#233;union des Mus&#233;es Nationaux.</mixed-citation>
+      </ref>
+      <ref>
+        <mixed-citation>Meinhold, Wiebke. 2009. <italic>I&#353;tar in A&#353;&#353;ur: Untersuchung eines Lokalkultes von ca. 2500 bis 614 v. Chr. </italic>[Alter Orient und Altes Testament (AOAT) Ver&#246;ffentlichungen zur Kultur und Geschichte des Alten Orients und des Alten Testaments 367]. M&#252;nster: Ugarit-Verlag.</mixed-citation>
+      </ref>
+      <ref id="ID3e6d8a97-d252-4ae6-b727-5642e99a6f3e">
+        <mixed-citation>Menasc, Jean de. 1954. &#8220;Le t&#233;moignage de Jayh&#257;n&#299; sur le mazd&#233;isme.&#8221; In <italic>Donvm Natalicivm H. S. Nyberg Oblatvm 28. mense dec. 1954</italic>. Edited by Erik Gern et al., 50&#8211;9. Mense Dec. Mcmliv. Uppsala:&#160;Almquist &amp; Wiksell.</mixed-citation>
+      </ref>
+      <ref>
+        <mixed-citation>Narten, Johanna. 1982. <italic>Die Am&#477;&#7779;&#780;a Sp&#477;&#7751;tas im Avesta</italic>. Wiesbaden: Harrassowitz.</mixed-citation>
+      </ref>
+      <ref>
+        <mixed-citation>Pakzad Soraki, Fazlolah, ed.2005. <italic>Bundahi&#353;n: Zoroastrische Kosmologie und Kosmogonie</italic>. Ancient Iranian Studies Series 2. Teheran: Center for the Great Islamic Encyclopaedia; Band I. Kritische Edition.</mixed-citation>
+      </ref>
+      <ref>
+        <mixed-citation>Pokorny, Julius.1959.<italic>Indogermanisches etymologisches W&#246;rterbuch: Bd. 1</italic>. Bern: Francke.</mixed-citation>
+      </ref>
+      <ref id="IDf291c5d8-0aa6-43b8-9db3-3cd110be5a96">
+        <mixed-citation>Ringbom, Lars-Ivar. 1957. <italic>Zur Ikonographie der G&#246;ttin Ardvi Sura Anahita. </italic>Acta Academiae Aboensis . Humaniora : humanistiska vetenskaper, socialvetenskaper, teologi. &#197;bo: &#197;bo Akad. Acta Academiae Aboensis: Humaniora XXIII, 2.</mixed-citation>
+      </ref>
+      <ref id="IDb454293d-ab07-4fc2-8217-813ae923644c">
+        <mixed-citation>Sarkhosh Curtis, Vesta. 1998. <italic>The Art and Archaeology of Ancient Persia: New Light on the Parthian and Sasanian Empires</italic>. London: Tauris.</mixed-citation>
+      </ref>
+      <ref>
+        <mixed-citation>Sarre, Friedrich. 1922. <italic>Die Kunst des alten Persien. </italic>Kunst des Ostens. Berlin: Cassirer.</mixed-citation>
+      </ref>
+      <ref id="ID2f0ef4cf-061c-4aaa-9d20-7e7b5c47995d">
+        <mixed-citation>Schippmann, Klaus. 1990.<italic>Grundz&#252;ge der Geschichte des sasanidischen Reiches</italic>. Darmstadt: Wiss. Buchges.</mixed-citation>
+      </ref>
+      <ref id="ID340751fe-ba2d-49f8-9648-06a3d8c09510">
+        <mixed-citation>Shepherd, Dorothy G. 1964. &#8220;Sasanian Art in Cleveland.&#8221;<italic>Bulletin of the Cleveland Museum of Art</italic>: 66&#8211;92.</mixed-citation>
+      </ref>
+      <ref id="ID45aea18d-267b-4bf6-a60b-ccea38aaa9d0">
+        <mixed-citation>&#8212;. 1980. &#8220;The Iconography of An&#257;hit&#257;: Part I.&#8221;<italic>Berytus Archeological Studies</italic> XXVIII: 47&#8211;86.</mixed-citation>
+      </ref>
+      <ref>
+        <mixed-citation>Skj&#230;rv&#248;, Prods O. 2011. <italic>The Spirit of Zoroastrianism</italic>. New Haven, Conn: Yale University Press.</mixed-citation>
+      </ref>
+      <ref>
+        <mixed-citation>Stock, Alex. 1996. <italic>Keine Kunst: Aspekte der Bildtheologie</italic>. Paderborn: Ferdinand Sch&#246;ningh.Stolze, Franz. 1882. <italic>Persepolis</italic>. Berlin: Asher.</mixed-citation>
+      </ref>
+      <ref id="ID744039b9-edcc-4315-b39a-ef3f3267565d">
+        <mixed-citation>Taylor, Paul. 2008. <italic>Iconography without texts. </italic>Warburg Institute colloquia, ISSN 1352&#8211;9986. London: Warburg Inst.</mixed-citation>
+      </ref>
+      <ref>
+        <mixed-citation>Uehlinger, Christoph, ed. <italic>Iconography of Deities and Demons in the Ancient Near East (IDD)</italic>. Leiden/Z&#252;rich: Brill (Electronic Pre-Publication). Accessed 19 May&#160;2010. http://www.religionswissenschaft.uzh.ch/idd/index.php.</mixed-citation>
+      </ref>
+      <ref>
+        <mixed-citation>Vanden Berghe, Louis. 1984. <italic>Reliefs Rupestres de l'Ir&#257;n Ancien</italic>. Bruxelles: Musees Royaux d'Art et d&#700;Histoire.</mixed-citation>
+      </ref>
+      <ref>
+        <mixed-citation>Wegner, Ilse. 1991. <italic>Gestalt und Kult der I&#353;tar-&#352;awu&#353;ka in Kleinasien. </italic>Alter Orient und Altes Testament (AOAT) Ver&#246;ffentlichungen zur Kultur und Geschichte des Alten Orients und des Alten Testaments 36. Kevelaer: Butzon [und] Bercker.</mixed-citation>
+      </ref>
+      <ref>
+        <mixed-citation>Werner, Karel. 1990. <italic>Symbols in Art and Religion: The Indian and the Comparative Perspectives</italic>. 1st publ. London: Curzon Pr.</mixed-citation>
+      </ref>
+      <ref>
+        <mixed-citation>Yarshater, Ehsan, ed. 1983. <italic>The Cambridge History of Iran: Vol. 3: Seleucid, Parthian and Sasanian periods, Part II</italic>. Cambridge: Cambridge University Press.</mixed-citation>
+      </ref>
+      <ref>
+        <mixed-citation>&#8212;, ed. 1985. <italic>Encyclop&#230;dia Iranica</italic> Vol. 1. London: Routledge &amp; Paul; &#256;B -AN&#256;HID.</mixed-citation>
+      </ref>
+      <ref id="IDd9327d69-9782-40b7-9465-b9492fc1d08e">
+        <mixed-citation>&#8212;, ed. 1987. <italic>Encyclop&#230;dia Iranica</italic> Vol. 2. London: Routledge &amp; Paul; An&#257;maka - &#256;&#7791;&#257;r al-wozar&#257;&#697;.</mixed-citation>
+      </ref>
+      <ref>
+        <mixed-citation>&#8212;, ed. 1989. <italic>Encyclop&#230;dia Iranica</italic> Vol. 3. London: Routledge &amp; Paul; &#256;ta&#353;-Bayhaq&#299;.</mixed-citation>
+      </ref>
+      <ref id="ID0b467216-579f-41de-aec3-4b4474b95a9e">
+        <mixed-citation>&#8212;, ed. 1996. <italic>Encyclop&#230;dia Iranica</italic> Vol. 7. Costa Mesa, Calif.: Routledge &amp; Paul; Mazda Publ.; D&#257;r&#257;(b) - Ebn Al-A&#7791;&#299;r.</mixed-citation>
+      </ref>
+      <ref>
+        <mixed-citation>&#8212;, ed. 1999. <italic>Encyclop&#230;dia Iranica</italic> Vol. 9. New York, NY: Bibliotheca Persica Press; Eth&#233;-Fish.</mixed-citation>
+      </ref>
+      <ref>
+        <mixed-citation>&#8212;, ed. 2001. <italic>Encyclop&#230;dia Iranica</italic> Vol. 10. New York, NY: Bibliotheca Persica Press; Fisheries-Gindaros.</mixed-citation>
+      </ref>
+      <ref id="ID26f9e92b-188a-4d75-baf4-061fbd310bdb">
+        <mixed-citation>&#8212;, ed. 2006. <italic>Encyclop&#230;dia Iranica</italic> Vol. 13. New York, NY: Encyclop&#230;dia Iranica Foundation; Illuminationism - Isfahan VIII.</mixed-citation>
+      </ref>
+      <ref>
+        <mixed-citation>Zgoll, Annette. 2003. <italic>Die Kunst des Betens: Form und Funktion, Theologie und Psychagogik in babylonisch-assyrischen Handerhebungsgebeten zu I&#353;tar. </italic>[Alter Orient und Altes Testament (AOAT) Ver&#246;ffentlichungen zur Kultur und Geschichte des Alten Orients und des Alten Testaments 308]. M&#252;nster: Ugarit-Verlag.</mixed-citation>
+      </ref>
+    </ref-list>
+  </back>
+</article>

@@ -1,0 +1,128 @@
+<!DOCTYPE article PUBLIC "-//NLM//DTD Journal Publishing DTD v3.0 20080202//EN" "http://dtd.nlm.nih.gov/publishing/3.0/journalpublishing3.dtd">
+<article>
+  <front>
+    <journal-meta>
+      <journal-id journal-id-type="publisher-id">The Journal Title</journal-id>
+      <issn pub-type="epub">0000-000X</issn>
+      <publisher>
+        <publisher-name>The Publisher Name</publisher-name>
+      </publisher>
+    </journal-meta>
+    <article-meta>
+      <article-id pub-id-type="doi">10.1000/123456</article-id>
+      <article-categories>
+        <subj-group>
+          <subject>Sample Articles</subject>
+        </subj-group>
+      </article-categories>
+      <title-group>
+        <article-title>A Sample Article Title</article-title>
+      </title-group>
+      <contrib-group>
+        <contrib contrib-type="author">
+          <name>
+            <surname>Test</surname>
+            <given-names>Person</given-names>
+          </name>
+          <xref ref-type="aff" rid="heidelberg"/>
+        </contrib>
+        <aff id="heidelberg">
+          <institution>University of Heidelberg</institution>
+        </aff>
+      </contrib-group>
+      <pub-date pub-type="epub">
+        <year>2014</year>
+      </pub-date>
+      <volume>1</volume>
+      <issue>1</issue>
+      <fpage>1</fpage>
+      <lpage>2</lpage>
+      <permissions>
+        <copyright-statement>Copyright &#169; 2014, Heidelberg University</copyright-statement>
+        <license xmlns:xlink="http://www.w3.org/1999/xlink" license-type="open-access" xlink:href="http://creativecommons.org/licenses/by/2.0/">
+          <license-p>This is an open-access article distributed under the terms of the Creative Commons Attribution License, which permits unrestricted use, distribution, and reproduction in any medium, provided the original work is properly cited. The citation of this article must include: the name(s) of the authors, the name of the journal, the full URL of the article (in a hyperlinked format if distributed online) and the DOI number of the article.</license-p>
+        </license>
+      </permissions>
+      <self-uri>http://www.asia-europe.uni-heidelberg.de/</self-uri>
+      <abstract>
+        <p>This is a sample abstract that forms part of the metadataSample.xml file in meTypeset.</p>
+      </abstract>
+    </article-meta>
+  </front>
+  <body>
+    <sec>
+      <title>Part (if book contains parts and chapters, 24, bold)</title>
+    </sec>
+    <sec>
+      <title>Chapter (20, bold)</title>
+    </sec>
+    <sec>
+      <title>Chapter Section (18, bold)</title>
+      <sec>
+        <title>Subsection (14, bold)</title>
+        <p>Put your first footnotes no earlier than the end of the first sentence.<xref ref-type="fn" rid="bibd2e52"/> Text should be size 12 font, in a normal style (<xref rid="TO_LINK" ref-type="bibr" id="IDe2ce52ce-ce3f-40aa-abee-c47ca5801f03">not bolded</xref>). Body text does not need to be justified or otherwise formatted because the text formatting will be changed later, depending on which end format will be produced (<xref rid="TO_LINK" ref-type="bibr" id="ID4ee361b9-937a-4b9d-bba4-eb02466ba8ac">i.e. HTML, PDF, ePub, or PoD</xref>). </p>
+        <p>#IMAGE: bostonatsunset.jpg (must have this tag format, with no spaces, and include file type extension, to be recognized by meTypeset)</p>
+        <p>#CAPTION: Figure 1: Boston at Sunset (must include the tag if the image itself is not embedded, so in other words, all the time) </p>
+        <table-wrap specific-use="rules" id="ID54903029-3562-444b-817c-a6961995019c" position="float" orientation="portrait">
+          <label>Table 1</label>
+          <caption>
+            <p>Blah blah (tables added with word &#8220;insert+table&#8221; feature will automatically be lifted out; those created elsewhere and saves as image files cannot be embedded and must be tagged like accordingly)</p>
+          </caption>
+          <table>
+            <tr>
+              <td rowspan="1" colspan="1">A</td>
+              <td rowspan="1" colspan="1">B</td>
+              <td rowspan="1" colspan="1">C</td>
+              <td rowspan="1" colspan="1">D</td>
+              <td rowspan="1" colspan="1">E</td>
+            </tr>
+            <tr>
+              <td rowspan="1" colspan="1">10</td>
+              <td rowspan="1" colspan="1">10</td>
+              <td rowspan="1" colspan="1">80</td>
+              <td rowspan="1" colspan="1">-</td>
+              <td rowspan="1" colspan="1">- </td>
+            </tr>
+            <tr>
+              <td rowspan="1" colspan="1">A</td>
+              <td rowspan="1" colspan="1">B</td>
+              <td rowspan="1" colspan="1">B</td>
+              <td rowspan="1" colspan="1">B</td>
+              <td rowspan="1" colspan="1">B</td>
+            </tr>
+            <tr>
+              <td rowspan="1" colspan="1">A</td>
+              <td rowspan="1" colspan="1">B</td>
+              <td rowspan="1" colspan="1">B</td>
+              <td rowspan="1" colspan="1">B</td>
+              <td rowspan="1" colspan="1">B</td>
+            </tr>
+          </table>
+        </table-wrap>
+        <p>Body text goes here. Body text goes here. <bold>Body text</bold> goes here. <italic>Body text</italic> goes here. <underline>Body text</underline> goes here. Body text goes here. Body text goes here. Body text goes here. Body text goes here. Body text goes here. Body text goes here. Body text goes here. Body text goes here. Body text goes here. Body text goes here. Body text goes here. (<xref rid="TO_LINK" ref-type="bibr" id="ID3bc080e2-043a-45f5-8bc9-1286b677b151">Chapter 1</xref>) Body text goes here. Body text goes here. [Chapter 1] Body text goes here. Body text goes here. &#26085;&#26412;&#35486; jap</p>
+        <disp-quote>
+          <p>Body text goes here. Body text goes here. Body text goes here. Body text goes here. Body text goes here. Body text goes here. Body text goes here. Body text goes here. Body text goes here. Body text goes here. Body text goes here. </p>
+        </disp-quote>
+        <p>Body text goes here.(<xref rid="ID0a6d468d-e67b-465c-af54-ebfe65e258e3" ref-type="bibr" id="ID95f1d601-c5fa-4bbf-afc1-0012623be232">Eve 2014</xref>) Body text goes here. Body text goes here. Body text goes here.<xref ref-type="fn" rid="bibd2e175"/> Body text goes here.<xref ref-type="fn" rid="bibd2e180"/> Body text goes here. Body text goes here. Body text goes here. Body text goes here. Body text goes here. Body text goes here. Body text goes here. Body text goes here. Body text goes here. Body text goes here. Body text goes here. Body text goes here. Body text goes here. Body text goes here. Body text goes here. Body text goes here. Body text goes here. Body text goes here. Body text goes here. Body text goes here. Body text goes here. Body text goes here. Body text goes here. Body text goes here. Body text goes here. </p>
+      </sec>
+    </sec>
+  </body>
+  <back>
+    <fn-group>
+      <fn id="bibd2e52">
+        <p>Test footnote.</p>
+      </fn>
+      <fn id="bibd2e175">
+        <p>Pollan, Omnivore&#8217;s Dilemma, 3. (Pollan 2006)</p>
+      </fn>
+      <fn id="bibd2e180">
+        <p>Garc&#237;a M&#225;rquez, Cholera, 33.</p>
+      </fn>
+    </fn-group>
+    <ref-list>
+      <ref id="ID0a6d468d-e67b-465c-af54-ebfe65e258e3">
+        <mixed-citation> BIBLIOGRAPHY Eve, Martin. "Sample Title." <italic>Journal Name</italic> (Publisher), July 31 2014: 2-10.</mixed-citation>
+      </ref>
+    </ref-list>
+  </back>
+</article>
