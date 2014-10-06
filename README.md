@@ -1,7 +1,7 @@
 HEIDIEditor
 ===========
 
-HTML5 WYSWIG Editor for NML-XML  (Standalone Application or as OMP Plugin)
+HTML5 WYSIWYG Editor for NLM-XML  (Standalone Application or as OMP Plugin)
 
 ### Dependencies
   1. [meTypeset](https://github.com/MartinPaulEve/meTypeset)
