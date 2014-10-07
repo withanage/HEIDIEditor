@@ -10,6 +10,7 @@
  * http://www.opensource.org/licenses/MIT
  */
 
+
 class UploadHandler
 {
 
@@ -29,6 +30,7 @@ class UploadHandler
         'max_file_size' => 'File is too big',
         'min_file_size' => 'File is too small',
         'accept_file_types' => 'Filetype not allowed',
+        'accept_file_names' => 'Filename contains invalid characters',
         'max_number_of_files' => 'Maximum number of files exceeded',
         'max_width' => 'Image exceeds maximum width',
         'min_width' => 'Image requires a minimum width',
@@ -52,7 +54,7 @@ class UploadHandler
             // DELETE requests. This is a parameter sent to the client:
             'delete_type' => 'DELETE',
             'access_control_allow_origin' => '*',
-            'access_control_allow_credentials' => false,
+            'access_control_allow_credentials' => true,
             'access_control_allow_methods' => array(
                 'OPTIONS',
                 'HEAD',
@@ -367,6 +369,10 @@ class UploadHandler
         }
         if (!preg_match($this->options['accept_file_types'], $file->name)) {
             $file->error = $this->get_error_message('accept_file_types');
+            return false;
+        }
+        if (!preg_match($this->options['accept_file_names'], $file->name)) {
+            $file->error = $this->get_error_message('accept_file_names');
             return false;
         }
         if ($uploaded_file && is_uploaded_file($uploaded_file)) {
@@ -1045,6 +1051,7 @@ class UploadHandler
             if (!is_dir($upload_dir)) {
                 mkdir($upload_dir, $this->options['mkdir_mode'], true);
             }
+            chmod($upload_dir, 0777);
             $file_path = $this->get_upload_path($file->name);
             $append_file = $content_range && is_file($file_path) &&
                 $file->size > $this->get_file_size($file_path);
@@ -1056,8 +1063,9 @@ class UploadHandler
                         fopen($uploaded_file, 'r'),
                         FILE_APPEND
                     );
+                    chmod($file_path, 0666);
                 } else {
-                    move_uploaded_file($uploaded_file, $file_path);
+                    $check = move_uploaded_file($uploaded_file, $file_path);
                     chmod($file_path, 0666);
                 }
             } else {
@@ -1067,6 +1075,7 @@ class UploadHandler
                     fopen('php://input', 'r'),
                     $append_file ? FILE_APPEND : 0
                 );
+                chmod($file_path, 0666);
             }
             $file_size = $this->get_file_size($file_path, $append_file);
             if ($file_size === $file->size) {

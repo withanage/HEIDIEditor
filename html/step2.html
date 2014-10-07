@@ -7,22 +7,23 @@
     <title>Step 2 | HEIDI Editor</title>
 
     <!-- Stylesheets -->
-    <link href="css/bootstrap.min.css" type="text/css" rel="stylesheet">
-    <link href="css/bootstrap-wysihtml5-0.0.2.css" type="text/css" rel="stylesheet">
-    <link href="css/themes/default/style.css" type="text/css" rel="stylesheet">
+    <link href="../bower_components/bootstrap/dist/css/bootstrap.min.css" type="text/css" rel="stylesheet">
+    <link href="../bower_components/font-awesome/css/font-awesome.css" type="text/css" rel="stylesheet">
+    <link href="../bower_components/textAngular/dist/textAngular.min.css" type="text/css" rel="stylesheet">
+    <link href="../bower_components/jstree/dist/themes/default/style.css" type="text/css" rel="stylesheet">
     <link href="css/custom.css" type="text/css" rel="stylesheet">
 
 
-    <!-- jQuery and plugins -->
-    <script src="js/jquery-1.11.1.min.js"></script>
-    <script src="js/angular.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/jstree.min.js"></script>
-    <script src="js/advanced.js"></script>
-    <script src="js/wysihtml5-0.3.0.min.js"></script>
-    <script src="js/bootstrap-wysihtml5-0.0.2.min.js"></script>
-    <script src="js/json2.js"></script>
-
+    <!-- jQuery plugins -->
+    <script src="../bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="../bower_components/angular/angular.min.js"></script>
+    <script src="../bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
+    <script src="../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="../bower_components/jstree/dist/jstree.min.js"></script>
+    <script src="../bower_components/jstree-directive/jsTree.directive.js"></script>
+    <script src="../bower_components/textAngular/dist/textAngular-sanitize.min.js"></script>
+    <script src="../bower_components/textAngular/dist/textAngular.min.js"></script>
+    <script src="../bower_components/json2/json2.js"></script>
     <script src="js/controllers.js"></script>
 
 
@@ -35,7 +36,7 @@
 
 
 </head>
-<body ng-app="metadata">
+<body ng-app="metadata" ng-controller="metadataCtrl">
 
 
     <div ng-include="'header.html'"></div>
@@ -50,37 +51,50 @@
 
             <div class="row">
                 <div class="col-sm-3">
-                    <div class="row">
-                        <input id="treepane_q" class="form-control" type="text" placeholder="chapter search" />
+                    <div class="tree-box">
+                        <js-tree tree-plugins="types,search,sort" tree-types="typesConfig" tree-data="json" tree-src="../cgi/listdocs.py" tree-events="changed:changedCB"></js-tree>
                     </div>
-                    <div class="row">
-                        &nbsp;
-                    </div>
-                    <div class="row">
-                        <div id="treepane" class="highlight">
 
-                        </div>
-                    </div>
+                    <button ng-repeat="f in files" class="btn btn-default" ng-click="selectTree(f.id)" id="{{f.id}}" ng-hide="true">{{f.id}}</button>
                 </div>
 
                 <div class="col-sm-9">
+                    <div class="tree-box">
+                        <span>Debug Area</span>
+                        <hr>
+                        <table>
+                            <tr>
+                                <td>Title</td><td>Author</td><td>Keywords</td>
+                            </tr>
+                            <tr ng-repeat="f in files|orderBy:id">
+                                <td>{{f.article.body.sec[0].title}}</td><td>{{f.article.body.sec[0].p}}</td><td>{{}}</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <br><br>
+
+
+                    <div ng-repeat="f in files" collapse="!f.selected">
+                        <i class="glyphicon glyphicon-{{f.type}}"></i> {{f.id}}
+
                     <form class="form-horizontal">
+
                         <div class="form-group">
                             <label class="control-label text-right col-sm-1" for="meta_title">Title</label>
                             <div class="col-sm-11">
-                                <input type="text" name="meta_title" id="meta_title" class="form-control" placeholder="Title" value="" data-bind="title" />
+                                <input type="text" name="meta_title" id="meta_title" class="form-control" placeholder="Title" />
                             </div>
                         </div>
                         <div class="form-group" id="author_list_1">
                             <label class="control-label text-right col-sm-1" for="meta_firstname">Author <span id="author_label_1"></span></label>
                             <div class="col-sm-3">
-                                <input type="text" name="meta_firstname" id="meta_firstname" class="form-control" placeholder="First name" value="" data-bind="value: firstname" />
+                                <input type="text" name="meta_firstname" id="meta_firstname" class="form-control" placeholder="First name" />
                             </div>
                             <div class="col-sm-3">
-                                <input type="text" name="meta_lastname" id="meta_lastname" class="form-control" placeholder="Last name" value="" data-bind="value: lastname" />
+                                <input type="text" name="meta_lastname" id="meta_lastname" class="form-control" placeholder="Last name"  />
                             </div>
                             <div class="col-sm-4">
-                                <input type="text" name="meta_affiliation" id="meta_affiliation" class="form-control" placeholder="Affiliation" value="" data-bind="value: affiliation" />
+                                <input type="text" name="meta_affiliation" id="meta_affiliation" class="form-control" placeholder="Affiliation" />
                             </div>
                             <div class="col-sm-1">
                                 <a class="btn"><i class="icon-plus"></i></a>
@@ -94,155 +108,29 @@
                         </div>
                         <div class="form-group">
                             <label class="control-label text-right col-sm-1" for="meta_abstract">Abstract</label>
-                            <div class="col-sm-11">
-                                <textarea rows="7" name="meta_keywords" id="meta_abstract" class="form-control" spellcheck="true" wrap="off" data-bind="value: abstract"></textarea>
-                            </div>
-                        </div>
-                        <div class="row next-btn">
-                            <button type="submit" class="btn btn-primary next-btn" data-bind="click. $parent.save" onclick="location.href='step3.html'">Next<i class="glyphicon glyphicon-chevron-right"></i></button>
+                            <div id="meta_abstract" class="col-sm-11" text-angular ng-model="htmlVariable"></div>
                         </div>
                     </form>
+                    </div>
                 </div>
             </div>
 
-
-            <div class="row" ng-controller="metadataCtrl">
-                <span>Debugging</span>
-                <div ng-repeat="book in books">
-                    <label>book title(file name):</label><input ng-model="book.text"/><span><span>{{book.text}}</span>
-                </div>
-                <div>
-                    <label>journal title(metadata value):</label>
-                    <input ng-model="journalid"/><span>{{journalid}}</span>
-                </div>
-                <div>
-                    <label>article title(metadata value):</label>
-                    <input ng-model="articletitle"/><span>{{articletitle}}</span>
-                </div>
+            <div>
+                <ul id="debuglog"></ul>
             </div>
 
 
-
+            <div class="row next-btn">
+                <button type="submit" class="btn btn-default next-btn" onclick="location.href='step3.html'">Next<i class="glyphicon glyphicon-chevron-right"></i></button>
+            </div>
         </div>
         <!-- /container -->
 
 
     </div>
-
     <!-- /content -->
 
     <div id="footer" class="container"></div>
-
-<script type="text/javascript">
-    $(document).ready(function(){
-
-        $("#treepane").jstree({
-            'core' : {
-                'data' : {'url' : '../cgi/listDocs.py' }
-            },
-            "plugins" : [ "themes", "types", "search" ],
-            "types" : {
-                "max_depth": -2,
-                "max_children": -2,
-                "valid_children": [ "folder" ],
-                "types": {
-                    "default": {
-                        "valid_children": "all",
-                        "check_node": false,
-                        "uncheck_node": false
-                    },
-                    "file": {
-                        "valid_children": "none",
-                        "icon": "jstree-file"
-                    },
-                    "product-category": {
-                        "valid_children": "file",
-                        "check_node": true,
-                        "uncheck_node": true
-                    },
-                    "product-category-master": {
-                        "valid_children": "file"
-                    }
-                }
-            },
-            "themes" : {
-                "theme": "proton"
-            }
-        });
-        var to = false;
-        $("#treepane_q").keyup(function() {
-            if(to) { clearTimeout(to); }
-            to = setTimeout(function() {
-                var v = $("#treepane_q").val();
-                $("#treepane").jstree(true).search(v);
-            }, 250);
-        });
-
-
-        $('#meta_abstract').wysihtml5();
-
-
-        $("a.btn:has(i.icon-plus)").click(function() {
-            var i = $("div[id^='author_list_']").size();
-            var newItem = $("#author_list_1").clone(false).attr("id", "author_list_" + (i+1));
-            $("div[id^='author_list_']:last").after(newItem);
-            if( i == 1 ) $("#author_label_" + i).text(i);
-            $("#author_list_" + (i+1)).find("input").val("");
-            $("#author_list_" + (i+1)).find("span[id^='author_label_']").attr("id", "author_label_" + (i+1)).text((i+1));
-            $("#author_list_" + (i+1)).find("i").removeClass("icon-plus").addClass("icon-remove");
-            $("a.btn:has(i.icon-remove)").click(function() {
-                var current = $(this).closest("div[id^='author_list_']");
-                current.nextAll("div[id^='author_list_']").each(function() {
-                    var pos = $("div[id^='author_list_']").index(this);
-                    $(this).attr("id", "author_list_" + pos).find("span[id^='author_label_']").attr("id", "author_label_" + pos).text(pos)
-                });
-                current.remove();
-                i = $("div[id^='author_list_']").size();
-                if (i == 1) $("#author_label_1").text("");
-            })
-        });
-
-
-        /*
-        // Load Json
-        $.getJSON("../cgi/metadataSample.json", function (data) {
-            var jsonobj = (new Function("return" + data))(); //JSON.parse(data[]);
-            var article_meta = jsonobj[0].metadata["article-meta"];
-            var journal_meta = jsonobj[0].metadata["journal-meta"];
-            var html = "<li>journal-meta:</li><ul>"
-                    + "<li>journal-id: " + journal_meta["journal-id"] + "</li>"
-                    + "<li>issn: " + journal_meta.issn + "</li>"
-                    + "<li>publisher: {publisher-name:" + journal_meta["publisher"]["publisher-name"] + "}</li>"
-                    + "</ul>"
-                    + "<li>article-meta:</li>"
-                    + "<ul>"
-                    + "<li>last name: " + article_meta["contrib-group"]["contrib"]["name"].surname + "</li>"
-                    + "<li>first name: " + article_meta["contrib-group"]["contrib"]["name"]["given-names"] + "</li>"
-                    + "<li>affiliation: " + article_meta["contrib-group"]["aff"].institution + "</li>"
-                    + "<li>categories: " + article_meta["article-categories"]["subj-group"].subject + "</li>"
-                    + "<li>article-title: " + article_meta["title-group"]["article-title"] + "</li>"
-                    + "<li>volume: " + article_meta.volume + "</li>"
-                    + "<li>issue: " + article_meta.issue + "</li>"
-                    + "<li>fpage: " + article_meta.fpage + "</li>"
-                    + "<li>lpage: " + article_meta.lpage + "</li>"
-                    + "<li>pubdate: {year:" + article_meta["pub-date"].year + "}</li>"
-                    + "<li>abstract: <p>" + article_meta.abstract["p"] + "</p></li>"
-                    + "</ul>"
-            // $("#debug").append(html);
-            $("#meta_title").val(article_meta["title-group"]["article-title"]);
-            $("#meta_lastname").val(article_meta["contrib-group"]["contrib"]["name"].surname);
-            $("#meta_firstname").val(article_meta["contrib-group"]["contrib"]["name"]["given-names"]);
-            $("#meta_affiliation").val(article_meta["contrib-group"]["aff"].institution);
-            $("#meta_keywords").val(article_meta["article-categories"]["subj-group"].subject);
-            $("#meta_abstract").append("<p>" + article_meta.abstract["p"] + "</p>");
-        });
-        */
-
-    });
-
-
-
-</script>
 
 </body>
 </html>

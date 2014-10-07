@@ -15,7 +15,7 @@
 (function () {
     'use strict';
 
-    var url = './php/index.php';
+    var url = './php/';
 
     angular.module('demo', ['blueimp.fileupload'])
     .config([
@@ -33,7 +33,8 @@
                 disableImageResize: /Android(?!.*Chrome)|Opera/
                     .test(window.navigator.userAgent),
                 maxFileSize: 5000000,
-                acceptFileTypes: /(\.)(docx?|odt|jpe?g|png|gif|tiff|eps|mav|mp3|mp4)$/i
+                acceptFileTypes: /(\.)(docx?|odt|jpe?g|png|gif|tiff|eps|mav|mp3|mp4)$/i,
+                dataType: 'json'
             });
         }
     ])
@@ -89,6 +90,7 @@
             }
         }
     ]);
+
 
 
 }());
