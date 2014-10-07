@@ -1,0 +1,35 @@
+{
+  "name": "HEIDIEditor",
+  "version": "0.0.1",
+  "homepage": "https://github.com/may-/HEIDIEditor",
+  "authors": [
+    "mayumi ohta <mayumi.ohta@asia-europe.uni-heidelberg.de>"
+  ],
+  "description": "HTML5 WYSIWYG Editor for NLM-XML (Standalone Application or as OMP Plugin)",
+  "main": "index.html",
+  "keywords": [
+    "HTML5",
+    "WYSIWYG",
+    "OMP"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "1",
+    "bootstrap": "~3.2.0",
+    "angular": "~1.2.26",
+    "angular-bootstrap": "~0.11.2",
+    "jquery-file-upload": "~9.8.0",
+    "json2": "*",
+    "textAngular": "~1.2.2",
+    "font-awesome": "~4.2.0",
+    "jstree-directive": "~0.1.2",
+    "jstree": "~3.0.4"
+  }
+}
