@@ -1,19 +1,6 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 
-# show progress bar
-print 'Content-Type: text/html\n'
-print '<html><head>'
-print '<title>typesetting | HEIDIEditor</title>'
-print '<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">'
-print '<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>'
-print '</head><body><div class="container">'
-print '<h1 style="text-align:center; margin-top:150px">Typesetting...</h1>'
-print '<div class="progress progress-striped active" style="width:50%; margin: 0 auto">'
-print '<div class="progress-bar progress-bar-primary" style="width:100%"></div>'
-print '</div></div></body></html>'
-
-
 
 import cgitb
 import logging
@@ -30,8 +17,9 @@ import shutil
 sys.path.append('../../meTypeset/bin')
 import meTypeset
 
-
+# display error messages in web browser
 cgitb.enable()
+# store log messages in file
 logging.basicConfig(level=logging.DEBUG, filename='typeset.log')
 
 
@@ -41,6 +29,7 @@ UPLOAD_DIR = '../html/uploads'
 METADATA_PATH = os.path.abspath('../../meTypeset/metadata/metadataSample.xml')
 METADATA_NAME = 'metadata.xml'
 PERM_666 = (stat.S_IRUSR | stat.S_IWUSR | stat.S_IRGRP | stat.S_IWGRP | stat.S_IROTH | stat.S_IWOTH)
+PERM_777 = (stat.S_IRUSR | stat.S_IWUSR | stat.S_IXUSR | stat.S_IRGRP | stat.S_IWGRP | stat.S_IXGRP | stat.S_IROTH | stat.S_IWOTH | stat.S_IXOTH)
 MEDIA_LIST = ['.jpg', '.jpeg', '.gif', '.tiff', '.esp', '.wav', '.mp3', '.mp4']
 DOC_LIST = ['.doc', '.docx', '.odt']
 
@@ -72,21 +61,20 @@ def typeset(item):
     logging.info("\t"+str(datetime.now().time())+":\t\t meTypeset debug log: \n"+log)
 
     nlmfile = out_dir+"/"+"nlm"+"/"+"out.xml"
-    # logging.info("\t"+str(datetime.now().time())+":\t\t Generating JSON ...")
-    # xmldata = open(nlmfile).read()
-    # jsondata = xmltodict.parse(xmldata)
-    # logging.info("\t"+str(datetime.now().time())+":\t\t JSON data: \n"+jsondata)
+    #logging.info("\t"+str(datetime.now().time())+":\t\t Generating JSON ...")
+    #xmldata = open(nlmfile).read()
+    #jsondata = xmltodict.parse(xmldata)
 
-    # if not os.path.isdir(bookname_dir+"/"+"json"):
-    # logging.info("\t"+str(datetime.now().time())+":\t\t Making directory "+bookname_dir+"/"+"json"+" ...")
+    #if not os.path.isdir(bookname_dir+"/"+"json"):
+    #    logging.info("\t"+str(datetime.now().time())+":\t\t Making directory "+bookname_dir+"/json ...")
     #    os.mkdir(bookname_dir+"/"+"json", 0775)
-    # jsonfile = bookname_dir+"/"+"json"+"/"+filename[0]+".json"
-    # if os.path.exists(jsonfile):
-    #     logging.debug("\t"+str(datetime.now().time())+":\t\t "+jsonfile+" already exists. remove it.")
-    #     os.remove(jsonfile)
-    # logging.info("\t"+str(datetime.now().time())+":\t\t Writing JSON to "+jsonfile+" ...")
-    # with open(jsonfile, 'w+') as f:
-    #     json.dump(jsondata, f, sort_keys=False, indent=4)
+    #jsonfile = bookname_dir+"/"+"json"+"/"+filename[0]+".json"
+    #if os.path.exists(jsonfile):
+    #    logging.debug("\t"+str(datetime.now().time())+":\t\t "+jsonfile+" already exists. remove it.")
+    #    os.remove(jsonfile)
+    #logging.info("\t"+str(datetime.now().time())+":\t\t Writing JSON to "+jsonfile+" ...")
+    #with open(jsonfile, 'w+') as f:
+    #    json.dump(jsondata, f, sort_keys=False, indent=4)
 
     if not os.path.isdir(bookname_dir+"/"+"xml"):
         logging.info("\t"+str(datetime.now().time())+":\t\t Making directory "+bookname_dir+"/"+"xml"+" ...")
@@ -97,22 +85,12 @@ def typeset(item):
         os.remove(xmlfile)
     logging.info("\t"+str(datetime.now().time())+":\t\t Copying XML to "+xmlfile+" ...")
     shutil.copyfile(nlmfile, xmlfile)
-    logging.info("\t"+str(datetime.now().time())+":\t\t Copying metadata file to "+bookname_dir+" ...")
-    shutil.copyfile(METADATA_PATH, bookname_dir+"/"+METADATA_NAME)
 
 
 def main():
     logging.info("\n\t================main() in saveUploads.py "+str(datetime.now())+"=================\n")
 
-    # set METADATA_PATH
-    files = os.listdir(TMP_DIR)
-    if(METADATA_NAME in files):
-        METADATA_PATH = os.path.abspath(TMP_DIR+"/"+METADATA_NAME)
-        metafile = os.open(METADATA_PATH, os.O_RDONLY)
-        os.fchmod(metafile, PERM_666)
-        os.close(metafile)
-
-    for item in files:
+    for item in os.listdir(TMP_DIR):
         logging.info("\t"+str(datetime.now().time())+":\t Processing "+item+" ...")
         if(os.path.isfile(TMP_DIR+"/"+item)):
 
@@ -150,5 +128,5 @@ if __name__ == "__main__":
     main()
 
     # jump to next page
-    #print 'Content-Type: text/html\n'
+    print 'Content-Type: text/html'
     print "Location: http://"+os.environ['HTTP_HOST']+"/HEIDIEditor/html/step2.html\n"

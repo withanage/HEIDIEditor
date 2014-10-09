@@ -17,7 +17,7 @@
 
     var url = './php/';
 
-    angular.module('demo', ['blueimp.fileupload'])
+    angular.module('demo', ['blueimp.fileupload', 'ui.bootstrap'])
     .config([
         '$httpProvider', 'fileUploadProvider',
         function ($httpProvider, fileUploadProvider) {
@@ -33,7 +33,7 @@
                 disableImageResize: /Android(?!.*Chrome)|Opera/
                     .test(window.navigator.userAgent),
                 maxFileSize: 5000000,
-                acceptFileTypes: /(\.)(docx?|odt|jpe?g|png|gif|tiff|eps|mav|mp3|mp4)$/i,
+                acceptFileTypes: /(\.)(docx?|odt|jpe?g|png|gif|tiff|eps|wav|mp3|mp4)$/i,
                 dataType: 'json'
             });
         }
@@ -89,8 +89,24 @@
                 };
             }
         }
+    ])
+
+    // lock browser monitor during typesetting
+    .controller('modalCtrl', [
+        '$scope', '$modal', '$window',
+        function($scope, $modal, $window) {
+            $scope.open = function (path) {
+                // redirect to the given path
+                $window.location.href = path;
+                // lock browser monitor
+                $modal.open({
+                    templateUrl: 'loading.html',
+                    backdrop: 'static',
+                    keyboard: false,
+                    size: 'sm'
+                });
+            }
+        }
     ]);
-
-
 
 }());

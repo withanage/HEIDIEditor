@@ -30,6 +30,7 @@
     "textAngular": "~1.2.2",
     "font-awesome": "~4.2.0",
     "jstree-directive": "~0.1.2",
-    "jstree": "~3.0.4"
+    "jstree": "~3.0.4",
+    "angular-recursion": "~1.0.3"
   }
 }

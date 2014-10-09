@@ -127,8 +127,19 @@
                 </div>
             </div></div>
 
-            <div class="row next-btn">
-                <button class="btn btn-default next-btn" onclick="location.href='../cgi/loading.py'">Next<i class="glyphicon glyphicon-chevron-right"></i></button>
+            <div class="row next-btn" data-ng-controller="modalCtrl">
+                <script type="text/ng-template" id="loading.html">
+                    <div class="modal-header">
+                        <h3 class="modal-title">Typesetting...</h3>
+                    </div>
+                    <div class="modal-body">
+                        <progressbar class="progress-striped active" animate="false" value="100"></progressbar>
+                    </div>
+                    <div class="modal-footer">
+                        <span>Please wait a moment.</span>
+                    </div>
+                </script>
+                <button class="btn btn-default next-btn" ng-click="open('../cgi/saveUploads.py')">Next <i class="glyphicon glyphicon-chevron-right"></i></button>
             </div>
         </div>
         <!-- /container -->
