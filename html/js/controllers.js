@@ -10,40 +10,9 @@ metadata.factory('JsonData', function(){
     };
 });
 
-/* articleMetadata directive */
-metadata.directive('articleMetadata', function(){
-    return {
-        restrict: "E",
-        scope: {src: '='},
-        templateurl: './articlemetadata.html',
-        compile: function(element, attrs){
-            if(attrs.src === ''){
-
-            }
-            return function(scope, element, attrs){
-                // link function
-            }
-        }
-    };
-});
-
-/* bookMetadata directive */
-metadata.directive('bookMetadata', function(){
-    return {
-        restrict: "E",
-        scope: {src: '='},
-        templateurl: './bookmetadata.html'
-    };
-});
-
-/* main controller */
-metadata.controller('metadataCtrl',
-    ['$scope', 'JsonData', function($scope, JsonData){
-        $scope.files = JsonData.files;
 
 
-    }]
-);
+
 
 /* jstree controller */
 metadata.controller('jstreeCtrl',
@@ -68,12 +37,22 @@ metadata.controller('jstreeCtrl',
             return false;
         };
 
-        $scope.htmlVariable = 'test';
+        $scope.pubType = ['PDF', 'epub', 'html']
+
+        $scope.duplicate = function(obj, key){
+            if(obj.hasOwnProperty(key)){
+                if(!angular.isArray(obj[key])){
+                    var tmp = obj[key];
+                    obj[key] = [tmp];
+                }
+                obj[key].push(obj[key][0])
+            }
+        };
 
         // jsTree config
         $scope.typesConfig = {
             "book": {
-                "icon": "glyphicon glyphicon-book"
+                "icon": "glyphicon glyphicon-folder-open"
             },
             "file": {
                 "icon": "glyphicon glyphicon-file"

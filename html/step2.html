@@ -12,7 +12,6 @@
     <link href="../bower_components/font-awesome/css/font-awesome.css" type="text/css" rel="stylesheet">
     <link href="../bower_components/textAngular/dist/textAngular.min.css" type="text/css" rel="stylesheet">
     <link href="../bower_components/jstree/dist/themes/default/style.css" type="text/css" rel="stylesheet">
-    <link href="../bower_components/json-tree/json-tree.css" type="text/css" rel="stylesheet">
     <link href="css/custom.css" type="text/css" rel="stylesheet">
 
 
@@ -25,10 +24,8 @@
     <script src="../bower_components/jstree-directive/jsTree.directive.js"></script>
     <script src="../bower_components/textAngular/dist/textAngular-sanitize.min.js"></script>
     <script src="../bower_components/textAngular/dist/textAngular.min.js"></script>
-    <script src="../bower_components/json-tree/json-tree.js"></script>
-    <script src="../bower_components/angular-recursion/angular-recursion.min.js"></script>
     <script src="js/controllers.js"></script>
-
+    <script src="js/directives.js"></script>
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -39,20 +36,14 @@
 
 
 </head>
-<body ng-app="metadata">
+<body ng-app="metadata" style="padding-top:40px">
 
-    <!-- header -->
-    <div ng-include="'header.html'"></div>
-    <!-- /header -->
+    <header step="2"></header>
 
     <div id="content">
         <div class="container" ng-controller="jstreeCtrl">
 
-
-            <!-- title -->
             <h2 class="title">Step2: Add Metadata</h2>
-            <!-- /title -->
-
 
             <div class="row">
                 <div class="col-sm-3">
@@ -70,7 +61,6 @@
                     <button ng-repeat="f in files" ng-click="selectTree(f.id)" id="{{f.id}}" ng-hide="true">
                         {{f.id}}
                     </button>
-
 
                     <div ng-controller="modalCtrl">
                         <script type="text/ng-template" id="aside.template.html">
@@ -98,182 +88,42 @@
                             </div>
                         </script>
                         <button class="btn btn-default" ng-click="open()">
-                            <i class="glyphicon glyphicon-wrench"></i> Show JSON
+                            <i class="glyphicon glyphicon-eye-open"></i> Show JSON
                         </button>
                     </div>
-
                 </div>
 
                 <div class="col-sm-9">
-
-
-
-
                     <div ng-repeat="f in files" collapse="!f.selected">
-                        <i class="glyphicon glyphicon-{{f.type}}"></i> {{f.id}}
-                        <br>
-                        <!-- <div data-ng-if="!!(f.type === 'book')"> -->
-                            <table class="table">
-                                <tr>
-                                    <th>Tagset</th>
-                                    <td colspan="2">
-                                        {{f.tagset}} tagset
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th>Title</th>
-                                    <td colspan="2">
-                                        <input type="text" class="form-control" placeholder="Title"
-                                               data-ng-model="f['article']['front']['article-meta']['title-group']['article-title']"/>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th>Author</th>
-                                    <td>
-                                        <input type="text" class="form-control" placeholder="First name"
-                                               data-ng-model="f['article']['front']['article-meta']['contrib-group']['contrib']['name']['surname']"/>
-                                    </td>
-                                    <td>
-                                        <input type="text" class="form-control" placeholder="Last name"
-                                               data-ng-model="f['article']['front']['article-meta']['contrib-group']['contrib']['name']['given-names']"/>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th>Keywords</th>
-                                    <td colspan="2">
-                                        <input type="text" name="meta_keywords" class="form-control" placeholder="xxx, yyy, zzz" />
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th>Abstract</th>
-                                    <td colspan="2">
-                                        <div text-angular data-ng-model="f['article']['front']['article-meta']['abstract']['p']"></div>
-                                    </td>
-                                </tr>
-                            </table>
-                        <!-- </div> -->
-
-
-                        <!--
-                        <div data-ng-if="!!(f.type === 'file')">
-                            <table class="table">
-                                <tr>
-                                    <th>Tagset</th>
-                                    <td colspan="2">
-                                        {{f.tagset}} tagset
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th>Title</th>
-                                    <td colspan="2">
-                                        <input type="text" class="form-control" placeholder="Title"
-                                               data-ng-model="f['article']['front']['article-meta']['title-group']['article-title']"/>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th>Author</th>
-                                    <td>
-                                        <input type="text" class="form-control" placeholder="First name"
-                                               data-ng-model="f['article']['front']['article-meta']['contrib-group']['contrib']['name']['surname']"/>
-                                    </td>
-                                    <td>
-                                        <input type="text" class="form-control" placeholder="Last name"
-                                               data-ng-model="f['article']['front']['article-meta']['contrib-group']['contrib']['name']['given-names']"/>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th>Keywords</th>
-                                    <td colspan="2">
-                                        <input type="text" name="meta_keywords" class="form-control" placeholder="xxx, yyy, zzz" />
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th>Abstract</th>
-                                    <td colspan="2">
-                                        <div text-angular data-ng-model="f['article']['front']['article-meta']['abstract']['p']"></div>
-                                    </td>
-                                </tr>
-                            </table>
-
-
-                            <hr>
-
-                            <form class="form-horizontal">
-
-                                <div class="form-group">
-                                    <label class="control-label text-right col-sm-1">Title</label>
-                                    <div class="col-sm-11">
-                                        <input type="text" class="form-control" placeholder="Title"
-                                               data-ng-model="f['article']['front']['article-meta']['title-group']['article-title']"/>
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label class="control-label text-right col-sm-2">Contributor</label>
-                                    <div class="col-sm-3">
-                                        <select type="text" class="form-control"
-                                                data-ng-model="f['article']['front']['article-meta']['contrib-group']['contrib']['@contrib-type']">
-                                        </select>
-                                    </div>
-                                    <div class="col-sm-3">
-                                        <input type="text" class="form-control" placeholder="First name"
-                                               data-ng-model="f['article']['front']['article-meta']['contrib-group']['contrib']['name']['surname']"/>
-                                    </div>
-                                    <div class="col-sm-3">
-                                        <input type="text" class="form-control" placeholder="Last name"
-                                               data-ng-model="f['article']['front']['article-meta']['contrib-group']['contrib']['name']['given-names']"/>
-                                    </div>
-                                    <div class="col-sm-1">
-                                        <a class="btn"><i class="glyphicon glyphicon-plus-sign"></i></a>
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label class="control-label text-right col-sm-1">Keywords</label>
-                                    <div class="col-sm-11">
-                                        <input type="text" name="meta_keywords" class="form-control" placeholder="xxx, yyy, zzz" />
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label class="control-label text-right col-sm-1">Abstract</label>
-                                    <div class="col-sm-11" text-angular data-ng-model="htmlVariable"></div>
-                                </div>
-                            </form>
-                        </div>
-                        -->
+                        <metadata-fields></metadata-fields>
                     </div>
-
-
-
                 </div>
 
+                <div class="row next-btn">
+                    <button type="submit" class="btn btn-default next-btn" onclick="location.href='step3.html'">
+                        Next <i class="glyphicon glyphicon-chevron-right"></i>
+                    </button>
+                </div>
 
-
+                <!--
+                <hr>
                 <div class="row">
-                    <hr>
-                    <div class="col-sm-8 col-sm-offset-4">
                         <span>Debug Area</span>
                         <br>
                         <pre><code>{{files | json}}</code></pre>
                     </div>
                 </div>
+                -->
 
             </div>
-
-
-            <div class="row next-btn">
-                <button type="submit" class="btn btn-default next-btn" onclick="location.href='step3.html'">
-                    Next <i class="glyphicon glyphicon-chevron-right"></i>
-                </button>
-            </div>
-
 
         </div>
         <!-- /container -->
 
-
     </div>
     <!-- /content -->
 
-    <div id="footer" class="container"></div>
+    <footer></footer>
 
 </body>
 </html>

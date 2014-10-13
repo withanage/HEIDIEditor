@@ -107,6 +107,17 @@
                 });
             }
         }
-    ]);
+    ])
+
+    // header directive
+    .directive('header', function(){
+        return {
+            restrict: "E",
+            scope: {
+                step: '='
+            },
+            templateUrl: './tpls/header.html'
+        };
+    });
 
 }());

@@ -9,7 +9,7 @@ from upload import save_file
 
 
 cgitb.enable()
-logging.basicConfig(level=logging.DEBUG, filename='HEIDIEditor/cgi/log.txt')
+logging.basicConfig(level=logging.DEBUG, filename='HEIDIEditor/cgi/serverlog.txt')
 
 class ServerHandler(SimpleHTTPServer.SimpleHTTPRequestHandler):
 

@@ -1,0 +1,19 @@
+# compiled python classses
+*.pyc
+
+# WebStorm settings
+.idea
+
+# htaccess
+.htpasswd
+.htusers
+.htaccess
+
+# omp
+omp
+
+# lens
+lens
+
+# bower components
+bower_components

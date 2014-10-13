@@ -1,0 +1,128 @@
+<i class="glyphicon"
+   ng-class="{'glyphicon-file':f.type == 'file', 'glyphicon-folder-open':f.type == 'book'}"></i>
+{{f.id}}
+<div ng-if="!!(f.tagset == 'article')">
+    <div ng-if="!!(f.type == 'book')">
+    <table class="table">
+        <tr>
+            <th>Manuscript Type</th>
+            <td colspan="2">
+                <input type="radio" ng-model="f['tagset']" value="article"/>journal article
+                <input type="radio" ng-model="f['tagset']" value="book"/>book
+            </td>
+        </tr>
+        <tr>
+            <th>ISSN</th>
+            <td>
+                <input type="radio" ng-model="f['article']['front']['journal-meta']['issn']['@pub-type']" value="PoD"/>PoD
+                <input type="radio" ng-model="f['article']['front']['journal-meta']['issn']['@pub-type']" value="ePub"/>ePub
+                <input type="radio" ng-model="f['article']['front']['journal-meta']['issn']['@pub-type']" value="html"/>html
+            </td>
+            <td>
+                <input class="form-control"
+                       ng-model="f['article']['front']['journal-meta']['issn']['#text']"/>
+            </td>
+        </tr>
+        <tr>
+            <th>Journal Title</th>
+            <td colspan="2">
+                <input type="text" class="form-control" placeholder="Title"
+                       ng-model="f['article']['front']['journal-meta']['journal-title-group']['journal-title']"/>
+            </td>
+        </tr>
+        <tr>
+            <th>Publisher</th>
+            <td>
+                <input type="text" class="form-control" placeholder="Publisher name"
+                       ng-model="f['article']['front']['journal-meta']['publisher']['publisher-name']"/>
+            </td>
+            <td>
+                <input type="text" class="form-control" placeholder="Location"
+                       ng-model="f['article']['front']['journal-meta']['publisher']['publisher-loc']"/>
+            </td>
+        </tr>
+    </table>
+    </div>
+    <div ng-if="!!(f.type == 'file')">
+        <table class="table">
+            <tr>
+                <th>Article Title</th>
+                <td colspan="2">
+                    <input type="text" class="form-control" placeholder="Title"
+                           ng-model="f['article']['front']['article-meta']['title-group']['article-title']"/>
+                </td>
+            </tr>
+            <tr ng-repeat="c in f['article']['front']['article-meta']['contrib-group']">
+                <th>Author</th>
+                <td>
+                    <input type="text" class="form-control" placeholder="First name"
+                           ng-model="c['contrib']['name']['surname']"/>
+                </td>
+                <td>
+                    <input type="text" class="form-control" placeholder="Last name"
+                           ng-model="c['contrib']['name']['given-names']"/>
+                </td>
+            </tr>
+            <tr>
+                <th>Keywords</th>
+                <td colspan="2">
+                    <input type="text" name="meta_keywords" class="form-control" placeholder="xxx, yyy, zzz" />
+                </td>
+            </tr>
+            <tr>
+                <th>Abstract</th>
+                <td colspan="2">
+                    <div text-angular ng-model="f['article']['front']['article-meta']['abstract']['p']"></div>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<div ng-if="!!(f.tagset == 'book')">
+    <table class="table">
+        <tr ng-if="!!(f.type == 'book')">
+            <th>Manuscript Type</th>
+            <td colspan="2">
+                <input type="radio" placeholder="Title"
+                       ng-model="f['tagset']" value="article"/>journal article
+                <input type="radio" placeholder="Title"
+                       ng-model="f['tagset']" value="book"/>book
+            </td>
+        </tr>
+        <tr>
+            <th>
+                <span ng-if="!!(f.type === 'book')">Book </span>
+                <span ng-if="!!(f.type === 'file')">Chapter </span>
+                Title
+            </th>
+            <td colspan="2">
+                <input type="text" class="form-control" placeholder="Title"
+                       ng-model="f['book']['book-meta']['book-title-group']['book-title']"/>
+            </td>
+        </tr>
+        <tr>
+            <th>Author</th>
+            <td>
+                <input type="text" class="form-control" placeholder="First name"
+                       ng-model="f['book']['book-meta']['contrib-group']['contrib']['name']['surname']"/>
+            </td>
+            <td>
+                <input type="text" class="form-control" placeholder="Last name"
+                       ng-model="f['book']['book-meta']['contrib-group']['contrib']['name']['given-names']"/>
+            </td>
+        </tr>
+        <tr>
+            <th>Keywords</th>
+            <td colspan="2">
+                <input type="text" name="meta_keywords" class="form-control" placeholder="xxx, yyy, zzz" />
+            </td>
+        </tr>
+        <tr>
+            <th>Abstract</th>
+            <td colspan="2">
+                <div text-angular ng-model="f['article']['front']['article-meta']['abstract']['p']"></div>
+            </td>
+        </tr>
+    </table>
+</div>
