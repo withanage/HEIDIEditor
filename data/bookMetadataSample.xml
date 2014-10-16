@@ -1,0 +1,76 @@
+<?xml version="1.0"?>
+<!DOCTYPE book PUBLIC "-//NLM//DTD Book DTD v3.0 20080202//EN" "book3.dtd">
+<metadata
+    xmlns:mml="http://www.w3.org/1998/Math/MathML"
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" >
+    <book-meta>
+        <book-id pub-id-type="other">handbook1</book-id>
+        <book-title-group>
+            <book-title>A Sample Book</book-title>
+        </book-title-group>
+        <volume>1</volume>
+        <series>Heidelberg Studies in Transculturality Open Access Book Series</series>
+        <edition>1st</edition>
+        <contrib-group>
+            <contrib contrib-type="author" rid="cluster">
+                <digrees>BA</digrees>
+                <name><surname>Ohta</surname>
+                    <given-names>May</given-names></name>
+                <emal>test@example.com</emal>
+            </contrib>
+            <contrib contrib-type="editor" rid="cluster">
+                <name><surname>Hacker</surname>
+                    <given-names>Andrea</given-names></name>
+                <ext-link xlink:href="http://example.com">http://example.com</ext-link>
+            </contrib>
+        </contrib-group>
+        <aff id="cluster">
+            <institution>Cluster of Excellence "Asia and Europe in a Global Context", Ruprecht-Karls Universität Heidelberg, Karl Jaspers Centre</institution>,
+            <addr-line>Vossstraße 2, Building 4400, D-69115 Heidelberg</addr-line>
+        </aff>
+        <publisher>
+            <publisher-name>Heidelberg University</publisher-name>
+            <publisher-loc>Heidelberg</publisher-loc>
+        </publisher>
+        <isbn pub-type="epub">0000-000X</isbn>
+        <pub-date pub-type="epub"><month>Oct.</month><year>2014</year></pub-date>
+        <history>
+            <date date-type="created">
+                <day>01</day><month>10</month><year>2014</year>
+            </date>
+            <date date-type="updated">
+                <day>10</day><month>10</month><year>2014</year>
+            </date>
+        </history>
+        <alternate-form alternate-form-type="pdf" xlink:href="/path/to/file.pdf">pdf</alternate-form>
+        <permissions>
+            <copyright-statement>Copyright &#x00A9; 2014, Heidelberg University</copyright-statement>
+            <copyright-year>2014</copyright-year>
+            <license license-type="open-access" xlink:href="http://creativecommons.org/licenses/by/2.0/">
+                <license-p>This is an open-access book distributed under the terms of the Creative Commons Attribution License, which permits unrestricted use, distribution, and reproduction in any medium, provided the original work is properly cited. The citation of this article must include: the name(s) of the authors, the name of the journal, the full URL of the article (in a hyperlinked format if distributed online) and the DOI number of the article.</license-p>
+            </license>
+        </permissions>
+        <abstract>
+            <p>This is a sample abstract that forms part of the bookMetadataSample.xml file.</p>
+        </abstract>
+        <counts>
+            <fig-count count="10"/>
+            <table-count count="10"/>
+            <equation-count count="0"/>
+            <ref-count count="50"/>
+            <page-count count="100"/>
+            <word-count count="100000"/>
+        </counts>
+        <kwd-group kwd-group-type="author-generated">
+            <kwd>Transculturality</kwd>
+            <kwd>Open Access</kwd>
+        </kwd-group>
+    </book-meta>
+    <book-front>
+        <ack>
+            <title>Acknowledgements</title>
+            <p>This is a sample acknowledgement.</p>
+        </ack>
+    </book-front>
+</metadata>
