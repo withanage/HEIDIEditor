@@ -14,10 +14,10 @@
         <edition>1st</edition>
         <contrib-group>
             <contrib contrib-type="author" rid="cluster">
-                <digrees>BA</digrees>
+                <degrees>BA</degrees>
                 <name><surname>Ohta</surname>
                     <given-names>May</given-names></name>
-                <emal>test@example.com</emal>
+                <email>test@example.com</email>
             </contrib>
             <contrib contrib-type="editor" rid="cluster">
                 <name><surname>Hacker</surname>
@@ -27,7 +27,7 @@
         </contrib-group>
         <aff id="cluster">
             <institution>Cluster of Excellence "Asia and Europe in a Global Context", Ruprecht-Karls Universität Heidelberg, Karl Jaspers Centre</institution>,
-            <addr-line>Vossstraße 2, Building 4400, D-69115 Heidelberg</addr-line>
+            <addr-line>Voßstraße 2, Building 4400, D-69115 Heidelberg</addr-line>
         </aff>
         <publisher>
             <publisher-name>Heidelberg University</publisher-name>
