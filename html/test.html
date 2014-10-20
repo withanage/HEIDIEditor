@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Book Metadata | HEIDIEditor</title>
+
+    <!-- Stylesheets -->
+    <link href="../bower_components/bootstrap/dist/css/bootstrap.min.css" type="text/css" rel="stylesheet">
+    <link href="../bower_components/bootstrap-additions/dist/bootstrap-additions.min.css" type="text/css" rel="stylesheet">
+    <link href="../bower_components/font-awesome/css/font-awesome.css" type="text/css" rel="stylesheet">
+    <link href="../bower_components/textAngular/dist/textAngular.min.css" type="text/css" rel="stylesheet">
+    <link href="../bower_components/jstree/dist/themes/default/style.css" type="text/css" rel="stylesheet">
+    <link href="../bower_components/angular-xeditable/dist/css/xeditable.css" type="text/css" rel="stylesheet">
+    <link href="css/custom.css" type="text/css" rel="stylesheet">
+
+    <!-- Angular modules -->
+    <script src="../bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="../bower_components/angular/angular.min.js"></script>
+    <script src="../bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
+    <script src="../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="../bower_components/jstree/dist/jstree.min.js"></script>
+    <script src="../bower_components/jstree-directive/jsTree.directive.js"></script>
+    <script src="../bower_components/textAngular/dist/textAngular-sanitize.min.js"></script>
+    <script src="../bower_components/textAngular/dist/textAngular.min.js"></script>
+    <script src="../bower_components/angular-xeditable/dist/js/xeditable.min.js"></script>
+    <script src="js/test.js"></script>
+    <script src="js/directives.js"></script>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+<body ng-app="metadata" style="padding-top:40px">
+
+    <header step="2"></header>
+
+    <div id="content">
+        <div class="container">
+
+            <h2 class="title">Step2: Add Metadata</h2>
+
+            <div class="row">
+                <div class="col-sm-3" ng-controller="jstreeCtrl">
+                    <div class="tree-box">
+                        <js-tree
+                                tree-plugins="types,search,sort"
+                                tree-types="typesConfig"
+                                tree-data="json"
+                                tree-src="../cgi/bookparts.py"
+                                tree-events="changed:changedCB">
+                        </js-tree>
+                    </div>
+
+
+
+                </div>
+
+                <div class="col-sm-9" ng-controller="textCtrl">
+                    <book-meta></book-meta>
+
+                    <div class="row">
+                        <span>Debug Area</span>
+                        <br>
+                        <pre><code>{{tree | json}}</code></pre>
+                    </div>
+
+                </div>
+            </div>
+
+
+        </div>
+
+        </div>
+    </div>
+
+
+</body>
+</html>
