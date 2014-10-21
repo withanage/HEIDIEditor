@@ -1,0 +1,126 @@
+<table class="table">
+    <tr>
+        <th>Manuscript Type</th>
+        <td colspan="5">
+            <input type="radio" placeholder="Title" disabled="disabled" value="article"/> journal article
+            <input type="radio" placeholder="Title" checked="checked" value="book"/> book
+        </td>
+        <td></td>
+    </tr>
+    <tr>
+        <th>Book Title</th>
+        <td colspan="5">
+            <a href="#" editable-text="tree['book']['book-meta']['book-title-group']['book-title']"
+               onbeforesave="isEmpty($data)">
+                {{tree['book']['book-meta']['book-title-group']['book-title'] || 'empty'}}
+            </a>
+        </td>
+    </tr>
+    <tr>
+        <th>Series</th>
+        <td colspan="5">
+            <a href="#" editable-text="tree['book']['book-meta']['series']">
+                {{tree['book']['book-meta']['series'] || 'empty'}}
+            </a>
+        </td>
+    </tr>
+    <tr>
+        <th rowspan="{{tree['book']['book-meta']['contrib-group']['contrib'].length + 1}}">
+            Contributor
+            <button class="btn btn-default"
+                    ng-click="tree['book']['book-meta']['contrib-group']['contrib'].push({'@contrib-type':'author', '@rid': '', name:{'surname':'', 'given-names':''}})">
+                Add
+            </button>
+        </th>
+        <th>Role</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Affiliation</th>
+    </tr>
+    <tr ng-repeat="c in tree['book']['book-meta']['contrib-group']['contrib']">
+        <td>
+            <a editable-select="c['@contrib-type']" e-ng-options="type for type in contribType">
+                {{c['@contrib-type'] || 'Not set'}}
+            </a>
+        </td>
+        <td>
+            <a href="#" editable-text="c['name']['given-names']" onbeforesave="isEmpty($data)">
+                {{c['name']['given-names'] || 'empty'}}
+            </a>
+        </td>
+        <td>
+            <a href="#" editable-text="c['name']['surname']" onbeforesave="isEmpty($data)">
+                {{c['name']['surname'] || 'empty'}}
+            </a>
+        </td>
+        <td>
+            <a href="#" editable-select="c['@rid']"
+               e-ng-options="t['@id'] as t['@id'] for t in tree['book']['book-meta']['aff']">
+                {{c['@rid'] || 'Not set'}}
+            </a>
+        </td>
+        <td>
+            <div ng-show="tree['book']['book-meta']['contrib-group']['contrib'].length > 1">
+                <button class="btn btn-default"
+                        ng-click="tree['book']['book-meta']['contrib-group']['contrib'].splice($index,1)">
+                    <i class="glyphicon glyphicon-remove"></i>
+                </button>
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <th>ISBN</th>
+        <td>
+            <a href="#" editable-select="tree['book']['book-meta']['isbn']['@pub-type']"
+               e-ng-options="type for type in pubType">
+                {{tree['book']['book-meta']['isbn']['@pub-type'] || 'empty'}}
+            </a>
+        </td>
+        <td colspan="4">
+            <a href="#" editable-text="tree['book']['book-meta']['isbn']['#text']">
+                {{tree['book']['book-meta']['isbn']['#text'] || 'empty'}}
+            </a>
+        </td>
+    </tr>
+    <tr>
+        <th>Volume</th>
+        <td colspan="5">
+            <a href="#" editable-text="tree['book']['book-meta']['volume']">
+                {{tree['book']['book-meta']['volume'] || 'empty'}}
+            </a>
+        </td>
+    </tr>
+        <th>Edition</th>
+        <td colspan="5">
+            <a href="#" editable-text="tree['book']['book-meta']['edition']">
+                {{tree['book']['book-meta']['edition'] || 'empty'}}
+            </a>
+        </td>
+    </tr>
+    <tr>
+        <th>
+            Keywords
+            <button class="btn btn-default" ng-click="tree['book']['book-meta']['kwd-group']['kwd'].push('')">
+            Add
+            </button>
+        </th>
+        <td colspan="5">
+            <span ng-repeat="k in tree['book']['book-meta']['kwd-group']['kwd']">
+                <a href="#" editable-text="k">{{k || 'empty'}}</a>
+                <i class="glyphicon glyphicon-remove"
+                   ng-click="tree['book']['book-meta']['kwd-group']['kwd'].splice($index,1)"></i>
+                <span ng-show="!$last">, </span>
+            </span>
+        </td>
+    </tr>
+    <tr>
+        <th>Publication Date</th>
+        <td colspan="5">
+            <div>
+                <span>published: </span>
+                <a href="#" editable-bsdate="dummydate" onbeforesave="saveDate($data)" e-datepicker-popup="dd-MMMM-yyyy">
+                    {{ (dummydate | date:"dd MMMM yyyy") || 'empty'}}</a><div ng-click="resetDate()"> -> initialize</div>
+            </div>
+        </td>
+    </tr>
+</table>

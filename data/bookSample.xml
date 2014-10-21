@@ -1,0 +1,839 @@
+<?xml version="1.0"?>
+<!DOCTYPE book PUBLIC "-//NLM//DTD Book DTD v3.0 20080202//EN" "book3.dtd">
+<book
+    xmlns:mml="http://www.w3.org/1998/Math/MathML"
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <book-meta>
+        <book-id pub-id-type="other">handbook1</book-id>
+        <book-title-group>
+            <book-title>A Sample Book</book-title>
+        </book-title-group>
+        <volume>1</volume>
+        <series>Heidelberg Studies in Transculturality Open Access Book Series</series>
+        <edition>1st</edition>
+        <contrib-group>
+            <contrib contrib-type="author" rid="cluster">
+                <degrees>BA</degrees>
+                <name><surname>Ohta</surname>
+                    <given-names>May</given-names></name>
+                <email>test@example.com</email>
+            </contrib>
+            <contrib contrib-type="editor" rid="cluster">
+                <name><surname>Hacker</surname>
+                    <given-names>Andrea</given-names></name>
+                <ext-link xlink:href="http://example.com">http://example.com</ext-link>
+            </contrib>
+        </contrib-group>
+        <aff id="cluster">
+            <institution>Cluster of Excellence "Asia and Europe in a Global Context", Ruprecht-Karls Universität Heidelberg, Karl Jaspers Centre</institution>
+            <addr-line>Voßstraße 2, Building 4400, D-69115 Heidelberg</addr-line>
+        </aff>
+        <publisher>
+            <publisher-name>Heidelberg University</publisher-name>
+            <publisher-loc>Heidelberg</publisher-loc>
+        </publisher>
+        <isbn pub-type="epub">0000-000X</isbn>
+        <pub-date pub-type="epub"><month>Oct.</month><year>2014</year></pub-date>
+        <history>
+            <date date-type="created">
+                <day>01</day><month>10</month><year>2014</year>
+            </date>
+            <date date-type="updated">
+                <day>10</day><month>10</month><year>2014</year>
+            </date>
+        </history>
+        <alternate-form alternate-form-type="pdf" xlink:href="/path/to/file.pdf">pdf</alternate-form>
+        <permissions>
+            <copyright-statement>Copyright &#x00A9; 2014, Heidelberg University</copyright-statement>
+            <copyright-year>2014</copyright-year>
+            <license license-type="open-access" xlink:href="http://creativecommons.org/licenses/by/2.0/">
+                <license-p>This is an open-access book distributed under the terms of the Creative Commons Attribution License, which permits unrestricted use, distribution, and reproduction in any medium, provided the original work is properly cited. The citation of this article must include: the name(s) of the authors, the name of the journal, the full URL of the article (in a hyperlinked format if distributed online) and the DOI number of the article.</license-p>
+            </license>
+        </permissions>
+        <abstract>
+            <p>This is a sample abstract that forms part of the bookMetadataSample.xml file.</p>
+        </abstract>
+        <counts>
+            <fig-count count="10"/>
+            <table-count count="10"/>
+            <equation-count count="0"/>
+            <ref-count count="50"/>
+            <page-count count="100"/>
+            <word-count count="100000"/>
+        </counts>
+        <kwd-group kwd-group-type="author-generated">
+            <kwd>Transculturality</kwd>
+            <kwd>Open Access</kwd>
+        </kwd-group>
+    </book-meta>
+    <book-front>
+        <ack>
+            <title>Acknowledgements</title>
+            <p>This is a sample acknowledgement.</p>
+        </ack>
+        <notes>
+            <title>Editorial Notes</title>
+            <p>This is a sample editorial note.</p>
+        </notes>
+    </book-front>
+    <body>
+        <book-part id="part1" book-part-type="part" book-part-number="1">
+            <book-part-meta>
+                <title-group>
+                    <title>Part 1</title>
+                </title-group>
+            </book-part-meta>
+            <body>
+                <book-part id="part1_chap1" book-part-type="chapter" book-part-number="1">
+                    <book-part-meta>
+                        <title-group>
+                            <title>The Open Access Project</title>
+                        </title-group>
+                        <contrib-group>
+                            <contrib contrib-type="author">
+                                <name><surname>E</surname>
+                                    <given-names>C</given-names></name>
+                            </contrib>
+                        </contrib-group>
+                        <history>
+                            <date date-type="created">
+                                <day>9</day><month>10</month><year>2014</year>
+                            </date>
+                            <date date-type="updated">
+                                <day>13</day> <month>10</month><year>2014</year>
+                            </date>
+                        </history>
+                        <alternate-form alternate-form-type="pdf" xlink:href="/path/to/file.pdf"/>
+                        <abstract>
+                            <title>Abstract</title>
+                            <p>Paragraph (Part 1 - Chapter 1 - Abstract)</p>
+                            <p>Paragraph</p>
+                        </abstract>
+                    </book-part-meta>
+                    <body>
+                        <sec id="part1_chap1_sec1">
+                            <title>Section 1</title>
+                            <p>Paragraph (Part 1 - Chapter 1 - Section 1)</p>
+                            <p>Paragraph</p>
+                        </sec>
+                        <sec id="part1_chap1_sec2">
+                            <title>Section 2</title>
+                            <p>Paragraph (Part 1 - Chapter 1 - Section 2)</p>
+                            <p>Paragraph</p>
+                        </sec>
+                        <sec id="part1_chap1_sec3">
+                            <title>Section 3</title>
+                            <p>Paragraph (Part 1 - Chapter 1 - Section 3)</p>
+                            <p>Paragraph</p>
+                        </sec>
+                    </body>
+                    <back>
+                        <app-group>
+                            <app id="part1_chap1_app1">
+                                <title>Appendix 1</title>
+                                <sec id="part1_chap1_app1_sec1">
+                                    <title>Section 1</title>
+                                    <p>Paragraph (Part 1 - Appendix 1 - Section 1)</p>
+                                    <p>Paragraph</p>
+                                </sec>
+                                <sec id="part1_chap1_app1_sec2">
+                                    <title>Section 2</title>
+                                    <p>Paragraph (Part 1 - Appendix 1 - Section 2)</p>
+                                    <p>Paragraph</p>
+                                </sec>
+                            </app>
+                            <app id="part1_chap1_app2">
+                                <title>Appendix 2</title>
+                                <sec id="part1_chap1_app2_sec1">
+                                    <title>Section 1</title>
+                                    <p>Paragraph (Part 1 - Appendix 2 - Section 1)</p>
+                                    <p>Paragraph</p>
+                                </sec>
+                                <sec id="part1_chap1_app2_sec2">
+                                    <title>Synonym</title>
+                                    <p>Paragraph (Part 1 - Appendix 2 - Section 2)</p>
+                                    <p>Paragraph</p>
+                                </sec>
+                            </app>
+                        </app-group>
+                        <ref-list>
+                            <title>Bibliography</title>
+                            <ref>
+                                <mixed-citation publication-type="book" publication-format="epub">
+                                    <string-name><surname>Suber</surname>
+                                        <given-names>Peter</given-names></string-name>
+                                    <source>Open Access</source>
+                                    <series>MIT Press Essential Knowledge</series>
+                                    <year>2012</year>
+                                    <publisher-name>MIT Press</publisher-name>
+                                </mixed-citation>
+                            </ref>
+                        </ref-list>
+                    </back>
+                </book-part>
+                <book-part id="part1_chap2" book-part-type="chapter" book-part-number="2">
+                    <book-part-meta>
+                        <title-group>
+                            <title>The Open Access Project</title>
+                        </title-group>
+                        <contrib-group>
+                            <contrib contrib-type="author">
+                                <name><surname>E</surname>
+                                    <given-names>C</given-names></name>
+                            </contrib>
+                        </contrib-group>
+                        <history>
+                            <date date-type="created">
+                                <day>9</day><month>10</month><year>2014</year>
+                            </date>
+                            <date date-type="updated">
+                                <day>13</day> <month>10</month><year>2014</year>
+                            </date>
+                        </history>
+                        <alternate-form alternate-form-type="pdf" xlink:href="/path/to/file.pdf"/>
+                        <abstract>
+                            <title>Abstract</title>
+                            <p>Paragraph (Part 1 - Chapter 2 - Abstract)</p>
+                            <p>Paragraph</p>
+                        </abstract>
+                    </book-part-meta>
+                    <body>
+                        <sec id="part1_chap2_sec1">
+                            <title>Section 1</title>
+                            <p>Paragraph (Part 1 - Chapter 2 - Section 1)</p>
+                            <p>Paragraph</p>
+                        </sec>
+                        <sec id="part1_chap2_sec2">
+                            <title>Section 2</title>
+                            <p>Paragraph (Part 1 - Chapter 2 - Section 2)</p>
+                            <p>Paragraph</p>
+                        </sec>
+                        <sec id="part1_chap2_sec3">
+                            <title>Section 3</title>
+                            <p>Paragraph (Part 1 - Chapter 2 - Section 3)</p>
+                            <p>Paragraph</p>
+                        </sec>
+                    </body>
+                    <back>
+                        <app-group>
+                            <app id="part1_chap2_app1">
+                                <title>Appendix 1</title>
+                                <sec id="part1_chap2_app1_sec1">
+                                    <title>Section 1</title>
+                                    <p>Paragraph (Chapter 2 - Appendix 1 - Section 1)</p>
+                                    <p>Paragraph</p>
+                                </sec>
+                                <sec id="part1_chap2_app1_sec2">
+                                    <title>Section 2</title>
+                                    <p>Paragraph (Chapter 2 - Appendix 1 - Section 2)</p>
+                                    <p>Paragraph</p>
+                                </sec>
+                            </app>
+                            <app id="part1_chap2_app2">
+                                <title>Appendix 2</title>
+                                <sec id="part1_chap2_app2_sec1">
+                                    <title>Section 1</title>
+                                    <p>Paragraph (Chapter 2 - Appendix 2 - Section 1)</p>
+                                    <p>Paragraph</p>
+                                </sec>
+                                <sec id="part1_chap2_app2_sec2">
+                                    <title>Synonym</title>
+                                    <p>Paragraph (Chapter 2 - Appendix 2 - Section 2)</p>
+                                    <p>Paragraph</p>
+                                </sec>
+                            </app>
+                        </app-group>
+                        <ref-list>
+                            <title>Bibliography</title>
+                            <ref>
+                                <mixed-citation publication-type="book" publication-format="epub">
+                                    <string-name><surname>Suber</surname>
+                                        <given-names>Peter</given-names></string-name>
+                                    <source>Open Access</source>
+                                    <series>MIT Press Essential Knowledge</series>
+                                    <year>2012</year>
+                                    <publisher-name>MIT Press</publisher-name>
+                                </mixed-citation>
+                            </ref>
+                        </ref-list>
+                    </back>
+                </book-part>
+                <book-part id="part1_chap3" book-part-type="chapter" book-part-number="3">
+                    <book-part-meta>
+                        <title-group>
+                            <title>The Open Access Project</title>
+                        </title-group>
+                        <contrib-group>
+                            <contrib contrib-type="author">
+                                <name><surname>E</surname>
+                                    <given-names>C</given-names></name>
+                            </contrib>
+                        </contrib-group>
+                        <history>
+                            <date date-type="created">
+                                <day>9</day><month>10</month><year>2014</year>
+                            </date>
+                            <date date-type="updated">
+                                <day>13</day> <month>10</month><year>2014</year>
+                            </date>
+                        </history>
+                        <alternate-form alternate-form-type="pdf" xlink:href="/path/to/file.pdf"/>
+                        <abstract>
+                            <title>Abstract</title>
+                            <p>Paragraph (Part 1 - Chapter 3 - Abstract)</p>
+                            <p>Paragraph</p>
+                        </abstract>
+                    </book-part-meta>
+                    <body>
+                        <sec id="part1_chap3_sec1">
+                            <title>Section 1</title>
+                            <p>Paragraph (Part 1 - Chapter 3 - Section 1)</p>
+                            <p>Paragraph</p>
+                        </sec>
+                        <sec id="part1_chap3_sec2">
+                            <title>Section 2</title>
+                            <p>Paragraph (Part 1 - Chapter 3 - Section 2)</p>
+                            <p>Paragraph</p>
+                        </sec>
+                        <sec id="part1_chap3_sec3">
+                            <title>Section 3</title>
+                            <p>Paragraph (Part 1 - Chapter 3 - Section 3)</p>
+                            <p>Paragraph</p>
+                        </sec>
+                    </body>
+                    <back>
+                        <app-group>
+                            <app id="part1_chap3_app1">
+                                <title>Appendix 1</title>
+                                <sec id="part1_chap3_app1_sec1">
+                                    <title>Section 1</title>
+                                    <p>Paragraph (Chapter 3 - Appendix 1 - Section 1)</p>
+                                    <p>Paragraph</p>
+                                </sec>
+                                <sec id="part1_chap3_app1_sec2">
+                                    <title>Section 2</title>
+                                    <p>Paragraph (Chapter 3 - Appendix 1 - Section 2)</p>
+                                    <p>Paragraph</p>
+                                </sec>
+                            </app>
+                            <app id="part1_chap3_app2">
+                                <title>Appendix 2</title>
+                                <sec id="part1_chap3_app2_sec1">
+                                    <title>Section 1</title>
+                                    <p>Paragraph (Chapter 3 - Appendix 2 - Section 1)</p>
+                                    <p>Paragraph</p>
+                                </sec>
+                                <sec id="part1_chap3_app2_sec2">
+                                    <title>Synonym</title>
+                                    <p>Paragraph (Chapter 3 - Appendix 2 - Section 2)</p>
+                                    <p>Paragraph</p>
+                                </sec>
+                            </app>
+                        </app-group>
+                        <ref-list>
+                            <title>Bibliography</title>
+                            <ref>
+                                <mixed-citation publication-type="book" publication-format="epub">
+                                    <string-name><surname>Suber</surname>
+                                        <given-names>Peter</given-names></string-name>
+                                    <source>Open Access</source>
+                                    <series>MIT Press Essential Knowledge</series>
+                                    <year>2012</year>
+                                    <publisher-name>MIT Press</publisher-name>
+                                </mixed-citation>
+                            </ref>
+                        </ref-list>
+                    </back>
+                </book-part>
+                <book-part id="part1_chap4" book-part-type="chapter" book-part-number="4">
+                    <book-part-meta>
+                        <title-group>
+                            <title>The Open Access Project</title>
+                        </title-group>
+                        <contrib-group>
+                            <contrib contrib-type="author">
+                                <name><surname>E</surname>
+                                    <given-names>C</given-names></name>
+                            </contrib>
+                        </contrib-group>
+                        <history>
+                            <date date-type="created">
+                                <day>9</day><month>10</month><year>2014</year>
+                            </date>
+                            <date date-type="updated">
+                                <day>13</day> <month>10</month><year>2014</year>
+                            </date>
+                        </history>
+                        <alternate-form alternate-form-type="pdf" xlink:href="/path/to/file.pdf"/>
+                        <abstract>
+                            <title>Abstract</title>
+                            <p>Paragraph (Part 1 - Chapter 4 - Abstract)</p>
+                            <p>Paragraph</p>
+                        </abstract>
+                    </book-part-meta>
+                    <body>
+                        <sec id="part1_chap4_sec1">
+                            <title>Section 1</title>
+                            <p>Paragraph (Part 1 - Chapter 4 - Section 1)</p>
+                            <p>Paragraph</p>
+                        </sec>
+                        <sec id="part1_chap4_sec2">
+                            <title>Section 2</title>
+                            <p>Paragraph (Part 1 - Chapter 4 - Section 2)</p>
+                            <p>Paragraph</p>
+                        </sec>
+                        <sec id="part1_chap4_sec3">
+                            <title>Section 3</title>
+                            <p>Paragraph (Part 1 - Chapter 4 - Section 3)</p>
+                            <p>Paragraph</p>
+                        </sec>
+                    </body>
+                    <back>
+                        <app-group>
+                            <app id="part1_chap4_app1">
+                                <title>Appendix 1</title>
+                                <sec id="part1_chap4_app1_sec1">
+                                    <title>Section 1</title>
+                                    <p>Paragraph (Chapter 4 - Appendix 1 - Section 1)</p>
+                                    <p>Paragraph</p>
+                                </sec>
+                                <sec id="part1_chap4_app1_sec2">
+                                    <title>Section 2</title>
+                                    <p>Paragraph (Chapter 4 - Appendix 1 - Section 2)</p>
+                                    <p>Paragraph</p>
+                                </sec>
+                            </app>
+                            <app id="part1_chap4_app2">
+                                <title>Appendix 2</title>
+                                <sec id="part1_chap4_app2_sec1">
+                                    <title>Section 1</title>
+                                    <p>Paragraph (Chapter 4 - Appendix 2 - Section 1)</p>
+                                    <p>Paragraph</p>
+                                </sec>
+                                <sec id="part1_chap4_app2_sec2">
+                                    <title>Synonym</title>
+                                    <p>Paragraph (Chapter 4 - Appendix 2 - Section 2)</p>
+                                    <p>Paragraph</p>
+                                </sec>
+                            </app>
+                        </app-group>
+                        <ref-list>
+                            <title>Bibliography</title>
+                            <ref>
+                                <mixed-citation publication-type="book" publication-format="epub">
+                                    <string-name><surname>Suber</surname>
+                                        <given-names>Peter</given-names></string-name>
+                                    <source>Open Access</source>
+                                    <series>MIT Press Essential Knowledge</series>
+                                    <year>2012</year>
+                                    <publisher-name>MIT Press</publisher-name>
+                                </mixed-citation>
+                            </ref>
+                        </ref-list>
+                    </back>
+                </book-part>
+            </body>
+        </book-part>
+        <book-part id="part2" book-part-type="part" book-part-number="2">
+            <book-part-meta>
+                <title-group>
+                    <title>Part 2</title>
+                </title-group>
+            </book-part-meta>
+            <body>
+                <book-part id="part2_chap5" book-part-type="chapter" book-part-number="5">
+                    <book-part-meta>
+                        <title-group>
+                            <title>The Open Access Project</title>
+                        </title-group>
+                        <contrib-group>
+                            <contrib contrib-type="author">
+                                <name><surname>E</surname>
+                                    <given-names>C</given-names></name>
+                            </contrib>
+                        </contrib-group>
+                        <history>
+                            <date date-type="created">
+                                <day>9</day><month>10</month><year>2014</year>
+                            </date>
+                            <date date-type="updated">
+                                <day>13</day> <month>10</month><year>2014</year>
+                            </date>
+                        </history>
+                        <alternate-form alternate-form-type="pdf" xlink:href="/path/to/file.pdf"/>
+                        <abstract>
+                            <title>Abstract</title>
+                            <p>Paragraph (Part 2 - Chapter 5 - Abstract)</p>
+                            <p>Paragraph</p>
+                        </abstract>
+                    </book-part-meta>
+                    <body>
+                        <sec id="part2_chap5_sec1">
+                            <title>Section 1</title>
+                            <p>Paragraph (Part 2 - Chapter 5 - Section 1)</p>
+                            <p>Paragraph</p>
+                        </sec>
+                        <sec id="part2_chap5_sec2">
+                            <title>Section 2</title>
+                            <p>Paragraph (Part 2 - Chapter 5 - Section 2)</p>
+                            <p>Paragraph</p>
+                        </sec>
+                        <sec id="part2_chap5_sec3">
+                            <title>Section 3</title>
+                            <p>Paragraph (Part 2 - Chapter 5 - Section 3)</p>
+                            <p>Paragraph</p>
+                        </sec>
+                    </body>
+                    <back>
+                        <app-group>
+                            <app id="part2_chap5_app1">
+                                <title>Appendix 1</title>
+                                <sec id="part2_chap5_app1_sec1">
+                                    <title>Section 1</title>
+                                    <p>Paragraph (Chapter 5 - Appendix 1 - Section 1)</p>
+                                    <p>Paragraph</p>
+                                </sec>
+                                <sec id="part2_chap5_app1_sec2">
+                                    <title>Section 2</title>
+                                    <p>Paragraph (Chapter 5 - Appendix 1 - Section 2)</p>
+                                    <p>Paragraph</p>
+                                </sec>
+                            </app>
+                            <app id="part2_chap5_app2">
+                                <title>Appendix 2</title>
+                                <sec id="part2_chap5_app2_sec1">
+                                    <title>Section 1</title>
+                                    <p>Paragraph (Chapter 5 - Appendix 2 - Section 1)</p>
+                                    <p>Paragraph</p>
+                                </sec>
+                                <sec id="part2_chap5_app2_sec2">
+                                    <title>Synonym</title>
+                                    <p>Paragraph (Chapter 5 - Appendix 2 - Section 2)</p>
+                                    <p>Paragraph</p>
+                                </sec>
+                            </app>
+                        </app-group>
+                        <ref-list>
+                            <title>Bibliography</title>
+                            <ref>
+                                <mixed-citation publication-type="book" publication-format="epub">
+                                    <string-name><surname>Suber</surname>
+                                        <given-names>Peter</given-names></string-name>
+                                    <source>Open Access</source>
+                                    <series>MIT Press Essential Knowledge</series>
+                                    <year>2012</year>
+                                    <publisher-name>MIT Press</publisher-name>
+                                </mixed-citation>
+                            </ref>
+                        </ref-list>
+                    </back>
+                </book-part>
+                <book-part id="part2_chap6" book-part-type="chapter" book-part-number="6">
+                    <book-part-meta>
+                        <title-group>
+                            <title>The Open Access Project</title>
+                        </title-group>
+                        <contrib-group>
+                            <contrib contrib-type="author">
+                                <name><surname>E</surname>
+                                    <given-names>C</given-names></name>
+                            </contrib>
+                        </contrib-group>
+                        <history>
+                            <date date-type="created">
+                                <day>9</day><month>10</month><year>2014</year>
+                            </date>
+                            <date date-type="updated">
+                                <day>13</day> <month>10</month><year>2014</year>
+                            </date>
+                        </history>
+                        <alternate-form alternate-form-type="pdf" xlink:href="/path/to/file.pdf"/>
+                        <abstract>
+                            <title>Abstract</title>
+                            <p>Paragraph (Part 2 - Chapter 6 - Abstract)</p>
+                            <p>Paragraph</p>
+                        </abstract>
+                    </book-part-meta>
+                    <body>
+                        <sec id="part2_chap6_sec1">
+                            <title>Section 1</title>
+                            <p>Paragraph (Part 2 - Chapter 6 - Section 1)</p>
+                            <p>Paragraph</p>
+                        </sec>
+                        <sec id="part2_chap6_sec2">
+                            <title>Section 2</title>
+                            <p>Paragraph (Part 2 - Chapter 6 - Section 2)</p>
+                            <p>Paragraph</p>
+                        </sec>
+                        <sec id="part2_chap6_sec3">
+                            <title>Section 3</title>
+                            <p>Paragraph (Part 2 - Chapter 6 - Section 3)</p>
+                            <p>Paragraph</p>
+                        </sec>
+                    </body>
+                    <back>
+                        <app-group>
+                            <app id="part2_chap6_app1">
+                                <title>Appendix 1</title>
+                                <sec id="part2_chap6_app1_sec1">
+                                    <title>Section 1</title>
+                                    <p>Paragraph (Chapter 6 - Appendix 1 - Section 1)</p>
+                                    <p>Paragraph</p>
+                                </sec>
+                                <sec id="part2_chap6_app1_sec2">
+                                    <title>Section 2</title>
+                                    <p>Paragraph (Chapter 6 - Appendix 1 - Section 2)</p>
+                                    <p>Paragraph</p>
+                                </sec>
+                            </app>
+                            <app id="part2_chap6_app2">
+                                <title>Appendix 2</title>
+                                <sec id="part2_chap6_app2_sec1">
+                                    <title>Section 1</title>
+                                    <p>Paragraph (Chapter 6 - Appendix 2 - Section 1)</p>
+                                    <p>Paragraph</p>
+                                </sec>
+                                <sec id="part2_chap6_app2_sec2">
+                                    <title>Synonym</title>
+                                    <p>Paragraph (Chapter 6 - Appendix 2 - Section 2)</p>
+                                    <p>Paragraph</p>
+                                </sec>
+                            </app>
+                        </app-group>
+                        <ref-list>
+                            <title>Bibliography</title>
+                            <ref>
+                                <mixed-citation publication-type="book" publication-format="epub">
+                                    <string-name><surname>Suber</surname>
+                                        <given-names>Peter</given-names></string-name>
+                                    <source>Open Access</source>
+                                    <series>MIT Press Essential Knowledge</series>
+                                    <year>2012</year>
+                                    <publisher-name>MIT Press</publisher-name>
+                                </mixed-citation>
+                            </ref>
+                        </ref-list>
+                    </back>
+                </book-part>
+                <book-part id="part2_chap7" book-part-type="chapter" book-part-number="7">
+                    <book-part-meta>
+                        <title-group>
+                            <title>The Open Access Project</title>
+                        </title-group>
+                        <contrib-group>
+                            <contrib contrib-type="author">
+                                <name><surname>E</surname>
+                                    <given-names>C</given-names></name>
+                            </contrib>
+                        </contrib-group>
+                        <history>
+                            <date date-type="created">
+                                <day>9</day><month>10</month><year>2014</year>
+                            </date>
+                            <date date-type="updated">
+                                <day>13</day> <month>10</month><year>2014</year>
+                            </date>
+                        </history>
+                        <alternate-form alternate-form-type="pdf" xlink:href="/path/to/file.pdf"/>
+                        <abstract>
+                            <title>Abstract</title>
+                            <p>Paragraph (Part 2 - Chapter 7 - Abstract)</p>
+                            <p>Paragraph</p>
+                        </abstract>
+                    </book-part-meta>
+                    <body>
+                        <sec id="part2_chap7_sec1">
+                            <title>Section 1</title>
+                            <p>Paragraph (Part 2 - Chapter 7 - Section 1)</p>
+                            <p>Paragraph</p>
+                        </sec>
+                        <sec id="part2_chap7_sec2">
+                            <title>Section 2</title>
+                            <p>Paragraph (Part 2 - Chapter 7 - Section 2)</p>
+                            <p>Paragraph</p>
+                        </sec>
+                        <sec id="part2_chap7_sec3">
+                            <title>Section 3</title>
+                            <p>Paragraph (Part 2 - Chapter 7 - Section 3)</p>
+                            <p>Paragraph</p>
+                        </sec>
+                    </body>
+                    <back>
+                        <app-group>
+                            <app id="part2_chap7_app1">
+                                <title>Appendix 1</title>
+                                <sec id="part2_chap7_app1_sec1">
+                                    <title>Section 1</title>
+                                    <p>Paragraph (Chapter 7 - Appendix 1 - Section 1)</p>
+                                    <p>Paragraph</p>
+                                </sec>
+                                <sec id="part2_chap7_app1_sec2">
+                                    <title>Section 2</title>
+                                    <p>Paragraph (Chapter 7 - Appendix 1 - Section 2)</p>
+                                    <p>Paragraph</p>
+                                </sec>
+                            </app>
+                            <app id="part2_chap7_app2">
+                                <title>Appendix 2</title>
+                                <sec id="part2_chap7_app2_sec1">
+                                    <title>Section 1</title>
+                                    <p>Paragraph (Chapter 7 - Appendix 2 - Section 1)</p>
+                                    <p>Paragraph</p>
+                                </sec>
+                                <sec id="part2_chap7_app2_sec2">
+                                    <title>Synonym</title>
+                                    <p>Paragraph (Chapter 7 - Appendix 2 - Section 2)</p>
+                                    <p>Paragraph</p>
+                                </sec>
+                            </app>
+                        </app-group>
+                        <ref-list>
+                            <title>Bibliography</title>
+                            <ref>
+                                <mixed-citation publication-type="book" publication-format="epub">
+                                    <string-name><surname>Suber</surname>
+                                        <given-names>Peter</given-names></string-name>
+                                    <source>Open Access</source>
+                                    <series>MIT Press Essential Knowledge</series>
+                                    <year>2012</year>
+                                    <publisher-name>MIT Press</publisher-name>
+                                </mixed-citation>
+                            </ref>
+                        </ref-list>
+                    </back>
+                </book-part>
+                <book-part id="part2_chap8" book-part-type="chapter" book-part-number="8">
+                    <book-part-meta>
+                        <title-group>
+                            <title>The Open Access Project</title>
+                        </title-group>
+                        <contrib-group>
+                            <contrib contrib-type="author">
+                                <name><surname>E</surname>
+                                    <given-names>C</given-names></name>
+                            </contrib>
+                        </contrib-group>
+                        <history>
+                            <date date-type="created">
+                                <day>9</day><month>10</month><year>2014</year>
+                            </date>
+                            <date date-type="updated">
+                                <day>13</day> <month>10</month><year>2014</year>
+                            </date>
+                        </history>
+                        <alternate-form alternate-form-type="pdf" xlink:href="/path/to/file.pdf"/>
+                        <abstract>
+                            <title>Abstract</title>
+                            <p>Paragraph (Part 2 - Chapter 8 - Abstract)</p>
+                            <p>Paragraph</p>
+                        </abstract>
+                    </book-part-meta>
+                    <body>
+                        <sec id="part2_chap8_sec1">
+                            <title>Section 1</title>
+                            <p>Paragraph (Part 2 - Chapter 8 - Section 1)</p>
+                            <p>Paragraph</p>
+                        </sec>
+                        <sec id="part2_chap8_sec2">
+                            <title>Section 2</title>
+                            <p>Paragraph (Part 2 - Chapter 8 - Section 2)</p>
+                            <p>Paragraph</p>
+                        </sec>
+                        <sec id="part2_chap8_sec3">
+                            <title>Section 3</title>
+                            <p>Paragraph (Part 2 - Chapter 8 - Section 3)</p>
+                            <p>Paragraph</p>
+                        </sec>
+                    </body>
+                    <back>
+                        <app-group>
+                            <app id="part2_chap8_app1">
+                                <title>Appendix 1</title>
+                                <sec id="part2_chap8_app1_sec1">
+                                    <title>Section 1</title>
+                                    <p>Paragraph (Chapter 8 - Appendix 1 - Section 1)</p>
+                                    <p>Paragraph</p>
+                                </sec>
+                                <sec id="part2_chap8_app1_sec2">
+                                    <title>Section 2</title>
+                                    <p>Paragraph (Chapter 8 - Appendix 1 - Section 2)</p>
+                                    <p>Paragraph</p>
+                                </sec>
+                            </app>
+                            <app id="part2_chap8_app2">
+                                <title>Appendix 2</title>
+                                <sec id="part2_chap8_app2_sec1">
+                                    <title>Section 1</title>
+                                    <p>Paragraph (Chapter 8 - Appendix 2 - Section 1)</p>
+                                    <p>Paragraph</p>
+                                </sec>
+                                <sec id="part2_chap8_app2_sec2">
+                                    <title>Synonym</title>
+                                    <p>Paragraph (Chapter 8 - Appendix 2 - Section 2)</p>
+                                    <p>Paragraph</p>
+                                </sec>
+                            </app>
+                        </app-group>
+                        <ref-list>
+                            <title>Bibliography</title>
+                            <ref>
+                                <mixed-citation publication-type="book" publication-format="epub">
+                                    <string-name><surname>Suber</surname>
+                                        <given-names>Peter</given-names></string-name>
+                                    <source>Open Access</source>
+                                    <series>MIT Press Essential Knowledge</series>
+                                    <year>2012</year>
+                                    <publisher-name>MIT Press</publisher-name>
+                                </mixed-citation>
+                            </ref>
+                        </ref-list>
+                    </back>
+                </book-part>
+            </body>
+        </book-part>
+    </body>
+    <back>
+        <glossary id="glossary">
+            <title>Glossary</title>
+            <def-list>
+                <def-item>
+                    <term id="term1">Term 1</term>
+                    <def>
+                        <p>Paragraph (Back - Glossary - Term 1)</p>
+                    </def>
+                </def-item>
+                <def-item>
+                    <term id="term2">Term 2</term>
+                    <def>
+                        <p>Paragraph (Back - Glossary - Term 2)</p>
+                    </def>
+                </def-item>
+                <def-item>
+                    <term id="term3">Term 3</term>
+                    <def>
+                        <p>Paragraph (Back - Glossary - Term 3)</p>
+                    </def>
+                </def-item>
+                <def-item>
+                    <term id="term4">Term 4</term>
+                    <def>
+                        <p>Paragraph (Back - Glossary - Term 4)</p>
+                    </def>
+                </def-item>
+            </def-list>
+        </glossary>
+        <ref-list>
+            <ref>
+                <mixed-citation publication-type="book" publication-format="epub">
+                    <string-name><surname>Suber</surname>
+                        <given-names>Peter</given-names></string-name>
+                    <source>Open Access</source>
+                    <series>MIT Press Essential Knowledge</series>
+                    <year>2012</year>
+                    <publisher-name>MIT Press</publisher-name>
+                </mixed-citation>
+            </ref>
+        </ref-list>
+    </back>
+</book>

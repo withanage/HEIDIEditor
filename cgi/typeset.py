@@ -8,20 +8,19 @@ import stat
 import time
 from datetime import datetime
 import sys
-from xml2json import xml2json
+import xmltodict
 import optparse
 import json
 import shutil
 
 cgitb.enable()
-#logging.basicConfig(level=logging.DEBUG, filename='typeset.log')
-logging.basicConfig(level=logging.DEBUG)
+logging.basicConfig(level=logging.DEBUG, filename='typeset.log')
 
 
 #### Constant variables ####
-TMP_DIR = '..'+"/"+'html'+"/"+'files'
-UPLOAD_DIR = '..'+"/"+'html'+"/"+'uploads'
-METADATA_PATH = os.path.abspath('..'+"/"+'html'+"/"+'xml'+"/"+'metadataTest.xml')
+TMP_DIR = '../html/files'
+UPLOAD_DIR = '../html/uploads'
+METADATA_PATH = os.path.abspath('../html/xml/metadataTest.xml')
 PERM_666 = (stat.S_IRUSR | stat.S_IWUSR | stat.S_IRGRP | stat.S_IWGRP | stat.S_IROTH | stat.S_IWOTH)
 
 
@@ -53,8 +52,7 @@ def typeset(item):
     logging.info("\t"+str(datetime.now().time())+":\t Generating JSON ...")
     nlmfile = out_dir+"/"+"nlm"+"/"+"out.xml"
     xmldata = open(nlmfile).read()
-    options = optparse.Values({'pretty': True})
-    jsondata = xml2json(xmldata, options, 1)
+    jsondata = xmltodict.parse(xmldata)
     # logging.info("\t"+str(datetime.now().time())+":\t JSON data: \n"+jsondata)
 
     if not os.path.isdir(bookname_dir+"/"+"json"):
@@ -66,7 +64,7 @@ def typeset(item):
         os.remove(jsonfile)
     logging.info("\t"+str(datetime.now().time())+":\t Writing JSON to "+jsonfile+" ...")
     with open(jsonfile, 'w+') as f:
-        json.dump("["+jsondata+"]", f, sort_keys=False, indent=4)
+        json.dump(jsondata, f, sort_keys=False, indent=4)
 
     if not os.path.isdir(bookname_dir+"/"+"xml"):
         logging.info("\t"+str(datetime.now().time())+":\t Making directory "+bookname_dir+"/"+"xml"+" ...")
@@ -81,7 +79,7 @@ def typeset(item):
 
 if __name__ == "__main__":
     logging.info("================run typeset.py "+str(datetime.now())+"=================")
-    sys.path.append('..'+"/"+'meTypeset'+"/"+'bin')
+    sys.path.append('../../meTypeset/bin')
     import meTypeset
 
 
@@ -101,17 +99,17 @@ if __name__ == "__main__":
                 logging.info("\t"+str(datetime.now().time())+":\t [-------Upload-------]")
                 for item in added:
                     # Change permission
-                    if(os.path.isdir(TMP_DIR+"/"+"thumbnail")):
-                        for i in os.listdir(TMP_DIR+"/"+"thumbnail"):
+                    if(os.path.isdir(TMP_DIR+"/thumbnail")):
+                        for i in os.listdir(TMP_DIR+"/thumbnail"):
                             logging.info("\t"+str(datetime.now().time())+":\t Changing permission for "+i+" ...")
-                            f = os.open(TMP_DIR+"/"+"thumbnail"+"/"+i, os.O_RDONLY)
+                            f = os.open(TMP_DIR+"/thumbnail/"+i, os.O_RDONLY)
                             os.fchmod(f, PERM_666)
                             os.close(f)
                     # Make Directory
                     bookname = item.split('_',1)
                     bookname_dir = UPLOAD_DIR+"/"+bookname[0]
                     if not os.path.isdir(bookname_dir):
-                        logging.info("\t"+str(datetime.now().time())+":\t Making directory "+bookname_dir+"/"+" ...")
+                        logging.info("\t"+str(datetime.now().time())+":\t Making directory "+bookname_dir+"/ ...")
                         os.mkdir(bookname_dir, 0775)
                     # Copy file
                     filename = os.path.splitext(bookname[1])
@@ -119,9 +117,9 @@ if __name__ == "__main__":
                         logging.info("\t"+str(datetime.now().time())+":\t Copying file to "+bookname_dir+"/"+bookname[1]+" ...")
                         shutil.copy2(TMP_DIR+"/"+item, bookname_dir+"/"+bookname[1])
                     else:
-                        media_dir = bookname_dir+"/"+"media"
+                        media_dir = bookname_dir+"/media"
                         if not os.path.exists(media_dir):
-                            logging.info("\t"+str(datetime.now().time())+":\t Making directory "+media_dir+"/"+" ...")
+                            logging.info("\t"+str(datetime.now().time())+":\t Making directory "+media_dir+"/ ...")
                             os.mkdir(media_dir, 0775)
                         logging.info("\t"+str(datetime.now().time())+":\t Copying file to "+media_dir+"/"+bookname[1]+" ...")
                         shutil.copy2(TMP_DIR+"/"+item, media_dir+"/"+bookname[1])
@@ -139,16 +137,16 @@ if __name__ == "__main__":
                             logging.info("\t"+str(datetime.now().time())+":\t Removing "+ bookname_dir+"/"+bookname[1] +" ...")
                             os.remove(bookname_dir+"/"+bookname[1])
                         if(len(os.listdir(bookname_dir)) == 0):
-                            logging.info("\t"+str(datetime.now().time())+":\t Removing "+ bookname_dir+"/"+" ...")
+                            logging.info("\t"+str(datetime.now().time())+":\t Removing "+ bookname_dir+"/ ...")
                             os.rmdir(bookname_dir)
-                        media_dir = UPLOAD_DIR+"/"+bookname[0]+"/"+"media"
+                        media_dir = UPLOAD_DIR+"/"+bookname[0]+"/media"
                         if os.path.exists(media_dir+bookname[1]):
                             logging.info("\t"+str(datetime.now().time())+":\t Removing "+ Umedia_dir+"/"+bookname[1] +" ...")
                             os.remove(media_dir+"/"+bookname[1])
                         if(len(os.listdir(media_dir)) == 0):
-                            logging.info("\t"+str(datetime.now().time())+":\t Removing "+ media_dir+"/"+" ...")
+                            logging.info("\t"+str(datetime.now().time())+":\t Removing "+ media_dir+"/ ...")
                             os.rmdir(media_dir)
-                    out_dir = UPLOAD_DIR+"/"+bookname[0]+"/"+"out_"+filename[0]
+                    out_dir = UPLOAD_DIR+"/"+bookname[0]+"/out_"+filename[0]
                     if os.path.exists(out_dir):
                         logging.info("\t"+str(datetime.now().time())+":\t Removing "+ out_dir +" ...")
                         shutil.rmtree(out_dir)

@@ -7,13 +7,13 @@
     <title>HEIDI Editor</title>
 
     <!-- Stylesheets -->
-    <link href="css/bootstrap.min.css" type="text/css" rel="stylesheet">
-    <link href="css/jquery.fileupload.css" type="text/css" rel="stylesheet">
-    <link href="css/jquery.fileupload-ui.css" type="text/css" rel="stylesheet">
+    <link href="../bower_components/bootstrap/dist/css/bootstrap.min.css" type="text/css" rel="stylesheet">
+    <link href="../bower_components/jquery-file-upload/css/jquery.fileupload.css" type="text/css" rel="stylesheet">
+    <link href="../bower_components/jquery-file-upload/css/jquery.fileupload-ui.css" type="text/css" rel="stylesheet">
     <link href="css/custom.css" type="text/css" rel="stylesheet">
     <!-- CSS adjustments for browsers with JavaScript disabled -->
-    <noscript><link rel="stylesheet" href="css/jquery.fileupload-noscript.css"></noscript>
-    <noscript><link rel="stylesheet" href="css/jquery.fileupload-ui-noscript.css"></noscript>
+    <noscript><link rel="stylesheet" href="../bower_components/jquery-file-upload/css/jquery.fileupload-noscript.css"></noscript>
+    <noscript><link rel="stylesheet" href="../bower_components/jquery-file-upload/css/jquery.fileupload-ui-noscript.css"></noscript>
 
 
     <style>
@@ -21,13 +21,13 @@
         .ng-cloak {
             display: none;
         }
-
-
     </style>
 
 </head>
-<body data-ng-app="demo">
-    <div ng-include="'header.html'"></div>
+<body data-ng-app="demo" >
+
+    <header></header>
+
     <div id="content">
         <div class="container">
 
@@ -82,8 +82,8 @@
                             <td>
                                 <p class="name" data-ng-switch data-on="!!file.url">
                                 <span data-ng-switch-when="true" data-ng-switch data-on="!!file.thumbnailUrl">
-                                    <a data-ng-switch-when="true" data-ng-href="{{file.url}}" title="{{file.name}}" download="{{file.name}}" data-gallery>{{file.name}}</a>
-                                    <a data-ng-switch-default data-ng-href="{{file.url}}" title="{{file.name}}" download="{{file.name}}">{{file.name}}</a>
+                                    <a data-ng-switch-when="true" data-ng-href="{{file.url}}" title="{{file.name}}" download="{{file.name}}" data-gallery><i class="glyphicon glyphicon-ok-sign"></i> {{file.name}}</a>
+                                    <a data-ng-switch-default data-ng-href="{{file.url}}" title="{{file.name}}" download="{{file.name}}"><i class="glyphicon glyphicon-ok-sign"></i> {{file.name}}</a>
                                 </span>
                                 <span data-ng-switch-default>{{file.name}}</span>
                                 </p>
@@ -129,8 +129,19 @@
                 </div>
             </div></div>
 
-            <div class="row next-btn">
-                <button class="btn btn-default next-btn" onclick="location.href='step2.html'">Next<i class="glyphicon glyphicon-chevron-right"></i></button>
+            <div class="row next-btn" data-ng-controller="modalCtrl">
+                <script type="text/ng-template" id="loading.html">
+                    <div class="modal-header">
+                        <h3 class="modal-title">Typesetting...</h3>
+                    </div>
+                    <div class="modal-body">
+                        <progressbar class="progress-striped active" animate="false" value="100"></progressbar>
+                    </div>
+                    <div class="modal-footer">
+                        <span>Please wait a moment.</span>
+                    </div>
+                </script>
+                <button class="btn btn-default next-btn" ng-click="open('../cgi/saveUploads.py')">Next <i class="glyphicon glyphicon-chevron-right"></i></button>
             </div>
         </div>
         <!-- /container -->
@@ -144,35 +155,35 @@
 
 
     <!-- Javascripts -->
-    <script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="../bower_components/jquery/dist/jquery.min.js"></script>
     <!-- Angular JS -->
-    <script type="text/javascript" src="js/angular.min.js"></script>
+    <script type="text/javascript" src="../bower_components/angular/angular.min.js"></script>
     <!-- UI Bootstrap -->
-    <script type="text/javascript" src="js/ui-bootstrap-tpls-0.11.0.min.js"></script>
+    <script type="text/javascript" src="../bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
     <!-- The Canvas to Blob plugin is included for image resizing functionality -->
-    <script src="//blueimp.github.io/JavaScript-Canvas-to-Blob/js/canvas-to-blob.min.js"></script>
+    <script type="text/javascript" src="../bower_components/blueimp-canvas-to-blob/js/canvas-to-blob.min.js"></script>
     <!-- The jQuery UI widget factory, can be omitted if jQuery UI is already included -->
-    <script type="text/javascript" src="js/jquery.ui.widget.js"></script>
+    <script type="text/javascript" src="../bower_components/jquery-file-upload/js/vendor/jquery.ui.widget.js"></script>
     <!-- The Load Image plugin is included for the preview images and image resizing functionality -->
-    <script type="text/javascript" src="js/load-image.all.min.js"></script>
+    <script type="text/javascript" src="../bower_components/blueimp-load-image/js/load-image.all.min.js"></script>
     <!-- Bootstrap JS is not required, but included for the responsive demo navigation -->
-    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
     <!-- The Iframe Transport is required for browsers without support for XHR file uploads -->
-    <script type="text/javascript" src="js/jquery.iframe-transport.js"></script>
+    <script type="text/javascript" src="../bower_components/jquery-file-upload/js/jquery.iframe-transport.js"></script>
     <!-- The basic File Upload plugin -->
-    <script type="text/javascript" src="js/jquery.fileupload.js"></script>
+    <script type="text/javascript" src="../bower_components/jquery-file-upload/js/jquery.fileupload.js"></script>
     <!-- The File Upload processing plugin -->
-    <script type="text/javascript" src="js/jquery.fileupload-process.js"></script>
+    <script type="text/javascript" src="../bower_components/jquery-file-upload/js/jquery.fileupload-process.js"></script>
     <!-- The File Upload image preview & resize plugin -->
-    <script type="text/javascript" src="js/jquery.fileupload-image.js"></script>
+    <script type="text/javascript" src="../bower_components/jquery-file-upload/js/jquery.fileupload-image.js"></script>
     <!-- The File Upload audio preview plugin -->
-    <script type="text/javascript" src="js/jquery.fileupload-audio.js"></script>
+    <script type="text/javascript" src="../bower_components/jquery-file-upload/js/jquery.fileupload-audio.js"></script>
     <!-- The File Upload video preview plugin -->
-    <script type="text/javascript" src="js/jquery.fileupload-video.js"></script>
+    <script type="text/javascript" src="../bower_components/jquery-file-upload/js/jquery.fileupload-video.js"></script>
     <!-- The File Upload validation plugin -->
-    <script type="text/javascript" src="js/jquery.fileupload-validate.js"></script>
+    <script type="text/javascript" src="../bower_components/jquery-file-upload/js/jquery.fileupload-validate.js"></script>
     <!-- The File Upload Angular JS module -->
-    <script type="text/javascript" src="js/jquery.fileupload-angular.js"></script>
+    <script type="text/javascript" src="../bower_components/jquery-file-upload/js/jquery.fileupload-angular.js"></script>
     <!-- The main application script -->
     <script type="text/javascript" src="js/app.js"></script>
 

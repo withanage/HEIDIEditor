@@ -7,22 +7,25 @@
     <title>Step 2 | HEIDI Editor</title>
 
     <!-- Stylesheets -->
-    <link href="css/bootstrap.min.css" type="text/css" rel="stylesheet">
-    <link href="css/bootstrap-wysihtml5-0.0.2.css" type="text/css" rel="stylesheet">
-    <link href="css/themes/default/style.css" type="text/css" rel="stylesheet">
+    <link href="../bower_components/bootstrap/dist/css/bootstrap.min.css" type="text/css" rel="stylesheet">
+    <link href="../bower_components/bootstrap-additions/dist/bootstrap-additions.min.css" type="text/css" rel="stylesheet">
+    <link href="../bower_components/font-awesome/css/font-awesome.css" type="text/css" rel="stylesheet">
+    <link href="../bower_components/textAngular/dist/textAngular.min.css" type="text/css" rel="stylesheet">
+    <link href="../bower_components/jstree/dist/themes/default/style.css" type="text/css" rel="stylesheet">
     <link href="css/custom.css" type="text/css" rel="stylesheet">
 
 
-    <!-- jQuery and plugins -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/jstree.min.js"></script>
-    <script src="js/advanced.js"></script>
-    <script src="js/wysihtml5-0.3.0.min.js"></script>
-    <script src="js/bootstrap-wysihtml5-0.0.2.min.js"></script>
-    <script src="js/knockout-3.2.0.js"></script>
-    <script src="js/json2.js"></script>
-
+    <!-- Angular modules -->
+    <script src="../bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="../bower_components/angular/angular.min.js"></script>
+    <script src="../bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
+    <script src="../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="../bower_components/jstree/dist/jstree.min.js"></script>
+    <script src="../bower_components/jstree-directive/jsTree.directive.js"></script>
+    <script src="../bower_components/textAngular/dist/textAngular-sanitize.min.js"></script>
+    <script src="../bower_components/textAngular/dist/textAngular.min.js"></script>
+    <script src="js/controllers.js"></script>
+    <script src="js/directives.js"></script>
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -31,260 +34,96 @@
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 
-    <script>
-        $(function(){
-            $("#header").load("header.html", null, function(){
-                $("a.disabled").click(function(){return false;});
-                $("li#nav-step2").addClass("active").nextAll().each(function(){
-                    $(this).find("a").addClass("disabled").attr({href:"javascript:void(0)", onClick:"return false"});
-                });
-            });
-        });
-    </script>
 
 </head>
-<body>
+<body ng-app="metadata" style="padding-top:40px">
 
+    <header step="2"></header>
 
     <div id="content">
-        <div class="container">
-
-            <div id="header"></div>
-
+        <div class="container" ng-controller="jstreeCtrl">
 
             <h2 class="title">Step2: Add Metadata</h2>
-            <!-- /title -->
-
 
             <div class="row">
                 <div class="col-sm-3">
-                    <div class="row">
-                        <input id="treepane_q" class="form-control" type="text" placeholder="search" />
+                    <div class="tree-box">
+                        <js-tree
+                            tree-plugins="types,search,sort"
+                            tree-types="typesConfig"
+                            tree-data="json"
+                            tree-src="../cgi/listdocs.py"
+                            tree-events="changed:changedCB">
+                        </js-tree>
                     </div>
-                    <div class="row">
-                        &nbsp;
-                    </div>
-                    <div class="row">
-                        <div id="treepane" class="highlight">
 
-                        </div>
+                    <!-- hidden buttons -->
+                    <button ng-repeat="f in files" ng-click="selectTree(f.id)" id="{{f.id}}" ng-hide="true">
+                        {{f.id}}
+                    </button>
+
+                    <div ng-controller="modalCtrl">
+                        <script type="text/ng-template" id="aside.template.html">
+                            <div class="aside fade" tabindex="-1" role="dialog"
+                                 ng-class="{'in': animate}"
+                                 ng-style="{'z-index': 1050 + index*10, display: 'block'}"
+                                 ng-click="close($event)">
+                                <div class="aside-dialog">
+                                    <div class="aside-content" ng-transclude=""></div>
+                                </div>
+                            </div>
+                        </script>
+                        <script type="text/ng-template" id="checkSource.html">
+                            <div class="aside-header">
+                                <h4 class="aside-title">
+                                    JSON Inspector
+                                    <i class="glyphicon glyphicon-remove-circle pull-right" ng-click="close()"></i>
+                                </h4>
+                            </div>
+                            <div class="aside-body">
+                                 <pre style="max-width:400px"><code>{{contents | json}}</code></pre>
+                            </div>
+                            <div class="aside-footer">
+                                <button class="btn btn-primary" ng-click="close()">Close</button>
+                            </div>
+                        </script>
+                        <button class="btn btn-default" ng-click="open()">
+                            <i class="glyphicon glyphicon-eye-open"></i> Show JSON
+                        </button>
                     </div>
                 </div>
 
                 <div class="col-sm-9">
-                    <form class="form-horizontal">
-                        <div class="form-group">
-                            <label class="control-label text-right col-sm-1" for="meta_title">Title</label>
-                            <div class="col-sm-11">
-                                <input type="text" name="meta_title" id="meta_title" class="form-control" placeholder="Title" value="" data-bind="title" />
-                            </div>
-                        </div>
-                        <div class="form-group" id="author_list_1">
-                            <label class="control-label text-right col-sm-1" for="meta_firstname">Author <span id="author_label_1"></span></label>
-                            <div class="col-sm-3">
-                                <input type="text" name="meta_firstname" id="meta_firstname" class="form-control" placeholder="First name" value="" data-bind="value: firstname" />
-                            </div>
-                            <div class="col-sm-3">
-                                <input type="text" name="meta_lastname" id="meta_lastname" class="form-control" placeholder="Last name" value="" data-bind="value: lastname" />
-                            </div>
-                            <div class="col-sm-4">
-                                <input type="text" name="meta_affiliation" id="meta_affiliation" class="form-control" placeholder="Affiliation" value="" data-bind="value: affiliation" />
-                            </div>
-                            <div class="col-sm-1">
-                                <a class="btn"><i class="icon-plus"></i></a>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label class="control-label text-right col-sm-1" for="meta_keywords">Keywords</label>
-                            <div class="col-sm-11">
-                                <input type="text" name="meta_keywords" id="meta_keywords" class="form-control" placeholder="xxx, yyy, zzz" value="" data-bind="value: keywords"/>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label class="control-label text-right col-sm-1" for="meta_abstract">Abstract</label>
-                            <div class="col-sm-11">
-                                <textarea rows="7" name="meta_keywords" id="meta_abstract" class="form-control" spellcheck="true" wrap="off" data-bind="value: abstract"></textarea>
-                            </div>
-                        </div>
-                        <div class="row next-btn">
-                            <button type="submit" class="btn btn-primary next-btn" data-bind="click. $parent.save" onclick="location.href='step3.html'">Next<i class="glyphicon glyphicon-chevron-right"></i></button>
-                        </div>
-                    </form>
+                    <div ng-repeat="f in files" collapse="!f.selected">
+                        <metadata-fields></metadata-fields>
+                    </div>
                 </div>
+
+                <div class="row next-btn">
+                    <button type="submit" class="btn btn-default next-btn" onclick="location.href='step3.html'">
+                        Next <i class="glyphicon glyphicon-chevron-right"></i>
+                    </button>
+                </div>
+
+                <!--
+                <hr>
+                <div class="row">
+                        <span>Debug Area</span>
+                        <br>
+                        <pre><code>{{files | json}}</code></pre>
+                    </div>
+                </div>
+                -->
+
             </div>
-
-
-            <div class="row">
-                <ul id="debug"></ul>
-            </div>
-
-
 
         </div>
         <!-- /container -->
 
-
     </div>
-
     <!-- /content -->
 
-    <div id="footer" class="container">footer</div>
-
-<script type="text/javascript">
-    $(document).ready(function(){
-
-        $("#treepane").jstree({
-            'core' : {
-                'data' : [
-                    'Acknowledgements',
-                    'Preface',
-                    {
-                        'text': 'Chapter 1',
-                        'state': {'selected': true}
-                    },
-                    'Chapter 2',
-                    'Chapter 3',
-                    'Appendix',
-                    'Bibliography'
-                ]
-            },
-            "plugins" : [ "themes", "types", "search" ],
-            "types" : {
-                "max_depth" : -2,
-                "max_children" : -2,
-                "valid_children" : [ "folder" ],
-                "types" : {
-                    "default" : {
-                        "valid_children" : "all",
-                        "check_node" : false,
-                        "uncheck_node" : false
-                    },
-                    "file" : {
-                        "valid_children" : "none"
-                    },
-                    "product-category": {
-                        "valid_children" : "file",
-                        "check_node" : true,
-                        "uncheck_node" : true
-                    },
-                    "product-category-master": {
-                        "valid_children" : "file"
-                    }
-                }
-            },
-            "themes" : {
-                "theme" : "proton"
-            }
-        });
-        var to = false;
-        $("#treepane_q").keyup(function() {
-            if(to) { clearTimeout(to); }
-            to = setTimeout(function() {
-                var v = $("#treepane_q").val();
-                $("#treepane").jstree(true).search(v);
-            }, 250);
-        });
-
-
-        $('#meta_abstract').wysihtml5();
-
-
-        $("a.btn:has(i.icon-plus)").click(function() {
-            var i = $("div[id^='author_list_']").size();
-            var newItem = $("#author_list_1").clone(false).attr("id", "author_list_" + (i+1));
-            $("div[id^='author_list_']:last").after(newItem);
-            if( i == 1 ) $("#author_label_" + i).text(i);
-            $("#author_list_" + (i+1)).find("input").val("");
-            $("#author_list_" + (i+1)).find("span[id^='author_label_']").attr("id", "author_label_" + (i+1)).text((i+1));
-            $("#author_list_" + (i+1)).find("i").removeClass("icon-plus").addClass("icon-remove");
-            $("a.btn:has(i.icon-remove)").click(function() {
-                var current = $(this).closest("div[id^='author_list_']");
-                current.nextAll("div[id^='author_list_']").each(function() {
-                    var pos = $("div[id^='author_list_']").index(this);
-                    $(this).attr("id", "author_list_" + pos).find("span[id^='author_label_']").attr("id", "author_label_" + pos).text(pos)
-                });
-                current.remove();
-                i = $("div[id^='author_list_']").size();
-                if (i == 1) $("#author_label_1").text("");
-            })
-        });
-
-
-
-
-        // Load Json
-        $.getJSON("../cgi/json/metadataTest.json", function (data) {
-            var jsonobj = (new Function("return" + data))(); //JSON.parse(data[]);
-            var article_meta = jsonobj[0].metadata["article-meta"];
-            var journal_meta = jsonobj[0].metadata["journal-meta"];
-            var html = "<li>journal-meta:</li><ul>"
-                    + "<li>journal-id: " + journal_meta["journal-id"] + "</li>"
-                    + "<li>issn: " + journal_meta.issn + "</li>"
-                    + "<li>publisher: {publisher-name:" + journal_meta["publisher"]["publisher-name"] + "}</li>"
-                    + "</ul>"
-                    + "<li>article-meta:</li>"
-                    + "<ul>"
-                    + "<li>last name: " + article_meta["contrib-group"]["contrib"]["name"].surname + "</li>"
-                    + "<li>first name: " + article_meta["contrib-group"]["contrib"]["name"]["given-names"] + "</li>"
-                    + "<li>affiliation: " + article_meta["contrib-group"]["aff"].institution + "</li>"
-                    + "<li>categories: " + article_meta["article-categories"]["subj-group"].subject + "</li>"
-                    + "<li>article-title: " + article_meta["title-group"]["article-title"] + "</li>"
-                    + "<li>volume: " + article_meta.volume + "</li>"
-                    + "<li>issue: " + article_meta.issue + "</li>"
-                    + "<li>fpage: " + article_meta.fpage + "</li>"
-                    + "<li>lpage: " + article_meta.lpage + "</li>"
-                    + "<li>pubdate: {year:" + article_meta["pub-date"].year + "}</li>"
-                    + "<li>abstract: <p>" + article_meta.abstract["p"] + "</p></li>"
-                    + "</ul>"
-            // $("#debug").append(html);
-            $("#meta_title").val(article_meta["title-group"]["article-title"]);
-            $("#meta_lastname").val(article_meta["contrib-group"]["contrib"]["name"].surname);
-            $("#meta_firstname").val(article_meta["contrib-group"]["contrib"]["name"]["given-names"]);
-            $("#meta_affiliation").val(article_meta["contrib-group"]["aff"].institution);
-            $("#meta_keywords").val(article_meta["article-categories"]["subj-group"].subject);
-            $("#meta_abstract").append("<p>" + article_meta.abstract["p"] + "</p>");
-        });
-
-
-        ko.applyBindings(new MetadataViewModel());
-
-
-    });
-
-    function Metadata(data) {
-        this.title = ko.observable(data["title-group"]["article-title"]);
-        this.lastname = ko.observable(data["contrib-group"]["contrib"]["name"].surname);
-        this.firstname = ko.observable(data["contrib-group"]["contrib"]["name"]["given-names"]);
-        this.affiliation = ko.observable(data["contrib-group"]["aff"].institution);
-        this.keywords = ko.observable(data["article-categories"]["subj-group"].subject);
-        this.abstract = ko.observable("<p>" + data.abstract["p"] + "</p>");
-    }
-
-    function MetadataViewModel() {
-        // Data
-        var self = this;
-        self.metadata.ko.observable();
-
-        // Operations
-        self.save = function() {
-            $.ajax("../cgi/json/metaDataTest.json", {
-                data: ko.toJSON(self.metadata),
-                type: "post",
-                contentType: "application/json",
-                success: function(result) {alert(result)}
-            });
-        };
-
-        // Load json
-        $.getJSON("../cgi/json/metadataTest.json", function (data) {
-            var jsonobj = (new Function("return" + data))(); //JSON.parse(data);
-            var allData = $.map(jsonobj, function(item){ return new Metadata(item)});
-            self.articleMeta(allData);
-        });
-
-    }
-
-</script>
+    <footer></footer>
 
 </body>
 </html>
