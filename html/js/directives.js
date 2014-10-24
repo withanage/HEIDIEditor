@@ -8,6 +8,30 @@ metadata.directive('metadataFields', function(){
     };
 });
 
+/* bookMeta directive*/
+metadata.directive('bookMeta', function(){
+    return{
+        restrict: "E",
+        templateUrl: './tpls/bookMeta.html'
+    };
+});
+
+/* bookChapter directive*/
+metadata.directive('bookChapter', function(){
+    return{
+        restrict: "E",
+        templateUrl: './tpls/bookChapter.html'
+    };
+});
+
+/* bookPart directive*/
+metadata.directive('bookPart', function(){
+    return{
+        restrict: "E",
+        templateUrl: './tpls/bookPart.html'
+    };
+});
+
 metadata.directive('header', function(){
     return {
         restrict: "E",
@@ -23,7 +47,7 @@ metadata.directive('footer', function(){
         restrict: "E",
         templateUrl: './tpls/footer.html',
         controller : ['$scope','JsonData', function($scope, JsonData) {
-            $scope.contents = JsonData.files;
+            $scope.contents = JsonData.tree;
         }]
     };
 });

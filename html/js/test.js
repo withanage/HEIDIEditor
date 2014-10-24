@@ -1,10 +1,17 @@
 'use strict';
 
-var components = ['ui.bootstrap', 'textAngular', 'jsTree.directive', 'xeditable'];
+var components = ['textAngular', 'jsTree.directive', 'xeditable', 'ui.bootstrap'];
 var metadata = angular.module('metadata', components);
 
-metadata.run(function(editableOptions) {
-    editableOptions.theme = 'bs3'; // bootstrap3 theme.
+
+// xeditable config
+metadata.run(function(editableOptions, editableThemes) {
+    // set `default` theme
+    editableOptions.theme = 'bs3';
+
+    // overwrite button templates
+    editableThemes['bs3'].submitTpl = '<button type="submit" class="btn btn-primary">save</button>';
+    editableThemes['bs3'].cancelTpl = '<button type="button" class="btn btn-default" ng-click="$form.$cancel()">cancel</button>';
 });
 
 
@@ -12,37 +19,66 @@ metadata.run(function(editableOptions) {
 metadata.factory('JsonData', function(){
     return {
         tree: null,
+        selected: null,
         pubType : ['pdf', 'epub', 'html'],
+        dateType : ['created', 'reviewed', 'updated'],
         idType : [
             { name: 'archive', info: 'Identifier assigned by an archive or other repository for articles' },
             { name: 'aggregator', info: 'Identifier assigned by a data aggregator' },
             { name: 'doaj', info: 'Directory of Open Access Journals'},
             { name: 'doi', info: 'Digital Object Identifier for the entire journal, not just for the article (rare)' },
             { name: 'index', info: 'Identifier assigned by an abstracting or indexing service' },
-            { name: 'publisher-id', info: 'Identifier assigned by the content publisher, for example, "HeiPUB"'}
+            { name: 'publisher-id', info: 'Identifier assigned by the content publisher, for example, "HeiPUB"'},
+            { name: 'other', info: ''}
         ],
         contribType : ['author', 'editor', 'translator', 'designer']
+
     };
 });
 
 metadata.controller('textCtrl',
-    ['$scope', '$http', '$timeout', 'JsonData', function($scope, $http, $timeout, JsonData){
+    ['$scope', '$http', '$filter', 'JsonData', function($scope, $http, $filter, JsonData){
+        console.log('textCtrl');
+        // json data
         $http.get("../cgi/bookJson.py").success(function(data){
             $scope.tree = data;
             JsonData.tree = data;
+            $scope.initDate();
         });
+
+        // jstree selector
+        /*
+        $http.get("../cgi/bookparts.py").success(function(data){
+            $scope.booktree = {};
+            angular.forEach(data, function(item, i){
+                $scope.booktree[item['id']] = item['state']['selected']
+            });
+        });*/
+
+        // initial values
         $scope.pubType = JsonData.pubType;
+        $scope.dateType = JsonData.dateType;
+        $scope.today = $filter('date')(new Date(),'yyyy-MM-dd');
         $scope.idType = JsonData.idType;
         $scope.contribType = JsonData.contribType;
 
-        $scope.dummydate = new Date();
-        $scope.resetDate = function(){
-            $scope.dummydate.setFullYear($scope.tree['book']['book-meta']['pub-date']['year']);
-            $scope.dummydate.setMonth(parseInt($scope.tree['book']['book-meta']['pub-date']['month'])-1);
-            $scope.dummydate.setDate($scope.tree['book']['book-meta']['pub-date']['date']);
+        // datepicker config
+        $scope.initDate = function(){
+            $scope.dummydate = new Date();
+            if('pub-date' in $scope.tree['book']['book-meta']){
+                if('year' in $scope.tree['book']['book-meta']['pub-date']) {
+                    $scope.dummydate.setFullYear($scope.tree['book']['book-meta']['pub-date']['year']);
+                }
+                if('month' in $scope.tree['book']['book-meta']['pub-date']) {
+                    $scope.dummydate.setMonth(parseInt($scope.tree['book']['book-meta']['pub-date']['month']) - 1);
+                }
+                if('date' in $scope.tree['book']['book-meta']['pub-date']) {
+                    $scope.dummydate.setDate($scope.tree['book']['book-meta']['pub-date']['date']);
+                }
+            }
         };
         $scope.saveDate = function(data){
-            $scope.tree['book']['book-meta']['pub-date']['year'] = data.getYear().toString();
+            $scope.tree['book']['book-meta']['pub-date']['year'] = data.getFullYear().toString();
             $scope.tree['book']['book-meta']['pub-date']['month'] = (data.getMonth() + 1).toString();
             $scope.tree['book']['book-meta']['pub-date']['date'] = data.getDate().toString();
         };
@@ -54,25 +90,12 @@ metadata.controller('textCtrl',
           }
         };
 
-        // Check Array
-        $scope.isArray = function(obj){
-            if(obj){
-                return angular.isArray(obj);
-            }
-            return false;
-        };
+        $scope.booktree = {selected : ''};
 
-        // Check Object's Key
-        $scope.hasOwnProperty = function(obj, key){
-            if(obj){
-                return obj.hasOwnProperty(key);
-            }
-            return false;
-        };
 
-        $scope.date = function(obj){
-             new Date
-        }
+        $scope.$watch('booktree', function(newVal, oldVal) {
+            console.log('watch!'+newVal.selected);
+        },true);
 
     }]
 );
@@ -80,9 +103,8 @@ metadata.controller('textCtrl',
 
 /* jstree controller */
 metadata.controller('jstreeCtrl',
-    ['$scope', '$timeout', 'JsonData', function($scope, $timeout, JsonData) {
-        $scope.tree = JsonData.tree;
-
+    ['$scope','$timeout', 'JsonData', function($scope, $timeout, JsonData) {
+        console.log('jstreeCtrl');
         // jsTree config
         $scope.typesConfig = {
             "book": {
@@ -96,19 +118,9 @@ metadata.controller('jstreeCtrl',
             }
         };
         $scope.changedCB = function(e, data){
-            console.log(data);
-            $timeout(function() {
-                angular.element("button#"+data.selected[0]).triggerHandler('click');
+            $scope.booktree.selected = data.selected[0];
+            $timeout(function() { //dummy function!
             }, 0);
-        };
-        $scope.selectTree = function(treeid){
-            angular.forEach($scope.tree, function(value, i){
-                if(value['id'] == treeid){
-                    value['selected'] = true;
-                }else{
-                    value['selected'] = false;
-                }
-            });
         };
 
 
@@ -129,10 +141,10 @@ metadata.controller('modalCtrl',
 
 metadata.controller('asideCtrl',
     ['$scope', '$modalInstance', 'JsonData', function($scope, $modalInstance, JsonData) {
-        $scope.contents = JsonData.files;
+        $scope.contents = JsonData.tree;
 
         $scope.close = function(){
-            JsonData.files = $scope.contents;
+            JsonData.tree = $scope.contents;
             $modalInstance.close();
         };
         $scope.cancel = function(){

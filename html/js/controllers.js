@@ -3,24 +3,31 @@
 var components = ['ui.bootstrap', 'textAngular', 'jsTree.directive'];
 var metadata = angular.module('metadata', components);
 
-/* Shared Searvice (global variable) */
 metadata.factory('JsonData', function(){
     return {
-        files: null
+        files: null,
+        pubType : ['pdf', 'epub', 'html'],
+        idType : [
+            { name: 'archive', info: 'Identifier assigned by an archive or other repository for articles' },
+            { name: 'aggregator', info: 'Identifier assigned by a data aggregator' },
+            { name: 'doaj', info: 'Directory of Open Access Journals'},
+            { name: 'doi', info: 'Digital Object Identifier for the entire journal, not just for the article (rare)' },
+            { name: 'index', info: 'Identifier assigned by an abstracting or indexing service' },
+            { name: 'publisher-id', info: 'Identifier assigned by the content publisher, for example, "HeiPUB"'}
+        ]
     };
 });
-
-
-
 
 
 /* jstree controller */
 metadata.controller('jstreeCtrl',
     ['$scope', '$http', '$timeout', 'JsonData', function($scope, $http, $timeout, JsonData) {
+
         $http.get("../cgi/createJSON.py").success(function(data){
             $scope.files = data;
             JsonData.files = data;
         });
+
 
         $scope.isArray = function(obj){
             if(obj){
@@ -37,7 +44,10 @@ metadata.controller('jstreeCtrl',
             return false;
         };
 
-        $scope.pubType = ['PDF', 'epub', 'html']
+        $scope.pubType = JsonData.pubType;
+        $scope.idType = JsonData.idType;
+
+
 
         $scope.duplicate = function(obj, key){
             if(obj.hasOwnProperty(key)){
@@ -59,6 +69,7 @@ metadata.controller('jstreeCtrl',
             }
         };
         $scope.changedCB = function(e, data){
+            console.log(data);
             $timeout(function() {
                 angular.element("button#"+data.selected[0]).triggerHandler('click');
             }, 0);
