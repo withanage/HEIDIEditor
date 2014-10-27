@@ -1,9 +1,11 @@
 {
   "name": "HEIDIEditor",
   "version": "0.0.1",
-  "homepage": "https://github.com/may-/HEIDIEditor",
+  "homepage": "https://github.com/withanage/HEIDIEditor",
   "authors": [
+    "dulip withanage <withanage@ub.uni-heidelberg.de>" 
     "mayumi ohta <mayumi.ohta@asia-europe.uni-heidelberg.de>"
+
   ],
   "description": "HTML5 WYSIWYG Editor for NLM-XML (Standalone Application or as OMP Plugin)",
   "main": "index.html",
