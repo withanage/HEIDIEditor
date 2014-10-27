@@ -1,6 +1,10 @@
+<h3>
+    <i class="glyphicon glyphicon-folder-open"></i>
+    &nbsp;{{tree['book']['book-meta']['book-id']['#text']}}
+</h3>
 <table class="table">
     <tr>
-        <th>Manuscript Type</th>
+        <th width="20%">Manuscript Type</th>
         <td colspan="5">
             <input type="radio" placeholder="Title" disabled="disabled" value="article"/> journal article
             <input type="radio" placeholder="Title" checked="checked" value="book"/> book
@@ -27,15 +31,16 @@
     <tr>
         <th rowspan="{{tree['book']['book-meta']['contrib-group']['contrib'].length + 1}}">
             Contributor
-            <button class="btn btn-default"
+            <button class="btn btn-default pull-right"
                     ng-click="tree['book']['book-meta']['contrib-group']['contrib'].push({'@contrib-type':'author', '@rid': '', name:{'surname':'', 'given-names':''}})">
                 Add
             </button>
         </th>
-        <th>Role</th>
-        <th>First Name</th>
-        <th>Last Name</th>
-        <th>Affiliation</th>
+        <th width="18%">Role</th>
+        <th width="18%">First Name</th>
+        <th width="18%">Last Name</th>
+        <th width="18%">Affiliation</th>
+        <th width="8%"></th>
     </tr>
     <tr ng-repeat="c in tree['book']['book-meta']['contrib-group']['contrib']">
         <td>
@@ -69,6 +74,42 @@
         </td>
     </tr>
     <tr>
+        <th rowspan="{{tree['book']['book-meta']['aff'].length + 1}}">
+            Affiliation
+            <button class="btn btn-default pull-right"
+                    ng-click="tree['book']['book-meta']['aff'].push({'@id':'', 'institution': '', 'addr-line': ''})">
+                Add
+            </button>
+        </th>
+        <th>ID</th>
+        <th colspan="2">Institution</th>
+        <th>Address</th>
+        <th></th>
+    </tr>
+    <tr ng-repeat="a in tree['book']['book-meta']['aff']">
+        <td>
+            <a href="#" editable-text="a['@id']" onbeforesave="isEmpty($data)">
+                {{a['@id'] || 'empty'}}
+            </a>
+        </td>
+        <td colspan="2">
+            <a href="#" editable-text="a['institution']" onbeforesave="isEmpty($data)">
+                {{a['institution'] || 'empty'}}
+            </a>
+        </td>
+        <td>
+            <a href="#" editable-text="a['addr-line']">{{a['addr-line'] || 'empty'}}</a>
+        </td>
+        <td>
+            <div ng-show="tree['book']['book-meta']['aff'].length > 1">
+                <button class="btn btn-default"
+                        ng-click="tree['book']['book-meta']['aff'].splice($index,1)">
+                    <i class="glyphicon glyphicon-remove"></i>
+                </button>
+            </div>
+        </td>
+    </tr>
+    <tr>
         <th>ISBN</th>
         <td>
             <a href="#" editable-select="tree['book']['book-meta']['isbn']['@pub-type']"
@@ -85,12 +126,19 @@
     <tr>
         <th>Volume</th>
         <td colspan="5">
-            <a href="#" editable-text="tree['book']['book-meta']['volume']">
+            <a ng-if="tree['book']['book-meta'].hasOwnProperty('volume')"
+               href="#" editable-text="tree['book']['book-meta']['volume']">
                 {{tree['book']['book-meta']['volume'] || 'empty'}}
             </a>
         </td>
     </tr>
-        <th>Edition</th>
+        <th>
+            Edition
+            <button class="btn btn-default pull-right" ng-if="!tree['book']['book-meta'].hasOwnProperty('edition')"
+                    ng-click="tree['book']['book-meta']['edition'] = ''">
+                Add
+            </button>
+        </th>
         <td colspan="5">
             <a href="#" editable-text="tree['book']['book-meta']['edition']">
                 {{tree['book']['book-meta']['edition'] || 'empty'}}
@@ -100,27 +148,72 @@
     <tr>
         <th>
             Keywords
-            <button class="btn btn-default" ng-click="tree['book']['book-meta']['kwd-group']['kwd'].push('')">
+            <button class="btn btn-default pull-right"
+                    ng-click="tree['book']['book-meta']['kwd-group']['kwd'].push('')">
             Add
             </button>
         </th>
         <td colspan="5">
-            <span ng-repeat="k in tree['book']['book-meta']['kwd-group']['kwd']">
+            <span ng-repeat="k in tree['book']['book-meta']['kwd-group']['kwd']">{{$index}}
                 <a href="#" editable-text="k">{{k || 'empty'}}</a>
                 <i class="glyphicon glyphicon-remove"
                    ng-click="tree['book']['book-meta']['kwd-group']['kwd'].splice($index,1)"></i>
-                <span ng-show="!$last">, </span>
+                <span ng-show="!$last">,&nbsp;&nbsp;</span>
             </span>
         </td>
+    </tr>    <tr>
+        <th>Publisher</th>
+        <th><span class="pull-right">Name:</span></th>
+        <td>
+            <a href="#" editable-text="tree['book']['book-meta']['publisher']['publisher-name']" onbeforesave="isEmpty($data)">
+                {{tree['book']['book-meta']['publisher']['publisher-name'] || 'empty'}}
+            </a>
+        </td>
+        <th><span class="pull-right">Location:</span></th>
+        <td>
+            <a href="#" editable-text="tree['book']['book-meta']['publisher']['publisher-loc']" onbeforesave="isEmpty($data)">
+                {{tree['book']['book-meta']['publisher']['publisher-loc'] || 'empty'}}
+            </a>
+        </td>
+        <td></td>
     </tr>
     <tr>
         <th>Publication Date</th>
         <td colspan="5">
-            <div>
-                <span>published: </span>
-                <a href="#" editable-bsdate="dummydate" onbeforesave="saveDate($data)" e-datepicker-popup="dd-MMMM-yyyy">
-                    {{ (dummydate | date:"dd MMMM yyyy") || 'empty'}}</a><div ng-click="resetDate()"> -> initialize</div>
-            </div>
+            <a href="#" editable-bsdate="dummydate" onbeforesave="saveDate($data)"
+               e-datepicker-popup="dd-MMMM-yyyy" e-is-open="true">
+                {{ (dummydate | date:"dd MMMM, yyyy") || 'empty'}}
+            </a>
+        </td>
+    </tr>
+    <tr>
+        <th>History<br>
+            <input type="radio" ng-model="dateformat" value="date"/> date month year
+            <input type="radio" ng-model="dateformat" value="month"/> month year
+            <button class="btn btn-default pull-right"
+                    ng-click="tree['book']['book-meta']['history']['date'].push({'@date-type': '', 'string-date': today})">
+                Add
+            </button>
+        </th>
+        <td colspan="5">
+            <span ng-repeat="h in tree['book']['book-meta']['history']['date']">
+                <a href="#" editable-select="h['@date-type']" e-ng-options="type for type in dateType">
+                    {{h['@date-type'] || 'not set'}}:&nbsp;
+                </a>
+                <span ng-if="dateformat == 'date'">
+                    <a href="#" editable-date="h['string-date']">
+                        {{ (h['string-date'] | date:"dd MMMM, yyyy") || 'empty'}}
+                    </a>
+                </span>
+                <span ng-if="dateformat == 'month'">
+                    <a href="#" editable-month="h['string-date']">
+                        {{ (h['string-date'] | date:"MMMM, yyyy") || 'empty'}}
+                    </a>
+                </span>
+                <i class="glyphicon glyphicon-remove"
+                   ng-click="tree['book']['book-meta']['history']['date'].splice($index,1)"></i>
+                <span ng-show="!$last">,&nbsp;&nbsp;</span>
+            </span>
         </td>
     </tr>
 </table>

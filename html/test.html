@@ -16,7 +16,7 @@
     <!-- Angular modules -->
     <script src="../bower_components/jquery/dist/jquery.min.js"></script>
     <script src="../bower_components/angular/angular.min.js"></script>
-    <script src="../bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
+    <script src="../bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
     <script src="../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
     <script src="../bower_components/jstree/dist/jstree.min.js"></script>
     <script src="../bower_components/jstree-directive/jsTree.directive.js"></script>
@@ -43,7 +43,7 @@
 
             <h2 class="title">Step2: Add Metadata</h2>
 
-            <div class="row">
+            <div class="row" ng-controller="textCtrl">
                 <div class="col-sm-3" ng-controller="jstreeCtrl">
                     <div class="tree-box">
                         <js-tree
@@ -55,16 +55,26 @@
                         </js-tree>
                     </div>
 
-
-
                 </div>
 
-                <div class="col-sm-9" ng-controller="textCtrl">
-                    <book-meta></book-meta>
+                <div class="col-sm-9">
+                    <div collapse="booktree.selected != tree['book']['book-meta']['book-id']['#text']">
+                        <book-meta></book-meta>
+                    </div>
 
-                    <div class="row">
-                        <span>Debug Area</span>
-                        <br>
+                    <div ng-repeat="part in tree['book']['body']['book-part']" ng-if="part['@book-part-type'] == 'part'">
+                            <book-part collapse="booktree.selected != part['@id']"></book-part>
+                            <div ng-repeat="chapter in part['body']['book-part']">
+                                <book-chapter collapse="booktree.selected != chapter['@id']"></book-chapter>
+                            </div>
+                    </div>
+                    <div ng-repeat="chapter in tree['book']['body']['book-part']" ng-if="chapter['@book-part-type'] == 'chapter'">
+                        <book-chapter collapse="booktree.selected != chapter['@id']"></book-chapter>
+                    </div>
+
+
+                    <div>
+                        Debug Area
                         <pre><code>{{tree | json}}</code></pre>
                     </div>
 
