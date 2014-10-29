@@ -15,6 +15,18 @@
     margin-top: 20px;
 }
 
+
+/* ------------------------------------- <em>/
+/</em>   text angular
+/* ------------------------------------- */
+.ta-editor.ta-html, .ta-scroll-window.form-control{
+    width: 100%;
+    min-height: 100px;
+}
+.ta-scroll-window>.ta-bind{
+    min-height: 95px;
+}
+
 /* ------------------------------------- <em>/
 /</em>   content
 /* ------------------------------------- */

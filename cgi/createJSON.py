@@ -4,6 +4,8 @@
 import json
 import os
 import xmltodict
+from bs4 import BeautifulSoup
+from bs4 import CData
 
 UPLOAD_DIR = '../html/uploads'
 METADATA_NAME = 'metadata.xml'
@@ -29,11 +31,15 @@ def predictTagset(d):
 def validate(xmldict):
     if(xmldict['tagset'] == 'article'):
         if not(xmldict['article']['front']['journal-meta'].has_key('publisher')):
-            mldict['article']['front']['journal-meta']['publisher'] = {'publisher-name' : PUBLISHER_NAME, 'publisher-loc': PUBLISHER_LOC}
+            xmldict['article']['front']['journal-meta']['publisher'] = {'publisher-name' : PUBLISHER_NAME, 'publisher-loc': PUBLISHER_LOC}
+        else:
+            if not (xmldict['article']['front']['journal-meta']['publisher'].has_key('publisher_loc')):
+                xmldict['article']['front']['journal-meta']['publisher']['publisher_loc'] = PUBLISHER_LOC
         if not(xmldict['article']['front']['journal-meta'].has_key('journal-title-group')):
             if (isinstance(xmldict['article']['front']['journal-meta']['journal-id'], str)):
                 xmldict['article']['front']['journal-meta']['journal-id'] = {'@pub-type': 'epub', '#text': xmldict['article']['front']['journal-meta']['journal-id']}
             xmldict['article']['front']['journal-meta']['journal-title-group'] = {'journal-title': xmldict['article']['front']['journal-meta']['journal-id']['#text']}
+
         if(xmldict['article']['front']['article-meta'].has_key('contrib-group')):
             if not(isinstance(xmldict['article']['front']['article-meta']['contrib-group'], list)):
                 xmldict['article']['front']['article-meta']['contrib-group'] = [xmldict['article']['front']['article-meta']['contrib-group']]
@@ -44,10 +50,29 @@ def validate(xmldict):
     return xmldict
 
 
+def escape(xml):
+    soup = BeautifulSoup(xml, 'xml', from_encoding='utf-8')
+    for i in soup.find_all('p'):
+        if i.string is None:
+            string = ''.join([str(j) for j in i.contents])
+            cdata = CData(string)
+            i.string = ''
+            i.string.replace_with(cdata)
+    for i in soup.find_all('mixed-citation'):
+        if i.string is None:
+            string = ''.join([str(j) for j in i.contents])
+            cdata = CData(string)
+            i.string = ''
+            i.string.replace_with(cdata)
+
+
+    return str(soup)
+
 
 for root, dirs, files in os.walk(UPLOAD_DIR):
     if(METADATA_NAME in files):
         xmldata = open(root+"/"+METADATA_NAME).read()
+        xmldata = escape(xmldata)
         xmldict = xmltodict.parse(xmldata)
         tagset = predictTagset(xmldict)
         xmldict['tagset'] = tagset
@@ -60,7 +85,8 @@ for root, dirs, files in os.walk(UPLOAD_DIR):
     if('xml' in dirs):
         xmlfiles = os.listdir(root+"/xml")
         for xml in xmlfiles:
-            xmldata = open(root+"/xml/"+xml).read()
+            xmldata = open(root+"/xml/"+xml)
+            xmldata = escape(xmldata)
             xmldict = xmltodict.parse(xmldata)
             xmldict['selected'] = False
             xmldict['type'] = 'file'

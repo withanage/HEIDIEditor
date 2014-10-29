@@ -154,7 +154,7 @@
             </button>
         </th>
         <td colspan="5">
-            <span ng-repeat="k in tree['book']['book-meta']['kwd-group']['kwd']">{{$index}}
+            <span ng-repeat="k in tree['book']['book-meta']['kwd-group']['kwd']">
                 <a href="#" editable-text="k">{{k || 'empty'}}</a>
                 <i class="glyphicon glyphicon-remove"
                    ng-click="tree['book']['book-meta']['kwd-group']['kwd'].splice($index,1)"></i>
@@ -178,18 +178,44 @@
         <td></td>
     </tr>
     <tr>
-        <th>Publication Date</th>
+        <th>Publication Date<br>
+            <input type="checkbox" ng-model="pub_dateformat" checked="checked"/> date
+            <button class="btn btn-default pull-right"
+                    ng-click="tree['book']['book-meta']['pub-date'].push({'@pub-type': '', 'string-date': today})">
+                Add
+            </button>
+        </th>
         <td colspan="5">
-            <a href="#" editable-bsdate="dummydate" onbeforesave="saveDate($data)"
-               e-datepicker-popup="dd-MMMM-yyyy" e-is-open="true">
-                {{ (dummydate | date:"dd MMMM, yyyy") || 'empty'}}
-            </a>
+            <span ng-repeat="d in tree['book']['book-meta']['pub-date']">
+                <a href="#" editable-select="d['@pub-type']" e-ng-options="type for type in pubType">
+                    {{d['@pub-type'] || 'not set'}}:&nbsp;
+                </a>
+                <sapn ng-switch on="pub_dateformat">
+                    <span ng-switch-when="true">
+                        <a href="#" editable-date="d['string-date']">
+                            {{ (d['string-date'] | date:"dd MMMM, yyyy") || 'empty'}}
+                        </a>
+                    </span>
+                    <span ng-switch-when="false">
+                        <a href="#" editable-month="d['string-date']">
+                            {{ (d['string-date'] | date:"MMMM, yyyy") || 'empty'}}
+                        </a>
+                    </span>
+                    <span ng-switch-default>
+                        <a href="#" editable-month="d['string-date']">
+                            {{ (d['string-date'] | date:"MMMM, yyyy") || 'empty'}}
+                        </a>
+                    </span>
+                </sapn>
+                <i class="glyphicon glyphicon-remove"
+                   ng-click="tree['book']['book-meta']['pub-date'].splice($index,1)"></i>
+                <span ng-show="!$last">,&nbsp;&nbsp;</span>
+            </span>
         </td>
     </tr>
     <tr>
         <th>History<br>
-            <input type="radio" ng-model="dateformat" value="date"/> date month year
-            <input type="radio" ng-model="dateformat" value="month"/> month year
+            <input type="checkbox" ng-model="histry_dateformat" checked="checked"/> date
             <button class="btn btn-default pull-right"
                     ng-click="tree['book']['book-meta']['history']['date'].push({'@date-type': '', 'string-date': today})">
                 Add
@@ -200,16 +226,23 @@
                 <a href="#" editable-select="h['@date-type']" e-ng-options="type for type in dateType">
                     {{h['@date-type'] || 'not set'}}:&nbsp;
                 </a>
-                <span ng-if="dateformat == 'date'">
-                    <a href="#" editable-date="h['string-date']">
-                        {{ (h['string-date'] | date:"dd MMMM, yyyy") || 'empty'}}
-                    </a>
-                </span>
-                <span ng-if="dateformat == 'month'">
-                    <a href="#" editable-month="h['string-date']">
-                        {{ (h['string-date'] | date:"MMMM, yyyy") || 'empty'}}
-                    </a>
-                </span>
+                <sapn ng-switch on="histry_dateformat">
+                    <span ng-switch-when="true">
+                        <a href="#" editable-date="h['string-date']">
+                            {{ (h['string-date'] | date:"dd MMMM, yyyy") || 'empty'}}
+                        </a>
+                    </span>
+                    <span ng-switch-when="false">
+                        <a href="#" editable-month="h['string-date']">
+                            {{ (h['string-date'] | date:"MMMM, yyyy") || 'empty'}}
+                        </a>
+                    </span>
+                    <span ng-switch-default>
+                        <a href="#" editable-month="h['string-date']">
+                            {{ (h['string-date'] | date:"MMMM, yyyy") || 'empty'}}
+                        </a>
+                    </span>
+                </sapn>
                 <i class="glyphicon glyphicon-remove"
                    ng-click="tree['book']['book-meta']['history']['date'].splice($index,1)"></i>
                 <span ng-show="!$last">,&nbsp;&nbsp;</span>
