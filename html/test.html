@@ -22,7 +22,7 @@
     <script src="../bower_components/jstree-directive/jsTree.directive.js"></script>
     <script src="../bower_components/textAngular/dist/textAngular-sanitize.min.js"></script>
     <script src="../bower_components/textAngular/dist/textAngular.min.js"></script>
-    <script src="../bower_components/angular-xeditable/dist/js/xeditable.min.js"></script>
+    <script src="../bower_components/angular-xeditable/dist/js/xeditable.js"></script>
     <script src="js/test.js"></script>
     <script src="js/directives.js"></script>
 
@@ -58,18 +58,31 @@
                 </div>
 
                 <div class="col-sm-9">
+                    <!-- book-level metadata-->
                     <div collapse="booktree.selected != tree['book']['book-meta']['book-id']['#text']">
                         <book-meta></book-meta>
                     </div>
 
+                    <!-- part-level metadata-->
                     <div ng-repeat="part in tree['book']['body']['book-part']" ng-if="part['@book-part-type'] == 'part'">
-                            <book-part collapse="booktree.selected != part['@id']"></book-part>
-                            <div ng-repeat="chapter in part['body']['book-part']">
-                                <book-chapter collapse="booktree.selected != chapter['@id']"></book-chapter>
-                            </div>
+                        <div collapse="booktree.selected != part['@id']">
+                            <book-part></book-part>
+                        </div>
                     </div>
+                    <!-- part-chapter-level metadata-->
+                    <div ng-repeat="part in tree['book']['body']['book-part']" ng-if="part['@book-part-type'] == 'part'">
+                        <div ng-repeat="chapter in part['body']['book-part']" ng-if="chapter['@book-part-type'] == 'chapter'">
+                            <div collapse="booktree.selected != chapter['@id']">
+                                <book-chapter></book-chapter>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- chapter-level metadata-->
                     <div ng-repeat="chapter in tree['book']['body']['book-part']" ng-if="chapter['@book-part-type'] == 'chapter'">
-                        <book-chapter collapse="booktree.selected != chapter['@id']"></book-chapter>
+                        <div collapse="booktree.selected != chapter['@id']">
+                            <book-chapter></book-chapter>
+                        </div>
                     </div>
 
 

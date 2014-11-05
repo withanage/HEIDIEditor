@@ -43,17 +43,7 @@ metadata.controller('textCtrl',
         $http.get("../cgi/bookJson.py").success(function(data){
             $scope.tree = data;
             JsonData.tree = data;
-            $scope.initDate();
         });
-
-        // jstree selector
-        /*
-        $http.get("../cgi/bookparts.py").success(function(data){
-            $scope.booktree = {};
-            angular.forEach(data, function(item, i){
-                $scope.booktree[item['id']] = item['state']['selected']
-            });
-        });*/
 
         // initial values
         $scope.pubType = JsonData.pubType;
@@ -62,26 +52,6 @@ metadata.controller('textCtrl',
         $scope.idType = JsonData.idType;
         $scope.contribType = JsonData.contribType;
 
-        // datepicker config
-        $scope.initDate = function(){
-            $scope.dummydate = new Date();
-            if('pub-date' in $scope.tree['book']['book-meta']){
-                if('year' in $scope.tree['book']['book-meta']['pub-date']) {
-                    $scope.dummydate.setFullYear($scope.tree['book']['book-meta']['pub-date']['year']);
-                }
-                if('month' in $scope.tree['book']['book-meta']['pub-date']) {
-                    $scope.dummydate.setMonth(parseInt($scope.tree['book']['book-meta']['pub-date']['month']) - 1);
-                }
-                if('date' in $scope.tree['book']['book-meta']['pub-date']) {
-                    $scope.dummydate.setDate($scope.tree['book']['book-meta']['pub-date']['date']);
-                }
-            }
-        };
-        $scope.saveDate = function(data){
-            $scope.tree['book']['book-meta']['pub-date']['year'] = data.getFullYear().toString();
-            $scope.tree['book']['book-meta']['pub-date']['month'] = (data.getMonth() + 1).toString();
-            $scope.tree['book']['book-meta']['pub-date']['date'] = data.getDate().toString();
-        };
 
         // validation
         $scope.isEmpty = function(data){

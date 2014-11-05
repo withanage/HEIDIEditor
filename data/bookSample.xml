@@ -34,13 +34,18 @@
             <publisher-loc>Heidelberg</publisher-loc>
         </publisher>
         <isbn pub-type="epub">0000-000X</isbn>
-        <pub-date pub-type="epub"><month>Oct.</month><year>2014</year></pub-date>
+        <pub-date pub-type="epub">
+            <string-date>2014-10-10</string-date>
+        </pub-date>
+        <pub-date pub-type="pdf">
+            <string-date>2014-10-10</string-date>
+        </pub-date>
         <history>
             <date date-type="created">
-                <day>01</day><month>10</month><year>2014</year>
+                <string-date>2014-10-10</string-date>
             </date>
             <date date-type="updated">
-                <day>10</day><month>10</month><year>2014</year>
+                <string-date>2014-10-10</string-date>
             </date>
         </history>
         <alternate-form alternate-form-type="pdf" xlink:href="/path/to/file.pdf">pdf</alternate-form>
@@ -92,16 +97,20 @@
                         </title-group>
                         <contrib-group>
                             <contrib contrib-type="author">
-                                <name><surname>E</surname>
-                                    <given-names>C</given-names></name>
+                                <name><surname>A</surname>
+                                    <given-names>B</given-names></name>
+                            </contrib>
+                            <contrib contrib-type="author">
+                                <name><surname>C</surname>
+                                    <given-names>D</given-names></name>
                             </contrib>
                         </contrib-group>
                         <history>
                             <date date-type="created">
-                                <day>9</day><month>10</month><year>2014</year>
+                                2014-10-01
                             </date>
                             <date date-type="updated">
-                                <day>13</day> <month>10</month><year>2014</year>
+                                2014-10-10
                             </date>
                         </history>
                         <alternate-form alternate-form-type="pdf" xlink:href="/path/to/file.pdf"/>
@@ -182,13 +191,17 @@
                                 <name><surname>E</surname>
                                     <given-names>C</given-names></name>
                             </contrib>
+                            <contrib contrib-type="author">
+                                <name><surname>C</surname>
+                                    <given-names>D</given-names></name>
+                            </contrib>
                         </contrib-group>
                         <history>
                             <date date-type="created">
-                                <day>9</day><month>10</month><year>2014</year>
+                                2014-10-01
                             </date>
                             <date date-type="updated">
-                                <day>13</day> <month>10</month><year>2014</year>
+                                2014-10-10
                             </date>
                         </history>
                         <alternate-form alternate-form-type="pdf" xlink:href="/path/to/file.pdf"/>
@@ -269,13 +282,17 @@
                                 <name><surname>E</surname>
                                     <given-names>C</given-names></name>
                             </contrib>
+                            <contrib contrib-type="author">
+                                <name><surname>C</surname>
+                                    <given-names>D</given-names></name>
+                            </contrib>
                         </contrib-group>
                         <history>
                             <date date-type="created">
-                                <day>9</day><month>10</month><year>2014</year>
+                                2014-10-01
                             </date>
                             <date date-type="updated">
-                                <day>13</day> <month>10</month><year>2014</year>
+                                2014-10-10
                             </date>
                         </history>
                         <alternate-form alternate-form-type="pdf" xlink:href="/path/to/file.pdf"/>
@@ -356,13 +373,17 @@
                                 <name><surname>E</surname>
                                     <given-names>C</given-names></name>
                             </contrib>
+                            <contrib contrib-type="author">
+                                <name><surname>C</surname>
+                                    <given-names>D</given-names></name>
+                            </contrib>
                         </contrib-group>
                         <history>
                             <date date-type="created">
-                                <day>9</day><month>10</month><year>2014</year>
+                                2014-10-01
                             </date>
                             <date date-type="updated">
-                                <day>13</day> <month>10</month><year>2014</year>
+                                2014-10-10
                             </date>
                         </history>
                         <alternate-form alternate-form-type="pdf" xlink:href="/path/to/file.pdf"/>
@@ -452,13 +473,17 @@
                                 <name><surname>E</surname>
                                     <given-names>C</given-names></name>
                             </contrib>
+                            <contrib contrib-type="author">
+                                <name><surname>C</surname>
+                                    <given-names>D</given-names></name>
+                            </contrib>
                         </contrib-group>
                         <history>
                             <date date-type="created">
-                                <day>9</day><month>10</month><year>2014</year>
+                                2014-10-01
                             </date>
                             <date date-type="updated">
-                                <day>13</day> <month>10</month><year>2014</year>
+                                2014-10-10
                             </date>
                         </history>
                         <alternate-form alternate-form-type="pdf" xlink:href="/path/to/file.pdf"/>
@@ -539,13 +564,17 @@
                                 <name><surname>E</surname>
                                     <given-names>C</given-names></name>
                             </contrib>
+                            <contrib contrib-type="author">
+                                <name><surname>C</surname>
+                                    <given-names>D</given-names></name>
+                            </contrib>
                         </contrib-group>
                         <history>
                             <date date-type="created">
-                                <day>9</day><month>10</month><year>2014</year>
+                                2014-10-01
                             </date>
                             <date date-type="updated">
-                                <day>13</day> <month>10</month><year>2014</year>
+                                2014-10-10
                             </date>
                         </history>
                         <alternate-form alternate-form-type="pdf" xlink:href="/path/to/file.pdf"/>
@@ -626,13 +655,23 @@
                                 <name><surname>E</surname>
                                     <given-names>C</given-names></name>
                             </contrib>
+                            <contrib contrib-type="author">
+                                <name><surname>C</surname>
+                                    <given-names>D</given-names></name>
+                            </contrib>
                         </contrib-group>
                         <history>
                             <date date-type="created">
-                                <day>9</day><month>10</month><year>2014</year>
+                                <string-date>2014-10-01</string-date>
+                                <year>2014</year>
+                                <month>10</month>
+                                <date>01</date>
                             </date>
                             <date date-type="updated">
-                                <day>13</day> <month>10</month><year>2014</year>
+                                <string-date>2014-10-10</string-date>
+                                <year>2014</year>
+                                <month>10</month>
+                                <date>10</date>
                             </date>
                         </history>
                         <alternate-form alternate-form-type="pdf" xlink:href="/path/to/file.pdf"/>
@@ -713,13 +752,17 @@
                                 <name><surname>E</surname>
                                     <given-names>C</given-names></name>
                             </contrib>
+                            <contrib contrib-type="author">
+                                <name><surname>C</surname>
+                                    <given-names>D</given-names></name>
+                            </contrib>
                         </contrib-group>
                         <history>
                             <date date-type="created">
-                                <day>9</day><month>10</month><year>2014</year>
+                                2014-10-01
                             </date>
                             <date date-type="updated">
-                                <day>13</day> <month>10</month><year>2014</year>
+                                2014-10-10
                             </date>
                         </history>
                         <alternate-form alternate-form-type="pdf" xlink:href="/path/to/file.pdf"/>
