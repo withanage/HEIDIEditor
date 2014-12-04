@@ -93,7 +93,7 @@
                     </div>
                     <h4 class="panel-title pull-right" ng-model="isOpen" ng-init="false" ng-click="isOpen = !isOpen">
                         <span class="pull-left">{{$index+1}}&nbsp;
-                            <a><span ng-bind-html="ref['mixed-citation'] | chicagoStyleBook"></span></a>
+                            <a><span ng-bind-html="ref['element-citation'] | chicagoStyle"></span></a>
                         </span>
                         <span class="pull-right" >
                             <i class="glyphicon icon" ng-class="{'glyphicon-chevron-up':isOpen,'glyphicon-chevron-down':!isOpen}"></i>
@@ -104,76 +104,80 @@
                             <tr class="no-border-top ">
                                 <th width="20%">Type</th>
                                 <td>
-                                    <a editable-select="ref['mixed-citation']['@publication-type']"
+                                    <a editable-select="ref['element-citation']['@publication-type']"
                                        e-ng-options="type for type in bibType">
-                                        {{ref['mixed-citation']['@publication-type'] || 'empty'}}
+                                        {{ref['element-citation']['@publication-type'] || 'empty'}}
                                     </a>
                                 </td>
                             </tr>
-                            <tr ng-if="ref['mixed-citation']['@publication-type'] == 'book'">
+                            <tr ng-if="ref['element-citation']['@publication-type'] == 'book'">
                                 <th>Book Title
-                                    <span ng-if="!ref['mixed-citation'].hasOwnProperty('source')">
+                                    <span ng-if="!ref['element-citation'].hasOwnProperty('source')">
                                         <button class="btn btn-default pull-right"
-                                                ng-click="ref['mixed-citation']['source'] = '';triggerClick('td.source a');">
+                                                ng-click="ref['element-citation']['source'] = '';triggerClick('td.source a');">
                                             Add
                                         </button>
                                     </span>
                                 </th>
                                 <td class="source">
-                                    <a href="#" editable-text="ref['mixed-citation']['source']"
+                                    <a href="#" editable-text="ref['element-citation']['source']"
                                        onbeforesave="isEmpty($data)">
-                                        {{ref['mixed-citation']['source'] || 'empty'}}
+                                        {{ref['element-citation']['source'] || 'empty'}}
                                     </a>
                                 </td>
                             </tr>
                             <tr>
+                                <th>Author</th>
+                                <td></td>
+                            </tr>
+                            <tr>
                                 <th>Publisher
-                                    <span ng-if="!ref['mixed-citation'].hasOwnProperty('publisher-name')">
+                                    <span ng-if="!ref['element-citation'].hasOwnProperty('publisher-name')">
                                         <button class="btn btn-default pull-right"
-                                                ng-click="ref['mixed-citation']['publisher-name'] = '';triggerClick('td.publisherName a');">
+                                                ng-click="ref['element-citation']['publisher-name'] = '';triggerClick('td.publisherName a');">
                                             Add
                                         </button>
                                     </span>
                                 </th>
                                 <td class="publisherName">
-                                    <span ng-if="!!ref['mixed-citation'].hasOwnProperty('publisher-name')">
-                                        <a href="#" editable-text="ref['mixed-citation']['publisher-name']">
-                                            {{ref['mixed-citation']['publisher-name'] || 'empty'}}
+                                    <span ng-if="!!ref['element-citation'].hasOwnProperty('publisher-name')">
+                                        <a href="#" editable-text="ref['element-citation']['publisher-name']">
+                                            {{ref['element-citation']['publisher-name'] || 'empty'}}
                                         </a>
                                     </span>
                                 </td>
                             </tr>
                             <tr>
                                 <th>Location
-                                    <span ng-if="!ref['mixed-citation'].hasOwnProperty('publisher-loc')">
+                                    <span ng-if="!ref['element-citation'].hasOwnProperty('publisher-loc')">
                                         <button class="btn btn-default pull-right"
-                                                ng-click="ref['mixed-citation']['publisher-loc'] = '';triggerClick('td.publisherLoc a');">
+                                                ng-click="ref['element-citation']['publisher-loc'] = '';triggerClick('td.publisherLoc a');">
                                             Add
                                         </button>
                                     </span>
                                 </th>
                                 <td class="publisherLoc">
-                                    <span ng-if="!!ref['mixed-citation'].hasOwnProperty('publisher-loc')">
-                                        <a href="#" editable-text="ref['publisher-loc']">
-                                            {{ref['mixed-citation']['publisher-loc'] || 'empty'}}
+                                    <span ng-if="!!ref['element-citation'].hasOwnProperty('publisher-loc')">
+                                        <a href="#" editable-text="ref['element-citation']['publisher-loc']">
+                                            {{ref['element-citation']['publisher-loc'] || 'empty'}}
                                         </a>
                                     </span>
                                 </td>
                             </tr>
                             <tr>
                                 <th>Year
-                                    <span ng-if="!ref['mixed-citation'].hasOwnProperty('year')">
+                                    <span ng-if="!ref['element-citation'].hasOwnProperty('year')">
                                         <button class="btn btn-default pull-right"
-                                                ng-click="ref['mixed-citation']['year'] = '';triggerClick('td.year a');">
+                                                ng-click="ref['element-citation']['year'] = '';triggerClick('td.year a');">
                                             Add
                                         </button>
                                     </span>
                                 </th>
                                 <td class="year">
-                                    <span ng-if="!!ref['mixed-citation'].hasOwnProperty('year')">
-                                        <a editable-select="ref['mixed-citation']['year']"
+                                    <span ng-if="!!ref['element-citation'].hasOwnProperty('year')">
+                                        <a editable-select="ref['element-citation']['year']"
                                            e-ng-options="n for n in [] | range:1900:2020">
-                                            {{ref['mixed-citation']['year'] || 'empty'}}
+                                            {{ref['element-citation']['year'] || 'empty'}}
                                         </a>
                                     </span>
                                 </td>
