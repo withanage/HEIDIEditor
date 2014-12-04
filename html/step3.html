@@ -1,23 +1,35 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Step 3 | HEIDI Editor</title>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Step 3 | HEIDIEditor</title>
 
     <!-- Stylesheets -->
-    <link href="css/bootstrap.min.css" type="text/css" rel="stylesheet">
-    <link href="css/themes/default/style.css" type="text/css" rel="stylesheet">
+    <link href="../bower_components/bootstrap/dist/css/bootstrap.min.css" type="text/css" rel="stylesheet">
+    <link href="../bower_components/bootstrap-additions/dist/bootstrap-additions.min.css" type="text/css" rel="stylesheet">
+    <link href="../bower_components/font-awesome/css/font-awesome.css" type="text/css" rel="stylesheet">
+    <link href="../bower_components/textAngular/dist/textAngular.min.css" type="text/css" rel="stylesheet">
+    <link href="../bower_components/jstree/dist/themes/default/style.css" type="text/css" rel="stylesheet">
+    <link href="../bower_components/angular-xeditable/dist/css/xeditable.css" type="text/css" rel="stylesheet">
     <link href="css/custom.css" type="text/css" rel="stylesheet">
 
-
-    <!-- jQuery and plugins -->
-    <script src="js/jquery-1.11.1.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/jstree.min.js"></script>
-    <script src="js/advanced.js"></script>
-
+    <!-- Angular modules -->
+    <script src="../bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="../bower_components/jquery-ui/jquery-ui.min.js"></script>
+    <script src="../bower_components/angular/angular.min.js"></script>
+    <script src="../bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+    <script src="../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="../bower_components/jstree/dist/jstree.min.js"></script>
+    <script src="../bower_components/jstree-directive/jsTree.directive.js"></script>
+    <script src="../bower_components/textAngular/dist/textAngular-sanitize.min.js"></script>
+    <script src="../bower_components/textAngular/dist/textAngular.min.js"></script>
+    <script src="../bower_components/angular-xeditable/dist/js/xeditable.js"></script>
+    <script src="../bower_components/underscore/underscore-min.js"></script>
+    <script src="../bower_components/angular-underscore-module/angular-underscore-module.js"></script>
+    <script src="../bower_components/angular-ui-sortable/sortable.min.js"></script>
+    <script src="js/controllers.js"></script>
+    <script src="js/directives.js"></script>
+    <script src="js/filters.js"></script>
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -26,122 +38,70 @@
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 
-    <script>
-        $(function(){
-            $("#header").load("header.html", null, function(){
-                $("a.disabled").click(function(){return false;});
-                $("li#nav-step3").addClass("active").nextAll().each(function(){
-                    $(this).find("a").addClass("disabled").attr({href:"javascript:void(0)", onClick:"return false"});
-                });
-            });
-        });
-    </script>
-
 </head>
-<body>
+<body ng-app="metadata" style="padding-top:40px">
 
+<header step="3"></header>
 
 <div id="content">
     <div class="container">
 
-        <div id="header"></div>
+        <h2 class="title">Step3: Confirm Back Matter</h2>
 
-        <h2 class="title">Step3: Identify Bibliography</h2>
-        <!-- /title -->
-
-
-        <div class="row">
-            <div id="treepane" class="col-sm-11 col-sm-offset-1 highlight">
-
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col-sm-11 col-sm-offset-1 highlight">
-                Rendering...
-                <div class="progress progress-striped active">
-                    <div class="progress-bar progress-bar-primary"  style="width: 50%"></div>
-
+        <div class="row" ng-controller="textCtrl">
+            <div class="col-sm-3" ng-controller="jstreeCtrl">
+                <div class="tree-box">
+                    <js-tree
+                            tree-plugins="types,search,sort"
+                            tree-types="typesConfig"
+                            tree-data="json"
+                            tree-src="../cgi/bookchapters.py"
+                            tree-events="changed:changedCB">
+                    </js-tree>
                 </div>
+
+            </div>
+
+            <div class="col-sm-9">
+                <!-- book-level metadata-->
+                <div collapse="booktree.selected != tree['book']['book-meta']['book-id']['#text']">
+                    <book-back></book-back>
+                </div>
+
+                <!-- part-chapter-level metadata-->
+                <div ng-repeat="part in tree['book']['body']['book-part']" ng-if="part['@book-part-type'] == 'part'">
+                    <div ng-repeat="chapter in part['body']['book-part']" ng-if="chapter['@book-part-type'] == 'chapter'">
+                        <div collapse="booktree.selected != chapter['@id']">
+                            <chapter-back></chapter-back>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- chapter-level metadata-->
+                <div ng-repeat="chapter in tree['book']['body']['book-part']" ng-if="chapter['@book-part-type'] == 'chapter'">
+                    <div collapse="booktree.selected != chapter['@id']">
+                        <chapter-back></chapter-back>
+                    </div>
+                </div>
+
+
+                <div class="row next-btn">
+                    <button class="btn btn-primary next-btn" onclick="location.href='step4.html'">
+                        Next<i class="glyphicon glyphicon-chevron-right"></i>
+                    </button>
+                </div>
+
+
             </div>
         </div>
 
 
-        <div class="row next-btn">
-            <button class="btn btn-primary next-btn" onclick="location.href='step4.html'">Next<i class="glyphicon glyphicon-chevron-right"></i></button>
-        </div>
     </div>
     <!-- /container -->
 
-
+</div>
 </div>
 
-<!-- /content -->
-
-<div id="footer" class="container">footer</div>
-
-<script type="text/javascript">
-    $(document).ready(function(){
-
-
-        $("#treepane").jstree({
-            'core' : {
-                'data' : [
-                    'Acknowledgements',
-                    'Preface',
-                    'Chapter 1 *******************',
-                    'Chapter 2 ************',
-                    'Chapter 3 ************************',
-                    'Appendix',
-                    {
-                        'text': 'Bibliography',
-                        'state': {'selected': true}
-                    }
-                ]
-            },
-            "plugins" : [ "themes", "types" ],
-            "types" : {
-                "max_depth" : -2,
-                "max_children" : -2,
-                "valid_children" : [ "folder" ],
-                "types" : {
-                    "default" : {
-                        "valid_children" : "all",
-                        "check_node" : false,
-                        "uncheck_node" : false
-                    },
-                    "file" : {
-                        "valid_children" : "none"
-                    },
-                    "product-category": {
-                        "valid_children" : "file",
-                        "check_node" : true,
-                        "uncheck_node" : true
-                    },
-                    "product-category-master": {
-                        "valid_children" : "file"
-                    }
-                }
-            },
-            "themes" : {
-                "theme" : "proton"
-            }
-        });
-
-        //progressbar
-        var req = new XMLHttpRequest();
-
-        req.addEventListener("progress", updateProgress, false);
-        req.addEventListener("load", transferComplete, false);
-        req.addEventListener("error", transferFailed, false);
-        req.addEventListener("abort", transferCanceled, false);
-
-        req.open();
-
-
-    });
-
-</script>
 
 </body>
 </html>
