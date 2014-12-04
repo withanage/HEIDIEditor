@@ -32,6 +32,22 @@ metadata.directive('bookPart', function(){
     };
 });
 
+/* bookBibliograpy directive*/
+metadata.directive('bookBack', function(){
+    return{
+        restrict: "E",
+        templateUrl: './tpls/bookBackMatter.html'
+    };
+});
+
+/* chapterBibliography directive*/
+metadata.directive('chapterBack', function(){
+    return{
+        restrict: "E",
+        templateUrl: './tpls/chapterBackMatter.html'
+    };
+});
+
 metadata.directive('header', function(){
     return {
         restrict: "E",
@@ -52,11 +68,4 @@ metadata.directive('footer', function(){
     };
 });
 
-metadata.filter('range', function() {
-    return function(arr, lower, upper) {
-        for (var i = lower; i <= upper; i++){
-            arr.push(i);
-        }
-        return arr;
-    };
-});
+

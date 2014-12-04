@@ -1,0 +1,198 @@
+<h3>
+    <i class="glyphicon glyphicon-folder-open"></i>
+    &nbsp;{{tree['book']['book-meta']['book-id']['#text']}}
+</h3>
+
+<div class="row" class="back-matter">
+<tabset>
+    <tab ng-repeat="(header, content) in tree['book']['back']" heading="{{header}}">
+        <!-- glossary -->
+        <div ng-if="content.hasOwnProperty('def-list')">
+            <table class="table">
+                <tr class="no-border-top">
+                    <th width="20%">List Title
+                        <span ng-if="!tree['book']['book-meta'].hasOwnProperty('series')">
+                            <button class="btn btn-default pull-right" ng-click="tree['book']['book-meta']['series'] = '';triggerClick('td.series.book a');">
+                                Add
+                            </button>
+                        </span>
+                    </th>
+                    <td>
+                        <span ng-if="!!content.hasOwnProperty('title')">
+                            <a href="#" editable-text="content['title']">
+                                {{content['title'] || 'empty'}}
+                            </a>
+                        </span>
+                    </td>
+                </tr>
+            </table>
+
+            <ul ui-sortable="sortableOptions" ng-model="content['def-list']['def-item']" class="panel-group">
+                <li ng-repeat="def in content['def-list']['def-item']" class="panel pane-default">
+                    <div class="handle btn btn-default">
+                        <i class="glyphicon glyphicon-resize-vertical"></i>
+                    </div>
+                    <h4 class="panel-title pull-right" ng-model="isOpen" ng-init="false" ng-click="isOpen = !isOpen">
+                        <span class="pull-left">{{$index+1}} <a>{{def['term']['#text']}}</a></span>
+                        <span class="pull-right" >
+                            <i class="glyphicon icon" ng-class="{'glyphicon-chevron-up':isOpen,'glyphicon-chevron-down':!isOpen}"></i>
+                        </span>
+                    </h4>
+                    <div ng-show="isOpen" class="panel-body">
+                        <table class="table">
+                            <tr class="no-border-top">
+                                <th width="10%">Term</th>
+                                <td>
+                                    <a href="#" editable-text="def['term']['#text']">
+                                        {{def['term']['#text'] || 'empty'}}
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>Description</th>
+                                <td>
+                                    <a href="#" editable-textangular="def['def']['p']">
+                                        <span ng-bind-html="def['def']['p'] || 'empty'"></span>
+                                    </a>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </li>
+            </ul>
+
+
+        </div>
+        <!-- end of glossary -->
+        <!-- bibliography -->
+        <div ng-if="content.hasOwnProperty('ref')">
+            <table class="table">
+                <tr class="no-border-top">
+                    <th width="20%">List Title
+                        <span ng-if="!content.hasOwnProperty('title')">
+                            <button class="btn btn-default pull-right"
+                                    ng-click="content['title'] = '';triggerClick('td.refListTitle a');">
+                                Add
+                            </button>
+                        </span>
+                    </th>
+                    <td class="refListTitle">
+                        <span ng-if="!!content.hasOwnProperty('title')">
+                            <a href="#" editable-text="content['title']">
+                                {{content['title'] || 'empty'}}
+                            </a>
+                        </span>
+                    </td>
+                </tr>
+            </table>
+
+            <ul ui-sortable="sortableOptions" ng-model="content['ref']" class="panel-group">
+                <li ng-repeat="ref in content['ref']" class="panel pane-default">
+                    <div class="handle btn btn-default">
+                        <i class="glyphicon glyphicon-resize-vertical"></i>
+                    </div>
+                    <h4 class="panel-title pull-right" ng-model="isOpen" ng-init="false" ng-click="isOpen = !isOpen">
+                        <span class="pull-left">{{$index+1}}&nbsp;
+                            <a><span ng-bind-html="ref['mixed-citation'] | chicagoStyleBook"></span></a>
+                        </span>
+                        <span class="pull-right" >
+                            <i class="glyphicon icon" ng-class="{'glyphicon-chevron-up':isOpen,'glyphicon-chevron-down':!isOpen}"></i>
+                        </span>
+                    </h4>
+                    <div ng-show="isOpen" class="panel-body">
+                        <table class="table">
+                            <tr class="no-border-top ">
+                                <th width="20%">Type</th>
+                                <td>
+                                    <a editable-select="ref['mixed-citation']['@publication-type']"
+                                       e-ng-options="type for type in bibType">
+                                        {{ref['mixed-citation']['@publication-type'] || 'empty'}}
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr ng-if="ref['mixed-citation']['@publication-type'] == 'book'">
+                                <th>Book Title
+                                    <span ng-if="!ref['mixed-citation'].hasOwnProperty('source')">
+                                        <button class="btn btn-default pull-right"
+                                                ng-click="ref['mixed-citation']['source'] = '';triggerClick('td.source a');">
+                                            Add
+                                        </button>
+                                    </span>
+                                </th>
+                                <td class="source">
+                                    <a href="#" editable-text="ref['mixed-citation']['source']"
+                                       onbeforesave="isEmpty($data)">
+                                        {{ref['mixed-citation']['source'] || 'empty'}}
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>Publisher
+                                    <span ng-if="!ref['mixed-citation'].hasOwnProperty('publisher-name')">
+                                        <button class="btn btn-default pull-right"
+                                                ng-click="ref['mixed-citation']['publisher-name'] = '';triggerClick('td.publisherName a');">
+                                            Add
+                                        </button>
+                                    </span>
+                                </th>
+                                <td class="publisherName">
+                                    <span ng-if="!!ref['mixed-citation'].hasOwnProperty('publisher-name')">
+                                        <a href="#" editable-text="ref['mixed-citation']['publisher-name']">
+                                            {{ref['mixed-citation']['publisher-name'] || 'empty'}}
+                                        </a>
+                                    </span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>Location
+                                    <span ng-if="!ref['mixed-citation'].hasOwnProperty('publisher-loc')">
+                                        <button class="btn btn-default pull-right"
+                                                ng-click="ref['mixed-citation']['publisher-loc'] = '';triggerClick('td.publisherLoc a');">
+                                            Add
+                                        </button>
+                                    </span>
+                                </th>
+                                <td class="publisherLoc">
+                                    <span ng-if="!!ref['mixed-citation'].hasOwnProperty('publisher-loc')">
+                                        <a href="#" editable-text="ref['publisher-loc']">
+                                            {{ref['mixed-citation']['publisher-loc'] || 'empty'}}
+                                        </a>
+                                    </span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>Year
+                                    <span ng-if="!ref['mixed-citation'].hasOwnProperty('year')">
+                                        <button class="btn btn-default pull-right"
+                                                ng-click="ref['mixed-citation']['year'] = '';triggerClick('td.year a');">
+                                            Add
+                                        </button>
+                                    </span>
+                                </th>
+                                <td class="year">
+                                    <span ng-if="!!ref['mixed-citation'].hasOwnProperty('year')">
+                                        <a editable-select="ref['mixed-citation']['year']"
+                                           e-ng-options="n for n in [] | range:1900:2020">
+                                            {{ref['mixed-citation']['year'] || 'empty'}}
+                                        </a>
+                                    </span>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </li>
+            </ul>
+
+        </div>
+        <!-- end of bibliography -->
+
+    </tab>
+</tabset>
+
+</div>
+
+<div class="row">&nbsp;</div>
+<div class="row">
+    Debug Area
+    <pre><code>{{tree['book']['back'] | json}}</code></pre>
+</div>

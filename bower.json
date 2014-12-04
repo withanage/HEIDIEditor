@@ -3,7 +3,11 @@
   "version": "0.0.1",
   "homepage": "https://github.com/withanage/HEIDIEditor",
   "authors": [
+<<<<<<< HEAD
     "dulip withanage <withanage@ub.uni-heidelberg.de>" 
+=======
+    "dulip withanage <withanage@ub.uni-heidelberg.de>",
+>>>>>>> upstream/master
     "mayumi ohta <mayumi.ohta@asia-europe.uni-heidelberg.de>"
 
   ],
@@ -28,12 +32,17 @@
     "angular": "~1.2.26",
     "angular-bootstrap": "~0.11.2",
     "jquery-file-upload": "~9.8.0",
+    "jquery-ui": "~1.11.2",
     "json2": "*",
     "textAngular": "~1.2.2",
     "font-awesome": "~4.2.0",
     "jstree-directive": "~0.1.2",
     "jstree": "~3.0.4",
     "angular-recursion": "~1.0.3",
-    "angular-xeditable": "~0.1.8"
+    "angular-xeditable": "~0.1.8",
+    "underscore": "~1.7.0",
+    "angular-underscore-module": "~1.0.1",
+    "angular-ui-tree": "~2.1.5",
+    "angular-ui-sortable": "~0.13.1"
   }
 }
