@@ -7,22 +7,22 @@
     <book-meta>
         <book-id pub-id-type="other">handbook1</book-id>
         <book-title-group>
-            <book-title>A Sample Book</book-title>
+            <book-title xml:lang="en">A Sample Book</book-title>
         </book-title-group>
         <volume>1</volume>
         <series>Heidelberg Studies in Transculturality Open Access Book Series</series>
         <edition>1st</edition>
         <contrib-group>
             <contrib contrib-type="author" rid="cluster">
-                <degrees>BA</degrees>
-                <name><surname>Ohta</surname>
-                    <given-names>May</given-names></name>
+                <degrees>MA</degrees>
+                <name><surname>A</surname>
+                    <given-names>B</given-names></name>
                 <email>test@example.com</email>
             </contrib>
             <contrib contrib-type="editor" rid="cluster">
-                <name><surname>Hacker</surname>
-                    <given-names>Andrea</given-names></name>
-                <ext-link xlink:href="http://example.com">http://example.com</ext-link>
+                <name><surname>C</surname>
+                    <given-names>D</given-names></name>
+                <ext-link xlink:href="http://example.com" ext-link-type="uri">http://example.com</ext-link>
             </contrib>
         </contrib-group>
         <aff id="cluster">
@@ -34,6 +34,8 @@
             <publisher-loc>Heidelberg</publisher-loc>
         </publisher>
         <isbn pub-type="epub">0000-000X</isbn>
+        <isbn pub-type="pdf">0000-000Y</isbn>
+        <isbn pub-type="html">0000-000Z</isbn>
         <pub-date pub-type="epub">
             <string-date>2014-10-10</string-date>
         </pub-date>
@@ -50,14 +52,14 @@
         </history>
         <alternate-form alternate-form-type="pdf" xlink:href="/path/to/file.pdf">pdf</alternate-form>
         <permissions>
-            <copyright-statement>Copyright &#x00A9; 2014, Heidelberg University</copyright-statement>
+            <copyright-statement>All rights reserved &#x00A9; 2014, Heidelberg University</copyright-statement>
             <copyright-year>2014</copyright-year>
             <license license-type="open-access" xlink:href="http://creativecommons.org/licenses/by/2.0/">
                 <license-p>This is an open-access book distributed under the terms of the Creative Commons Attribution License, which permits unrestricted use, distribution, and reproduction in any medium, provided the original work is properly cited. The citation of this article must include: the name(s) of the authors, the name of the journal, the full URL of the article (in a hyperlinked format if distributed online) and the DOI number of the article.</license-p>
             </license>
         </permissions>
         <abstract>
-            <p>This is a sample abstract that forms part of the bookMetadataSample.xml file.</p>
+            <p>This is a sample abstract that forms part of the <italic>bookMetadataSample.xml</italic> file.</p>
         </abstract>
         <counts>
             <fig-count count="10"/>
@@ -68,8 +70,8 @@
             <word-count count="100000"/>
         </counts>
         <kwd-group kwd-group-type="author-generated">
-            <kwd>Transculturality</kwd>
-            <kwd>Open Access</kwd>
+            <kwd id="ts">Transculturality</kwd>
+            <kwd id="oa">Open Access</kwd>
         </kwd-group>
     </book-meta>
     <book-front>
@@ -86,14 +88,14 @@
         <book-part id="part1" book-part-type="part" book-part-number="1">
             <book-part-meta>
                 <title-group>
-                    <title>Part 1</title>
+                    <title xml:lang="en">Part 1</title>
                 </title-group>
             </book-part-meta>
             <body>
                 <book-part id="part1_chap1" book-part-type="chapter" book-part-number="1">
                     <book-part-meta>
                         <title-group>
-                            <title>The Open Access Project</title>
+                            <title xml:lang="en">The Open Access Project</title>
                         </title-group>
                         <contrib-group>
                             <contrib contrib-type="author">
@@ -107,17 +109,16 @@
                         </contrib-group>
                         <history>
                             <date date-type="created">
-                                2014-10-01
+                                <string-date>2014-10-01</string-date>
                             </date>
                             <date date-type="updated">
-                                2014-10-10
+                                <string-date>2014-10-10</string-date>
                             </date>
                         </history>
                         <alternate-form alternate-form-type="pdf" xlink:href="/path/to/file.pdf"/>
                         <abstract>
                             <title>Abstract</title>
                             <p>Paragraph (Part 1 - Chapter 1 - Abstract)</p>
-                            <p>Paragraph</p>
                         </abstract>
                     </book-part-meta>
                     <body>
@@ -170,8 +171,26 @@
                             <title>Bibliography</title>
                             <ref>
                                 <mixed-citation publication-type="book" publication-format="epub">
-                                    <string-name><surname>Suber</surname>
-                                        <given-names>Peter</given-names></string-name>
+                                    <person-group person-group-type="author">
+                                        <name>
+                                            <surname>Suber</surname>
+                                            <given-names>Peter</given-names>
+                                        </name>
+                                    </person-group>
+                                    <source>Open Access</source>
+                                    <series>MIT Press Essential Knowledge</series>
+                                    <year>2012</year>
+                                    <publisher-name>MIT Press</publisher-name>
+                                </mixed-citation>
+                            </ref>
+                            <ref>
+                                <mixed-citation publication-type="book" publication-format="epub">
+                                    <person-group person-group-type="author">
+                                        <name>
+                                            <surname>Suber</surname>
+                                            <given-names>Peter</given-names>
+                                        </name>
+                                    </person-group>
                                     <source>Open Access</source>
                                     <series>MIT Press Essential Knowledge</series>
                                     <year>2012</year>
@@ -184,7 +203,7 @@
                 <book-part id="part1_chap2" book-part-type="chapter" book-part-number="2">
                     <book-part-meta>
                         <title-group>
-                            <title>The Open Access Project</title>
+                            <title xml:lang="en">The Open Access Project</title>
                         </title-group>
                         <contrib-group>
                             <contrib contrib-type="author">
@@ -198,18 +217,13 @@
                         </contrib-group>
                         <history>
                             <date date-type="created">
-                                2014-10-01
+                                <string-date>2014-10-01</string-date>
                             </date>
                             <date date-type="updated">
-                                2014-10-10
+                                <string-date>2014-10-10</string-date>
                             </date>
                         </history>
                         <alternate-form alternate-form-type="pdf" xlink:href="/path/to/file.pdf"/>
-                        <abstract>
-                            <title>Abstract</title>
-                            <p>Paragraph (Part 1 - Chapter 2 - Abstract)</p>
-                            <p>Paragraph</p>
-                        </abstract>
                     </book-part-meta>
                     <body>
                         <sec id="part1_chap2_sec1">
@@ -261,8 +275,26 @@
                             <title>Bibliography</title>
                             <ref>
                                 <mixed-citation publication-type="book" publication-format="epub">
-                                    <string-name><surname>Suber</surname>
-                                        <given-names>Peter</given-names></string-name>
+                                    <person-group person-group-type="author">
+                                        <name>
+                                            <surname>Suber</surname>
+                                            <given-names>Peter</given-names>
+                                        </name>
+                                    </person-group>
+                                    <source>Open Access</source>
+                                    <series>MIT Press Essential Knowledge</series>
+                                    <year>2012</year>
+                                    <publisher-name>MIT Press</publisher-name>
+                                </mixed-citation>
+                            </ref>
+                            <ref>
+                                <mixed-citation publication-type="book" publication-format="epub">
+                                    <person-group person-group-type="author">
+                                        <name>
+                                            <surname>Suber</surname>
+                                            <given-names>Peter</given-names>
+                                        </name>
+                                    </person-group>
                                     <source>Open Access</source>
                                     <series>MIT Press Essential Knowledge</series>
                                     <year>2012</year>
@@ -275,7 +307,7 @@
                 <book-part id="part1_chap3" book-part-type="chapter" book-part-number="3">
                     <book-part-meta>
                         <title-group>
-                            <title>The Open Access Project</title>
+                            <title xml:lang="en">The Open Access Project</title>
                         </title-group>
                         <contrib-group>
                             <contrib contrib-type="author">
@@ -289,17 +321,16 @@
                         </contrib-group>
                         <history>
                             <date date-type="created">
-                                2014-10-01
+                                <string-date>2014-10-01</string-date>
                             </date>
                             <date date-type="updated">
-                                2014-10-10
+                                <string-date>2014-10-10</string-date>
                             </date>
                         </history>
                         <alternate-form alternate-form-type="pdf" xlink:href="/path/to/file.pdf"/>
                         <abstract>
                             <title>Abstract</title>
                             <p>Paragraph (Part 1 - Chapter 3 - Abstract)</p>
-                            <p>Paragraph</p>
                         </abstract>
                     </book-part-meta>
                     <body>
@@ -352,8 +383,26 @@
                             <title>Bibliography</title>
                             <ref>
                                 <mixed-citation publication-type="book" publication-format="epub">
-                                    <string-name><surname>Suber</surname>
-                                        <given-names>Peter</given-names></string-name>
+                                    <person-group person-group-type="author">
+                                        <name>
+                                            <surname>Suber</surname>
+                                            <given-names>Peter</given-names>
+                                        </name>
+                                    </person-group>
+                                    <source>Open Access</source>
+                                    <series>MIT Press Essential Knowledge</series>
+                                    <year>2012</year>
+                                    <publisher-name>MIT Press</publisher-name>
+                                </mixed-citation>
+                            </ref>
+                            <ref>
+                                <mixed-citation publication-type="book" publication-format="epub">
+                                    <person-group person-group-type="author">
+                                        <name>
+                                            <surname>Suber</surname>
+                                            <given-names>Peter</given-names>
+                                        </name>
+                                    </person-group>
                                     <source>Open Access</source>
                                     <series>MIT Press Essential Knowledge</series>
                                     <year>2012</year>
@@ -366,7 +415,7 @@
                 <book-part id="part1_chap4" book-part-type="chapter" book-part-number="4">
                     <book-part-meta>
                         <title-group>
-                            <title>The Open Access Project</title>
+                            <title xml:lang="en">The Open Access Project</title>
                         </title-group>
                         <contrib-group>
                             <contrib contrib-type="author">
@@ -380,17 +429,16 @@
                         </contrib-group>
                         <history>
                             <date date-type="created">
-                                2014-10-01
+                                <string-date>2014-10-01</string-date>
                             </date>
                             <date date-type="updated">
-                                2014-10-10
+                                <string-date>2014-10-10</string-date>
                             </date>
                         </history>
                         <alternate-form alternate-form-type="pdf" xlink:href="/path/to/file.pdf"/>
                         <abstract>
                             <title>Abstract</title>
                             <p>Paragraph (Part 1 - Chapter 4 - Abstract)</p>
-                            <p>Paragraph</p>
                         </abstract>
                     </book-part-meta>
                     <body>
@@ -443,8 +491,26 @@
                             <title>Bibliography</title>
                             <ref>
                                 <mixed-citation publication-type="book" publication-format="epub">
-                                    <string-name><surname>Suber</surname>
-                                        <given-names>Peter</given-names></string-name>
+                                    <person-group person-group-type="author">
+                                        <name>
+                                            <surname>Suber</surname>
+                                            <given-names>Peter</given-names>
+                                        </name>
+                                    </person-group>
+                                    <source>Open Access</source>
+                                    <series>MIT Press Essential Knowledge</series>
+                                    <year>2012</year>
+                                    <publisher-name>MIT Press</publisher-name>
+                                </mixed-citation>
+                            </ref>
+                            <ref>
+                                <mixed-citation publication-type="book" publication-format="epub">
+                                    <person-group person-group-type="author">
+                                        <name>
+                                            <surname>Suber</surname>
+                                            <given-names>Peter</given-names>
+                                        </name>
+                                    </person-group>
                                     <source>Open Access</source>
                                     <series>MIT Press Essential Knowledge</series>
                                     <year>2012</year>
@@ -459,14 +525,14 @@
         <book-part id="part2" book-part-type="part" book-part-number="2">
             <book-part-meta>
                 <title-group>
-                    <title>Part 2</title>
+                    <title xml:lang="en">Part 2</title>
                 </title-group>
             </book-part-meta>
             <body>
                 <book-part id="part2_chap5" book-part-type="chapter" book-part-number="5">
                     <book-part-meta>
                         <title-group>
-                            <title>The Open Access Project</title>
+                            <title xml:lang="en">The Open Access Project</title>
                         </title-group>
                         <contrib-group>
                             <contrib contrib-type="author">
@@ -480,17 +546,16 @@
                         </contrib-group>
                         <history>
                             <date date-type="created">
-                                2014-10-01
+                                <string-date>2014-10-01</string-date>
                             </date>
                             <date date-type="updated">
-                                2014-10-10
+                                <string-date>2014-10-10</string-date>
                             </date>
                         </history>
                         <alternate-form alternate-form-type="pdf" xlink:href="/path/to/file.pdf"/>
                         <abstract>
                             <title>Abstract</title>
                             <p>Paragraph (Part 2 - Chapter 5 - Abstract)</p>
-                            <p>Paragraph</p>
                         </abstract>
                     </book-part-meta>
                     <body>
@@ -543,8 +608,26 @@
                             <title>Bibliography</title>
                             <ref>
                                 <mixed-citation publication-type="book" publication-format="epub">
-                                    <string-name><surname>Suber</surname>
-                                        <given-names>Peter</given-names></string-name>
+                                    <person-group person-group-type="author">
+                                        <name>
+                                            <surname>Suber</surname>
+                                            <given-names>Peter</given-names>
+                                        </name>
+                                    </person-group>
+                                    <source>Open Access</source>
+                                    <series>MIT Press Essential Knowledge</series>
+                                    <year>2012</year>
+                                    <publisher-name>MIT Press</publisher-name>
+                                </mixed-citation>
+                            </ref>
+                            <ref>
+                                <mixed-citation publication-type="book" publication-format="epub">
+                                    <person-group person-group-type="author">
+                                        <name>
+                                            <surname>Suber</surname>
+                                            <given-names>Peter</given-names>
+                                        </name>
+                                    </person-group>
                                     <source>Open Access</source>
                                     <series>MIT Press Essential Knowledge</series>
                                     <year>2012</year>
@@ -557,7 +640,7 @@
                 <book-part id="part2_chap6" book-part-type="chapter" book-part-number="6">
                     <book-part-meta>
                         <title-group>
-                            <title>The Open Access Project</title>
+                            <title xml:lang="en">The Open Access Project</title>
                         </title-group>
                         <contrib-group>
                             <contrib contrib-type="author">
@@ -571,17 +654,16 @@
                         </contrib-group>
                         <history>
                             <date date-type="created">
-                                2014-10-01
+                                <string-date>2014-10-01</string-date>
                             </date>
                             <date date-type="updated">
-                                2014-10-10
+                                <string-date>2014-10-10</string-date>
                             </date>
                         </history>
                         <alternate-form alternate-form-type="pdf" xlink:href="/path/to/file.pdf"/>
                         <abstract>
                             <title>Abstract</title>
                             <p>Paragraph (Part 2 - Chapter 6 - Abstract)</p>
-                            <p>Paragraph</p>
                         </abstract>
                     </book-part-meta>
                     <body>
@@ -634,8 +716,26 @@
                             <title>Bibliography</title>
                             <ref>
                                 <mixed-citation publication-type="book" publication-format="epub">
-                                    <string-name><surname>Suber</surname>
-                                        <given-names>Peter</given-names></string-name>
+                                    <person-group person-group-type="author">
+                                        <name>
+                                            <surname>Suber</surname>
+                                            <given-names>Peter</given-names>
+                                        </name>
+                                    </person-group>
+                                    <source>Open Access</source>
+                                    <series>MIT Press Essential Knowledge</series>
+                                    <year>2012</year>
+                                    <publisher-name>MIT Press</publisher-name>
+                                </mixed-citation>
+                            </ref>
+                            <ref>
+                                <mixed-citation publication-type="book" publication-format="epub">
+                                    <person-group person-group-type="author">
+                                        <name>
+                                            <surname>Suber</surname>
+                                            <given-names>Peter</given-names>
+                                        </name>
+                                    </person-group>
                                     <source>Open Access</source>
                                     <series>MIT Press Essential Knowledge</series>
                                     <year>2012</year>
@@ -648,7 +748,7 @@
                 <book-part id="part2_chap7" book-part-type="chapter" book-part-number="7">
                     <book-part-meta>
                         <title-group>
-                            <title>The Open Access Project</title>
+                            <title xml:lang="en">The Open Access Project</title>
                         </title-group>
                         <contrib-group>
                             <contrib contrib-type="author">
@@ -663,22 +763,15 @@
                         <history>
                             <date date-type="created">
                                 <string-date>2014-10-01</string-date>
-                                <year>2014</year>
-                                <month>10</month>
-                                <date>01</date>
                             </date>
                             <date date-type="updated">
                                 <string-date>2014-10-10</string-date>
-                                <year>2014</year>
-                                <month>10</month>
-                                <date>10</date>
                             </date>
                         </history>
                         <alternate-form alternate-form-type="pdf" xlink:href="/path/to/file.pdf"/>
                         <abstract>
                             <title>Abstract</title>
                             <p>Paragraph (Part 2 - Chapter 7 - Abstract)</p>
-                            <p>Paragraph</p>
                         </abstract>
                     </book-part-meta>
                     <body>
@@ -731,8 +824,26 @@
                             <title>Bibliography</title>
                             <ref>
                                 <mixed-citation publication-type="book" publication-format="epub">
-                                    <string-name><surname>Suber</surname>
-                                        <given-names>Peter</given-names></string-name>
+                                    <person-group person-group-type="author">
+                                        <name>
+                                            <surname>Suber</surname>
+                                            <given-names>Peter</given-names>
+                                        </name>
+                                    </person-group>
+                                    <source>Open Access</source>
+                                    <series>MIT Press Essential Knowledge</series>
+                                    <year>2012</year>
+                                    <publisher-name>MIT Press</publisher-name>
+                                </mixed-citation>
+                            </ref>
+                            <ref>
+                                <mixed-citation publication-type="book" publication-format="epub">
+                                    <person-group person-group-type="author">
+                                        <name>
+                                            <surname>Suber</surname>
+                                            <given-names>Peter</given-names>
+                                        </name>
+                                    </person-group>
                                     <source>Open Access</source>
                                     <series>MIT Press Essential Knowledge</series>
                                     <year>2012</year>
@@ -745,7 +856,7 @@
                 <book-part id="part2_chap8" book-part-type="chapter" book-part-number="8">
                     <book-part-meta>
                         <title-group>
-                            <title>The Open Access Project</title>
+                            <title xml:lang="en">The Open Access Project</title>
                         </title-group>
                         <contrib-group>
                             <contrib contrib-type="author">
@@ -759,17 +870,16 @@
                         </contrib-group>
                         <history>
                             <date date-type="created">
-                                2014-10-01
+                                <string-date>2014-10-01</string-date>
                             </date>
                             <date date-type="updated">
-                                2014-10-10
+                                <string-date>2014-10-10</string-date>
                             </date>
                         </history>
                         <alternate-form alternate-form-type="pdf" xlink:href="/path/to/file.pdf"/>
                         <abstract>
                             <title>Abstract</title>
                             <p>Paragraph (Part 2 - Chapter 8 - Abstract)</p>
-                            <p>Paragraph</p>
                         </abstract>
                     </book-part-meta>
                     <body>
@@ -822,8 +932,26 @@
                             <title>Bibliography</title>
                             <ref>
                                 <mixed-citation publication-type="book" publication-format="epub">
-                                    <string-name><surname>Suber</surname>
-                                        <given-names>Peter</given-names></string-name>
+                                    <person-group person-group-type="author">
+                                        <name>
+                                            <surname>Suber</surname>
+                                            <given-names>Peter</given-names>
+                                        </name>
+                                    </person-group>
+                                    <source>Open Access</source>
+                                    <series>MIT Press Essential Knowledge</series>
+                                    <year>2012</year>
+                                    <publisher-name>MIT Press</publisher-name>
+                                </mixed-citation>
+                            </ref>
+                            <ref>
+                                <mixed-citation publication-type="book" publication-format="epub">
+                                    <person-group person-group-type="author">
+                                        <name>
+                                            <surname>Suber</surname>
+                                            <given-names>Peter</given-names>
+                                        </name>
+                                    </person-group>
                                     <source>Open Access</source>
                                     <series>MIT Press Essential Knowledge</series>
                                     <year>2012</year>
@@ -867,10 +995,29 @@
             </def-list>
         </glossary>
         <ref-list>
+            <title>Bibliography</title>
             <ref>
                 <mixed-citation publication-type="book" publication-format="epub">
-                    <string-name><surname>Suber</surname>
-                        <given-names>Peter</given-names></string-name>
+                    <person-group person-group-type="author">
+                        <name>
+                            <surname>Suber</surname>
+                            <given-names>Peter</given-names>
+                        </name>
+                    </person-group>
+                    <source>Open Access</source>
+                    <series>MIT Press Essential Knowledge</series>
+                    <year>2012</year>
+                    <publisher-name>MIT Press</publisher-name>
+                </mixed-citation>
+            </ref>
+            <ref>
+                <mixed-citation publication-type="book" publication-format="epub">
+                    <person-group person-group-type="author">
+                        <name>
+                            <surname>Suber</surname>
+                            <given-names>Peter</given-names>
+                        </name>
+                    </person-group>
                     <source>Open Access</source>
                     <series>MIT Press Essential Knowledge</series>
                     <year>2012</year>
