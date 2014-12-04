@@ -3,11 +3,7 @@
   "version": "0.0.1",
   "homepage": "https://github.com/withanage/HEIDIEditor",
   "authors": [
-<<<<<<< HEAD
     "dulip withanage <withanage@ub.uni-heidelberg.de>" 
-=======
-    "dulip withanage <withanage@ub.uni-heidelberg.de>",
->>>>>>> upstream/master
     "mayumi ohta <mayumi.ohta@asia-europe.uni-heidelberg.de>"
 
   ],
