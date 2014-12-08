@@ -136,7 +136,7 @@
                                     </span>
                                 </td>
                             </tr>
-                            <tr ng-if="['book', 'book chapter', 'journal article', 'newspaper/magazine article', 'website'].indexOf(ref['element-citation']['@publication-type']) >= 0">
+                            <tr ng-if="['book', 'book chapter', 'book review', 'journal article', 'newspaper/magazine article', 'website'].indexOf(ref['element-citation']['@publication-type']) >= 0">
                                 <th>Book Title
                                     <span ng-if="!ref['element-citation'].hasOwnProperty('source')">
                                         <button class="btn btn-default pull-right"
