@@ -19,7 +19,6 @@ metadata.run(function(editableOptions, editableThemes) {
 metadata.factory('JsonData', function(){
     return {
         tree: null,
-        selected: null,
         pubType : ['pdf', 'epub', 'html'],
         dateType : ['created', 'reviewed', 'updated'],
         idType : [
@@ -45,7 +44,10 @@ metadata.factory('JsonData', function(){
             {name: 'CC BY-NC-SA', info: 'Creative Commons Attribution-NonCommercial-ShareAlike License'}
         ],
         languages : {'en':'English', 'de':'German', 'fr':'French', 'es': 'Spanish', 'zh':'Chinese', 'ja':'Japanese'},
-        bibType : ['article', 'book', 'book review', 'thesis', 'website', 'misc']
+        bibType : ['book', 'book chapter', 'book review', 'conference proceeding', 'journal article', 'newspaper/magazine article', 'thesis', 'website', 'other'],
+        citation : {
+            chicago: {etal: 4, nameOrder: 1, and: 'and', abbrev: {}}
+        }
     };
 });
 
@@ -89,7 +91,6 @@ metadata.controller('textCtrl',
             }
         };
         $scope.triggerClick = function(selector){
-            console.log(selector);
             $timeout(function() {
                 angular.element(selector).trigger('click');
             }, 0);
@@ -203,7 +204,6 @@ metadata.controller('contribInstanceCtrl',
         $scope.degreeType = JsonData.degreeType;
         $scope.aff = JsonData.tree['book']['book-meta']['aff'];
         $scope.triggerClick = function(selector){
-            console.log(selector);
             $timeout(function() {
                 angular.element(selector).trigger('click');
             }, 0);
@@ -219,7 +219,6 @@ metadata.controller('affInstanceCtrl',
     ['$scope', '$modalInstance', '$timeout', 'aff', function($scope, $modalInstance, $timeout, aff) {
         $scope.aff = aff;
         $scope.triggerClick = function(selector){
-            console.log(selector);
             $timeout(function() {
                 angular.element(selector).trigger('click');
             }, 0);
@@ -236,7 +235,6 @@ metadata.controller('titleInstanceCtrl',
         $scope.title = title;
         $scope.languages = JsonData.languages;
         $scope.triggerClick = function(selector){
-            console.log(selector);
             $timeout(function() {
                 angular.element(selector).trigger('click');
             }, 0);
@@ -253,7 +251,6 @@ metadata.controller('permissionsInstanceCtrl',
         $scope.permissions = permissions;
         $scope.licenseType = JsonData.licenseType;
         $scope.triggerClick = function(selector){
-            console.log(selector);
             $timeout(function() {
                 angular.element(selector).trigger('click');
             }, 0);
