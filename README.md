@@ -10,4 +10,4 @@ HTML5 WYSIWYG Editor for NLM-XML  (Standalone Application or as OMP Plugin)
 
 
 #### Thanks 
-  1. [JetBeains ] (http://www.jetbrains.com) for the opensource license
+  1. [JetBrains ] (http://www.jetbrains.com) for the opensource license
