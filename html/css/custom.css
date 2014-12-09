@@ -25,6 +25,7 @@
 }
 .ta-scroll-window>.ta-bind{
     min-height: 95px;
+    max-width: 620px;
 }
 
 /* ------------------------------------- <em>/
@@ -51,6 +52,103 @@
     border-radius: 4px;
 }
 
+/*  table
+/*--------------------------------- */
+
+.cell-border-left{
+    border-left: 1px solid #ddd;
+}
+
+tr.no-border-top > td,
+tr.no-border-top > th,
+th.no-border-top,
+.table>tbody+tbody {
+    border-top: 0px !important;
+}
+
+tr.even-row {
+    background-color: #f9f9f9;
+}
+
+.table button.btn-default {
+    background-color: inherit;
+}
+
+/*  ui-sortable
+/*--------------------------------- */
+
+tbody.ui-sortable th{
+    width: 20%;
+    border: none !important;
+}
+
+tbody.ui-sortable .ui-sortable-placeholder td,
+tbody.ui-sortable .ui-sortable-placeholder th{
+    height: 55px;
+}
+
+tbody.ui-sortable .ui-sortable-helper td{
+    width: 17%;
+}
+tbody.ui-sortable .ui-sortable-handle td{
+    cursor:move;
+}
+
+
+/* ------------------------------------- <em>/
+/</em>   back matter
+/* ------------------------------------- */
+
+ul.panel-group {
+    list-style:none;
+}
+
+.back-matter .handle,
+.back-matter h4 {
+    display:inline-block;
+}
+
+.sorticon {
+    margin:2px !important;
+}
+
+.panel-group .panel {
+    padding: 4px;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+    background-color: #f5f5f5;
+}
+
+.panel-default .panel-heading {
+    color: #333;
+    background-color: #f5f5f5;
+    border-color: #ddd;
+}
+.panel-group .panel-title {
+    margin:10px;
+    width:90%
+}
+.panel-group .panel-body {
+    padding:15px;
+    margin-left: 50px;
+    background-color: #fefefe;
+    border-radius: 4px;
+}
+
+.preview-box {
+    padding: 10px 10px 10px 40px;
+    border: 2px solid #ddd;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    text-indent: -25px;
+    background-color: #fff;
+}
+
+select.form-control{
+    display: inline-block;
+    width: inherit;
+    background-color: inherit;
+}
 
 /*  breadcrumb
 /*--------------------------------- */
@@ -81,4 +179,8 @@ button.next-btn{
 div.download-btn{
     text-align: center;
     margin-top: 20px;
+}
+
+button.margin{
+    margin: 10px;
 }
