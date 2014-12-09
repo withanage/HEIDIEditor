@@ -1,0 +1,406 @@
+
+<table class="table">
+    <tr class="no-border-top">
+        <th width="20%">List Title
+            <span ng-if="!content.hasOwnProperty('title')">
+                <button class="btn btn-default pull-right"
+                        ng-click="content['title'] = '';triggerClick('td.refListTitle a');">
+                    Add
+                </button>
+            </span>
+        </th>
+        <td class="refListTitle">
+            <span ng-if="!!content.hasOwnProperty('title')">
+                <a href="#" editable-text="content['title']">
+                    {{content['title'] || 'empty'}}
+                </a>
+            </span>
+        </td>
+    </tr>
+</table>
+
+
+<ul ui-sortable="sortableOptions" ng-model="content['ref']" class="panel-group">
+    <li ng-repeat="ref in content['ref']" class="panel pane-default">
+        <div class="btn btn-default"><i class="glyphicon glyphicon-resize-vertical"></i></div>
+        <h4 class="panel-title pull-right" ng-model="isOpen" ng-init="false" ng-click="isOpen = !isOpen">
+            <span class="pull-left">{{$index+1}}&nbsp;
+                <a>
+                    <span ng-if="ref.hasOwnProperty('element-citation')">
+                        {{ref['element-citation']['label']}}
+                    </span>
+                    <span ng-if="ref.hasOwnProperty('mixed-citation')">
+                        {{ref['element-citation']['label']}}
+                    </span>
+                </a>
+            </span>
+            <span class="pull-right" >
+                <i class="glyphicon icon" ng-class="{'glyphicon-chevron-up':isOpen,'glyphicon-chevron-down':!isOpen}"></i>
+            </span>
+        </h4>
+        <div ng-show="isOpen" class="panel-body">
+            <div style="padding: 5px;">
+                <strong>Format:</strong>&nbsp;
+                <select  class="form-control" ng-model="ref['element-citation']['@publication-type']" ng-options="type for type in bibType">
+                    {{ref['element-citation']['@publication-type'] || 'empty'}}
+                </select>
+            </div>
+            <div class="preview-box"><span ng-bind-html="ref['element-citation'] | chicagoStyle"></span></div>
+            <table class="table">
+                <tr class="no-border-top ">
+                    <th width="25%">Label (short name)
+                        <span ng-if="!ref['element-citation'].hasOwnProperty('label')">
+                            <button class="btn btn-default pull-right"
+                                    ng-click="ref['element-citation']['label'] = '';triggerClick('td.shortName a');">
+                                Add
+                            </button>
+                        </span>
+                    </th>
+                    <td class="shortName">
+                        <span ng-if="!!ref['element-citation'].hasOwnProperty('label')">
+                            <a editable-text="ref['element-citation']['label']" onbeforesave="isEmpty($data)">
+                                {{ref['element-citation']['label'] || 'empty'}}
+                            </a>
+                        </span>
+                    </td>
+                </tr>
+                <tr ng-if="['book', 'book chapter', 'journal article', 'newspaper/magazine article'].indexOf(ref['element-citation']['@publication-type']) >= 0">
+                    <th><span ng-if="ref['element-citation']['@publication-type'] === 'book' || ref['element-citation']['@publication-type'] === 'book chapter'">Book</span>
+                        <span ng-if="ref['element-citation']['@publication-type'] === 'journal article'">Journal</span>
+                        <span ng-if="ref['element-citation']['@publication-type'] === 'newspaper/magazine article'">Newspaper/Magazine</span>
+                        &nbsp;Title
+                        <span ng-if="!ref['element-citation'].hasOwnProperty('source')">
+                            <button class="btn btn-default pull-right"
+                                    ng-click="ref['element-citation']['source'] = '';triggerClick('td.source a');">
+                                Add
+                            </button>
+                        </span>
+                    </th>
+                    <td class="source">
+                        <span ng-if="!!ref['element-citation'].hasOwnProperty('source')">
+                            <a href="#" editable-text="ref['element-citation']['source']"
+                               onbeforesave="isEmpty($data)">
+                                {{ref['element-citation']['source'] || 'empty'}}
+                            </a>
+                        </span>
+                    </td>
+                </tr>
+                <tr ng-if="ref['element-citation']['@publication-type'] === 'book chapter'">
+                    <th>Chapter Title
+                        <span ng-if="!ref['element-citation'].hasOwnProperty('chapter-title')">
+                            <button class="btn btn-default pull-right"
+                                    ng-click="ref['element-citation']['chapter-title'] = '';triggerClick('td.chapterTitle a');">
+                                Add
+                            </button>
+                        </span>
+                    </th>
+                    <td class="chapterTitle">
+                        <span ng-if="!!ref['element-citation'].hasOwnProperty('chapter-title')">
+                            <a href="#" editable-text="ref['element-citation']['chapter-title']">
+                                {{ref['element-citation']['chapter-title'] || 'empty'}}
+                            </a>
+                        </span>
+                    </td>
+                </tr>
+                <tr ng-if="['book review', 'journal article', 'newspaper/magazine article', 'conference proceeding', 'thesis', 'website'].indexOf(ref['element-citation']['@publication-type']) >= 0">
+                    <th>Article Title
+                        <span ng-if="!ref['element-citation'].hasOwnProperty('article-title')">
+                            <button class="btn btn-default pull-right"
+                                    ng-click="ref['element-citation']['article-title'] = '';triggerClick('td.articleTitle a');">
+                                Add
+                            </button>
+                        </span>
+                    </th>
+                    <td class="articleTitle">
+                        <span ng-if="!!ref['element-citation'].hasOwnProperty('article-title')">
+                            <a href="#" editable-text="ref['element-citation']['article-title']">
+                                {{ref['element-citation']['article-title'] || 'empty'}}
+                            </a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <th>Author</th>
+                    <td></td>
+                </tr>
+                <tr ng-if="['book', 'book chapter', 'book review', 'journal article', 'newspaper/magazine article'].indexOf(ref['element-citation']['@publication-type']) >= 0">
+                    <th>Publisher
+                        <span ng-if="!ref['element-citation'].hasOwnProperty('publisher-name')">
+                            <button class="btn btn-default pull-right"
+                                    ng-click="ref['element-citation']['publisher-name'] = '';triggerClick('td.publisherName a');">
+                                Add
+                            </button>
+                        </span>
+                    </th>
+                    <td class="publisherName">
+                        <span ng-if="!!ref['element-citation'].hasOwnProperty('publisher-name')">
+                            <a href="#" editable-text="ref['element-citation']['publisher-name']">
+                                {{ref['element-citation']['publisher-name'] || 'empty'}}
+                            </a>
+                        </span>
+                    </td>
+                </tr>
+                <tr ng-if="!!ref['element-citation']['publisher']">
+                    <th>Location
+                        <span ng-if="!ref['element-citation'].hasOwnProperty('publisher-loc')">
+                            <button class="btn btn-default pull-right"
+                                    ng-click="ref['element-citation']['publisher-loc'] = '';triggerClick('td.publisherLoc a');">
+                                Add
+                            </button>
+                        </span>
+                    </th>
+                    <td class="publisherLoc">
+                        <span ng-if="!!ref['element-citation'].hasOwnProperty('publisher-loc')">
+                            <a href="#" editable-text="ref['element-citation']['publisher-loc']">
+                                {{ref['element-citation']['publisher-loc'] || 'empty'}}
+                            </a>
+                        </span>
+                    </td>
+                </tr>
+                <tr ng-if="ref['element-citation']['@publication-type'] === 'thesis'">
+                    <th>Institution
+                        <span ng-if="!ref['element-citation'].hasOwnProperty('institution')">
+                            <button class="btn btn-default pull-right"
+                                    ng-click="ref['element-citation']['institution'] = '';triggerClick('td.institution a');">
+                                Add
+                            </button>
+                        </span>
+                    </th>
+                    <td class="institution">
+                        <span ng-if="!!ref['element-citation'].hasOwnProperty('institution')">
+                            <a href="#" editable-text="ref['element-citation']['institution']">
+                                {{ref['element-citation']['institution'] || 'empty'}}
+                            </a>
+                        </span>
+                    </td>
+                </tr>
+                <tr ng-if="ref['element-citation']['@publication-type'] === 'thesis'">
+                    <th>Type
+                        <span ng-if="!ref['element-citation'].hasOwnProperty('annotation')">
+                            <button class="btn btn-default pull-right"
+                                    ng-click="ref['element-citation']['annotation'] = '';triggerClick('td.annotation a');">
+                                Add
+                            </button>
+                        </span>
+                    </th>
+                    <td class="annotation">
+                        <span ng-if="!!ref['element-citation'].hasOwnProperty('annotation')">
+                            <a href="#" editable-text="ref['element-citation']['annotation']">
+                                {{ref['element-citation']['annotation'] || 'empty'}}
+                            </a>
+                        </span>
+                    </td>
+                </tr>
+                <tr ng-if="ref['element-citation']['@publication-type'] === 'conference proceeding'">
+                    <th>Conference name
+                        <span ng-if="!ref['element-citation'].hasOwnProperty('conf-name')">
+                            <button class="btn btn-default pull-right"
+                                    ng-click="ref['element-citation']['conf-name'] = '';triggerClick('td.confName a');">
+                                Add
+                            </button>
+                        </span>
+                    </th>
+                    <td class="confName">
+                        <span ng-if="!!ref['element-citation'].hasOwnProperty('conf-name')">
+                            <a href="#" editable-text="ref['element-citation']['conf-name']">
+                                {{ref['element-citation']['conf-name'] || 'empty'}}
+                            </a>
+                        </span>
+                    </td>
+                </tr>
+                <tr ng-if="ref['element-citation']['@publication-type'] === 'conference proceeding'">
+                    <th>Conference Location
+                        <span ng-if="!ref['element-citation'].hasOwnProperty('conf-loc')">
+                            <button class="btn btn-default pull-right"
+                                    ng-click="ref['element-citation']['conf-loc'] = '';triggerClick('td.confLoc a');">
+                                Add
+                            </button>
+                        </span>
+                    </th>
+                    <td class="confLoc">
+                        <span ng-if="!!ref['element-citation'].hasOwnProperty('conf-loc')">
+                            <a href="#" editable-text="ref['element-citation']['conf-loc']">
+                                {{ref['element-citation']['conf-loc'] || 'empty'}}
+                            </a>
+                        </span>
+                    </td>
+                </tr>
+                <tr ng-if="!ref['date']">
+                    <th>Year
+                        <span ng-if="!ref['element-citation'].hasOwnProperty('year')">
+                            <button class="btn btn-default pull-right"
+                                    ng-click="ref['element-citation']['year'] = '';triggerClick('td.year a');">
+                                Add
+                            </button>
+                        </span>
+                    </th>
+                    <td class="year">
+                        <span ng-if="!!ref['element-citation'].hasOwnProperty('year')">
+                            <a editable-select="ref['element-citation']['year']"
+                               e-ng-options="n for n in [] | range:1900:2020">
+                                {{ref['element-citation']['year'] || 'empty'}}
+                            </a>
+                        </span>
+                    </td>
+                </tr>
+                <tr ng-if="['book review', 'newspaper/magazine article', 'website'].indexOf(ref['element-citation']['@publication-type']) >= 0">
+                    <th>Publication Date
+                        <span ng-if="!ref['element-citation'].hasOwnProperty('date')">
+                            <button class="btn btn-default pull-right"
+                                    ng-click="ref['element-citation']['date'] = {'@content-type': '', '#text': ''};triggerClick('td.date a');">
+                                Add
+                            </button>
+                        </span>
+                    </th>
+                    <td class="date">
+                        <span ng-if="!!ref['element-citation'].hasOwnProperty('date')">
+                            <a editable-select="ref['element-citation']['date']['#text']">
+                                {{ref['element-citation']['date']['#text'] || 'empty'}}
+                            </a>
+                        </span>
+                    </td>
+                </tr>
+                <tr ng-if="['book chapter', 'book review', 'journal article', 'newspaper/magazine article'].indexOf(ref['element-citation']['@publication-type']) >= 0">
+                    <th>First Page
+                        <span ng-if="!ref['element-citation'].hasOwnProperty('fpage')">
+                            <button class="btn btn-default pull-right"
+                                    ng-click="ref['element-citation']['fpage'] = '';triggerClick('td.fpage a');">
+                                Add
+                            </button>
+                        </span>
+                    </th>
+                    <td class="fpage">
+                        <span ng-if="!!ref['element-citation'].hasOwnProperty('fpage')">
+                            <a editable-text="ref['element-citation']['fpage']">
+                                {{ref['element-citation']['fpage'] || 'empty'}}
+                            </a>
+                        </span>
+                    </td>
+                </tr>
+                <tr ng-if="!!ref['element-citation']['fpage']">
+                    <th>Last Page
+                        <span ng-if="!ref['element-citation'].hasOwnProperty('lpage')">
+                            <button class="btn btn-default pull-right"
+                                    ng-click="ref['element-citation']['lpage'] = '';triggerClick('td.lpage a');">
+                                Add
+                            </button>
+                        </span>
+                    </th>
+                    <td class="lpage">
+                        <span ng-if="!!ref['element-citation'].hasOwnProperty('lpage')">
+                            <a editable-text="ref['element-citation']['lpage']">
+                                {{ref['element-citation']['lpage'] || 'empty'}}
+                            </a>
+                        </span>
+                    </td>
+                </tr>
+                <tr ng-if="ref['element-citation']['@publication-type'] === 'journal article'">
+                    <th>Volume
+                        <span ng-if="!ref['element-citation'].hasOwnProperty('volume')">
+                            <button class="btn btn-default pull-right"
+                                    ng-click="ref['element-citation']['volume'] = '';triggerClick('td.volume a');">
+                                Add
+                            </button>
+                        </span>
+                    </th>
+                    <td class="volume">
+                        <span ng-if="!!ref['element-citation'].hasOwnProperty('volume')">
+                            <a editable-select="ref['element-citation']['volume']"
+                               e-ng-options="n for n in [] | range:1900:2020">
+                                {{ref['element-citation']['volume'] || 'empty'}}
+                            </a>
+                        </span>
+                    </td>
+                </tr>
+                <tr ng-if="ref['element-citation']['@publication-type'] === 'journal article'">
+                    <th>Number
+                        <span ng-if="!ref['element-citation'].hasOwnProperty('issue')">
+                            <button class="btn btn-default pull-right"
+                                    ng-click="ref['element-citation']['issue'] = '';triggerClick('td.issue a');">
+                                Add
+                            </button>
+                        </span>
+                    </th>
+                    <td class="issue">
+                        <span ng-if="!!ref['element-citation'].hasOwnProperty('issue')">
+                            <a editable-select="ref['element-citation']['issue']"
+                               e-ng-options="n for n in [] | range:1900:2020">
+                                {{ref['element-citation']['issue'] || 'empty'}}
+                            </a>
+                        </span>
+                    </td>
+                </tr>
+                <tr ng-if="ref['element-citation']['@publication-type'] === 'journal article'">
+                    <th>Edition
+                        <span ng-if="!ref['element-citation'].hasOwnProperty('edition')">
+                            <button class="btn btn-default pull-right"
+                                    ng-click="ref['element-citation']['edition'] = '';triggerClick('td.edition a');">
+                                Add
+                            </button>
+                        </span>
+                    </th>
+                    <td class="edition">
+                        <span ng-if="!!ref['element-citation'].hasOwnProperty('edition')">
+                            <a editable-select="ref['element-citation']['edition']"
+                               e-ng-options="n for n in [] | range:1900:2020">
+                                {{ref['element-citation']['edition'] || 'empty'}}
+                            </a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <th>External Link
+                        <span ng-if="!ref['element-citation'].hasOwnProperty('ext-link')">
+                            <button class="btn btn-default pull-right"
+                                    ng-click="ref['element-citation']['ext-link'] = {'@content-type': 'uri', '@xlink:href': '', '#text': ''};triggerClick('td.extLink a');">
+                                Add
+                            </button>
+                        </span>
+                    </th>
+                    <td class="extLink">
+                        <span ng-if="!!ref['element-citation'].hasOwnProperty('ext-link')">
+                            <a editable-url="ref['element-citation']['ext-link']['#text']"
+                               onaftersave="ref['element-citation']['ext-link']['@xlink:href'] = $data; $data = null;">
+                                {{ref['element-citation']['ext-link']['#text'] || 'empty'}}
+                            </a>
+                        </span>
+                    </td>
+                </tr>
+                <tr ng-if="ref['element-citation']['@publication-type'] === 'journal article'">
+                    <th>DOI
+                        <span ng-if="!ref['element-citation'].hasOwnProperty('object-id')">
+                            <button class="btn btn-default pull-right"
+                                    ng-click="ref['element-citation']['object-id'] = {'@content-type': 'doi', '#text': ''};triggerClick('td.objectId a');">
+                                Add
+                            </button>
+                        </span>
+                    </th>
+                    <td class="objectId">
+                        <span ng-if="!!ref['element-citation'].hasOwnProperty('object-id')">
+                            <a editable-text="ref['element-citation']['object-id']['#text']">
+                                {{ref['element-citation']['object-id']['#text'] || 'empty'}}
+                            </a>
+                        </span>
+                    </td>
+                </tr>
+                <tr ng-if="ref['element-citation']['ext-link'] || ref['element-citation']['object-id']">
+                    <th>Access Date
+                        <span ng-if="!ref['element-citation'].hasOwnProperty('date-in-citation')">
+                            <button class="btn btn-default pull-right"
+                                    ng-click="ref['element-citation']['date-in-citation'] = {'@content-type': 'accessed', '#text': ''};triggerClick('td.dateInCitation a');">
+                                Add
+                            </button>
+                        </span>
+                    </th>
+                    <td class="dateInCitation">
+                        <span ng-if="!!ref['element-citation'].hasOwnProperty('date-in-citation')">
+                            <a editable-date="ref['element-citation']['date-in-citation']['#text']">
+                                {{(ref['element-citation']['date-in-citation']['#text'] | date:"MMMM dd, yyyy") || 'empty'}}
+                            </a>
+                        </span>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </li>
+</ul>
