@@ -107,26 +107,29 @@ metadata.filter('chicagoStyle', ['JsonData', '$filter', function(JsonData, $filt
             }
             if(bib['source']){
                 citation += '<i>'+bib['source']+'</i>';
-                citation += (bib['chapter-title'] || bib['volume'] || bib['issue'] || bib['edition'] || bib['date'])? ', ': '. ';
+                citation += (bib['chapter-title'] || bib['volume'] || bib['issue'] || bib['edition'] || bib['fpage'] || compiler || bib['date'])? ', ': '. ';
             }
             if(bib['volume']){
                 citation += 'vol. '+bib['volume'];
-                citation += (bib['issue'] || bib['edition'])? ', ': '. ';
+                citation += (bib['issue'] || bib['edition'] || bib['fpage'] || compiler)? ', ': '. ';
             }
             if(bib['issue']){
                 citation += 'no. '+bib['issue'];
-                citation += (bib['edition'])? ', ': '. ';
+                citation += (bib['edition'] || bib['fpage'] || compiler)? ', ': '. ';
             }
             if(bib['edition']){
-                citation += bib['edition']+' edition. ';
+                citation += bib['edition']+' ed. ';
+                citation += (bib['fpage'] || compiler)? ', ': '';
+            }
+            if(bib['fpage']){
+                citation += (bib['lpage'] && bib['fpage'] !== bib['lpage'])? 'pp. ': 'p.';
+                citation += bib['fpage'];
+                if(bib['lpage'] && bib['fpage'] !== bib['lpage']){
+                    citation += '-'+bib['lpage'];
+                }
+                citation += (compiler)? ', ': '. ';;
             }
             citation += compiler;
-            if(bib['fpage']){
-                citation += bib['fpage'];
-                if(bib.hasOwnProperty('lpage') && bib['fpage'] !== bib['lpage']){
-                    citation += '-'+bib['lpage']+'. ';
-                }
-            }
             if(bib['publisher-loc']){
                 citation += bib['publisher-loc']+': ';
             }
@@ -139,14 +142,20 @@ metadata.filter('chicagoStyle', ['JsonData', '$filter', function(JsonData, $filt
             if(bib['conf-loc']){
                 citation += bib['conf-loc']+', ';
             }
+            if(bib['annotation']){
+                citation += bib['annotation']+', ';
+            }
+            if(bib['institution']){
+                citation += bib['institution']+', ';
+            }
             if(bib['year']){
                 citation += bib['year']+'. ';
             }
             if(bib['date']){
-                citation += $filter('date')(new Date(bib['date']), 'MMM dd yyyy')+'. ';
+                citation += $filter('date')(new Date(bib['date']), 'MMMM dd, yyyy')+'. ';
             }
             if(bib['date-in-citation']){
-                citation += capitalize(bib['date-in-citation']['@content-type'])+' '+$filter('date')(new Date(bib['date-in-citation']['#text']), 'MMM dd yyyy')+'. ';
+                citation += capitalize(bib['date-in-citation']['@content-type'])+' '+$filter('date')(new Date(bib['date-in-citation']['#text']), 'MMMM dd, yyyy')+'. ';
             }
             if(bib['ext-link']){
                 citation += bib['ext-link']['#text']+'. ';
