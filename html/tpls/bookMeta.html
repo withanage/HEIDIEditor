@@ -40,7 +40,7 @@
         </td>
     </tr>
     <tr>
-        <th rowspan="{{tree['book']['book-meta']['contrib-group']['contrib'].length + 1}}">
+        <th>
             Contributor
             <button class="btn btn-default pull-right"
                     ng-click="tree['book']['book-meta']['contrib-group']['contrib'].push({'@contrib-type':'author', '@rid': '', name:{'surname':'', 'given-names':''}})">
@@ -53,38 +53,43 @@
         <th width="17%">Affiliation</th>
         <th width="12%"></th>
     </tr>
-    <tr ng-repeat="c in tree['book']['book-meta']['contrib-group']['contrib']">
-        <td>
-            <a editable-select="c['@contrib-type']" e-ng-options="type for type in contribType">
-                {{c['@contrib-type'] || 'Not set'}}
-            </a>
-        </td>
-        <td>
-            <a href="#" editable-text="c['name']['given-names']" onbeforesave="isEmpty($data)">
-                {{c['name']['given-names'] || 'empty'}}
-            </a>
-        </td>
-        <td>
-            <a href="#" editable-text="c['name']['surname']" onbeforesave="isEmpty($data)">
-                {{c['name']['surname'] || 'empty'}}
-            </a>
-        </td>
-        <td>
-            <a href="#" editable-select="c['@rid']"
-               e-ng-options="t['@id'] as t['@id'] for t in tree['book']['book-meta']['aff']">
-                {{c['@rid'] || 'empty'}}
-            </a>
-        </td>
-        <td>
-            <button class="btn btn-default" ng-click="openContrib(c)"><i class="glyphicon glyphicon-cog"></i></button>
-            <span ng-show="tree['book']['book-meta']['contrib-group']['contrib'].length > 1">
-                <button class="btn btn-default"
-                        ng-click="tree['book']['book-meta']['contrib-group']['contrib'].splice($index,1)">
-                    <i class="glyphicon glyphicon-remove"></i>
-                </button>
-            </span>
-        </td>
-    </tr>
+    <tbody ui-sortable ng-model="tree['book']['book-meta']['contrib-group']['contrib']">
+        <tr ng-repeat="c in tree['book']['book-meta']['contrib-group']['contrib']">
+            <th class="no-border-top">
+                <span class="handle btn btn-default pull-right"><i class="glyphicon glyphicon-resize-vertical"></i></span>
+            </th>
+            <td>
+                <a editable-select="c['@contrib-type']" e-ng-options="type for type in contribType">
+                    {{c['@contrib-type'] || 'Not set'}}
+                </a>
+            </td>
+            <td>
+                <a href="#" editable-text="c['name']['given-names']" onbeforesave="isEmpty($data)">
+                    {{c['name']['given-names'] || 'empty'}}
+                </a>
+            </td>
+            <td>
+                <a href="#" editable-text="c['name']['surname']" onbeforesave="isEmpty($data)">
+                    {{c['name']['surname'] || 'empty'}}
+                </a>
+            </td>
+            <td>
+                <a href="#" editable-select="c['@rid']"
+                   e-ng-options="t['@id'] as t['@id'] for t in tree['book']['book-meta']['aff']">
+                    {{c['@rid'] || 'empty'}}
+                </a>
+            </td>
+            <td>
+                <button class="btn btn-default" ng-click="openContrib(c)"><i class="glyphicon glyphicon-cog"></i></button>
+                <span ng-show="tree['book']['book-meta']['contrib-group']['contrib'].length > 1">
+                    <button class="btn btn-default"
+                            ng-click="tree['book']['book-meta']['contrib-group']['contrib'].splice($index,1)">
+                        <i class="glyphicon glyphicon-remove"></i>
+                    </button>
+                </span>
+            </td>
+        </tr>
+    </tbody>
     <tr class="even-row">
         <th rowspan="{{tree['book']['book-meta']['aff'].length + 1}}">
             Affiliation
