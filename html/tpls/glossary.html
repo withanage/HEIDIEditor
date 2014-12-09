@@ -1,0 +1,50 @@
+<table class="table">
+    <tr class="no-border-top">
+        <th width="20%">List Title
+            <span ng-if="!content.hasOwnProperty('title')">
+                <button class="btn btn-default pull-right" ng-click="content['title'] = '';triggerClick('td.glossary a');">
+                    Add
+                </button>
+            </span>
+        </th>
+        <td class="glossary">
+            <span ng-if="!!content.hasOwnProperty('title')">
+                <a href="#" editable-text="content['title']">{{content['title'] || 'empty'}}</a>
+            </span>
+        </td>
+    </tr>
+</table>
+
+<ul ui-sortable="sortableOptions" ng-model="content['def-list']['def-item']" class="panel-group">
+    <li ng-repeat="def in content['def-list']['def-item']" class="panel pane-default">
+        <div class="handle btn btn-default">
+            <i class="glyphicon glyphicon-resize-vertical"></i>
+        </div>
+        <h4 class="panel-title pull-right" ng-model="isOpen" ng-init="false" ng-click="isOpen = !isOpen">
+            <span class="pull-left">{{$index+1}} <a>{{def['term']['#text']}}</a></span>
+                <span class="pull-right" >
+                    <i class="glyphicon icon" ng-class="{'glyphicon-chevron-up':isOpen,'glyphicon-chevron-down':!isOpen}"></i>
+                </span>
+        </h4>
+        <div ng-show="isOpen" class="panel-body">
+            <table class="table">
+                <tr class="no-border-top">
+                    <th width="10%">Term</th>
+                    <td>
+                        <a href="#" editable-text="def['term']['#text']">
+                            {{def['term']['#text'] || 'empty'}}
+                        </a>
+                    </td>
+                </tr>
+                <tr>
+                    <th>Description</th>
+                    <td>
+                        <a href="#" editable-textangular="def['def']['p']">
+                            <span ng-bind-html="def['def']['p'] || 'empty'"></span>
+                        </a>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </li>
+</ul>
