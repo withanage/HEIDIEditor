@@ -32,7 +32,7 @@ metadata.directive('bookPart', function(){
     };
 });
 
-/* bookBibliograpy directive*/
+/* bookBackMatter directive*/
 metadata.directive('bookBack', function(){
     return{
         restrict: "E",
@@ -40,11 +40,27 @@ metadata.directive('bookBack', function(){
     };
 });
 
-/* chapterBibliography directive*/
+/* chapterBackMatter directive*/
 metadata.directive('chapterBack', function(){
     return{
         restrict: "E",
         templateUrl: './tpls/chapterBackMatter.html'
+    };
+});
+
+/* glossary directive*/
+metadata.directive('glossary', function(){
+    return{
+        restrict: "E",
+        templateUrl: './tpls/glossary.html'
+    };
+});
+
+/* bibliography directive*/
+metadata.directive('bibliography', function(){
+    return{
+        restrict: "E",
+        templateUrl: './tpls/bibliography.html'
     };
 });
 
