@@ -157,10 +157,12 @@ metadata.controller('textCtrl',
 
         // ui-sortable config
         $scope.sortableOptions = {
-            /* handle: '> .handle'
+            /*handle: '> .handle',
+            helper: "clone",
             start: function(event, ui){
-                //
-            },
+                //console.log(ui);
+                //ui.item.css('border', '1px solid red');
+            }
             update: function(event, ui){
                 //
             },
