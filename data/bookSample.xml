@@ -170,7 +170,7 @@
                         <ref-list>
                             <title>Bibliography</title>
                             <ref>
-                                <mixed-citation publication-type="book" publication-format="epub">
+                                <element-citation publication-type="book" publication-format="epub">
                                     <person-group person-group-type="author">
                                         <name>
                                             <surname>Suber</surname>
@@ -181,10 +181,10 @@
                                     <series>MIT Press Essential Knowledge</series>
                                     <year>2012</year>
                                     <publisher-name>MIT Press</publisher-name>
-                                </mixed-citation>
+                                </element-citation>
                             </ref>
                             <ref>
-                                <mixed-citation publication-type="book" publication-format="epub">
+                                <element-citation publication-type="book" publication-format="epub">
                                     <person-group person-group-type="author">
                                         <name>
                                             <surname>Suber</surname>
@@ -195,7 +195,7 @@
                                     <series>MIT Press Essential Knowledge</series>
                                     <year>2012</year>
                                     <publisher-name>MIT Press</publisher-name>
-                                </mixed-citation>
+                                </element-citation>
                             </ref>
                         </ref-list>
                     </back>
@@ -274,7 +274,7 @@
                         <ref-list>
                             <title>Bibliography</title>
                             <ref>
-                                <mixed-citation publication-type="book" publication-format="epub">
+                                <element-citation publication-type="book" publication-format="epub">
                                     <person-group person-group-type="author">
                                         <name>
                                             <surname>Suber</surname>
@@ -285,10 +285,10 @@
                                     <series>MIT Press Essential Knowledge</series>
                                     <year>2012</year>
                                     <publisher-name>MIT Press</publisher-name>
-                                </mixed-citation>
+                                </element-citation>
                             </ref>
                             <ref>
-                                <mixed-citation publication-type="book" publication-format="epub">
+                                <element-citation publication-type="book" publication-format="epub">
                                     <person-group person-group-type="author">
                                         <name>
                                             <surname>Suber</surname>
@@ -299,7 +299,7 @@
                                     <series>MIT Press Essential Knowledge</series>
                                     <year>2012</year>
                                     <publisher-name>MIT Press</publisher-name>
-                                </mixed-citation>
+                                </element-citation>
                             </ref>
                         </ref-list>
                     </back>
@@ -382,7 +382,7 @@
                         <ref-list>
                             <title>Bibliography</title>
                             <ref>
-                                <mixed-citation publication-type="book" publication-format="epub">
+                                <element-citation publication-type="book" publication-format="epub">
                                     <person-group person-group-type="author">
                                         <name>
                                             <surname>Suber</surname>
@@ -393,10 +393,10 @@
                                     <series>MIT Press Essential Knowledge</series>
                                     <year>2012</year>
                                     <publisher-name>MIT Press</publisher-name>
-                                </mixed-citation>
+                                </element-citation>
                             </ref>
                             <ref>
-                                <mixed-citation publication-type="book" publication-format="epub">
+                                <element-citation publication-type="book" publication-format="epub">
                                     <person-group person-group-type="author">
                                         <name>
                                             <surname>Suber</surname>
@@ -407,7 +407,7 @@
                                     <series>MIT Press Essential Knowledge</series>
                                     <year>2012</year>
                                     <publisher-name>MIT Press</publisher-name>
-                                </mixed-citation>
+                                </element-citation>
                             </ref>
                         </ref-list>
                     </back>
@@ -490,7 +490,7 @@
                         <ref-list>
                             <title>Bibliography</title>
                             <ref>
-                                <mixed-citation publication-type="book" publication-format="epub">
+                                <element-citation publication-type="book" publication-format="epub">
                                     <person-group person-group-type="author">
                                         <name>
                                             <surname>Suber</surname>
@@ -501,10 +501,10 @@
                                     <series>MIT Press Essential Knowledge</series>
                                     <year>2012</year>
                                     <publisher-name>MIT Press</publisher-name>
-                                </mixed-citation>
+                                </element-citation>
                             </ref>
                             <ref>
-                                <mixed-citation publication-type="book" publication-format="epub">
+                                <element-citation publication-type="book" publication-format="epub">
                                     <person-group person-group-type="author">
                                         <name>
                                             <surname>Suber</surname>
@@ -515,7 +515,7 @@
                                     <series>MIT Press Essential Knowledge</series>
                                     <year>2012</year>
                                     <publisher-name>MIT Press</publisher-name>
-                                </mixed-citation>
+                                </element-citation>
                             </ref>
                         </ref-list>
                     </back>
@@ -607,7 +607,7 @@
                         <ref-list>
                             <title>Bibliography</title>
                             <ref>
-                                <mixed-citation publication-type="book" publication-format="epub">
+                                <element-citation publication-type="book" publication-format="epub">
                                     <person-group person-group-type="author">
                                         <name>
                                             <surname>Suber</surname>
@@ -618,10 +618,10 @@
                                     <series>MIT Press Essential Knowledge</series>
                                     <year>2012</year>
                                     <publisher-name>MIT Press</publisher-name>
-                                </mixed-citation>
+                                </element-citation>
                             </ref>
                             <ref>
-                                <mixed-citation publication-type="book" publication-format="epub">
+                                <element-citation publication-type="book" publication-format="epub">
                                     <person-group person-group-type="author">
                                         <name>
                                             <surname>Suber</surname>
@@ -632,7 +632,7 @@
                                     <series>MIT Press Essential Knowledge</series>
                                     <year>2012</year>
                                     <publisher-name>MIT Press</publisher-name>
-                                </mixed-citation>
+                                </element-citation>
                             </ref>
                         </ref-list>
                     </back>
@@ -715,7 +715,7 @@
                         <ref-list>
                             <title>Bibliography</title>
                             <ref>
-                                <mixed-citation publication-type="book" publication-format="epub">
+                                <element-citation publication-type="book" publication-format="epub">
                                     <person-group person-group-type="author">
                                         <name>
                                             <surname>Suber</surname>
@@ -726,10 +726,10 @@
                                     <series>MIT Press Essential Knowledge</series>
                                     <year>2012</year>
                                     <publisher-name>MIT Press</publisher-name>
-                                </mixed-citation>
+                                </element-citation>
                             </ref>
                             <ref>
-                                <mixed-citation publication-type="book" publication-format="epub">
+                                <element-citation publication-type="book" publication-format="epub">
                                     <person-group person-group-type="author">
                                         <name>
                                             <surname>Suber</surname>
@@ -740,7 +740,7 @@
                                     <series>MIT Press Essential Knowledge</series>
                                     <year>2012</year>
                                     <publisher-name>MIT Press</publisher-name>
-                                </mixed-citation>
+                                </element-citation>
                             </ref>
                         </ref-list>
                     </back>
@@ -823,7 +823,7 @@
                         <ref-list>
                             <title>Bibliography</title>
                             <ref>
-                                <mixed-citation publication-type="book" publication-format="epub">
+                                <element-citation publication-type="book" publication-format="epub">
                                     <person-group person-group-type="author">
                                         <name>
                                             <surname>Suber</surname>
@@ -834,10 +834,10 @@
                                     <series>MIT Press Essential Knowledge</series>
                                     <year>2012</year>
                                     <publisher-name>MIT Press</publisher-name>
-                                </mixed-citation>
+                                </element-citation>
                             </ref>
                             <ref>
-                                <mixed-citation publication-type="book" publication-format="epub">
+                                <element-citation publication-type="book" publication-format="epub">
                                     <person-group person-group-type="author">
                                         <name>
                                             <surname>Suber</surname>
@@ -848,7 +848,7 @@
                                     <series>MIT Press Essential Knowledge</series>
                                     <year>2012</year>
                                     <publisher-name>MIT Press</publisher-name>
-                                </mixed-citation>
+                                </element-citation>
                             </ref>
                         </ref-list>
                     </back>
@@ -931,7 +931,7 @@
                         <ref-list>
                             <title>Bibliography</title>
                             <ref>
-                                <mixed-citation publication-type="book" publication-format="epub">
+                                <element-citation publication-type="book" publication-format="epub">
                                     <person-group person-group-type="author">
                                         <name>
                                             <surname>Suber</surname>
@@ -942,10 +942,10 @@
                                     <series>MIT Press Essential Knowledge</series>
                                     <year>2012</year>
                                     <publisher-name>MIT Press</publisher-name>
-                                </mixed-citation>
+                                </element-citation>
                             </ref>
                             <ref>
-                                <mixed-citation publication-type="book" publication-format="epub">
+                                <element-citation publication-type="book" publication-format="epub">
                                     <person-group person-group-type="author">
                                         <name>
                                             <surname>Suber</surname>
@@ -956,7 +956,7 @@
                                     <series>MIT Press Essential Knowledge</series>
                                     <year>2012</year>
                                     <publisher-name>MIT Press</publisher-name>
-                                </mixed-citation>
+                                </element-citation>
                             </ref>
                         </ref-list>
                     </back>
@@ -996,33 +996,260 @@
         </glossary>
         <ref-list>
             <title>Bibliography</title>
-            <ref>
-                <mixed-citation publication-type="book" publication-format="epub">
+            <ref id="Pollan2006">
+                <element-citation publication-type="book" publication-format="print">
+                    <label>Pollan 2006</label>
                     <person-group person-group-type="author">
-                        <name>
-                            <surname>Suber</surname>
-                            <given-names>Peter</given-names>
-                        </name>
+                        <string-name>
+                            <surname>Pollan</surname>
+                            <given-names>Michael</given-names>
+                        </string-name>
                     </person-group>
-                    <source>Open Access</source>
-                    <series>MIT Press Essential Knowledge</series>
-                    <year>2012</year>
-                    <publisher-name>MIT Press</publisher-name>
-                </mixed-citation>
+                    <source>The Omnivore’s Dilemma: A Natural History of Four Meals</source>
+                    <year>2006</year>
+                    <publisher-name>Penguin</publisher-name>
+                    <publisher-loc>New York</publisher-loc>
+                </element-citation>
+            </ref>
+            <ref id="Barnes2010">
+                <element-citation publication-type="book" publication-format="print">
+                    <label>Barnes et al. 2010</label>
+                    <person-group person-group-type="author">
+                        <string-name>
+                            <surname>Barnes</surname>
+                            <given-names>Dana</given-names>
+                        </string-name>
+                        <string-name>
+                            <surname>Erhardt</surname>
+                            <given-names>Eugene</given-names>
+                        </string-name>
+                        <string-name>
+                            <surname>Miller</surname>
+                            <given-names>Leonard</given-names>
+                        </string-name>
+                        <string-name>
+                            <surname>Smith</surname>
+                            <given-names>Jonathan</given-names>
+                        </string-name>
+                    </person-group>
+                    <source>Plastics: Essays on American Corporate Ascendance in the 1960s</source>
+                    <year>1982</year>
+                    <publisher-name>University of Chicago Press</publisher-name>
+                    <publisher-loc>Chicago</publisher-loc>
+                </element-citation>
+            </ref>
+            <ref id="Lattimore1951">
+                <element-citation publication-type="book" publication-format="print">
+                    <label>Lattimore 1951</label>
+                    <person-group person-group-type="translator">
+                        <string-name>
+                            <surname>Lattimore</surname>
+                            <given-names>Richmond</given-names>
+                        </string-name>
+                    </person-group>
+                    <source>The Iliad of Homer</source>
+                    <year>1951</year>
+                    <publisher-name>University of Chicago Press</publisher-name>
+                    <publisher-loc>Chicago</publisher-loc>
+                </element-citation>
+            </ref>
+            <ref id="GarciaMarquez1988">
+                <element-citation publication-type="book" publication-format="print">
+                    <label>García Márquez 1988</label>
+                    <person-group person-group-type="author">
+                        <string-name>
+                            <surname>García Márquez</surname>
+                            <given-names>Gabriel</given-names>
+                        </string-name>
+                    </person-group>
+                    <person-group person-group-type="translator">
+                        <string-name>
+                            <surname>Lattimore</surname>
+                            <given-names>Richmond</given-names>
+                        </string-name>
+                    </person-group>
+                    <source>Love in the Time of Cholera</source>
+                    <year>1988</year>
+                    <publisher-name>Cape</publisher-name>
+                    <publisher-loc>London</publisher-loc>
+                </element-citation>
+            </ref>
+            <ref id="Kelly2010">
+                <element-citation publication-type="book chapter" publication-format="print">
+                    <label>Kelly 2010</label>
+                    <person-group person-group-type="author">
+                        <string-name>
+                            <surname>Kelly</surname>
+                            <given-names>John D.</given-names>
+                        </string-name>
+                    </person-group>
+                    <person-group person-group-type="editor">
+                        <string-name>
+                            <surname>Kelly</surname>
+                            <given-names>John D.</given-names>
+                        </string-name>
+                        <string-name>
+                            <surname>Jauregui</surname>
+                            <given-names>Beatrice</given-names>
+                        </string-name>
+                        <string-name>
+                            <surname>Mitchell</surname>
+                            <given-names>Sean T.</given-names>
+                        </string-name>
+                        <string-name>
+                            <surname>Walton</surname>
+                            <given-names>Jeremy</given-names>
+                        </string-name>
+                    </person-group>
+                    <chapter-title>Seeing Red: Mao Fetishism, Pax Americana, and the Moral Economy of War</chapter-title>
+                    <source>Anthropology and Global Counterinsurgency</source>
+                    <fpage>67</fpage>
+                    <lpage>83</lpage>
+                    <year>2010</year>
+                    <publisher-name>University of Chicago Press</publisher-name>
+                    <publisher-loc>Chicago</publisher-loc>
+                </element-citation>
+            </ref>
+            <ref id="Kurland1987">
+                <element-citation publication-type="book" publication-format="print">
+                    <label>Kurland and Lerner 1987</label>
+                    <person-group person-group-type="editor">
+                        <string-name>
+                            <surname>Kurland</surname>
+                            <given-names>Philip B.</given-names>
+                        </string-name>
+                        <string-name>
+                            <surname>Lerner</surname>
+                            <given-names>Ralph</given-names>
+                        </string-name>
+                    </person-group>
+                    <source>The Founders’ Constitution</source>
+                    <date-in-citation content-type="accessed">2010-02-28</date-in-citation>
+                    <ext-link xlink:href="http://press-pubs.uchicago.edu/founders/" ext-link-type="uri">
+                        http://press-pubs.uchicago.edu/founders/
+                    </ext-link>
+                    <year>1987</year>
+                    <publisher-name>University of Chicago Press</publisher-name>
+                    <publisher-loc>Chicago</publisher-loc>
+                </element-citation>
+            </ref>
+            <ref id="Kossinets2009">
+                <element-citation publication-type="journal article">
+                    <label>Kossinets and Watt 2009</label>
+                    <person-group person-group-type="author">
+                        <string-name>
+                            <surname>Kossinets</surname>
+                            <given-names>Gueorgi</given-names>
+                        </string-name>
+                        <string-name>
+                            <surname>Watts</surname>
+                            <given-names>Duncan J.</given-names>
+                        </string-name>
+                    </person-group>
+                    <article-title>Origins of Homophily in an Evolving Social Network</article-title>
+                    <source>American Journal of Sociology</source>
+                    <date-in-citation content-type="accessed">2010-02-28</date-in-citation>
+                    <year>2009</year>
+                    <volume>115</volume>
+                    <issue>4</issue>
+                    <edition>1st</edition>
+                    <publisher-name>University of Chicago Press</publisher-name>
+                    <publisher-loc>Chicago</publisher-loc>
+                    <object-id content-type="doi">10.1086/599247</object-id>
+                </element-citation>
+            </ref>
+            <ref id="Stolberg2010">
+                <element-citation publication-type="newspaper/magazine article">
+                    <label>Stolberg and Pear 2010</label>
+                    <person-group person-group-type="author">
+                        <string-name>
+                            <surname>Stolberg</surname>
+                            <given-names>Sheryl Gay</given-names>
+                        </string-name>
+                        <string-name>
+                            <surname>Pear</surname>
+                            <given-names>Robert</given-names>
+                        </string-name>
+                    </person-group>
+                    <article-title>Wary Centrists Posing Challenge in Health Care Vote</article-title>
+                    <source>New York Times</source>
+                    <date>2010-02-27</date>
+                    <date-in-citation content-type="accessed">2010-02-28</date-in-citation>
+                    <ext-link xlink:href="http://www.nytimes.com/2010/02/28/us/politics/28health.html" ext-link-type="uri">
+                        http://www.nytimes.com/2010/02/28/us/politics/28health.html
+                    </ext-link>
+                </element-citation>
             </ref>
             <ref>
-                <mixed-citation publication-type="book" publication-format="epub">
+                <element-citation publication-type="book review">
+                    <label>Kamp 2006</label>
                     <person-group person-group-type="author">
-                        <name>
-                            <surname>Suber</surname>
-                            <given-names>Peter</given-names>
-                        </name>
+                        <string-name>
+                            <surname>Kamp</surname>
+                            <given-names>David</given-names>
+                        </string-name>
                     </person-group>
-                    <source>Open Access</source>
-                    <series>MIT Press Essential Knowledge</series>
-                    <year>2012</year>
-                    <publisher-name>MIT Press</publisher-name>
-                </mixed-citation>
+                    <article-title>
+                        Deconstructing Dinner
+                        <related-object content-type="review of">
+                            <source>The Omnivore’s Dilemma: A Natural History of Four Meals</source>
+                            <person-group person-group-type="author">
+                                <string-name>
+                                    <surname>Pollan</surname>
+                                    <given-names>Michael</given-names>
+                                </string-name>
+                            </person-group>
+                        </related-object>
+                    </article-title>
+                    <source>New York Times</source>
+                    <date>2006-04-23</date>
+                    <ext-link xlink:href="http://www.nytimes.com/2006/04/23/books/review/23kamp.html" ext-link-type="uri">
+                        http://www.nytimes.com/2006/04/23/books/review/23kamp.html
+                    </ext-link>
+                </element-citation>
+            </ref>
+            <ref>
+                <element-citation publication-type="thesis">
+                    <label>Choi 2008</label>
+                    <person-group person-group-type="author">
+                        <string-name>
+                            <surname>Choi</surname>
+                            <given-names>Mihwa</given-names>
+                        </string-name>
+                    </person-group>
+                    <article-title>Contesting Imaginaires in Death Rituals during the Northern Song Dynasty</article-title>
+                    <year>2008</year>
+                    <annotation>PhD thesis</annotation>
+                    <institution>University of Chicago</institution>
+                </element-citation>
+            </ref>
+            <ref>
+                <element-citation publication-type="conference proceeding">
+                    <label>Adelman 2009</label>
+                    <person-group person-group-type="author">
+                        <string-name>
+                            <surname>Adelman</surname>
+                            <given-names>Rachel</given-names>
+                        </string-name>
+                    </person-group>
+                    <article-title>'Such Stuff as Dreams Are Made On': God's Footstool in the Aramaic Targumim and Midrashic Tradition</article-title>
+                    <year>2009</year>
+                    <conf-name>the annual meeting for the Society of Biblical Literature</conf-name>
+                    <conf-loc>New Orleans</conf-loc>
+                </element-citation>
+            </ref>
+            <ref>
+                <element-citation publication-type="website">
+                    <label>Google 2009</label>
+                    <person-group person-group-type="author">
+                        <string-name>Google</string-name>
+                    </person-group>
+                    <article-title>Google Privacy Policy</article-title>
+                    <date-in-citation content-type="last modified">2010-02-28</date-in-citation>
+                    <ext-link xlink:href="http://www.google.com/intl/en/privacypolicy.html" ext-link-type="uri">
+                        http://www.google.com/intl/en/privacypolicy.html
+                    </ext-link>
+                </element-citation>
             </ref>
         </ref-list>
     </back>
