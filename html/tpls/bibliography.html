@@ -14,32 +14,35 @@
                 <a href="#" editable-text="content['title']">{{content['title'] || 'empty'}}</a>
             </span>
         </td>
-        <td width="20%">
-            <button class="btn btn-default" ng-click="content['ref'].push({'element-citation': {'@publication-type': 'book'}})">Add item</button>
-            <button class="btn btn-default" ng-click="content['ref'].push({'element-citation': {'@publication-type': 'book'}})">Add another List</button>
+    </tr>
+    <tr class="no-border-top">
+        <th></th>
+        <td>
+        <button class="btn btn-default pull-right" ng-click="content['ref'].push({'element-citation': {'@publication-type': 'book'}});triggerClick('ui.panel-group > li:last-child > h4');">Add item</button>
         </td>
     </tr>
 </table>
-
-<ul ui-sortable="sortableOptions" ng-model="content['ref']" class="panel-group">
+<ul ui-sortable="sortableOptions" ng-model="content['ref']" class="panel-group" id="">
     <li ng-repeat="ref in content['ref']" class="panel pane-default">
-        <div class="btn btn-default"><i class="glyphicon glyphicon-resize-vertical"></i></div>
-        <h4 class="panel-title pull-right" ng-model="isOpen" ng-init="false" ng-click="isOpen = !isOpen">
-            <span class="pull-left">{{$index+1}}&nbsp;
-                <a>
-                    <span ng-if="ref.hasOwnProperty('element-citation')">
-                        {{ref['element-citation']['label']}}
-                    </span>
-                    <span ng-if="ref.hasOwnProperty('mixed-citation')">
-                        {{ref['mixed-citation']['label']}}
-                    </span>
-                </a>
-            </span>
-            <span class="pull-right" >
+        <span class="btn btn-default"><i class="glyphicon glyphicon-resize-vertical"></i></span>
+        <h4 class="panel-title" ng-model="isOpen" ng-init="false" ng-click="isOpen = !isOpen">
+            <span class="pull-left" style="margin-right: 10px;">
                 <i class="glyphicon icon" ng-class="{'glyphicon-chevron-up':isOpen,'glyphicon-chevron-down':!isOpen}"></i>
             </span>
+            <span>
+                <a>
+                    <span ng-if="ref.hasOwnProperty('element-citation')">{{ref['element-citation']['label']}}</span>
+                    <span ng-if="ref.hasOwnProperty('mixed-citation')">{{ref['mixed-citation']['label']}}</span>
+                </a>
+            </span>
         </h4>
+        <span class="btn btn-default pull-right" ng-show="!isOpen" ng-click="content['ref'].splice($index, 1)">
+            <i class="glyphicon glyphicon-remove"></i>
+        </span>
         <div ng-show="isOpen" class="panel-body">
+            <div ng-if="ref.hasOwnProperty('mixed-citation')">
+
+            </div>
             <div style="padding: 5px;">
                 <strong>Format:</strong>&nbsp;
                 <select  class="form-control" ng-model="ref['element-citation']['@publication-type']" ng-options="type for type in bibType">
@@ -191,13 +194,29 @@
                     </td>
                 </tr>
                 <tr>
-                    <th>Author</th>
+                    <th>Author<br>
+                        <label tooltip="first name + last name" tooltip-placement="top">
+                            <input type="radio" name="authorFormat" ng-model="authorFormat" ng-init="authorFormat = 'person'" value="person" selected="selected" /> person
+                        </label>
+                        &nbsp;|&nbsp;
+                        <label tooltip="collaborative group author / organization" tooltip-placement="bottom">
+                            <input type="radio" name="authorFormat" ng-model="authorFormat" value="group" /> group
+                        </label>
+                        <span ng-if="!ref['element-citation'].hasOwnProperty('person-group')">
+                            <button class="btn btn-default pull-right"
+                                    ng-click="ref['element-citation']['person-group'] =  {'@person-group-type': 'author', 'string-name': [{'surname': '', 'given-names': ''}]};triggerClick('td.personGroup a');">
+                                Add
+                            </button>
+                        </span>
+                    </th>
                     <td>
-                        <!-- -->
+                        <span ng-switch="authorFormat">
+                            <span ng-switch-when=""></span>
+                        </span>
                     </td>
                     <td>
-                        <button ng-if="!!ref['element-citation'].hasOwnProperty('author')" class="btn btn-default pull-right">
-                            <i class="glyphicon glyphicon-remove" ng-click="ref['element-citation'] = omit(ref['element-citation'], 'author')"></i>
+                        <button ng-if="!!ref['element-citation'].hasOwnProperty('person-group')" class="btn btn-default pull-right">
+                            <i class="glyphicon glyphicon-remove" ng-click="ref['element-citation'] = omit(ref['element-citation'], 'person-group')"></i>
                         </button>
                     </td>
                 </tr>
