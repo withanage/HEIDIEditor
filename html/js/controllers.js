@@ -95,7 +95,15 @@ metadata.controller('textCtrl',
                 angular.element(selector).trigger('click');
             }, 0);
         };
-
+        $scope.omit = function(obj, key){
+            console.log('omit', _.omit(obj, key));
+            return _.omit(obj, key);
+        };
+        $scope.jumpTo = function (id) {
+            console.log(id);
+            $location.hash(id);
+            $anchorScroll();
+        };
 
         // validation
         $scope.isEmpty = function(data){
