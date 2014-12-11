@@ -73,9 +73,16 @@ tr.even-row {
 .table button.btn-default {
     background-color: inherit;
 }
+.table button.btn-default:hover {
+    background-color: #ddd;
+}
 
 /*  ui-sortable
 /*--------------------------------- */
+
+tbody.ui-sortable tr{ /* doesn't work! */
+    border: none !important;
+}
 
 tbody.ui-sortable th{
     width: 20%;
@@ -89,6 +96,7 @@ tbody.ui-sortable .ui-sortable-placeholder th{
 
 tbody.ui-sortable .ui-sortable-helper td{
     width: 17%;
+    background-color: #fff;
 }
 tbody.ui-sortable .ui-sortable-handle td{
     cursor:move;
@@ -126,7 +134,7 @@ ul.panel-group {
 }
 .panel-group .panel-title {
     margin:10px;
-    width:90%
+    display: inline-block;
 }
 .panel-group .panel-body {
     padding:15px;
@@ -142,6 +150,7 @@ ul.panel-group {
     margin-bottom: 10px;
     text-indent: -25px;
     background-color: #fff;
+    word-wrap: break-word;
 }
 
 select.form-control{
