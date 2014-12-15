@@ -5,17 +5,36 @@
 
 <div class="row" class="back-matter">
 <tabset>
-    <tab ng-repeat="(header, content) in tree['book']['back']" heading="{{header}}">
+    <tab ng-repeat="(header, contents) in tree['book']['back']" heading="{{header}}">
+        <!-- end notes -->
+        <div ng-if="header === 'fn-group' && typeOf(contents) !== 'Array'">
+            <endnotes fn-group="contents" type-of="typeOf" omit="omit"></endnotes>
+        </div>
+        <div ng-if="header === 'fn-group' && typeOf(contents) === 'Array'" ng-repeat="content in contents">
+            <hr ng-if="!$first" />
+            <endnotes fn-group="content" type-of="typeOf" omit="omit"></endnotes>
+        </div>
+        <!-- end of end notes -->
+
+
         <!-- glossary -->
-        <div ng-if="content.hasOwnProperty('def-list') && !isArray(content['def-list'])">
-            <glossary></glossary>
+        <div ng-if="header === 'glossary' && typeOf(contents) !== 'Array'">
+            <glossary def-list="contents" type-of="typeOf" omit="omit"></glossary>
+        </div>
+        <div ng-if="header === 'glossary' && typeOf(contents) === 'Array'" ng-repeat="content in contents">
+            <hr ng-if="!$first"/>
+            <glossary def-list="content" type-of="typeOf" omit="omit"></glossary>
         </div>
         <!-- end of glossary -->
 
 
         <!-- bibliography -->
-        <div ng-if="content.hasOwnProperty('ref') && !isArray(content['ref'])">
-            <bibliography></bibliography>
+        <div ng-if="header === 'ref-list' && typeOf(contents) !== 'Array'">
+            <bibliography ref-list="contents" bib-type="bibType" omit="omit" type-of="typeOf"></bibliography>
+        </div>
+        <div ng-if="header === 'ref-list' && typeOf(contents) === 'Array'" ng-repeat="content in contents">
+            <hr ng-if="!$first"/>
+            <bibliography ref-list="content" bib-type="bibType" omit="omit" type-of="typeOf"></bibliography>
         </div>
         <!-- end of bibliography -->
 
