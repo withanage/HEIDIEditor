@@ -104,6 +104,18 @@ metadata.controller('textCtrl',
             $location.hash(id);
             $anchorScroll();
         };
+        $scope.typeOf = function(obj){
+            return Object.prototype.toString.call(obj).slice(8, -1);
+        };
+        $scope.isTypeOf = function(type, obj){
+            var clas = Object.prototype.toString.call(obj).slice(8, -1);
+            return obj !== undefined && obj !== null && clas === type;
+        };
+        $scope.deleteProp = function(obj, key){
+            delete obj[key];
+            console.log(obj);
+            return obj;
+        };
 
         // validation
         $scope.isEmpty = function(data){
