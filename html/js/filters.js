@@ -7,12 +7,17 @@ metadata.filter('range', function() {
     };
 });
 
+metadata.filter('capitalize', function() {
+    return function(input, scope) {
+        return input.substring(0,1).toUpperCase()+input.substring(1);
+    }
+});
+
 metadata.filter('chicagoStyle', ['JsonData', '$filter', function(JsonData, $filter) {
     return function(bib) {
         var settings = JsonData.citation.chicago;
         var citation = '';
         var compiler = '';
-        var separator = false;
         var endsWith = function(str, suffix) {
             return (str)? str.indexOf(suffix, str.length - suffix.length) !== -1 : str;
         };
@@ -64,7 +69,7 @@ metadata.filter('chicagoStyle', ['JsonData', '$filter', function(JsonData, $filt
         };
         if(angular.isObject(bib)){
             if(bib['person-group']){
-                if(angular.isObject(bib['person-group']) && !angular.isArray(bib['person-group'])){ // if only one person group given
+                if(bib['person-group'].hasOwnProperty('string-name')){ // if only one person group given
                     citation += formatName(bib['person-group']['string-name'], settings['nameOrder']);
                     if(bib['person-group']['@person-group-type'] === 'translator'){
                         citation += ', trans';
@@ -111,23 +116,23 @@ metadata.filter('chicagoStyle', ['JsonData', '$filter', function(JsonData, $filt
             }
             if(bib['volume']){
                 citation += 'vol. '+bib['volume'];
-                citation += (bib['issue'] || bib['edition'] || bib['fpage'] || compiler)? ', ': '. ';
+                citation += (bib['issue'] || bib['edition'] || bib['fpage'] || compiler || bib['date'])? ', ': '. ';
             }
             if(bib['issue']){
                 citation += 'no. '+bib['issue'];
-                citation += (bib['edition'] || bib['fpage'] || compiler)? ', ': '. ';
+                citation += (bib['edition'] || bib['fpage'] || compiler || bib['date'])? ', ': '. ';
             }
             if(bib['edition']){
                 citation += bib['edition']+' ed. ';
-                citation += (bib['fpage'] || compiler)? ', ': '';
+                citation += (bib['fpage'] || compiler || bib['date'])? ', ': '';
             }
             if(bib['fpage']){
-                citation += (bib['lpage'] && bib['fpage'] !== bib['lpage'])? 'pp. ': 'p.';
+                citation += (bib['lpage'] && bib['fpage'] !== bib['lpage'])? 'pp. ': 'p. ';
                 citation += bib['fpage'];
                 if(bib['lpage'] && bib['fpage'] !== bib['lpage']){
                     citation += '-'+bib['lpage'];
                 }
-                citation += (compiler)? ', ': '. ';;
+                citation += (compiler || bib['date'])? ', ': '. ';
             }
             citation += compiler;
             if(bib['publisher-loc']){
