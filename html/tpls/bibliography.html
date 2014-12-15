@@ -1,28 +1,19 @@
 
-<table class="table">
-    <tr class="no-border-top">
-        <th width="20%">List Title
-            <span ng-if="!content.hasOwnProperty('title')">
-                <button class="btn btn-default pull-right"
-                        ng-click="content['title'] = '';triggerClick('td.refListTitle a');">
-                    Add
-                </button>
-            </span>
-        </th>
-        <td class="refListTitle">
-            <span ng-if="!!content.hasOwnProperty('title')">
-                <a href="#" editable-text="content['title']">{{content['title'] || 'empty'}}</a>
-            </span>
-        </td>
-    </tr>
-    <tr class="no-border-top">
-        <th></th>
-        <td>
-        <button class="btn btn-default pull-right" ng-click="content['ref'].push({'element-citation': {'@publication-type': 'book'}});triggerClick('ui.panel-group > li:last-child > h4');">Add item</button>
-        </td>
-    </tr>
-</table>
-<ul ui-sortable="sortableOptions" ng-model="content['ref']" class="panel-group" id="">
+<div class="listTitle">
+    <strong>List Title
+    </strong>
+    <span ng-if="!content.hasOwnProperty('title')">
+        <button class="btn btn-default" ng-click="content['title'] = '';triggerClick('div.listTitle span a');">
+            Add
+        </button>
+    </span>
+    <span ng-if="!!content.hasOwnProperty('title')">
+        <a href="#" editable-text="content['title']">{{content['title'] || 'empty'}}</a>
+    </span>
+    <button class="btn btn-default pull-right" ng-click="content['ref'].unshift({'element-citation': {'@publication-type': 'book'}});triggerClick('ui.panel-group > li:last-child > h4');">Add item</button>
+</div>
+
+<ul ui-sortable="sortableOptions" ng-model="content['ref']" class="panel-group">
     <li ng-repeat="ref in content['ref']" class="panel pane-default">
         <span class="btn btn-default"><i class="glyphicon glyphicon-resize-vertical"></i></span>
         <h4 class="panel-title" ng-model="isOpen" ng-init="false" ng-click="isOpen = !isOpen">
@@ -143,7 +134,7 @@
                         </span>
                     </th>
                     <td class="articleTitle">
-                        <span ng-if="!!ref['element-citation'].hasOwnProperty('article-title') && isString(ref['element-citation']['article-title'])">
+                        <span ng-if="!!ref['element-citation'].hasOwnProperty('article-title') && !ref['element-citation']['article-title']['#text']">
                             <a href="#" editable-text="ref['element-citation']['article-title']">
                                 {{ref['element-citation']['article-title'] || 'empty'}}
                             </a>
@@ -179,29 +170,35 @@
                     </td>
                     <td rowspan="2">
                         <button ng-if="!!ref['element-citation'].hasOwnProperty('label')" class="btn btn-default pull-right">
-                            <i class="glyphicon glyphicon-remove" ng-click="ref['element-citation']['article-title'] = ref['element-citation']['article-title']['#text']"></i>
+                            <i class="glyphicon glyphicon-remove" ng-click="ref['element-citation']['article-title'] = omit(ref['element-citation']['article-title']['#text'])"></i>
                         </button>
                     </td>
                 </tr>
                 <tr ng-if="ref['element-citation']['@publication-type'] === 'book review'">
                     <td>
                         <strong>Book Author:</strong>
-                        <span ng-if="isString(ref['element-citation']['article-title']['related-object']['person-group']['string-name'])">
-                            <a href="#" editable-text="ref['element-citation']['article-title']['related-object']['string-name']">
+                        <span ng-if="ref['element-citation']['article-title']['related-object']['person-group']['string-name']">
+                            <a href="#" editable-text="ref['element-citation']['article-title']['related-object']['person-group']['string-name']">
                                 {{ref['element-citation']['article-title']['related-object']['person-group']['string-name'] || 'empty'}}
                             </a>
                         </span>
                     </td>
                 </tr>
-                <tr>
-                    <th>Author<br>
+                <tr ng-if="ref['element-citation']['person-group']['string-name']"> <!-- if only one person group given-->
+                    <th>{{(ref['element-citation']['person-group']['@person-group-type'] | capitalize) || 'Author'}}
+                        <!--
                         <label tooltip="first name + last name" tooltip-placement="top">
-                            <input type="radio" name="authorFormat" ng-model="authorFormat" ng-init="authorFormat = 'person'" value="person" selected="selected" /> person
+                            <input type="radio" value="person" ng-model="authorFormat.bib" /> person
                         </label>
                         &nbsp;|&nbsp;
                         <label tooltip="collaborative group author / organization" tooltip-placement="bottom">
-                            <input type="radio" name="authorFormat" ng-model="authorFormat" value="group" /> group
+                            <input type="radio" value="group" ng-model="authorFormat.bib" /> group
                         </label>
+                        -->
+                        <select ng-model="authorType"ng-init="authorType = (ref['element-citation']['person-group']['string-name']['surname'] || ref['element-citation']['person-group']['string-name'][0]['surname'])? 'person': 'group'" class="form-control pull-right">
+                            <option title="first name + last name">person</option>
+                            <option title="collaborative group author / organization">group</option>
+                        </select>
                         <span ng-if="!ref['element-citation'].hasOwnProperty('person-group')">
                             <button class="btn btn-default pull-right"
                                     ng-click="ref['element-citation']['person-group'] =  {'@person-group-type': 'author', 'string-name': [{'surname': '', 'given-names': ''}]};triggerClick('td.personGroup a');">
@@ -210,8 +207,73 @@
                         </span>
                     </th>
                     <td>
-                        <span ng-switch="authorFormat">
-                            <span ng-switch-when=""></span>
+                        <span ng-switch on="authorType">
+                            <span ng-switch-when="person">
+                                <span ng-if="ref['element-citation']['person-group']['string-name'][0]['surname']" ng-repeat="strname in ref['element-citation']['person-group']['string-name']">
+                                    <a href="#" editable-text="name['given-names']">{{strname['given-names'] || 'empty'}}</a>
+                                    <a href="#" editable-text="name['surname']">{{strname['surname'] || 'empty'}}</a>
+                                    <i ng-if="ref['element-citation']['person-group']['string-name'].length > 1" class="glyphicon glyphicon-remove" ng-click="ref['element-citation']['person-group']['string-name'].splice($index, 1)"></i>
+                                    <span ng-if="!$last">, </span>
+                                </span>
+                                <span ng-if="ref['element-citation']['person-group']['string-name']['surname']">
+                                    <a href="#" editable-text="ref['element-citation']['person-group']['string-name']['given-names']">{{ref['element-citation']['person-group']['string-name']['given-names'] || 'empty'}}</a>
+                                    <a href="#" editable-text="ref['element-citation']['person-group']['string-name']['surname']">{{ref['element-citation']['person-group']['string-name']['surname'] || 'empty'}}</a>
+                                </span>
+                            </span>
+                            <span ng-switch-when="group">
+                                <span ng-if="ref['element-citation']['person-group']['string-name'][0]" ng-repeat="strname in ref['element-citation']['person-group']['string-name']">
+                                    <a href="#" editable-text="name">{{strname || 'empty'}}</a>
+                                    <i ng-if="ref['element-citation']['person-group']['string-name'].length > 1" class="glyphicon glyphicon-remove" ng-click="ref['element-citation']['person-group']['string-name'].splice($index, 1)"></i>
+                                </span>
+                                <span ng-if="ref['element-citation']['person-group']['string-name'] && !ref['element-citation']['person-group']['string-name'][0]">
+                                    <a href="#" editable-text="ref['element-citation']['person-group']['string-name']">{{ref['element-citation']['person-group']['string-name'] || 'empty'}}</a>
+                                </span>
+                            </span>
+                        </span>
+                    </td>
+                    <td>
+                        <button ng-if="!!ref['element-citation'].hasOwnProperty('person-group')" class="btn btn-default pull-right">
+                            <i class="glyphicon glyphicon-remove" ng-click="ref['element-citation'] = omit(ref['element-citation'], 'person-group')"></i>
+                        </button>
+                    </td>
+                </tr>
+                <tr ng-if="ref['element-citation']['person-group'][0]['string-name']" ng-repeat="group in ref['element-citation']['person-group']"> <!-- if multiple person groups given-->
+                    <th>{{(group['@person-group-type'] | capitalize) || 'Author'}}
+                        <select ng-model="authorType" ng-init="authorType = (group['string-name']['surname'] || group['string-name'][0]['surname'])? 'person': 'group'" class="form-control pull-right">
+                            <option title="first name + last name">person</option>
+                            <option title="collaborative group author / organization">group</option>
+                        </select>
+                        <span ng-if="!ref['element-citation'].hasOwnProperty('person-group')">
+                            <button class="btn btn-default pull-right"
+                                    ng-click="group =  {'@person-group-type': 'author', 'string-name': [{'surname': '', 'given-names': ''}]};triggerClick('td.personGroup a');">
+                                Add
+                            </button>
+                        </span>
+                    </th>
+                    <td>
+                        <span ng-switch on="authorType">
+                            <span ng-switch-when="person">
+                                <span ng-if="group['string-name'][0]['surname']" ng-repeat="strname in group['string-name']">
+                                    <a href="#" editable-text="name['given-names']">{{strname['given-names'] || 'empty'}}</a>
+                                    <a href="#" editable-text="name['surname']">{{strname['surname'] || 'empty'}}</a>
+                                    <i ng-if="group['string-name'].length > 1" class="glyphicon glyphicon-remove" ng-click="group['string-name'].splice($index, 1)"></i>
+                                    <span ng-if="!$last">, </span>
+                                </span>
+                                <span ng-if="group['string-name']['surname']">
+                                    <a href="#" editable-text="group['string-name']['given-names']">{{group['string-name']['given-names'] || 'empty'}}</a>
+                                    <a href="#" editable-text="group['string-name']['surname']">{{group['string-name']['surname'] || 'empty'}}</a>
+                                </span>
+                            </span>
+                            <span ng-switch-when="group">
+                                <span ng-if="group['string-name'][0]" ng-repeat="strname in group['string-name']">
+                                    <a href="#" editable-text="name">{{strname || 'empty'}}</a>
+                                    <i ng-if="group['string-name'].length > 1" class="glyphicon glyphicon-remove" ng-click="group['string-name'].splice($index, 1)"></i>
+                                    <span ng-if="!$last">, </span>
+                                </span>
+                                <span ng-if="group['string-name'] && !group['string-name'][0]">
+                                    <a href="#" editable-text="group['string-name']">{{group['string-name'] || 'empty'}}</a>
+                                </span>
+                            </span>
                         </span>
                     </td>
                     <td>
