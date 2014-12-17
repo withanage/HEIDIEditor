@@ -8,7 +8,7 @@ metadata.directive('metadataFields', function(){
     };
 });
 
-/* bookMeta directive*/
+/* bookMeta directive */
 metadata.directive('bookMeta', function(){
     return{
         restrict: "E",
@@ -24,7 +24,7 @@ metadata.directive('bookChapter', function(){
     };
 });
 
-/* bookPart directive*/
+/* bookPart directive */
 metadata.directive('bookPart', function(){
     return{
         restrict: "E",
@@ -32,7 +32,7 @@ metadata.directive('bookPart', function(){
     };
 });
 
-/* bookBibliograpy directive*/
+/* bookBackMatter directive */
 metadata.directive('bookBack', function(){
     return{
         restrict: "E",
@@ -40,11 +40,51 @@ metadata.directive('bookBack', function(){
     };
 });
 
-/* chapterBibliography directive*/
+/* chapterBackMatter directive */
 metadata.directive('chapterBack', function(){
     return{
         restrict: "E",
         templateUrl: './tpls/chapterBackMatter.html'
+    };
+});
+
+/* glossary directive */
+metadata.directive('glossary', function(){
+    return{
+        restrict: "E",
+        scope: {
+            content: '=defList',
+            typeOf: '&',
+            omit: '&'
+        },
+        templateUrl: './tpls/glossary.html'
+    };
+});
+
+/* bibliography directive */
+metadata.directive('bibliography', function(){
+    return{
+        restrict: "E",
+        scope: {
+            content: '=refList',
+            bibType: '=',
+            typeOf: '&',
+            omit: '&'
+        },
+        templateUrl: './tpls/bibliography.html'
+    };
+});
+
+/* end notes directive */
+metadata.directive('endnotes', function(){
+    return{
+        restrict: "E",
+        scope: {
+            content: '=fnGroup',
+            typeOf: '&',
+            omit: '&'
+        },
+        templateUrl: './tpls/endnotes.html'
     };
 });
 

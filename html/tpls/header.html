@@ -4,7 +4,7 @@
             <a class="navbar-brand" href="#">HEIDI Editor</a>
         </div>
         <ul class="nav navbar-nav" data-bind="foreach: steps">
-            <li><a href="../index.html">Step 1</a></li>
+            <li><a href="index.html">Step 1</a></li>
             <li ng-repeat="n in [] | range:2:step" ng-class="{'active': step == n}">
                 <a href="step{{n}}.html">Step {{n}}</a>
             </li>

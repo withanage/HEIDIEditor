@@ -95,7 +95,27 @@ metadata.controller('textCtrl',
                 angular.element(selector).trigger('click');
             }, 0);
         };
-
+        $scope.omit = function(obj, key){
+            console.log('omit', _.omit(obj, key));
+            return _.omit(obj, key);
+        };
+        $scope.jumpTo = function (id) {
+            console.log(id);
+            $location.hash(id);
+            $anchorScroll();
+        };
+        $scope.typeOf = function(obj){
+            return Object.prototype.toString.call(obj).slice(8, -1);
+        };
+        $scope.isTypeOf = function(type, obj){
+            var clas = Object.prototype.toString.call(obj).slice(8, -1);
+            return obj !== undefined && obj !== null && clas === type;
+        };
+        $scope.deleteProp = function(obj, key){
+            delete obj[key];
+            console.log(obj);
+            return obj;
+        };
 
         // validation
         $scope.isEmpty = function(data){
@@ -157,10 +177,12 @@ metadata.controller('textCtrl',
 
         // ui-sortable config
         $scope.sortableOptions = {
-            /* handle: '> .handle'
+            /*handle: '> .handle',
+            helper: "clone",
             start: function(event, ui){
-                //
-            },
+                //console.log(ui);
+                //ui.item.css('border', '1px solid red');
+            }
             update: function(event, ui){
                 //
             },

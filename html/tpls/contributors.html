@@ -141,7 +141,7 @@
             <td class="extLink">
                 <span ng-if="!!contrib.hasOwnProperty('ext-link')">
                     <a href="#" editable-url="contrib['ext-link']['#text']"
-                       onaftersave="contrib['ext-link']['@xlink:href'] = $data">
+                       onaftersave="contrib['ext-link']['@xlink:href'] = $data; $data = null;">
                         {{contrib['ext-link']['#text'] || 'empty'}}
                     </a>
                 </span>
