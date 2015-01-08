@@ -67,7 +67,7 @@ metadata.controller('textCtrl',
         $scope.idType = JsonData.idType;
         $scope.contribType = JsonData.contribType;
         $scope.copyrightYear = JsonData.copyrightYear;
-        $scope.bibType = JsonData.bibType;
+        $scope.backMatter = {'fn-group': 'Endnotes', 'glossary': 'Glossary', 'ref-list': 'Bibliography', 'app-group': 'Appendix'};
 
         // formatting
         $scope.makeDate = function(str){
@@ -106,15 +106,6 @@ metadata.controller('textCtrl',
         };
         $scope.typeOf = function(obj){
             return Object.prototype.toString.call(obj).slice(8, -1);
-        };
-        $scope.isTypeOf = function(type, obj){
-            var clas = Object.prototype.toString.call(obj).slice(8, -1);
-            return obj !== undefined && obj !== null && clas === type;
-        };
-        $scope.deleteProp = function(obj, key){
-            delete obj[key];
-            console.log(obj);
-            return obj;
         };
 
         // validation
