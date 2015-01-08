@@ -53,11 +53,14 @@ metadata.directive('glossary', function(){
     return{
         restrict: "E",
         scope: {
-            content: '=defList',
-            typeOf: '&',
-            omit: '&'
+            content: '=defList'
         },
-        templateUrl: './tpls/glossary.html'
+        templateUrl: './tpls/glossary.html',
+        controller : ['$scope', function($scope) {
+            $scope.triggerClick = $scope.$parent.triggerClick;
+            $scope.typeOf = $scope.$parent.typeOf;
+            $scope.omit = $scope.$parent.omit;
+        }]
     };
 });
 
@@ -66,25 +69,31 @@ metadata.directive('bibliography', function(){
     return{
         restrict: "E",
         scope: {
-            content: '=refList',
-            bibType: '=',
-            typeOf: '&',
-            omit: '&'
+            content: '=refList'
         },
-        templateUrl: './tpls/bibliography.html'
+        templateUrl: './tpls/bibliography.html',
+        controller : ['$scope','JsonData', function($scope, JsonData) {
+            $scope.bibType = JsonData.bibType;
+            $scope.triggerClick = $scope.$parent.triggerClick;
+            $scope.typeOf = $scope.$parent.typeOf;
+            $scope.omit = $scope.$parent.omit;
+        }]
     };
 });
 
-/* end notes directive */
-metadata.directive('endnotes', function(){
+/* footnotes directive */
+metadata.directive('footnotes', function(){
     return{
         restrict: "E",
         scope: {
-            content: '=fnGroup',
-            typeOf: '&',
-            omit: '&'
+            content: '=fnGroup'
         },
-        templateUrl: './tpls/endnotes.html'
+        templateUrl: './tpls/footnotes.html',
+        controller : ['$scope', function($scope) {
+            $scope.triggerClick = $scope.$parent.triggerClick;
+            $scope.typeOf = $scope.$parent.typeOf;
+            $scope.omit = $scope.$parent.omit;
+        }]
     };
 });
 
