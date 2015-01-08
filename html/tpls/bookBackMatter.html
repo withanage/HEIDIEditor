@@ -5,36 +5,36 @@
 
 <div class="row" class="back-matter">
 <tabset>
-    <tab ng-repeat="(header, contents) in tree['book']['back']" heading="{{header}}">
+    <tab ng-repeat="(header, contents) in tree['book']['back']" heading="{{backMatter[header]}}">
         <!-- end notes -->
         <div ng-if="header === 'fn-group' && typeOf(contents) !== 'Array'">
-            <endnotes fn-group="contents" type-of="typeOf" omit="omit"></endnotes>
+            <footnotes fn-group="contents"></footnotes>
         </div>
         <div ng-if="header === 'fn-group' && typeOf(contents) === 'Array'" ng-repeat="content in contents">
             <hr ng-if="!$first" />
-            <endnotes fn-group="content" type-of="typeOf" omit="omit"></endnotes>
+            <footnotes fn-group="content"></footnotes>
         </div>
         <!-- end of end notes -->
 
 
         <!-- glossary -->
-        <div ng-if="header === 'glossary' && typeOf(contents) !== 'Array'">
-            <glossary def-list="contents" type-of="typeOf" omit="omit"></glossary>
+        <div ng-if="header === 'glossary' && typeOf(contents['def-list']) !== 'Array'">
+            <glossary def-list="contents['def-list']"></glossary>
         </div>
-        <div ng-if="header === 'glossary' && typeOf(contents) === 'Array'" ng-repeat="content in contents">
+        <div ng-if="header === 'glossary' && typeOf(contents['def-list']) === 'Array'" ng-repeat="content in contents['def-list']">
             <hr ng-if="!$first"/>
-            <glossary def-list="content" type-of="typeOf" omit="omit"></glossary>
+            <glossary def-list="content['def-list']"></glossary>
         </div>
         <!-- end of glossary -->
 
 
         <!-- bibliography -->
         <div ng-if="header === 'ref-list' && typeOf(contents) !== 'Array'">
-            <bibliography ref-list="contents" bib-type="bibType" omit="omit" type-of="typeOf"></bibliography>
+            <bibliography ref-list="contents"></bibliography>
         </div>
         <div ng-if="header === 'ref-list' && typeOf(contents) === 'Array'" ng-repeat="content in contents">
             <hr ng-if="!$first"/>
-            <bibliography ref-list="content" bib-type="bibType" omit="omit" type-of="typeOf"></bibliography>
+            <bibliography ref-list="content"></bibliography>
         </div>
         <!-- end of bibliography -->
 
