@@ -24,7 +24,7 @@
   "dependencies": {
     "jquery": "1",
     "bootstrap": "~3.2.0",
-    "angular": "~1.2.26",
+    "angular": "~1.2.27",
     "angular-bootstrap": "~0.11.2",
     "jquery-file-upload": "~9.8.0",
     "jquery-ui": "~1.11.2",
