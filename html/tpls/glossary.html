@@ -10,11 +10,12 @@
     <span ng-if="!!content.hasOwnProperty('title')">
         <a href="#" editable-text="content['title']">{{content['title'] || 'empty'}}</a>
     </span>
-    <button class="btn btn-default pull-right" ng-click="content['def-list']['def-item'].unshift({'term': {'@id': '', '#text': ''}, 'def': {'p': ''}});triggerClick('ui.panel-group > li:last-child > h4');">Add item</button>
+    <button class="btn btn-default pull-right" ng-click="content['def-item'].unshift({'term': {'@id': '', '#text': ''}, 'def': {'p': ''}});triggerClick('ui.panel-group > li:first-child > h4.panel-title');">Add item</button>
 </div>
 
-<ul ui-sortable="sortableOptions" ng-model="content['def-list']['def-item']" class="panel-group">
-    <li ng-repeat="def in content['def-list']['def-item']" class="panel pane-default">
+
+<ul ui-sortable="sortableOptions" ng-model="content['def-item']" class="panel-group">
+    <li ng-repeat="def in content['def-item']" class="panel pane-default">
         <div class="btn btn-default">
             <i class="glyphicon glyphicon-resize-vertical"></i>
         </div>
@@ -24,7 +25,9 @@
             </span>
             <span><a>{{def['term']['#text']}}</a></span>
         </h4>
-        <div class="btn btn-default pull-right"><i class="glyphicon glyphicon-remove"></i></div>
+        <div class="btn btn-default pull-right" ng-click="content['def-item'].splice($index, 1)">
+            <i class="glyphicon glyphicon-remove"></i>
+        </div>
         <div ng-show="isOpen" class="panel-body">
             <table class="table">
                 <tr class="no-border-top">
