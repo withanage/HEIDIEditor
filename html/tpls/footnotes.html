@@ -10,11 +10,11 @@
     <span ng-if="!!content.hasOwnProperty('title')">
         <a href="#" editable-text="content['title']">{{content['title'] || 'empty'}}</a>
     </span>
-    <button class="btn btn-default pull-right" ng-click="content['def-list']['def-item'].unshift({'term': {'@id': '', '#text': ''}, 'def': {'p': ''}});triggerClick('ui.panel-group > li:last-child > h4');">Add item</button>
+    <button class="btn btn-default pull-right" ng-click="content['fn'].unshift({'@id': '', 'p': ''});triggerClick('ui.panel-group > li:last-child > h4');">Add item</button>
 </div>
 
-<ul ui-sortable="sortableOptions" ng-model="content['fn-group']" class="panel-group">
-    <li ng-repeat="fn in content['fn-group']" class="panel pane-default">
+<ul ui-sortable="sortableOptions" ng-model="content['fn']" class="panel-group">
+    <li ng-repeat="fn in content['fn']" class="panel pane-default">
         <div class="btn btn-default">
             <i class="glyphicon glyphicon-resize-vertical"></i>
         </div>
@@ -24,11 +24,13 @@
             </span>
             <span><a>{{fn['@id']}}</a></span>
         </h4>
-        <div class="btn btn-default pull-right"><i class="glyphicon glyphicon-remove"></i></div>
+        <div class="btn btn-default pull-right" ng-click="content['fn'].splice($index, 1)">
+            <i class="glyphicon glyphicon-remove"></i>
+        </div>
         <div ng-show="isOpen" class="panel-body">
             <table class="table">
                 <tr class="no-border-top">
-                    <th width="10%">ID</th>
+                    <th width="7%">ID</th>
                     <td>
                         <a href="#" editable-text="fn['@id']">
                             {{fn['@id'] || 'empty'}}
@@ -36,7 +38,7 @@
                     </td>
                 </tr>
                 <tr>
-                    <th>Description</th>
+                    <th>Text</th>
                     <td>
                         <a href="#" editable-textangular="fn['p']">
                             <span ng-bind-html="fn['p'] || 'empty'"></span>
