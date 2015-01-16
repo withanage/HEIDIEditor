@@ -38,6 +38,7 @@
     "underscore": "~1.7.0",
     "angular-underscore-module": "~1.0.1",
     "angular-ui-tree": "~2.1.5",
-    "angular-ui-sortable": "~0.13.1"
+    "angular-ui-sortable": "~0.13.1",
+    "angular-ui-tree-filter": "~0.1.0"
   }
 }
