@@ -22,7 +22,7 @@
             <span class="pull-left" style="margin-right: 10px;">
                 <i class="glyphicon icon" ng-class="{'glyphicon-chevron-up':isOpen,'glyphicon-chevron-down':!isOpen}"></i>
             </span>
-            <span><a>{{fn['@id']}}</a></span>
+            <span><a ng-class="{'editable-empty': !fn['@id']}">{{fn['@id'] || 'empty' }}</a></span>
         </h4>
         <div class="btn btn-default pull-right" ng-click="content['fn'].splice($index, 1)">
             <i class="glyphicon glyphicon-remove"></i>
