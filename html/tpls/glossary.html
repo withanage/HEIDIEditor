@@ -23,7 +23,7 @@
             <span class="pull-left" style="margin-right: 10px;">
                 <i class="glyphicon icon" ng-class="{'glyphicon-chevron-up':isOpen,'glyphicon-chevron-down':!isOpen}"></i>
             </span>
-            <span><a>{{def['term']['#text']}}</a></span>
+            <span><a ng-class="{'editable-empty': !def['term']['#text']}">{{def['term']['#text'] || 'empty' }}</a></span>
         </h4>
         <div class="btn btn-default pull-right" ng-click="content['def-item'].splice($index, 1)">
             <i class="glyphicon glyphicon-remove"></i>
