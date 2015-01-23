@@ -22,8 +22,8 @@
             </span>
             <span>
                 <a>
-                    <span ng-if="ref.hasOwnProperty('element-citation')">{{ref['element-citation']['label']}}</span>
-                    <span ng-if="ref.hasOwnProperty('mixed-citation')">{{ref['mixed-citation']['label']}}</span>
+                    <span ng-if="ref.hasOwnProperty('element-citation')">{{ref['element-citation']['label'] || 'empty'}}</span>
+                    <span ng-if="ref.hasOwnProperty('mixed-citation')">{{ref['mixed-citation']['label'] || 'empty'}}</span>
                 </a>
             </span>
         </h4>
