@@ -1,6 +1,6 @@
 'use strict';
 
-var components = ['textAngular', 'jsTree.directive', 'xeditable', 'ui.bootstrap', 'underscore', 'ui.sortable'];
+var components = ['textAngular', 'jsTree.directive', 'xeditable', 'ui.bootstrap', 'underscore', 'ui.sortable', 'ui.tree'];
 var metadata = angular.module('metadata', components);
 
 
@@ -180,6 +180,24 @@ metadata.controller('textCtrl',
             stop: function(event, ui){
                 console.log("New position: " + ui.item.index());
             }*/
+        };
+
+        // ui-tree
+        $scope.uiTreeRemove = function(scope) {
+            scope.remove();
+        };
+
+        $scope.uiTreeToggle = function(scope) {
+            scope.toggle();
+        };
+
+        $scope.uiTreeNewSubItem = function(scope) {
+            var nodeData = scope.$modelValue;
+            nodeData.items.push({
+                id: nodeData.id * 10 + nodeData.items.length,
+                title: nodeData.title + '.' + (nodeData.items.length + 1),
+                items: []
+            });
         };
     }]
 );
