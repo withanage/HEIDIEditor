@@ -97,6 +97,29 @@ metadata.directive('footnotes', function(){
     };
 });
 
+/* appendix directive */
+metadata.directive('appendix', function(){
+    return{
+        restrict: "E",
+        scope: {
+            content: '=app'
+        },
+        templateUrl: './tpls/appendix.html',
+        controller : ['$scope', function($scope) {
+            $scope.triggerClick = $scope.$parent.triggerClick;
+            $scope.typeOf = $scope.$parent.typeOf;
+        }]
+    };
+});
+
+/* headings directive */
+metadata.directive('headings', function(){
+    return{
+        restrict: "E",
+        templateUrl: './tpls/headings.html'
+    };
+});
+
 metadata.directive('header', function(){
     return {
         restrict: "E",
