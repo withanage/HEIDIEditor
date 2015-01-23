@@ -23,7 +23,7 @@
         </div>
         <div ng-if="header === 'glossary' && typeOf(contents['def-list']) === 'Array'" ng-repeat="content in contents['def-list']">
             <hr ng-if="!$first"/>
-            <glossary def-list="content['def-list']"></glossary>
+            <glossary def-list="content"></glossary>
         </div>
         <!-- end of glossary -->
 
@@ -38,6 +38,16 @@
         </div>
         <!-- end of bibliography -->
 
+
+        <!-- appendix -->
+        <div ng-if="header === 'app-group' && typeOf(contents['app-group']) !== 'Array'">
+            <appendix app="contents['app']"></appendix>
+        </div>
+        <div ng-if="header === 'app-group' && typeOf(contents['app']) === 'Array'" ng-repeat="content in contents['app']">
+            <hr ng-if="!$first"/>
+            <appendix app="content['app']"></appendix>
+        </div>
+        <!-- end of appendix -->
     </tab>
 </tabset>
 
