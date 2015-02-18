@@ -130,6 +130,24 @@ metadata.directive('header', function(){
     };
 });
 
+metadata.directive('navBar', function(){
+    return {
+        restrict: "E",
+        scope: {
+            step: '=stepNumber'
+        },
+        controller: ['$scope', function($scope){
+            $scope.st = $scope.$parent.stepNumber;
+            $scope.update = function(n){
+                $scope.st = n;
+                $scope.$parent.stepNumber = n;
+                $scope.$parent.gotoAnchor(n);
+            }
+        }],
+        templateUrl: './tpls/navBar.html'
+    };
+});
+
 metadata.directive('footer', function(){
     return {
         restrict: "E",
@@ -140,4 +158,35 @@ metadata.directive('footer', function(){
     };
 });
 
+/* step2 directive */
+metadata.directive('step2', function(){
+    return{
+        restrict: "E",
+        templateUrl: './tpls/step2.html'
+    };
+});
+
+/* headings directive */
+metadata.directive('step3', function(){
+    return{
+        restrict: "E",
+        templateUrl: './tpls/step3.html'
+    };
+});
+
+/* headings directive */
+metadata.directive('step4', function(){
+    return{
+        restrict: "E",
+        templateUrl: './tpls/step4.html'
+    };
+});
+
+/* headings directive */
+metadata.directive('step5', function(){
+    return{
+        restrict: "E",
+        templateUrl: './tpls/step5.html'
+    };
+});
 
