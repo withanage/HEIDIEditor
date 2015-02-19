@@ -25,12 +25,17 @@ def validate(dic):
 
 def escape(xml):
     soup = BeautifulSoup(xml, 'xml', from_encoding='utf-8')
+    italic_tag = soup.italic
+    italic_tag.name = 'i'
     for i in soup.find_all('p'):
-        if i.string is None:
-            string = ''.join([str(j) for j in i.contents])
+        parent = i.parent
+        if parent is not None:
+            string = ''.join([str(j) for j in parent.contents])
             cdata = CData(string)
-            i.string = ''
-            i.string.replace_with(cdata)
+            new_p = soup.new_tag('p')
+            new_p.string = cdata
+            parent.clear()
+            parent.append(new_p)
     return str(soup)
 
 def getjson(xmldata):

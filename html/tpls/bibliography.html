@@ -3,7 +3,7 @@
     <strong>List Title
     </strong>
     <span ng-if="!content.hasOwnProperty('title')">
-        <button class="btn btn-default" ng-click="content['title'] = '';triggerClick('div.listTitle span a');">
+        <button class="btn btn-default" ng-click="content['title'] = '';triggerClick('div.listTitle > span > a');">
             Add
         </button>
     </span>
@@ -22,8 +22,8 @@
             </span>
             <span>
                 <a>
-                    <span ng-if="ref.hasOwnProperty('element-citation')">{{ref['element-citation']['label']}}</span>
-                    <span ng-if="ref.hasOwnProperty('mixed-citation')">{{ref['mixed-citation']['label']}}</span>
+                    <span ng-if="ref.hasOwnProperty('element-citation')">{{ref['element-citation']['label'] || 'empty'}}</span>
+                    <span ng-if="ref.hasOwnProperty('mixed-citation')">{{ref['mixed-citation']['label'] || 'empty'}}</span>
                 </a>
             </span>
         </h4>
@@ -184,7 +184,7 @@
                         </span>
                     </td>
                 </tr>
-                <tr ng-if="ref['element-citation']['person-group']['string-name']"> <!-- if only one person group given-->
+                <tr ng-if="typeOf(ref['element-citation']['person-group']) !== 'Array'"> <!-- if only one person group given-->
                     <th>{{(ref['element-citation']['person-group']['@person-group-type'] | capitalize) || 'Author'}}
                         <!--
                         <label tooltip="first name + last name" tooltip-placement="top">
@@ -195,16 +195,22 @@
                             <input type="radio" value="group" ng-model="authorFormat.bib" /> group
                         </label>
                         -->
-                        <select ng-model="authorType"ng-init="authorType = (ref['element-citation']['person-group']['string-name']['surname'] || ref['element-citation']['person-group']['string-name'][0]['surname'])? 'person': 'group'" class="form-control pull-right">
-                            <option title="first name + last name">person</option>
-                            <option title="collaborative group author / organization">group</option>
-                        </select>
+                        <span ng-if="ref['element-citation']['person-group']">
+                            <button class="btn btn-default pull-right"
+                                    ng-click="ref['element-citation']['person-group'] =  {'@person-group-type': 'author', 'string-name': [{'surname': '', 'given-names': ''}]};triggerClick('td.personGroup a');">
+                                Add
+                            </button>
+                        </span>
                         <span ng-if="!ref['element-citation'].hasOwnProperty('person-group')">
                             <button class="btn btn-default pull-right"
                                     ng-click="ref['element-citation']['person-group'] =  {'@person-group-type': 'author', 'string-name': [{'surname': '', 'given-names': ''}]};triggerClick('td.personGroup a');">
                                 Add
                             </button>
                         </span>
+                        <select ng-model="authorType"ng-init="authorType = (ref['element-citation']['person-group']['string-name']['surname'] || ref['element-citation']['person-group']['string-name'][0]['surname'])? 'person': 'group'" class="form-control pull-right">
+                            <option title="first name + last name">person</option>
+                            <option title="collaborative group author / organization">group</option>
+                        </select>
                     </th>
                     <td>
                         <span ng-switch on="authorType">
@@ -237,7 +243,7 @@
                         </button>
                     </td>
                 </tr>
-                <tr ng-if="ref['element-citation']['person-group'][0]['string-name']" ng-repeat="group in ref['element-citation']['person-group']"> <!-- if multiple person groups given-->
+                <tr ng-if="typeOf(ref['element-citation']['person-group']) === 'Array'" ng-repeat="group in ref['element-citation']['person-group']"> <!-- if multiple person groups given-->
                     <th>{{(group['@person-group-type'] | capitalize) || 'Author'}}
                         <select ng-model="authorType" ng-init="authorType = (group['string-name']['surname'] || group['string-name'][0]['surname'])? 'person': 'group'" class="form-control pull-right">
                             <option title="first name + last name">person</option>

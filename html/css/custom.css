@@ -111,7 +111,6 @@ ul.panel-group {
     list-style:none;
 }
 
-.back-matter .handle,
 .back-matter h4 {
     display:inline-block;
 }
@@ -158,6 +157,17 @@ select.form-control{
     width: inherit;
     background-color: inherit;
 }
+
+div.listTitle {
+    margin: 10px 10px 10px 20px;
+    padding: 5px;
+    min-height: 44px;
+}
+
+.listTitle > span {
+    margin-left: 20px;
+}
+
 
 /*  breadcrumb
 /*--------------------------------- */

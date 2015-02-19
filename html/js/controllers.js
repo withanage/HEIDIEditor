@@ -1,8 +1,11 @@
 'use strict';
 
-var components = ['textAngular', 'jsTree.directive', 'xeditable', 'ui.bootstrap', 'underscore', 'ui.sortable'];
+var components = ['textAngular', 'jsTree.directive', 'xeditable', 'ui.bootstrap', 'underscore', 'ui.sortable', 'ui.tree', 'ui.tinymce'];
 var metadata = angular.module('metadata', components);
 
+metadata.config(function($locationProvider) {
+    $locationProvider.html5Mode(true);
+});
 
 // xeditable config
 metadata.run(function(editableOptions, editableThemes) {
@@ -14,10 +17,19 @@ metadata.run(function(editableOptions, editableThemes) {
     editableThemes['bs3'].cancelTpl = '<button type="button" class="btn btn-default" ng-click="$form.$cancel()">cancel</button>';
 });
 
+metadata.run(['$anchorScroll', function($anchorScroll) {
+    $anchorScroll.yOffset = 150;   // always scroll by 50 extra pixels
+}])
 
 
-metadata.factory('JsonData', function(){
+metadata.factory('JsonData', ['$http', '$rootScope', function($http, $rootScope){
     return {
+        getData: function (filename, id) {
+            return $http.get("../cgi/"+filename).success(function(data) {
+                $rootScope.$broadcast('broadcast:'+id, data);
+                return data;
+            });
+        },
         tree: null,
         pubType : ['pdf', 'epub', 'html'],
         dateType : ['created', 'reviewed', 'updated'],
@@ -47,17 +59,34 @@ metadata.factory('JsonData', function(){
         bibType : ['book', 'book chapter', 'book review', 'conference proceeding', 'journal article', 'newspaper/magazine article', 'thesis', 'website', 'other'],
         citation : {
             chicago: {etal: 4, nameOrder: 1, and: 'and', abbrev: {}}
-        }
+        },
+        stepTitle : [
+            'Drag & Drop Your Files', // step 1
+            'Add Metadata',// step 2
+            'Confirm Back Matter',// step 3
+            'Confirm Heading Structure',// step 4
+            'Confirm parenthetical reference list', // step 5
+            'Media insertion', // step 6
+            'Table captions', // step 7
+            'Freeform editing', // step 8
+        ]
     };
-});
+}]);
 
 metadata.controller('textCtrl',
-    ['$scope', '$http', '$filter', '$modal', '$timeout', '_', 'JsonData', function($scope, $http, $filter, $modal, $timeout, _, JsonData){
+    ['$scope', '$http', '$filter', '$modal', '$timeout', '$location', '$anchorScroll', '_', 'JsonData', function($scope, $http, $filter, $modal, $timeout, $location, $anchorScroll, _, JsonData){
         // json data
+        /*
         $http.get("../cgi/bookJson.py").success(function(data){
             $scope.tree = data;
             $scope.origTree = data; // Do not edit this tree!! (read-only)
             JsonData.tree = data;
+        });
+        */
+        JsonData.getData('bookJson.py', 'bookJson').then(function(res){
+            $scope.tree = res.data;
+            $scope.origTree = res.data; // Do not edit this tree!! (read-only)
+            JsonData.tree = res.data;
         });
 
         // initial values
@@ -67,7 +96,11 @@ metadata.controller('textCtrl',
         $scope.idType = JsonData.idType;
         $scope.contribType = JsonData.contribType;
         $scope.copyrightYear = JsonData.copyrightYear;
-        $scope.bibType = JsonData.bibType;
+        $scope.backMatter = {'fn-group': 'Endnotes', 'glossary': 'Glossary', 'ref-list': 'Bibliography', 'app-group': 'Appendix'};
+        $scope.stepNumber = 5;
+        $scope.getStepTitle = function(n){
+            return JsonData.stepTitle[n-1];
+        };
 
         // formatting
         $scope.makeDate = function(str){
@@ -107,14 +140,18 @@ metadata.controller('textCtrl',
         $scope.typeOf = function(obj){
             return Object.prototype.toString.call(obj).slice(8, -1);
         };
-        $scope.isTypeOf = function(type, obj){
-            var clas = Object.prototype.toString.call(obj).slice(8, -1);
-            return obj !== undefined && obj !== null && clas === type;
-        };
-        $scope.deleteProp = function(obj, key){
-            delete obj[key];
-            console.log(obj);
-            return obj;
+        $scope.gotoAnchor = function(x) {
+            $scope.stepNumber = x;
+            var newHash = 'step' + x;
+            if ($location.hash() !== newHash) {
+                // set the $location.hash to `newHash` and
+                // $anchorScroll will automatically scroll to it
+                $location.hash('step' + x);
+            } else {
+                // call $anchorScroll() explicitly,
+                // since $location.hash hasn't changed
+                $anchorScroll();
+            }
         };
 
         // validation
@@ -170,8 +207,9 @@ metadata.controller('textCtrl',
         // jstree selection
         $scope.booktree = {selected : ''};
         /*
-        $scope.$watch('booktree', function(newVal, oldVal) {
-            console.log('watch!'+newVal.selected);
+        $scope.$watch('tree', function(newVal, oldVal) {
+            console.log('watch!', newVal);
+            $scope.$broadcast('rootScope:bookJson', newVal);
         },true);
         */
 
@@ -190,12 +228,114 @@ metadata.controller('textCtrl',
                 console.log("New position: " + ui.item.index());
             }*/
         };
+
+
+
+
+
+        // ui-tree
+        $scope.uiTreeRemove = function(scope) {
+            scope.remove();
+        };
+
+        $scope.uiTreeToggle = function(scope) {
+            scope.toggle();
+        };
+
+        $scope.uiTreeNewSubItem = function(scope) {
+            var nodeData = scope.$modelValue;
+            nodeData.items.push({
+                id: nodeData.id * 10 + nodeData.items.length,
+                title: nodeData.title + '.' + (nodeData.items.length + 1),
+                items: []
+            });
+        };
+
+        // tinymce
+        $scope.tinymceOptions = {
+            plugins: "table",
+            tools: "inserttable"
+        }
     }]
 );
 
 /* jstree controller */
 metadata.controller('jstreeCtrl',
     ['$scope','$timeout', 'JsonData', function($scope, $timeout, JsonData) {
+        $scope.$on('broadcast:step', function(e, data) {
+            $
+        });
+
+        // initialize
+        $scope.$on('broadcast:bookJson', function(e, data) {
+            console.log('broadcast!', data);
+            function assignNode(current, parent){
+                var tmp = {};
+                tmp['text'] = current['@id'];
+                tmp['id'] = current['@id'];
+                tmp['state'] = {'opened': true, 'selected': false};
+                tmp['type'] = current['@book-part-type'];
+                tmp['parent'] = parent;
+                $scope.navmenu.push(tmp);
+            };
+            $scope.navmenu = [{
+                'text': data['book']['book-meta']['book-id']['#text'],
+                'id': data['book']['book-meta']['book-id']['#text'],
+                'state': {
+                    'opened': true,
+                    'selected': true
+                },
+                'type': 'book',
+                'parent': '#'
+            }];
+            if (angular.isArray(data['book']['body']['book-part'])) {
+                angular.forEach(data['book']['body']['book-part'], function (i) {
+                    assignNode(i, data['book']['book-meta']['book-id']['#text']);
+                    if (angular.isArray(i['body']['book-part'])) {
+                        angular.forEach(i['body']['book-part'], function (j) {
+                            assignNode(j, i['@id']);
+                        });
+                    } else {
+                        assignNode(i['body']['book-part'], data['book']['body']['book-part']['@id']);
+                    }
+                });
+            } else {
+                assignNode(data['book']['body']['book-part'], data['book']['book-meta']['book-id']['#text']);
+                if (angular.isArray(data['book']['body']['book-part']['body']['book-part'])) {
+                    angular.forEach(data['book']['body']['book-part']['body']['book-part'], function (j) {
+                        assignNode(j, data['book']['body']['book-part']['@id']);
+                    });
+                } else {
+                    assignNode(data['book']['body']['book-part']['body']['book-part'], data['book']['body']['book-part']['@id']);
+                }
+            }
+        },true);
+
+        // jsTree config
+        $scope.typesConfig = {
+            "book": {
+                "icon": "glyphicon glyphicon-folder-open"
+            },
+            "part": {
+                "icon": "glyphicon glyphicon-folder-open"
+            },
+            "chapter": {
+                "icon": "glyphicon glyphicon-file"
+            }
+        };
+        $scope.changedCB = function(e, data){
+            $scope.booktree.selected = data.selected[0];
+            $timeout(function() { //dummy function!
+            }, 0);
+        };
+
+
+    }]
+);
+
+/* navmenu controller */
+metadata.controller('navmenuCtrl',
+    ['$scope','$timeout', 'JsonData', function($scJsonData) {
         // jsTree config
         $scope.typesConfig = {
             "book": {

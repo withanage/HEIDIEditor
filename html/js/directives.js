@@ -53,11 +53,14 @@ metadata.directive('glossary', function(){
     return{
         restrict: "E",
         scope: {
-            content: '=defList',
-            typeOf: '&',
-            omit: '&'
+            content: '=defList'
         },
-        templateUrl: './tpls/glossary.html'
+        templateUrl: './tpls/glossary.html',
+        controller : ['$scope', function($scope) {
+            $scope.triggerClick = $scope.$parent.triggerClick;
+            $scope.typeOf = $scope.$parent.typeOf;
+            $scope.omit = $scope.$parent.omit;
+        }]
     };
 });
 
@@ -66,25 +69,54 @@ metadata.directive('bibliography', function(){
     return{
         restrict: "E",
         scope: {
-            content: '=refList',
-            bibType: '=',
-            typeOf: '&',
-            omit: '&'
+            content: '=refList'
         },
-        templateUrl: './tpls/bibliography.html'
+        templateUrl: './tpls/bibliography.html',
+        controller : ['$scope','JsonData', function($scope, JsonData) {
+            $scope.bibType = JsonData.bibType;
+            $scope.triggerClick = $scope.$parent.triggerClick;
+            $scope.typeOf = $scope.$parent.typeOf;
+            $scope.omit = $scope.$parent.omit;
+        }]
     };
 });
 
-/* end notes directive */
-metadata.directive('endnotes', function(){
+/* footnotes directive */
+metadata.directive('footnotes', function(){
     return{
         restrict: "E",
         scope: {
-            content: '=fnGroup',
-            typeOf: '&',
-            omit: '&'
+            content: '=fnGroup'
         },
-        templateUrl: './tpls/endnotes.html'
+        templateUrl: './tpls/footnotes.html',
+        controller : ['$scope', function($scope) {
+            $scope.triggerClick = $scope.$parent.triggerClick;
+            $scope.typeOf = $scope.$parent.typeOf;
+            $scope.omit = $scope.$parent.omit;
+        }]
+    };
+});
+
+/* appendix directive */
+metadata.directive('appendix', function(){
+    return{
+        restrict: "E",
+        scope: {
+            content: '=app'
+        },
+        templateUrl: './tpls/appendix.html',
+        controller : ['$scope', function($scope) {
+            $scope.triggerClick = $scope.$parent.triggerClick;
+            $scope.typeOf = $scope.$parent.typeOf;
+        }]
+    };
+});
+
+/* headings directive */
+metadata.directive('headings', function(){
+    return{
+        restrict: "E",
+        templateUrl: './tpls/headings.html'
     };
 });
 
@@ -98,6 +130,24 @@ metadata.directive('header', function(){
     };
 });
 
+metadata.directive('navBar', function(){
+    return {
+        restrict: "E",
+        scope: {
+            step: '=stepNumber'
+        },
+        controller: ['$scope', function($scope){
+            $scope.st = $scope.$parent.stepNumber;
+            $scope.update = function(n){
+                $scope.st = n;
+                $scope.$parent.stepNumber = n;
+                $scope.$parent.gotoAnchor(n);
+            }
+        }],
+        templateUrl: './tpls/navBar.html'
+    };
+});
+
 metadata.directive('footer', function(){
     return {
         restrict: "E",
@@ -108,4 +158,35 @@ metadata.directive('footer', function(){
     };
 });
 
+/* step2 directive */
+metadata.directive('step2', function(){
+    return{
+        restrict: "E",
+        templateUrl: './tpls/step2.html'
+    };
+});
+
+/* headings directive */
+metadata.directive('step3', function(){
+    return{
+        restrict: "E",
+        templateUrl: './tpls/step3.html'
+    };
+});
+
+/* headings directive */
+metadata.directive('step4', function(){
+    return{
+        restrict: "E",
+        templateUrl: './tpls/step4.html'
+    };
+});
+
+/* headings directive */
+metadata.directive('step5', function(){
+    return{
+        restrict: "E",
+        templateUrl: './tpls/step5.html'
+    };
+});
 
