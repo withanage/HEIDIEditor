@@ -1,0 +1,17 @@
+{{extend 'layout.html'}}
+
+<h2></h2>
+{{if request.args:}}<h3>{{=T('For %s #%s' % (request.args(0)[2:],request.args(1)))}}</h3>{{pass}}
+
+
+{{#=A(T('create new entry'),_href=URL('file_management_create'))}}
+
+{{#=A(T('search files'),_href=URL('file_management_search'))}}
+<br/>
+
+{{if rows:}}
+  {{headers=dict((str(k),k.label) for k in db.t_file_management)}}
+  {{=SQLTABLE(rows,headers=headers)}}
+{{else:}}
+  {{=TAG.blockquote(T(''))}}
+{{pass}}

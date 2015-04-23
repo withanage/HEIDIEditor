@@ -1,0 +1,9 @@
+{{extend 'layout.html'}}
+
+
+<h2></h2>
+{{=A(T('Edit entry'),_href=URL('file_management_update',args=request.args(0)))}}
+<br/>
+
+{{=form}}
+{{#for t,f in db.t_file_management._referenced_by:}}{{#if not t[-8:]=='_archive':}}[{{#=A(t[2:],_href=URL('%s_select'%t[2:],args=(f,form.record.id)))}}]{{#pass}}{{#pass}}

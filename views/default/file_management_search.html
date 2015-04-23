@@ -1,0 +1,14 @@
+{{extend 'layout.html'}}
+
+<h2>Search files</h2>
+{{#=A(T('create new entry'),_href=URL('file_management_create'))}}
+<br/>
+
+{{=form}}
+
+{{if rows:}}
+  {{headers=dict((str(k),k.label) for k in db.t_file_management)}}
+  {{=SQLTABLE(rows,headers=headers)}}
+{{else:}}
+  {{=TAG.blockquote(T(''))}}
+{{pass}}

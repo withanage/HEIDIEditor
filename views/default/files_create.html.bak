@@ -1,0 +1,9 @@
+{{extend 'layout.html'}}
+
+
+{{=A(T('select files'),_href=URL('files_select'))}}
+<br/>
+
+{{=form}}
+
+{{=result}}

@@ -1,0 +1,190 @@
+(dp0
+S'page_file_management_create'
+p1
+S'## Create file_management'
+p2
+sS'tables'
+p3
+(lp4
+S'auth_user'
+p5
+aS'file_management'
+p6
+asS'page_file_management_read'
+p7
+S'## Read file_management'
+p8
+sS'name'
+p9
+S'publications'
+p10
+sS'page_files_search'
+p11
+S''
+p12
+sS'page_file_management_select'
+p13
+S'## Select file_management'
+p14
+sS'page_files_create'
+p15
+g12
+sS'page_files_update'
+p16
+g12
+sS'page_files_read'
+p17
+g12
+sS'page_index'
+p18
+g12
+sS'page_error'
+p19
+S'# Error: the document does not exist'
+p20
+sS'params'
+p21
+(lp22
+(S'title'
+p23
+S'Publications application'
+p24
+tp25
+a(S'subtitle'
+p26
+S'Cluster Publication'
+p27
+tp28
+a(S'author'
+p29
+S'Dulip withanage'
+p30
+tp31
+a(S'author_email'
+p32
+S'withanage@asia-europe.uni-heidelberg.de'
+p33
+tp34
+a(S'keywords'
+p35
+S'epub, TEI, XML'
+p36
+tp37
+a(S'description'
+p38
+g12
+tp39
+a(S'layout_theme'
+p40
+S'Default'
+p41
+tp42
+a(S'database_uri'
+p43
+S'postgres://publications:XrOyBlpt@localhost:5432/publications'
+p44
+tp45
+a(S'security_key'
+p46
+S'2674c3a8-8bdd-4f1c-8eb1-efb9ec41ac24'
+p47
+tp48
+a(S'email_server'
+p49
+S'localhost'
+p50
+tp51
+a(S'email_sender'
+p52
+S'withanage@asia-europe.uni-heidelberg.de'
+p53
+tp54
+a(S'email_login'
+p55
+g12
+tp56
+a(S'login_method'
+p57
+S'local'
+p58
+tp59
+a(S'login_config'
+p60
+g12
+tp61
+a(S'plugins'
+p62
+(lp63
+tp64
+asS'table_file_management'
+p65
+(lp66
+S'original_document required upload'
+p67
+aS'tei_xml_file required upload'
+p68
+aS'xhtml_file upload'
+p69
+aS'pdf_file upload'
+p70
+aS'epub_file upload'
+p71
+aS'comment text'
+p72
+asS'page_files_select'
+p73
+g12
+sS'page_file_management_search'
+p74
+S'## Search file_management'
+p75
+sS'table_auth_user'
+p76
+(lp77
+S'username'
+p78
+aS'first_name'
+p79
+aS'last_name'
+p80
+aS'email'
+p81
+aS'password'
+p82
+asS'page_file_management_update'
+p83
+S'## Update file_management'
+p84
+sS'pages'
+p85
+(lp86
+S'index'
+p87
+aS'error'
+p88
+aS'file_management_create'
+p89
+aS'file_management_read'
+p90
+aS'file_management_update'
+p91
+aS'file_management_select'
+p92
+aS'file_management_search'
+p93
+asS'table_files'
+p94
+(lp95
+S'original_doc required upload'
+p96
+aS'tei_doc required upload'
+p97
+aS'xhtml upload'
+p98
+aS'pdf upload'
+p99
+aS'epub upload'
+p100
+aS'comment text'
+p101
+as.

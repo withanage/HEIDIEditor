@@ -1,0 +1,82 @@
+{{extend 'layout.html'}}
+
+ 
+<script type="text/javascript">
+$(document).ready(function(){
+
+//textboxes = $(":input:not(:submit)");
+textboxes = $(":input:not(:hidden)");
+
+$(textboxes).click(function(){
+    if ($.browser.mozilla) {
+      
+      $(textboxes).keypress (checkForEnter);
+    }
+    else {
+      
+      $(textboxes).keypress (checkForEnter);
+    }
+  });
+
+selectboxes=$("select");
+
+$(selectboxes).click(function()
+    {
+        if ($.browser.mozilla) {
+            $(selectboxes).keypress (checkForSelect);
+    }
+    else {
+            $(selecttboxes).keypress (checkForSelect);
+    }
+    
+   }
+   );
+  
+});
+
+function checkForSelect (event) {
+  if (event.keyCode == 13) {
+     event.preventDefault();
+
+    }
+    else{
+      return false;
+      
+    }
+  
+}
+
+
+function checkForEnter (event) {
+  if (event.keyCode == 13) {
+    currentBoxNumber = textboxes.index(this);
+    if (textboxes[currentBoxNumber + 1] != null) {
+      nextBox = textboxes[currentBoxNumber + 1]
+      nextBox.focus();
+      nextBox.select();
+      
+      if (currentBoxNumber <textboxes.length-2){
+        event.preventDefault();
+      }
+    }
+    else{
+      return false;
+      //event.preventDefault();
+    }
+    
+  }
+}
+</script>
+
+
+</head>
+
+<body>
+
+
+{{=form }}
+</body>
+</html>
+
+
+

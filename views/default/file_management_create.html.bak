@@ -1,0 +1,10 @@
+{{extend 'layout.html'}}
+
+<h2></h2>
+{{#=A(T('View all entries'),_href=URL('file_management_select'))}}
+<br/>
+
+{{=form}}
+{{=result}}
+
+

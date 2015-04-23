@@ -1,0 +1,17 @@
+*** Settings ***
+Documentation     This series of test cases evaluates the basic environment setup and the ability to parse basic documents.
+Library           Process
+Library           OperatingSystem
+Library           XML
+Library           Collections
+
+*** Test Cases ***
+M01 Mendeley Inline JSON Field
+    [Tags]    metadata    mendeley    bibliographymanagers    M01
+    ${result} =    Run Process    ../bin/meTypeset.py docx ./Mendeley.docx ./M01 -d --nogit    shell=True
+    Log    ${result.stdout}
+    Log    ${result.stderr}
+    ${xml}=    Parse XML    ./M01/nlm/out.xml
+    ${paragraph}=    Get Element    ${xml}    body/sec/p/xref
+    Should Be Equal As Strings    ${paragraph.text}    Silva, Rodrigues, Oliveira, & da F. Costa, 2013
+    [Teardown]    Remove Directory    M01    recursive=True

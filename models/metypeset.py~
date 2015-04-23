@@ -1,0 +1,20 @@
+import os
+import shutil
+import subprocess
+def metypeset_conversion(filename):
+    app_path = '/home/www-data/web2py/applications/HEIDIEditor/'
+    metypeset_path = app_path+'static/meTypeset/bin/meTypeset.py'
+    file_type = 'docx'
+    file_path  =app_path+ 'uploads/'+filename
+    output_path  = app_path +'uploads/'+ filename.rsplit('.', 1)[0]
+    if not os.path.exists(output_path):
+         os.makedirs(output_path)
+    cmd = [metypeset_path , file_type +' '+file_path+' '+output_path]
+  
+    try:
+	#os.setuid(1000)
+	#os.setgid(1000)
+        retcode =  subprocess.call(['touch','test'])
+    except OSError as e:
+        retcode = [cmd, e]
+    return dict(retcode=retcode)
