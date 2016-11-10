@@ -43,5 +43,10 @@
     "bootstrap-additions": "~0.2.3",
     "tinymce": "~4.1.7",
     "angular-ui-tinymce": "~0.0.5"
+  },
+  "resolutions": {
+    "angular": ">= 1.2.0",
+    "underscore": "~1.8",
+    "tinymce": "~4.4.3"
   }
 }
