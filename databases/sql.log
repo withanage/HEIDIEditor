@@ -1,0 +1,130 @@
+timestamp: 2016-11-10T14:38:21.312858
+CREATE TABLE auth_user(
+    id INT AUTO_INCREMENT NOT NULL,
+    username VARCHAR(512),
+    first_name VARCHAR(512),
+    last_name VARCHAR(512),
+    email VARCHAR(512),
+    password VARCHAR(512),
+    created_on DATETIME,
+    modified_on DATETIME,
+    registration_key VARCHAR(512),
+    reset_password_key VARCHAR(512),
+    registration_id VARCHAR(512),
+    PRIMARY KEY (id)
+) ENGINE=InnoDB CHARACTER SET utf8;
+success!
+timestamp: 2016-11-10T14:38:21.442695
+CREATE TABLE auth_group(
+    id INT AUTO_INCREMENT NOT NULL,
+    role VARCHAR(512),
+    description LONGTEXT,
+    PRIMARY KEY (id)
+) ENGINE=InnoDB CHARACTER SET utf8;
+success!
+timestamp: 2016-11-10T14:38:21.493508
+CREATE TABLE auth_membership(
+    id INT AUTO_INCREMENT NOT NULL,
+    user_id INT  , INDEX user_id__idx (user_id), FOREIGN KEY (user_id) REFERENCES auth_user (id) ON DELETE CASCADE,
+    group_id INT  , INDEX group_id__idx (group_id), FOREIGN KEY (group_id) REFERENCES auth_group (id) ON DELETE CASCADE,
+    PRIMARY KEY (id)
+) ENGINE=InnoDB CHARACTER SET utf8;
+success!
+timestamp: 2016-11-10T14:38:21.568628
+CREATE TABLE auth_permission(
+    id INT AUTO_INCREMENT NOT NULL,
+    group_id INT  , INDEX group_id__idx (group_id), FOREIGN KEY (group_id) REFERENCES auth_group (id) ON DELETE CASCADE,
+    name VARCHAR(512),
+    table_name VARCHAR(512),
+    record_id INT,
+    PRIMARY KEY (id)
+) ENGINE=InnoDB CHARACTER SET utf8;
+success!
+timestamp: 2016-11-10T14:38:21.619543
+CREATE TABLE auth_event(
+    id INT AUTO_INCREMENT NOT NULL,
+    time_stamp DATETIME,
+    client_ip VARCHAR(512),
+    user_id INT  , INDEX user_id__idx (user_id), FOREIGN KEY (user_id) REFERENCES auth_user (id) ON DELETE CASCADE,
+    origin VARCHAR(512),
+    description LONGTEXT,
+    PRIMARY KEY (id)
+) ENGINE=InnoDB CHARACTER SET utf8;
+success!
+timestamp: 2016-11-10T14:38:21.670374
+CREATE TABLE auth_cas(
+    id INT AUTO_INCREMENT NOT NULL,
+    user_id INT  , INDEX user_id__idx (user_id), FOREIGN KEY (user_id) REFERENCES auth_user (id) ON DELETE CASCADE,
+    created_on DATETIME,
+    service VARCHAR(512),
+    ticket VARCHAR(512),
+    renew CHAR(1),
+    PRIMARY KEY (id)
+) ENGINE=InnoDB CHARACTER SET utf8;
+success!
+timestamp: 2016-11-10T14:38:21.764422
+CREATE TABLE t_file_management(
+    id INT AUTO_INCREMENT NOT NULL,
+    f_filename VARCHAR(512),
+    f_original_document VARCHAR(512) NOT NULL,
+    f_original_filename VARCHAR(512),
+    f_tei_xml_file VARCHAR(512),
+    f_nlm_xml_file VARCHAR(512),
+    f_xhtml_file VARCHAR(512),
+    f_pdf_file VARCHAR(512),
+    f_epub_file VARCHAR(512),
+    f_comment LONGTEXT,
+    active CHAR(1),
+    created_on DATETIME,
+    modified_on DATETIME,
+    created_by INT  , INDEX created_by__idx (created_by), FOREIGN KEY (created_by) REFERENCES auth_user (id) ON DELETE CASCADE,
+    modified_by INT  , INDEX modified_by__idx (modified_by), FOREIGN KEY (modified_by) REFERENCES auth_user (id) ON DELETE CASCADE,
+    PRIMARY KEY (id)
+) ENGINE=InnoDB CHARACTER SET utf8;
+success!
+timestamp: 2016-11-10T14:38:21.885012
+CREATE TABLE t_file_management_archive(
+    id INT AUTO_INCREMENT NOT NULL,
+    f_filename VARCHAR(512),
+    f_original_document VARCHAR(512) NOT NULL,
+    f_original_filename VARCHAR(512),
+    f_tei_xml_file VARCHAR(512),
+    f_nlm_xml_file VARCHAR(512),
+    f_xhtml_file VARCHAR(512),
+    f_pdf_file VARCHAR(512),
+    f_epub_file VARCHAR(512),
+    f_comment LONGTEXT,
+    active CHAR(1),
+    created_on DATETIME,
+    modified_on DATETIME,
+    created_by INT  , INDEX created_by__idx (created_by), FOREIGN KEY (created_by) REFERENCES auth_user (id) ON DELETE CASCADE,
+    modified_by INT  , INDEX modified_by__idx (modified_by), FOREIGN KEY (modified_by) REFERENCES auth_user (id) ON DELETE CASCADE,
+    current_record INT  , INDEX current_record__idx (current_record), FOREIGN KEY (current_record) REFERENCES t_file_management (id) ON DELETE CASCADE,
+    PRIMARY KEY (id)
+) ENGINE=InnoDB CHARACTER SET utf8;
+success!
+timestamp: 2016-11-10T14:38:22.019661
+CREATE TABLE t_enter_key(
+    id INT AUTO_INCREMENT NOT NULL,
+    f_filevalue DOUBLE,
+    f_filename VARCHAR(512) NOT NULL,
+    f_filevalue2 DOUBLE,
+    f_filevalue3 DOUBLE,
+    PRIMARY KEY (id)
+) ENGINE=InnoDB CHARACTER SET utf8;
+success!
+timestamp: 2016-11-10T14:38:22.068994
+CREATE TABLE contacts(
+    id INT AUTO_INCREMENT NOT NULL,
+    name VARCHAR(512),
+    email VARCHAR(512),
+    PRIMARY KEY (id)
+) ENGINE=InnoDB CHARACTER SET utf8;
+success!
+timestamp: 2016-11-10T14:38:22.119864
+CREATE TABLE groups(
+    id INT AUTO_INCREMENT NOT NULL,
+    contact INT  , INDEX contact__idx (contact), FOREIGN KEY (contact) REFERENCES contacts (id) ON DELETE CASCADE,
+    PRIMARY KEY (id)
+) ENGINE=InnoDB CHARACTER SET utf8;
+success!

@@ -15,7 +15,7 @@ if request.env.web2py_runtime_gae:            # if running on Google App Engine
     # session.connect(request, response, db = MEMDB(Client()))
 else:                                         # else use a normal relational database
     #db = DAL('postgres://publications:Pass@localhost:5432/publications')       # if not, use SQLite or other DB
-    db = DAL('mysql://publications:Pass@localhost:3306/publications')
+    db = DAL('mysql://publications:SP1SQL-cb@localhost:3306/publications')
 ## if no need for session
 # session.forget()
 
@@ -79,11 +79,11 @@ db.auth_user.username.requires = IS_NOT_IN_DB(db, db.auth_user.username)
 db.auth_user.registration_id.requires = IS_NOT_IN_DB(db, db.auth_user.registration_id)
 db.auth_user.email.requires = (IS_EMAIL(error_message=auth.messages.invalid_email),
                                IS_NOT_IN_DB(db, db.auth_user.email))
-auth.settings.actions_disabled.append('register')
+#auth.settings.actions_disabled.append('register')
 auth.define_tables(migrate=settings.migrate)                           # creates all needed tables
 auth.settings.mailer = mail                    # for user email verification
-auth.settings.registration_requires_verification = True
-auth.settings.registration_requires_approval = True
+auth.settings.registration_requires_verification = False
+auth.settings.registration_requires_approval = False
 auth.messages.verify_email = 'Click on the link http://'+request.env.http_host+URL('default','user',args=['verify_email'])+'/%(key)s to verify your email'
 auth.settings.reset_password_requires_verification = True
 auth.messages.reset_password = 'Click on the link http://'+request.env.http_host+URL('default','user',args=['reset_password'])+'/%(key)s to reset your password'
