@@ -83,7 +83,7 @@ metadata.controller('textCtrl',
             JsonData.tree = data;
         });
         */
-        JsonData.getData('bookJson.py', 'bookJson').then(function(res){
+        JsonData.getData('../../../editor/bookJson', 'bookJson').then(function(res){
             $scope.tree = res.data;
             $scope.origTree = res.data; // Do not edit this tree!! (read-only)
             JsonData.tree = res.data;
