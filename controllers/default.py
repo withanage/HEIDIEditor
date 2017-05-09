@@ -20,7 +20,7 @@ def typesetter(upload_file_name):
 	row.update(f_tei_xml_file=upload_file_name.rsplit('.', 1)[0]+'_tei.xml', f_nlm_xml_file=upload_file_name.rsplit('.', 1)[0]+'_nlm.xml')
 	row.update_record() 
 
-@auth.requires_login()
+
 def file_management_create():
     upload_file_name = None
     form=crud.create(db.t_file_management)
@@ -33,13 +33,13 @@ def file_management_create():
         #result=oxgrarage_conversion(upload_file_name)
     return dict(form=form,result= db(db.t_file_management.f_original_document==upload_file_name).select().first())
 
-@auth.requires_login()
+
 def file_management_read():
     record = db.t_file_management(request.args(0)) or redirect(URL('error'))
     form=crud.read(db.t_file_management,record)
     return dict(form=form)
 
-@auth.requires_login()
+
 def file_management_update():
     record = db.t_file_management(request.args(0),active=True) or redirect(URL('error'))
     form=crud.update(db.t_file_management,record,next='file_management_read/[id]',
@@ -47,7 +47,7 @@ def file_management_update():
                      onaccept=crud.archive)
     return dict(form=form)
 
-@auth.requires_login()
+
 def file_management_select():
     f,v=request.args(0),request.args(1)
     try: query=f and db.t_file_management[f]==v or db.t_file_management
@@ -57,7 +57,7 @@ def file_management_select():
     db.t_file_management.modified_on,db.t_file_management.modified_by, orderby=~db.t_file_management.modified_on)
     return dict(rows=rows)
 
-@auth.requires_login()
+
 def file_management_search():
     form, rows=crud.search(db.t_file_management,query=db.t_file_management.active==True)
     return dict(form=form, rows=rows)
