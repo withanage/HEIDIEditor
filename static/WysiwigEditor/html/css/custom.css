@@ -194,6 +194,15 @@ button.next-btn{
     width: 80px;
     text-align: center;
 }
+div.back{
+    text-align: left;
+    margin-top: 20px;
+}
+
+button.back-btn{
+    width: 80px;
+    text-align: center;
+}
 
 div.download-btn{
     text-align: center;

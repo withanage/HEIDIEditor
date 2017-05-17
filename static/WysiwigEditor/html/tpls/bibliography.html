@@ -215,7 +215,7 @@
                     <td>
                         <span ng-switch on="authorType">
                             <span ng-switch-when="person">
-                                <span ng-if="ref['element-citation']['person-group']['string-name'][0]['surname']" ng-repeat="strname in ref['element-citation']['person-group']['string-name']">
+                                <span ng-if="ref['element-citation']['person-group']['string-name'][0]['surname']" ng-repeat="strname in ref['element-citation']['person-group']['string-name']" track by $index>
                                     <a href="#" editable-text="name['given-names']">{{strname['given-names'] || 'empty'}}</a>
                                     <a href="#" editable-text="name['surname']">{{strname['surname'] || 'empty'}}</a>
                                     <i ng-if="ref['element-citation']['person-group']['string-name'].length > 1" class="glyphicon glyphicon-remove" ng-click="ref['element-citation']['person-group']['string-name'].splice($index, 1)"></i>
@@ -227,7 +227,7 @@
                                 </span>
                             </span>
                             <span ng-switch-when="group">
-                                <span ng-if="ref['element-citation']['person-group']['string-name'][0]" ng-repeat="strname in ref['element-citation']['person-group']['string-name']">
+                                <span ng-if="ref['element-citation']['person-group']['string-name'][0]" ng-repeat="strname in ref['element-citation']['person-group']['string-name'] track by $index">
                                     <a href="#" editable-text="name">{{strname || 'empty'}}</a>
                                     <i ng-if="ref['element-citation']['person-group']['string-name'].length > 1" class="glyphicon glyphicon-remove" ng-click="ref['element-citation']['person-group']['string-name'].splice($index, 1)"></i>
                                 </span>

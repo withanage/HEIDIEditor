@@ -1,0 +1,14 @@
+{
+  "name": "WysiwigEditor",
+  "version": "0.0.1",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-clean-css": "^3.3.1",
+    "gulp-concat": "^2.6.1",
+    "gulp-load-plugins": "^1.5.0"
+  },
+  "dependencies": {
+    "gulp-concat-css": "^2.3.0",
+    "gulp-minify-css": "^1.2.4"
+  }
+}

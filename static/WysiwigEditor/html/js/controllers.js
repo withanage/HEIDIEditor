@@ -1,6 +1,8 @@
 'use strict';
 
-var components = ['textAngular', 'jsTree.directive', 'xeditable', 'ui.bootstrap', 'underscore', 'ui.sortable', 'ui.tree', 'ui.tinymce'];
+var components = ['textAngular',
+'jsTree.directive', 'xeditable', 'ui.bootstrap', 'underscore',
+'ui.sortable', 'ui.tree', 'ui.tinymce'];
 var metadata = angular.module('metadata', components);
 
 metadata.config(function($locationProvider) {
@@ -17,6 +19,8 @@ metadata.run(function(editableOptions, editableThemes) {
     editableThemes['bs3'].cancelTpl = '<button type="button" class="btn btn-default" ng-click="$form.$cancel()">cancel</button>';
 });
 
+
+//TODO add this
 metadata.run(['$anchorScroll', function($anchorScroll) {
     $anchorScroll.yOffset = 150;   // always scroll by 50 extra pixels
 }])
@@ -83,7 +87,7 @@ metadata.controller('textCtrl',
             JsonData.tree = data;
         });
         */
-        JsonData.getData('../../../editor/bookJson', 'bookJson').then(function(res){
+        JsonData.getData('../../../editor/call/json/bookJson', 'bookJson').then(function(res){
             $scope.tree = res.data;
             $scope.origTree = res.data; // Do not edit this tree!! (read-only)
             JsonData.tree = res.data;

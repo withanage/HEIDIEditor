@@ -5,7 +5,13 @@ import os
 import xmltodict
 from bs4 import CData
 
+def call():
+    session.forget()
+    return service()
+
 web2py_path = os.path.dirname(os.path.abspath('__file__'))
+
+@service.json
 def book_chapters():
 
     tree = []
@@ -50,9 +56,10 @@ def book_chapters():
                 chapter['parent'] = book['id']
             tree.append(chapter)
 
-    return gluon.contrib.simplejson.dumps(tree)
+    return tree
 
 
+@service.json
 def bookJson():
     def validate(dic):
         if dic['book']['book-meta'].has_key('contrib-group'):
@@ -89,6 +96,5 @@ def bookJson():
     xmldata = escape(xml)
     xmldict = xmltodict.parse(xmldata)
     jsondata = validate(xmldict)
-
-    return gluon.contrib.simplejson.dumps(jsondata)
-
+    response.headers['Access-Control-Allow-Origin'] = '*'
+    return jsondata

@@ -14,8 +14,7 @@ if request.env.web2py_runtime_gae:            # if running on Google App Engine
     # from google.appengine.api.memcache import Client
     # session.connect(request, response, db = MEMDB(Client()))
 else:                                         # else use a normal relational database
-    #db = DAL('postgres://publications:Pass@localhost:5432/publications')       # if not, use SQLite or other DB
-    db = DAL('mysql://publications:Pass@localhost:3306/publications')
+    db = DAL('postgres://publications:Pass@localhost:5432/publications')       # if not, use SQLite or other DB
 ## if no need for session
 # session.forget()
 
