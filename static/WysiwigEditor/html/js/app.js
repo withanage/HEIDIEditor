@@ -67,6 +67,7 @@ editor.controller('FileDestroyController', [
     function ($scope, $http) {
         var file = $scope.file,
             state;
+
         if (file.url) {
             file.$state = function () {
                 return state;
@@ -108,6 +109,7 @@ editor.controller('modalCtrl', [
                 keyboard: false,
                 size: 'sm'
             });
+            console.log('typesetting');
         }
     }
 ])
